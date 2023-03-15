@@ -1,0 +1,87 @@
+{
+    "id": "9c9fc3bc-de91-403e-9eb5-2ff7a18cfb55",
+    "changed": "2022-07-31T09:41:20Z",
+    "content": "Check:\n  all:\n    - name: $EXVAMT_EXISTS\n      operator: equal_to\n      value: true\n    - name: EC\n      operator: exists\nOperations:\n  - domain: EX\n    id: $EXVAMT_EXISTS\n    name: EXVAMT\n    operator: variable_exists\nCore:\n  Id: CDISC.SDTMIG.CG0105\n  Version: '1'\n  Status: Draft\nDescription: When EC exists, EXVAMT should not be used.\nOutcome:\n  Message: EXVAMT is present when EC exists.\n  Output Variables:\n    - EXVAMT\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0105\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: '\"When the EC domain is implemented in conjunction\n                  with the EX domain, EXVAMT and EXVAMTU should not be used in EX;  collected\n                  values instead would be represented in ECDOSE and ECDOSU.\"'\n                Document: IG v3.4\n                Item: Assumption 6c\n                Section: 6.1.3.1\nScope:\n  Classes:\n    Include:\n      - INTERVENTIONS\n  Domains:\n    Include:\n      - EX\n",
+    "created": "2021-10-06T14:54:46Z",
+    "creator": {
+        "id": "d0881041-369e-4940-b721-5b456d12101b"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "$EXVAMT_EXISTS",
+                    "operator": "equal_to",
+                    "value": true
+                },
+                {
+                    "name": "EC",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Operations": [
+            {
+                "domain": "EX",
+                "id": "$EXVAMT_EXISTS",
+                "name": "EXVAMT",
+                "operator": "variable_exists"
+            }
+        ],
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0105",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "When EC exists, EXVAMT should not be used.",
+        "Outcome": {
+            "Message": "EXVAMT is present when EC exists.",
+            "Output_Variables": [
+                "EXVAMT"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0105",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "\"When the EC domain is implemented in conjunction with the EX domain, EXVAMT and EXVAMTU should not be used in EX;  collected values instead would be represented in ECDOSE and ECDOSU.\"",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 6c",
+                                        "Section": "6.1.3.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "EX"
+                ]
+            }
+        }
+    }
+}

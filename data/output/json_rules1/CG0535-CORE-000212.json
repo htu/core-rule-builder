@@ -1,0 +1,87 @@
+{
+    "id": "ae81a418-6565-4d99-bb21-6c34923d7100",
+    "changed": "2022-10-11T12:16:17.133Z",
+    "content": "Check:\n  all:\n    - name: DSCAT\n      operator: is_not_unique_set\n      value:\n        - USUBJID\n        - EPOCH\n    - name: DSCAT\n      operator: equal_to\n      value: DISPOSITION EVENT\n    - name: DSSCAT\n      operator: not_exists\nCore:\n  Id: CORE-000212\n  Version: '1'\n  Status: Published\nDescription: When subject has more than one record per Epoch with DSCAT = DISPOSITION\n  EVENT, DSSCAT must be present.\nOutcome:\n  Message: DSSCAT is not present when subject has more than one record per Epoch with\n    DSCAT = 'DISPOSITION EVENT'.\n  Output Variables:\n    - USUBJID\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0535\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: An event with DSCAT = \u201cDISPOSITION EVENT\u201d describes\n                  either disposition of study participation or of a study treatment.  It\n                  describes whether a subject completed study participation or a study\n                  treatment, and if not, the reason they did not complete it. Dispositions\n                  may be described for each Epoch (e.g., screening, initial treatment,\n                  washout, cross-over treatment, follow-up) or for the study as a\n                  whole. If disposition events for both study participation and study\n                  treatment(s) are to be represented, then DSSCAT provides this distinction.\n                  The value of DSSCAT is based on the sponsor's controlled terminology,\n                  however for records with DSCAT = \"DISPOSITION EVENT\", DSSCAT = \"STUDY\n                  PARTICIPATION\" is used to represent disposition of study participation.\n                  DSSCAT = \"STUDY TREATMENT\" can be used as a generic identifier when\n                  a study has only a single treatment. If a study has multiple treatments,\n                  then DSSCAT should name the individual treatment.\n                Document: IG v3.4\n                Item: DS \u2013 Assumption 2b\n                Section: 6.2.3\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - DS\n",
+    "created": "2021-11-08T10:26:04Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "DSCAT",
+                    "operator": "is_not_unique_set",
+                    "value": [
+                        "USUBJID",
+                        "EPOCH"
+                    ]
+                },
+                {
+                    "name": "DSCAT",
+                    "operator": "equal_to",
+                    "value": "DISPOSITION EVENT"
+                },
+                {
+                    "name": "DSSCAT",
+                    "operator": "not_exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000212",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "When subject has more than one record per Epoch with DSCAT = DISPOSITION EVENT, DSSCAT must be present.",
+        "Outcome": {
+            "Message": "DSSCAT is not present when subject has more than one record per Epoch with DSCAT = 'DISPOSITION EVENT'.",
+            "Output_Variables": [
+                "USUBJID"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0535",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "An event with DSCAT = \u201cDISPOSITION EVENT\u201d describes either disposition of study participation or of a study treatment.  It describes whether a subject completed study participation or a study treatment, and if not, the reason they did not complete it. Dispositions may be described for each Epoch (e.g., screening, initial treatment, washout, cross-over treatment, follow-up) or for the study as a whole. If disposition events for both study participation and study treatment(s) are to be represented, then DSSCAT provides this distinction. The value of DSSCAT is based on the sponsor's controlled terminology, however for records with DSCAT = \"DISPOSITION EVENT\", DSSCAT = \"STUDY PARTICIPATION\" is used to represent disposition of study participation. DSSCAT = \"STUDY TREATMENT\" can be used as a generic identifier when a study has only a single treatment. If a study has multiple treatments, then DSSCAT should name the individual treatment.",
+                                        "Document": "IG v3.4",
+                                        "Item": "DS \u2013 Assumption 2b",
+                                        "Section": "6.2.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "DS"
+                ]
+            }
+        }
+    }
+}

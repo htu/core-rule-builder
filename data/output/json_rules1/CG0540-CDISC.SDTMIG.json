@@ -1,0 +1,87 @@
+{
+    "id": "8b99f7ac-39a0-43dd-a731-449637905bf6",
+    "changed": "2022-07-17T04:51:28Z",
+    "content": "Check:\n  all:\n    - name: ACTARMCD\n      operator: non_empty\n    - name: USUBJID\n      operator: is_not_contained_by\n      value: $ds_usubjid\nOperations:\n  - operator: distinct\n    domain: DS\n    name: USUBJID\n    id: $ds_usubjid\nCore:\n  Id: CDISC.SDTMIG.CG0540\n  Version: '1'\n  Status: Draft\nDescription: When ACTARMCD is populated, disposition data for subject must be present\nOutcome:\n  Message: There are no DS records for subject who was assigned treatment\n  Output Variables:\n    - USUBJID\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0540\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The Disposition dataset provides an accounting for\n                  all subjects who entered the study and may include protocol milestones,\n                  such as randomization, as well as the subject's completion status\n                  or reason for discontinuation for the entire study or each phase\n                  or segment of the study, including screening and post-treatment\n                  follow-up.\n                Document: IG v3.4\n                Item: Assumption 1\n                Section: 6.2.3\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - DM\n",
+    "created": "2021-11-08T10:26:54Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "ACTARMCD",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "USUBJID",
+                    "operator": "is_not_contained_by",
+                    "value": "$ds_usubjid"
+                }
+            ]
+        },
+        "Operations": [
+            {
+                "operator": "distinct",
+                "domain": "DS",
+                "name": "USUBJID",
+                "id": "$ds_usubjid"
+            }
+        ],
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0540",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "When ACTARMCD is populated, disposition data for subject must be present",
+        "Outcome": {
+            "Message": "There are no DS records for subject who was assigned treatment",
+            "Output_Variables": [
+                "USUBJID"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0540",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The Disposition dataset provides an accounting for all subjects who entered the study and may include protocol milestones, such as randomization, as well as the subject's completion status or reason for discontinuation for the entire study or each phase or segment of the study, including screening and post-treatment follow-up.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 1",
+                                        "Section": "6.2.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "DM"
+                ]
+            }
+        }
+    }
+}

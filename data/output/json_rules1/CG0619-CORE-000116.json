@@ -1,0 +1,79 @@
+{
+    "id": "844203d4-cd36-4fc7-bdf2-0356660835ee",
+    "changed": "2022-05-17T18:33:42Z",
+    "content": "Check:\n  all:\n    - name: --SPCUFL\n      operator: exists\n    - name: --SPCUFL\n      operator: not_equal_to\n      value: N\n    - name: --SPCUFL\n      operator: non_empty\nCore:\n  Id: CORE-000116\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --SPCUFL is not null or equal to \"N\"\nOutcome:\n  Message: --SPCUFL is not null or equal to 'N'\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0619\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The value will be \"N\" if the specimen is not usable,\n                  and null if the specimen is usable.\n                Document: SDTM v2.0\n                Section: Findings\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-08T12:36:43Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--SPCUFL",
+                    "operator": "exists"
+                },
+                {
+                    "name": "--SPCUFL",
+                    "operator": "not_equal_to",
+                    "value": "N"
+                },
+                {
+                    "name": "--SPCUFL",
+                    "operator": "non_empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000116",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --SPCUFL is not null or equal to \"N\"",
+        "Outcome": {
+            "Message": "--SPCUFL is not null or equal to 'N'"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0619",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The value will be \"N\" if the specimen is not usable, and null if the specimen is usable.",
+                                        "Document": "SDTM v2.0",
+                                        "Section": "Findings"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

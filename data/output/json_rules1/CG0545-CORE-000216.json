@@ -1,0 +1,86 @@
+{
+    "id": "43f2a703-8897-46f4-94fa-2762851ec02d",
+    "changed": "2023-02-28T14:17:48.190Z",
+    "content": "Check:\n  all:\n    - name: TMRPT\n      operator: equal_to\n      value: N\n    - name: MIDSTYPE\n      operator: is_not_unique_set\n      value: USUBJID\nMatch Datasets:\n  - Name: TM\n    Keys:\n      - MIDSTYPE\nCore:\n  Id: CORE-000216\n  Version: '1'\n  Status: Published\nDescription: MIDSTYPE must be unique within subject when MIDSTYPE = TM.MIDSTYPE\n  and TM.TMRPT = 'N'\nOutcome:\n  Message: MIDSTYPE is not unique within subject when MIDSTYPE = TM.MIDSTYPE and\n    TM.TMRPT = 'N'\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0545\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: \"For Disease Milestones that can occur only once (TMRPT = \\\"N\\\")\n                  the value of MIDS may be the value in MIDSTYPE or may be an\n                  abbreviated version.\\ \n\n                  SM\\tMIDSTYPE\\tMIDSTYPE = TM.MIDSTYPE and\n                  TM.TMRPT = 'N'\\tMIDSTYPE is unique per subject\"\n                Document: IG v3.4\n                Item: Assumption 2.a\n                Section: '5.4'\nScope:\n  Classes:\n    Include:\n      - SPECIAL PURPOSE\n  Domains:\n    Include:\n      - SM\nExecutability: Fully Executable\n",
+    "created": "2021-11-08T10:27:08Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "TMRPT",
+                    "operator": "equal_to",
+                    "value": "N"
+                },
+                {
+                    "name": "MIDSTYPE",
+                    "operator": "is_not_unique_set",
+                    "value": "USUBJID"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000216",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "MIDSTYPE must be unique within subject when MIDSTYPE = TM.MIDSTYPE and TM.TMRPT = 'N'",
+        "Outcome": {
+            "Message": "MIDSTYPE is not unique within subject when MIDSTYPE = TM.MIDSTYPE and TM.TMRPT = 'N'"
+        },
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 2.a",
+                                        "Section": "5.4",
+                                        "Cited_Guidance": "For Disease Milestones that can occur only once (TMRPT = \"N\") the value of MIDS may be the value in MIDSTYPE or may be an abbreviated version. \nSM\tMIDSTYPE\tMIDSTYPE = TM.MIDSTYPE and TM.TMRPT = 'N'\tMIDSTYPE is unique per subject"
+                                    }
+                                ],
+                                "Rule_Identifier": {
+                                    "Id": "CG0545",
+                                    "Version": "1"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SM"
+                ]
+            }
+        },
+        "Executability": "Fully Executable",
+        "Match_Datasets": [
+            {
+                "Name": "TM",
+                "Keys": [
+                    "MIDSTYPE"
+                ]
+            }
+        ],
+        "Rule_Type": "Record Data"
+    }
+}

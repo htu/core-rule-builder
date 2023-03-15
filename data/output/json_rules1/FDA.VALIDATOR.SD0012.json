@@ -1,0 +1,86 @@
+{
+    "id": "38b2471e-df0a-4c36-af3b-a9fd70005af2",
+    "changed": "2022-07-04T09:32:44Z",
+    "content": "Check:\n  all:\n    - name: --STDY\n      operator: non_empty\n    - name: --ENDY\n      operator: non_empty\n    - name: --STDY\n      operator: greater_than\n      value: --ENDY\nCore:\n  Id: FDA.VALIDATOR.SD0012\n  Version: '1'\n  Status: Draft\nDescription: --STDY must be equal to, or prior to, --ENDY\nOutcome:\n  Message: --STDY is after --ENDY\n  Output Variables:\n    - --STDY\n    - --ENDY\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: FDA\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: FDA Validator Rules\n            Rule Identifier:\n              Id: SD0012, Publisher ID FDAB034\n              Version: '1'\n            Version: '1.5'\n            Citations:\n              - Cited Guidance: Study Day of Start of Event, Exposure or Observation\n                  (--STDY) must be less or equal to Study Day of End of Event, Exposure\n                  or Observation (--ENDY).\n                Document: FDA Validator Rules v1.5\n                Section: Rules\nScope:\n  Classes:\n    Include:\n      - INTERVENTIONS\n      - EVENTS\n      - SPECIAL-PURPOSE\n  Domains:\n    Exclude:\n      - CO\n      - DM\n",
+    "created": "2021-11-11T23:08:40Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--STDY",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "--ENDY",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "--STDY",
+                    "operator": "greater_than",
+                    "value": "--ENDY"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "FDA.VALIDATOR.SD0012",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "--STDY must be equal to, or prior to, --ENDY",
+        "Outcome": {
+            "Message": "--STDY is after --ENDY",
+            "Output_Variables": [
+                "--STDY",
+                "--ENDY"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "FDA",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "FDA Validator Rules",
+                                "Rule_Identifier": {
+                                    "Id": "SD0012, Publisher ID FDAB034",
+                                    "Version": "1"
+                                },
+                                "Version": "1.5",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Study Day of Start of Event, Exposure or Observation (--STDY) must be less or equal to Study Day of End of Event, Exposure or Observation (--ENDY).",
+                                        "Document": "FDA Validator Rules v1.5",
+                                        "Section": "Rules"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "INTERVENTIONS",
+                    "EVENTS",
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Exclude": [
+                    "CO",
+                    "DM"
+                ]
+            }
+        }
+    }
+}

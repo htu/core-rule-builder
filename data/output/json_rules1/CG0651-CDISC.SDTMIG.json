@@ -1,0 +1,75 @@
+{
+    "id": "c30d1feb-8370-41c4-8d78-19ce1b8ff315",
+    "changed": "2022-05-11T13:24:17Z",
+    "content": "Check:\n  all:\n    #Condition: variable Core Status = Permissible and data is planned to be collected\r\n    - name: define_variable_role\n      operator: equal_to\n      value: Permissible\n    #Rule: Variable is not present\r\n    - name: variable_name\n      operator: not_exists\n\nCore:\n  Id: CDISC.SDTMIG.CG0651\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when variable Core Status = Permissible and data is planned\n  to be collected, but variable is not present\nOutcome:\n  Message: Variable is missing, where variable core status is permissible and data\n    is planned to be collected.\nRule Type: Variable Metadata Check against Define XML\nSensitivity: Variable\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0651\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: If a study includes a data item that would be represented\n                  in a Permissible variable, then that variable must be included in\n                  the SDTM dataset, even if null. Indicate no data were available\n                  for that variable in the Define-XML document.\"\n                Document: IG v3.4\n                Section: '2.5'\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2022-05-11T11:02:05Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "define_variable_role",
+                    "operator": "equal_to",
+                    "value": "Permissible"
+                },
+                {
+                    "name": "variable_name",
+                    "operator": "not_exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0651",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when variable Core Status = Permissible and data is planned to be collected, but variable is not present",
+        "Outcome": {
+            "Message": "Variable is missing, where variable core status is permissible and data is planned to be collected."
+        },
+        "Rule_Type": "Variable Metadata Check against Define XML",
+        "Sensitivity": "Variable",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0651",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "If a study includes a data item that would be represented in a Permissible variable, then that variable must be included in the SDTM dataset, even if null. Indicate no data were available for that variable in the Define-XML document.\"",
+                                        "Document": "IG v3.4",
+                                        "Section": "2.5"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

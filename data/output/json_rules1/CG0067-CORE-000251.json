@@ -1,0 +1,137 @@
+{
+    "id": "66ef1c4d-2a22-45bf-b0ce-6b3ce8929488",
+    "changed": "2023-01-24T20:20:32.330Z",
+    "content": "Check:\n  all:\n    - name: SSSTRESC\n      operator: equal_to\n      value: DEAD\n      value_is_literal: true\n    - name: $ds_dsdecod\n      operator: does_not_contain\n      value: DEATH\n      value_is_literal: true\nOperations:\n  - operator: distinct\n    domain: DS\n    name: DSDECOD\n    id: $ds_dsdecod\n    group:\n      - USUBJID\nCore:\n  Id: CORE-000251\n  Version: '1'\n  Status: Published\nDescription: When SS.SSSTRESC = \"DEAD\", the final disposition record must have DSDECOD\n  ^= \"DEATH\".\nOutcome:\n  Message: DSDECOD is not \"DEATH\", When SS.SSSTRESC = \"DEAD\".\n  Output Variables:\n    - SSSTRESC\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0067\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: For example, if a subject's survival status is \"DEAD\",\n                  the date of death must be stored in DM and within a final disposition\n                  record in DS.\n                Document: SDTMIG v3.4\n                Item: Assumption 1\n                Section: 6.3.11\n      - Name: SDTMIG\n        Version: '3.3'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0067\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: For example, if a subject's Survival Status is \"DEAD\",\n                  the date of death must be stored in DM and within a final disposition\n                  record in DS.\n                Document: SDTMIG v3.3\n                Item: Assumption 1\n                Section: 6.3.15\n      - Name: SDTMIG\n        Version: '3.2'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0067\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: For example, if a subject's Survival Status is \"DEAD\",\n                  the date of death must be stored in DM and within a final disposition\n                  record in DS.\n                Document: SDTMIG v3.2\n                Item: Assumption 2\n                Section: '6.3'\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - SS\n",
+    "created": "2022-05-03T14:26:26Z",
+    "creator": {
+        "id": "d0881041-369e-4940-b721-5b456d12101b"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "SSSTRESC",
+                    "operator": "equal_to",
+                    "value": "DEAD",
+                    "value_is_literal": true
+                },
+                {
+                    "name": "$ds_dsdecod",
+                    "operator": "does_not_contain",
+                    "value": "DEATH",
+                    "value_is_literal": true
+                }
+            ]
+        },
+        "Operations": [
+            {
+                "operator": "distinct",
+                "domain": "DS",
+                "name": "DSDECOD",
+                "id": "$ds_dsdecod",
+                "group": [
+                    "USUBJID"
+                ]
+            }
+        ],
+        "Core": {
+            "Id": "CORE-000251",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "When SS.SSSTRESC = \"DEAD\", the final disposition record must have DSDECOD ^= \"DEATH\".",
+        "Outcome": {
+            "Message": "DSDECOD is not \"DEATH\", When SS.SSSTRESC = \"DEAD\".",
+            "Output_Variables": [
+                "SSSTRESC"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0067",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "For example, if a subject's survival status is \"DEAD\", the date of death must be stored in DM and within a final disposition record in DS.",
+                                        "Document": "SDTMIG v3.4",
+                                        "Item": "Assumption 1",
+                                        "Section": "6.3.11"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.3",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0067",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "For example, if a subject's Survival Status is \"DEAD\", the date of death must be stored in DM and within a final disposition record in DS.",
+                                        "Document": "SDTMIG v3.3",
+                                        "Item": "Assumption 1",
+                                        "Section": "6.3.15"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.2",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0067",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "For example, if a subject's Survival Status is \"DEAD\", the date of death must be stored in DM and within a final disposition record in DS.",
+                                        "Document": "SDTMIG v3.2",
+                                        "Item": "Assumption 2",
+                                        "Section": "6.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SS"
+                ]
+            }
+        }
+    }
+}

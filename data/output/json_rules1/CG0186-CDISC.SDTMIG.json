@@ -1,0 +1,71 @@
+{
+    "id": "a793dc96-fc22-4cde-8567-613330e1e1b1",
+    "changed": "2022-07-17T11:02:43Z",
+    "content": "Check:\n  all:\n    - name: LBORNRLO\n      operator: equal_to\n      value: LBORRESU\nCore:\n  Id: CDISC.SDTMIG.CG0186\n  Version: '1'\n  Status: Draft\nDescription: LBORNRLO is expressed using the units in LBORRESU\nOutcome:\n  Message: LBORNRLO is not expressed using the units in LBORRESU\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0186\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Lower end of reference range for continuous measurement\n                  in original units.\n                Document: SDTMIG v3.4\n                Section: 6.3.5.6\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - LB\n",
+    "created": "2021-09-30T14:09:49Z",
+    "creator": {
+        "id": "c3910f45-cb71-431f-befb-338bab20116a"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "LBORNRLO",
+                    "operator": "equal_to",
+                    "value": "LBORRESU"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0186",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "LBORNRLO is expressed using the units in LBORRESU",
+        "Outcome": {
+            "Message": "LBORNRLO is not expressed using the units in LBORRESU"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0186",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Lower end of reference range for continuous measurement in original units.",
+                                        "Document": "SDTMIG v3.4",
+                                        "Section": "6.3.5.6"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "LB"
+                ]
+            }
+        }
+    }
+}

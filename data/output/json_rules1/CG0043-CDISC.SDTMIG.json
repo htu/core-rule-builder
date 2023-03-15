@@ -1,0 +1,94 @@
+{
+    "id": "531f9b56-98a9-470e-bd3e-41923374042b",
+    "changed": "2022-07-17T04:55:15Z",
+    "content": "Check:\n  all:\n    - name: AESMIE\n      operator: equal_to\n      value: Y\n    - name: QNAM\n      operator: equal_to\n      value: AESOSP\n    - name: QVAL\n      operator: non_empty\nMatch Datasets:\n  - Name: SUPPAE\n    Keys:\n      - USUBJID\n    Is Relationship: true\nCore:\n  Id: CDISC.SDTMIG.CG0043\n  Version: '1'\n  Status: Draft\nDescription: When AESMIE=Y then SUPPAE.QNAM=AESOSP should be present\nOutcome:\n  Message: Missing SUPPAE.QNAM=AESOSP, where AESMIE=Y\n  Output Variables:\n    - AESOSP\n    - AESMIE\nRule Type: Record Data\nSensitivity: Variable\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0043\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: When a description of Other Medically Important Serious\n                  Adverse Events category is collected on a CRF, sponsors should place\n                  the description in the SUPPAE dataset using the standard supplemental\n                  qualifier name code AESOSP.\n                Document: IG v3.4\n                Item: Asumtpion 6c\n                Section: 6.2.1\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - AE\n",
+    "created": "2021-10-28T20:25:12Z",
+    "creator": {
+        "id": "7de48ba7-1548-45ca-bfc8-3ad35590ae62"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "AESMIE",
+                    "operator": "equal_to",
+                    "value": "Y"
+                },
+                {
+                    "name": "QNAM",
+                    "operator": "equal_to",
+                    "value": "AESOSP"
+                },
+                {
+                    "name": "QVAL",
+                    "operator": "non_empty"
+                }
+            ]
+        },
+        "Match_Datasets": [
+            {
+                "Name": "SUPPAE",
+                "Keys": [
+                    "USUBJID"
+                ],
+                "Is_Relationship": true
+            }
+        ],
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0043",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "When AESMIE=Y then SUPPAE.QNAM=AESOSP should be present",
+        "Outcome": {
+            "Message": "Missing SUPPAE.QNAM=AESOSP, where AESMIE=Y",
+            "Output_Variables": [
+                "AESOSP",
+                "AESMIE"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Variable",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0043",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "When a description of Other Medically Important Serious Adverse Events category is collected on a CRF, sponsors should place the description in the SUPPAE dataset using the standard supplemental qualifier name code AESOSP.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Asumtpion 6c",
+                                        "Section": "6.2.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "AE"
+                ]
+            }
+        }
+    }
+}

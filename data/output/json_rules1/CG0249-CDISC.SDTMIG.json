@@ -1,0 +1,75 @@
+{
+    "id": "e6958f69-b812-463e-a270-afd13e7230f2",
+    "changed": "2022-02-15T21:31:55Z",
+    "content": "Check:\n  all:\n    - name:\n      operator:\n    - name: TATRANS\n      operator: non_empty\nCore:\n  Id: CDISC.SDTMIG.CG0249\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when element does not end with a decision that could lead\n  to a shortened path within the Arm and TATRANS is not null\nOutcome:\n  Message: TATRANS is populated when the element does not end with a decision that\n    could lead to a shortened path within the Arm\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0249\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: If an Element does not end with a decision that could\n                  lead to a shortened path within the Arm, then TATRANS will be blank.\n                Document: IG v3.4\n                Item: Assumption 7\n                Section: 7.2.1\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - TA\n",
+    "created": "2021-10-30T10:32:37Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": null,
+                    "operator": null
+                },
+                {
+                    "name": "TATRANS",
+                    "operator": "non_empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0249",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when element does not end with a decision that could lead to a shortened path within the Arm and TATRANS is not null",
+        "Outcome": {
+            "Message": "TATRANS is populated when the element does not end with a decision that could lead to a shortened path within the Arm"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0249",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "If an Element does not end with a decision that could lead to a shortened path within the Arm, then TATRANS will be blank.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 7",
+                                        "Section": "7.2.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TA"
+                ]
+            }
+        }
+    }
+}

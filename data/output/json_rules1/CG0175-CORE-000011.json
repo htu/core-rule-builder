@@ -1,0 +1,81 @@
+{
+    "id": "e16fcffd-60ec-4bbb-b9e3-8bdfac0a04ef",
+    "changed": "2022-03-07T22:22:11Z",
+    "content": "Check:\n  all:\n    - name: IECAT\n      operator: equal_to\n      value: EXCLUSION\n    - name: IEORRES\n      operator: equal_to\n      value: N\nCore:\n  Id: CORE-000011\n  Version: '1'\n  Status: Published\nDescription: Verify the value for IEORRES is Y\nOutcome:\n  Message: IEORRES = N for an exclusion criteria. Only exclusion criteria not met\n    should be included in IE domain.\n  Output Variables:\n    - IECAT\n    - IEORRES\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0175\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The intent of the domain model is to collect responses\n                  to only those criteria that the subject did not meet, and not the\n                  responses to all criteria.\u00a0\n                Document: SDTMIG v3.4\n                Item: Assumption 1\n                Section: 6.3.4\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - IE\n",
+    "created": "2021-09-27T18:36:03Z",
+    "creator": {
+        "id": "f9333394-14e8-48f3-9a3a-62f1e3cf098c"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "IECAT",
+                    "operator": "equal_to",
+                    "value": "EXCLUSION"
+                },
+                {
+                    "name": "IEORRES",
+                    "operator": "equal_to",
+                    "value": "N"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000011",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Verify the value for IEORRES is Y",
+        "Outcome": {
+            "Message": "IEORRES = N for an exclusion criteria. Only exclusion criteria not met should be included in IE domain.",
+            "Output_Variables": [
+                "IECAT",
+                "IEORRES"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0175",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The intent of the domain model is to collect responses to only those criteria that the subject did not meet, and not the responses to all criteria.\u00a0",
+                                        "Document": "SDTMIG v3.4",
+                                        "Item": "Assumption 1",
+                                        "Section": "6.3.4"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "IE"
+                ]
+            }
+        }
+    }
+}

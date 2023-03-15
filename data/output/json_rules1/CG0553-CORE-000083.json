@@ -1,0 +1,94 @@
+{
+    "id": "28fedb20-6d20-4506-a36f-db79c073298c",
+    "changed": "2022-05-19T11:08:25Z",
+    "content": "Check:\n  all:\n    - name: --ORRES\n      operator: empty\n    - name: --LOBXFL\n      operator: equal_to\n      value: Y\n    - any:\n        - name: --DRVFL\n          operator: not_exists\n        - name: --DRVFL\n          operator: not_equal_to\n          value: Y\nCore:\n  Id: CORE-000083\n  Version: '1'\n  Status: Published\nDescription: Verify that --ORRES is not null when --LOBXFL = Y and --DRVFL= null or\n  --DRVFL is not present in the dataset\nOutcome:\n  Message: --ORRES is missing even though --LOBXFL= \"Y\" and either --DRVFL is not\n    present in dataset or is not equal to \"Y\"\n  Output Variables:\n    - --ORRES\n    - --LOBXFL\n    - --DRVFL\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0553\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Operationally derived indicator used to identify the\n                  last non-missing value prior to RFXSTDTC.  Result value is in --STRESC.\n                  Should be \"Y\" or null.\n                Document: Model v2.0\n                Item: --LOBXFL\n                Section: The Findings Observation Class\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-04T14:33:59Z",
+    "creator": {
+        "id": "24709aaa-3e57-4ee4-a635-6006b165bb1b"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--ORRES",
+                    "operator": "empty"
+                },
+                {
+                    "name": "--LOBXFL",
+                    "operator": "equal_to",
+                    "value": "Y"
+                },
+                {
+                    "any": [
+                        {
+                            "name": "--DRVFL",
+                            "operator": "not_exists"
+                        },
+                        {
+                            "name": "--DRVFL",
+                            "operator": "not_equal_to",
+                            "value": "Y"
+                        }
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000083",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Verify that --ORRES is not null when --LOBXFL = Y and --DRVFL= null or --DRVFL is not present in the dataset",
+        "Outcome": {
+            "Message": "--ORRES is missing even though --LOBXFL= \"Y\" and either --DRVFL is not present in dataset or is not equal to \"Y\"",
+            "Output_Variables": [
+                "--ORRES",
+                "--LOBXFL",
+                "--DRVFL"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0553",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Operationally derived indicator used to identify the last non-missing value prior to RFXSTDTC.  Result value is in --STRESC. Should be \"Y\" or null.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--LOBXFL",
+                                        "Section": "The Findings Observation Class"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

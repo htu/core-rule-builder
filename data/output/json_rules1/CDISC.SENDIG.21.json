@@ -1,0 +1,76 @@
+{
+    "id": "5f497024-2142-421a-8b0c-d50fc10c781b",
+    "changed": "2022-09-08T15:38:53Z",
+    "content": "Check:\n  all:\n    - name: QNAM\n      operator: matches_regex\n      value: ^[0-9]\nCore:\n  Id: CDISC.SENDIG.21\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when QNAM starts with a number\nOutcome:\n  Message: QNAM may not start with a number\n  Output Variables:\n    - IDVAR\n    - IDVARVAL\n    - QNAM\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '21'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Values of --TESTCD and QNAM values must be limited\n                  to 8 characters, and cannot start with a number, nor can they contain\n                  characters other than letters, numbers, or underscores.\n                Document: IG v3.1\n                Section: 4.2.1\nScope:\n  Classes:\n    Include:\n      - RELATIONSHIP\n  Domains:\n    Include:\n      - SUPP--\n",
+    "created": "2022-09-08T15:38:53Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "QNAM",
+                    "operator": "matches_regex",
+                    "value": "^[0-9]"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.21",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when QNAM starts with a number",
+        "Outcome": {
+            "Message": "QNAM may not start with a number",
+            "Output_Variables": [
+                "IDVAR",
+                "IDVARVAL",
+                "QNAM"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "21",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Values of --TESTCD and QNAM values must be limited to 8 characters, and cannot start with a number, nor can they contain characters other than letters, numbers, or underscores.",
+                                        "Document": "IG v3.1",
+                                        "Section": "4.2.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "RELATIONSHIP"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SUPP--"
+                ]
+            }
+        }
+    }
+}

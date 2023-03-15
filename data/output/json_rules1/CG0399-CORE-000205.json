@@ -1,0 +1,75 @@
+{
+    "id": "e62164f6-50df-43f4-b1c0-821a396c75a0",
+    "changed": "2023-02-02T14:06:27.603Z",
+    "content": "Check:\n  all:\n    - name: --ULOQ\n      operator: exists\n    - name:\n      operator:\nCore:\n  Id: CORE-000205\n  Version: '1'\n  Status: Published\nDescription: Trigger error when --ULOQ is not expressed using the units in --STRESU\nOutcome:\n  Message: --ULOQ is not expressed using the units in --STRESU\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0399\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Units will be those used for --STRESU.\n                Document: Model v2.0\n                Item: --ULOQ\n                Section: Findings\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-06T09:22:27Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--ULOQ",
+                    "operator": "exists"
+                },
+                {
+                    "name": null,
+                    "operator": null
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000205",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Trigger error when --ULOQ is not expressed using the units in --STRESU",
+        "Outcome": {
+            "Message": "--ULOQ is not expressed using the units in --STRESU"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0399",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Units will be those used for --STRESU.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--ULOQ",
+                                        "Section": "Findings"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

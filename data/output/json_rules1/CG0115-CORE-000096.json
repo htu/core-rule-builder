@@ -1,0 +1,81 @@
+{
+    "id": "78769b71-c37b-4353-925f-3b4ba1a6269c",
+    "changed": "2022-07-17T11:01:24Z",
+    "content": "Check:\n  all:\n    - name: --LOC\n      operator: not_exists\n    - name: --PORTOT\n      operator: exists\nCore:\n  Id: CORE-000096\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --LOC does not exists in a dataset, --PORTOT exists.\nOutcome:\n  Message: --PORTOT variable is present, when --LOC variable does not exist in a dataset.\n  Output Variables:\n    - --LOC\n    - --PORTOT\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0115\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Events[Variable Qualifer of --LOC.] Interventions[Variable\n                  Qualifer of --LOC.] Findings[Variable Qualifer of --LOC.]\n                Document: Model v2.0\n                Item: --PORTOT\n                Section: Events Interventions Findings\nScope:\n  Classes:\n    Include:\n      - INTERVENTIONS\n      - FINDINGS\n      - EVENTS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-06T20:01:17Z",
+    "creator": {
+        "id": "d0881041-369e-4940-b721-5b456d12101b"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--LOC",
+                    "operator": "not_exists"
+                },
+                {
+                    "name": "--PORTOT",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000096",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --LOC does not exists in a dataset, --PORTOT exists.",
+        "Outcome": {
+            "Message": "--PORTOT variable is present, when --LOC variable does not exist in a dataset.",
+            "Output_Variables": [
+                "--LOC",
+                "--PORTOT"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0115",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Events[Variable Qualifer of --LOC.] Interventions[Variable Qualifer of --LOC.] Findings[Variable Qualifer of --LOC.]",
+                                        "Document": "Model v2.0",
+                                        "Item": "--PORTOT",
+                                        "Section": "Events Interventions Findings"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "INTERVENTIONS",
+                    "FINDINGS",
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

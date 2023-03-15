@@ -1,0 +1,81 @@
+{
+    "id": "e869a584-578c-4c33-8d6e-3b756eb3ead2",
+    "changed": "2022-03-15T10:23:43Z",
+    "content": "Check:\n  all:\n    - name: RDOMAIN\n      operator: not_equal_to\n      value: DM\n    - name: IDVAR\n      operator: empty\nCore:\n  Id: CORE-000134\n  Version: '1'\n  Status: Published\nDescription: Raise an error when RDOMAIN ^= 'DM' and IDVAR is empty.\nOutcome:\n  Message: RDOMAIN is not 'DM' but IDVAR is empty.\n  Output Variables:\n    - RDOMAIN\n    - IDVAR\n    - IDVARVAL\n    - QNAM\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0203\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: A record in a SUPP-- dataset relates back to its parent\n                  record(s) via the key identified  by the STUDYID, RDOMAIN, USUBJID,\n                  and IDVAR/IDVARVAL variables. An exception is SUPP-- dataset  records\n                  that are related to Demographics (DM) records, where both IDVAR\n                  and IDVARVAL will be  null because the key variables STUDYID, RDOMAIN,\n                  and USUBJID are sufficient to identify the unique  parent record\n                  in DM (DM has one record per USUBJID)\n                Document: SDTMIG v3.4\n                Section: 8.4.1\nScope:\n  Classes:\n    Include:\n      - RELATIONSHIP\n  Domains:\n    Include:\n      - SUPP--\n",
+    "created": "2021-10-13T12:19:10Z",
+    "creator": {
+        "id": "02c3c969-4787-4d57-b164-e2851035c0e8"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "RDOMAIN",
+                    "operator": "not_equal_to",
+                    "value": "DM"
+                },
+                {
+                    "name": "IDVAR",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000134",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when RDOMAIN ^= 'DM' and IDVAR is empty.",
+        "Outcome": {
+            "Message": "RDOMAIN is not 'DM' but IDVAR is empty.",
+            "Output_Variables": [
+                "RDOMAIN",
+                "IDVAR",
+                "IDVARVAL",
+                "QNAM"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0203",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "A record in a SUPP-- dataset relates back to its parent record(s) via the key identified  by the STUDYID, RDOMAIN, USUBJID, and IDVAR/IDVARVAL variables. An exception is SUPP-- dataset  records that are related to Demographics (DM) records, where both IDVAR and IDVARVAL will be  null because the key variables STUDYID, RDOMAIN, and USUBJID are sufficient to identify the unique  parent record in DM (DM has one record per USUBJID)",
+                                        "Document": "SDTMIG v3.4",
+                                        "Section": "8.4.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "RELATIONSHIP"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SUPP--"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+{
+    "id": "f094fe50-a350-4941-8694-6dae6a03a64b",
+    "changed": "2022-07-31T09:22:57Z",
+    "content": "Check:\n  all:\n    - operator: present_on_multiple_rows_within\n      target: DSDECOD\n      comparator: INFORMED CONSENT OBTAINED\n      within: USUBJID\n    - name: DSDECOD\n      operator: equal_to\n      value: INFORMED CONSENT OBTAINED\n    - name: $min_ds_dsstdtc\n      operator: equal_to\n      value: $dm_rficdtc\nCore:\n  Id: CDISC.SDTMIG.CG0068\n  Version: '1'\n  Status: Draft\nDescription: When there are multiple informed consents obtained and DSDECOD = 'INFORMED\n  CONSENT OBTAINED', the earliest DSSTDTC for each subject should be equal to DM.RFICDTC.\nOperations:\n  - domain: DM\n    id: $dm_rficdtc\n    name: USUBJID\n    operator: distinct\n  - domain: DS\n    id: $min_ds_dsstdtc\n    name: DSSTDTC\n    operator: min_date\n    group:\n      - USUBJID\nOutcome:\n  Message: The earliest disposition date for \"INFORMED CONSENT OBTAINED\" is not equal\n    to DM.RFICDTC\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0068\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Date/time of informed consent in ISO 8601 character\n                  format. This will be the same as the date of informed consent in\n                  the Disposition domain, if that protocol milestone is documented.\n                Document: IG v3.4\n                Item: Specification\n                Section: '5.2'\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - DS\n",
+    "created": "2022-02-05T05:39:07Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "operator": "present_on_multiple_rows_within",
+                    "target": "DSDECOD",
+                    "comparator": "INFORMED CONSENT OBTAINED",
+                    "within": "USUBJID"
+                },
+                {
+                    "name": "DSDECOD",
+                    "operator": "equal_to",
+                    "value": "INFORMED CONSENT OBTAINED"
+                },
+                {
+                    "name": "$min_ds_dsstdtc",
+                    "operator": "equal_to",
+                    "value": "$dm_rficdtc"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0068",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "When there are multiple informed consents obtained and DSDECOD = 'INFORMED CONSENT OBTAINED', the earliest DSSTDTC for each subject should be equal to DM.RFICDTC.",
+        "Operations": [
+            {
+                "domain": "DM",
+                "id": "$dm_rficdtc",
+                "name": "USUBJID",
+                "operator": "distinct"
+            },
+            {
+                "domain": "DS",
+                "id": "$min_ds_dsstdtc",
+                "name": "DSSTDTC",
+                "operator": "min_date",
+                "group": [
+                    "USUBJID"
+                ]
+            }
+        ],
+        "Outcome": {
+            "Message": "The earliest disposition date for \"INFORMED CONSENT OBTAINED\" is not equal to DM.RFICDTC"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0068",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Date/time of informed consent in ISO 8601 character format. This will be the same as the date of informed consent in the Disposition domain, if that protocol milestone is documented.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Specification",
+                                        "Section": "5.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "DS"
+                ]
+            }
+        }
+    }
+}

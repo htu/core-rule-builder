@@ -1,0 +1,76 @@
+{
+    "changed": "2023-03-01T11:48:17.877Z",
+    "content": "Check:\n  all:\n    - name: ADSL\n      operator: not_exists\nRule Type: Domain Presence Check\nCore:\n  Id: CDISC.ADAMIG.AD0001\n  Version: '1'\n  Status: Draft\nDescription: The ADSL dataset must exist\nExecutability: Fully Executable\nOutcome:\n  Message: ADSL dataset does not exist\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: ADaMIG\n        Version: '1.3'\n        References:\n          - Origin: ADaM Conformance Rules\n            Rule Identifier:\n              Id: '1'\n              Version: '1'\n            Version: '4.0'\n            Citations:\n              - Cited Guidance: ADSL and its related metadata are required in a CDISC-based\n                  submission of data from a clinical trial even if no other analysis\n                  datasets are submitted.\n                Document: Model v2.1\n                Section: '6'\n              - Cited Guidance: ADSL contains one record per subject, regardless of\n                  the type of clinical trial design. The label of the ADSL dataset\n                  is \"Subject-Level Analysis Dataset.\" In a study, there is only one\n                  dataset in the class of \"SUBJECT LEVEL ANALYSIS DATASET\", and its\n                  name is ADSL.\n                Document: ADaM IG v1.3\n                Section: 2.3.1\nScope:\n  Domains:\n    Include:\n      - ALL\n  Data Structures:\n    Include:\n      - ALL   \n",
+    "created": "2022-09-29T09:34:32.787Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "ADSL",
+                    "operator": "not_exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.ADAMIG.AD0001",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "The ADSL dataset must exist",
+        "Executability": "Fully Executable",
+        "Outcome": {
+            "Message": "ADSL dataset does not exist"
+        },
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "ADaMIG",
+                        "Version": "1.3",
+                        "References": [
+                            {
+                                "Origin": "ADaM Conformance Rules",
+                                "Version": "4.0",
+                                "Citations": [
+                                    {
+                                        "Document": "Model v2.1",
+                                        "Section": "6",
+                                        "Cited_Guidance": "ADSL and its related metadata are required in a CDISC-based submission of data from a clinical trial even if no other analysis datasets are submitted."
+                                    },
+                                    {
+                                        "Document": "ADaM IG v1.3",
+                                        "Section": "2.3.1",
+                                        "Cited_Guidance": "ADSL contains one record per subject, regardless of the type of clinical trial design. The label of the ADSL dataset is \"Subject-Level Analysis Dataset.\" In a study, there is only one dataset in the class of \"SUBJECT LEVEL ANALYSIS DATASET\", and its name is ADSL."
+                                    }
+                                ],
+                                "Rule_Identifier": {
+                                    "Id": "1",
+                                    "Version": "1"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Data_Structures": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        },
+        "Rule_Type": "Domain Presence Check"
+    },
+    "id": "7f958e72-2131-475b-9d6f-facfdbebf2f3"
+}

@@ -1,0 +1,75 @@
+{
+    "id": "61e87580-15bb-439b-83f9-68988a193581",
+    "changed": "2022-10-11T12:17:46.219Z",
+    "content": "Check:\n  all:\n    - name: ARMCD\n      operator: longer_than\n      value: 20\nCore:\n  Id: CORE-000157\n  Version: '1'\n  Status: Published\nDescription: The length of ARMCD is limited to 20 characters.\nOutcome:\n  Message: Length of ARMCD is greater than 20\n  Output Variables:\n    - ARMCD\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0297\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: ARMCD is limited to 20 characters and does not have\n                  special character restrictions.\n                Document: IG v3.4\n                Item: Specification\n                Section: 7.3.1\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - TV\n",
+    "created": "2021-10-17T05:47:50Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "ARMCD",
+                    "operator": "longer_than",
+                    "value": 20
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000157",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "The length of ARMCD is limited to 20 characters.",
+        "Outcome": {
+            "Message": "Length of ARMCD is greater than 20",
+            "Output_Variables": [
+                "ARMCD"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0297",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "ARMCD is limited to 20 characters and does not have special character restrictions.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Specification",
+                                        "Section": "7.3.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TV"
+                ]
+            }
+        }
+    }
+}

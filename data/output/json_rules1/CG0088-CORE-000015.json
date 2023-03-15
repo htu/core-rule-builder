@@ -1,0 +1,82 @@
+{
+    "id": "1dc7103d-6507-4805-9364-4278160f0d49",
+    "changed": "2022-03-10T12:57:02Z",
+    "content": "Check:\n  all:\n    - name: --PRESP\n      operator: not_exists\n    - name: --OCCUR\n      operator: exists\nCore:\n  Id: CORE-000015\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --PRESP does not exists in a dataset and --OCCUR\n  exist.\nOutcome:\n  Message: --PRESP is missing in dataset when --OCCUR is present.\n  Output Variables:\n    - --PRESP\n    - --OCCUR\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0088\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Events[--PRESP][An indication that the event was prospectively\n                  stated or detailed on the CRF. Values should be \"Y\" or null.]|Events|[--OCCUR][An\n                  indication as to whether a prespecified event has occurred.]|Events[--STAT][Used\n                  to indicate when a question about the occurrence of a prespecified\n                  event was not answered. Should be null or have a value of \"NOT DONE\".]|Interventions[--PRESP][An\n                  indication that the intervention was prospectively stated or detailed\n                  on the CRF. Values should be \"Y\" or null.]|Interventions[--OCCUR][An\n                  indication as to whether a prespecified intervention has occurred.]|Interventions[--STAT][Used\n                  to indicate when a question about the occurrence of a prespecified\n                  intervention was not answered. Should be null or have a value of\n                  \"NOT DONE\".]\n                Document: Model v2.0\n                Section: Events|Interventions\nScope:\n  Classes:\n    Include:\n      - EVENTS\n      - INTERVENTIONS\n  Domains:\n    Exclude:\n      - AE\n      - DS\n      - DV\n      - EX\n",
+    "created": "2021-09-28T15:58:38Z",
+    "creator": {
+        "id": "fac95de6-5815-411a-a579-ddbc7ee4b97a"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--PRESP",
+                    "operator": "not_exists"
+                },
+                {
+                    "name": "--OCCUR",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000015",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --PRESP does not exists in a dataset and --OCCUR exist.",
+        "Outcome": {
+            "Message": "--PRESP is missing in dataset when --OCCUR is present.",
+            "Output_Variables": [
+                "--PRESP",
+                "--OCCUR"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0088",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Events[--PRESP][An indication that the event was prospectively stated or detailed on the CRF. Values should be \"Y\" or null.]|Events|[--OCCUR][An indication as to whether a prespecified event has occurred.]|Events[--STAT][Used to indicate when a question about the occurrence of a prespecified event was not answered. Should be null or have a value of \"NOT DONE\".]|Interventions[--PRESP][An indication that the intervention was prospectively stated or detailed on the CRF. Values should be \"Y\" or null.]|Interventions[--OCCUR][An indication as to whether a prespecified intervention has occurred.]|Interventions[--STAT][Used to indicate when a question about the occurrence of a prespecified intervention was not answered. Should be null or have a value of \"NOT DONE\".]",
+                                        "Document": "Model v2.0",
+                                        "Section": "Events|Interventions"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS",
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Exclude": [
+                    "AE",
+                    "DS",
+                    "DV",
+                    "EX"
+                ]
+            }
+        }
+    }
+}

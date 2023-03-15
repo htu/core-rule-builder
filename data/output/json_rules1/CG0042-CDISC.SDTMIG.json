@@ -1,0 +1,191 @@
+{
+    "id": "905b074a-0352-4999-bfab-60e5094973a9",
+    "changed": "2022-12-02T12:56:36.202Z",
+    "content": "Check:\n  all:\n    - name: AESER\n      operator: not_equal_to\n      value: N\n    - all:\n        - any:\n            - name: AESCAN\n              operator: not_exists\n            - name: AESCAN\n              operator: not_equal_to\n              value: Y\n        - any:\n            - name: AESCONG\n              operator: not_exists\n            - name: AESCONG\n              operator: not_equal_to\n              value: Y\n        - any:\n            - name: AESDISAB\n              operator: not_exists\n            - name: AESDISAB\n              operator: not_equal_to\n              value: Y\n        - any:\n            - name: AESDTH\n              operator: not_exists\n            - name: AESDTH\n              operator: not_equal_to\n              value: Y\n        - any:\n            - name: AESHOSP\n              operator: not_exists\n            - name: AESHOSP\n              operator: not_equal_to\n              value: Y\n        - any:\n            - name: AESLIFE\n              operator: not_exists\n            - name: AESLIFE\n              operator: not_equal_to\n              value: Y\n        - any:\n            - name: AESOD\n              operator: not_exists\n            - name: AESOD\n              operator: not_equal_to\n              value: Y\n        - any:\n            - name: AESMIE\n              operator: not_exists\n            - name: AESMIE\n              operator: not_equal_to\n              value: Y\nCore:\n  Id: CDISC.SDTMIG.CG0042\n  Version: '1'\n  Status: Draft\nDescription: Select record where AESCAN and AESCONG and AESDISAB and AESDTH and AESHOSP\n  and AESLIFE and AESOD and AESMIE ^= \"Y\" However, AESER ^= \"N\"\nOutcome:\n  Message: If AESER = \"N\" then none of the seriousness criteria (AESCAN, AESCONG,\n    AESDISAB, AESDTH, AESHOSP, AESLIFE, AESOD, AESMIE) could be equal to \"Y\".\n  Output Variables:\n    - AESER\n    - AESCAN\n    - AESCONG\n    - AESDISAB\n    - AESDTH\n    - AESHOSP\n    - AESLIFE\n    - AESOD\n    - AESMIE\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0042\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: \"If categories of serious events are collected secondarily\\\n                  \\ to a leading question, as in the example below,  the values of\\\n                  \\ the variables that capture reasons an event is considered serious\\\n                  \\ (i.e., AESCAN, AESCONG, etc.) may be null.  For example, if Serious\\\n                  \\ = \\\"No\\\", the values for these variables may be null. However,\\\n                  \\ if Serious = \\\"Yes\\\", at least one of them will have a \\\"Y\\\" response.\\n\\\n                  \\n\\n    \"\n                Document: IG v3.4\n                Item: Assumption 6a\n                Section: 6.2.1\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - AE\n",
+    "created": "2021-10-27T21:19:32Z",
+    "creator": {
+        "id": "7de48ba7-1548-45ca-bfc8-3ad35590ae62"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "AESER",
+                    "operator": "not_equal_to",
+                    "value": "N"
+                },
+                {
+                    "all": [
+                        {
+                            "any": [
+                                {
+                                    "name": "AESCAN",
+                                    "operator": "not_exists"
+                                },
+                                {
+                                    "name": "AESCAN",
+                                    "operator": "not_equal_to",
+                                    "value": "Y"
+                                }
+                            ]
+                        },
+                        {
+                            "any": [
+                                {
+                                    "name": "AESCONG",
+                                    "operator": "not_exists"
+                                },
+                                {
+                                    "name": "AESCONG",
+                                    "operator": "not_equal_to",
+                                    "value": "Y"
+                                }
+                            ]
+                        },
+                        {
+                            "any": [
+                                {
+                                    "name": "AESDISAB",
+                                    "operator": "not_exists"
+                                },
+                                {
+                                    "name": "AESDISAB",
+                                    "operator": "not_equal_to",
+                                    "value": "Y"
+                                }
+                            ]
+                        },
+                        {
+                            "any": [
+                                {
+                                    "name": "AESDTH",
+                                    "operator": "not_exists"
+                                },
+                                {
+                                    "name": "AESDTH",
+                                    "operator": "not_equal_to",
+                                    "value": "Y"
+                                }
+                            ]
+                        },
+                        {
+                            "any": [
+                                {
+                                    "name": "AESHOSP",
+                                    "operator": "not_exists"
+                                },
+                                {
+                                    "name": "AESHOSP",
+                                    "operator": "not_equal_to",
+                                    "value": "Y"
+                                }
+                            ]
+                        },
+                        {
+                            "any": [
+                                {
+                                    "name": "AESLIFE",
+                                    "operator": "not_exists"
+                                },
+                                {
+                                    "name": "AESLIFE",
+                                    "operator": "not_equal_to",
+                                    "value": "Y"
+                                }
+                            ]
+                        },
+                        {
+                            "any": [
+                                {
+                                    "name": "AESOD",
+                                    "operator": "not_exists"
+                                },
+                                {
+                                    "name": "AESOD",
+                                    "operator": "not_equal_to",
+                                    "value": "Y"
+                                }
+                            ]
+                        },
+                        {
+                            "any": [
+                                {
+                                    "name": "AESMIE",
+                                    "operator": "not_exists"
+                                },
+                                {
+                                    "name": "AESMIE",
+                                    "operator": "not_equal_to",
+                                    "value": "Y"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0042",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Select record where AESCAN and AESCONG and AESDISAB and AESDTH and AESHOSP and AESLIFE and AESOD and AESMIE ^= \"Y\" However, AESER ^= \"N\"",
+        "Outcome": {
+            "Message": "If AESER = \"N\" then none of the seriousness criteria (AESCAN, AESCONG, AESDISAB, AESDTH, AESHOSP, AESLIFE, AESOD, AESMIE) could be equal to \"Y\".",
+            "Output_Variables": [
+                "AESER",
+                "AESCAN",
+                "AESCONG",
+                "AESDISAB",
+                "AESDTH",
+                "AESHOSP",
+                "AESLIFE",
+                "AESOD",
+                "AESMIE"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0042",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "If categories of serious events are collected secondarily to a leading question, as in the example below,  the values of the variables that capture reasons an event is considered serious (i.e., AESCAN, AESCONG, etc.) may be null.  For example, if Serious = \"No\", the values for these variables may be null. However, if Serious = \"Yes\", at least one of them will have a \"Y\" response.\n\n\n    ",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 6a",
+                                        "Section": "6.2.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "AE"
+                ]
+            }
+        }
+    }
+}

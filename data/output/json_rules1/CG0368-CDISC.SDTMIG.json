@@ -1,0 +1,70 @@
+{
+    "id": "3e8d5183-5e33-4f8b-aa3c-5dd3692dc115",
+    "changed": "2022-06-28T11:46:54Z",
+    "content": "Check:\n  all:\n    - name: DM\n      operator: not_exists\nCore:\n  Id: CDISC.SDTMIG.CG0368\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when DM dataset is not present\nOutcome:\n  Message: DM dataset is missing\nRule Type: Domain Presence Check\nSensitivity: Study\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0368\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Each study must include 1 standardized set of observations\n                  in a specific structure; this is the Demographics domain described\n                  here.\n                Document: Model v2.0\n                Section: Demographics\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-06T09:57:23Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "DM",
+                    "operator": "not_exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0368",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when DM dataset is not present",
+        "Outcome": {
+            "Message": "DM dataset is missing"
+        },
+        "Rule_Type": "Domain Presence Check",
+        "Sensitivity": "Study",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0368",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Each study must include 1 standardized set of observations in a specific structure; this is the Demographics domain described here.",
+                                        "Document": "Model v2.0",
+                                        "Section": "Demographics"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

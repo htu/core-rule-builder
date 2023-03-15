@@ -1,0 +1,89 @@
+{
+    "id": "5e9f6fe2-061f-45b9-9777-f26b08680aaf",
+    "changed": "2022-10-11T12:41:36.483Z",
+    "content": "Check:\n  any:\n    - name: QSEVALID\n      operator: exists\n    - name: FTEVALID\n      operator: exists\n#    - all:\r\n#        - name: RSEVALID\r\n#          operator: exists\r\n#        - name: RSCAT\r\n#          operator: \"references_correct_codelist\"\r\n#          value: \"CCCAT\"\r\nCore:\n  Id: CORE-000032\n  Version: '1'\n  Status: Published\nDescription: --EVALID must not be used to model QRS data.   This includes the 'QS'\n  and 'FT' domains as well as the 'RS' domain when the record pertains to a Clinical\n  Classification Use Case). This rule has been fully executed for the QS and FT domains\n  only.\nOutcome:\n  Message: --EVALID is present.  --EVALID must not be used to model QRS data.\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0660\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: --EVAL and --EVALID must not be used to model QRS\n                  data in SDTM.\n                Document: SDTMIG v3.4\n                Item: Assumption 8\n                Section: 6.3.9.1\n              - Cited Guidance: --EVAL and --EVALID must not be used to model QRS\n                  data in SDTM.\n                Document: SDTMIG v3.4\n                Item: Assumption 8\n                Section: 6.3.9.2\n              - Cited Guidance: --EVAL and --EVALID must not be used to model QRS\n                  data in SDTM.\n                Document: SDTMIG v3.4\n                Item: Assumption 8\n                Section: 6.3.9.3.2\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - QS\n      - FT\n      - RS\n",
+    "created": "2021-10-03T00:31:14Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "any": [
+                {
+                    "name": "QSEVALID",
+                    "operator": "exists"
+                },
+                {
+                    "name": "FTEVALID",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000032",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "--EVALID must not be used to model QRS data.   This includes the 'QS' and 'FT' domains as well as the 'RS' domain when the record pertains to a Clinical Classification Use Case). This rule has been fully executed for the QS and FT domains only.",
+        "Outcome": {
+            "Message": "--EVALID is present.  --EVALID must not be used to model QRS data."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0660",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "--EVAL and --EVALID must not be used to model QRS data in SDTM.",
+                                        "Document": "SDTMIG v3.4",
+                                        "Item": "Assumption 8",
+                                        "Section": "6.3.9.1"
+                                    },
+                                    {
+                                        "Cited_Guidance": "--EVAL and --EVALID must not be used to model QRS data in SDTM.",
+                                        "Document": "SDTMIG v3.4",
+                                        "Item": "Assumption 8",
+                                        "Section": "6.3.9.2"
+                                    },
+                                    {
+                                        "Cited_Guidance": "--EVAL and --EVALID must not be used to model QRS data in SDTM.",
+                                        "Document": "SDTMIG v3.4",
+                                        "Item": "Assumption 8",
+                                        "Section": "6.3.9.3.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "QS",
+                    "FT",
+                    "RS"
+                ]
+            }
+        }
+    }
+}

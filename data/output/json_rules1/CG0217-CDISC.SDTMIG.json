@@ -1,0 +1,94 @@
+{
+    "id": "dcfb078e-d669-4a63-9a02-0ce5ce419e9b",
+    "changed": "2022-04-04T13:11:57Z",
+    "content": "Check:\n  all:\n    - name: TAETORD\n      operator: exists\n    - name: SVSTDTC\n      operator: date_greater_than_or_equal_to\n      value: SESTDTC\n    - name: SVSTDTC\n      operator: date_less_than_or_equal_to\n      value: SEENDTC\n    - name: TAETORD\n      operator: not_equal_to\n      value: SE.TAETORD\nMatch Datasets:\n  - Name: SE\n    Keys:\n      - USUBJID\nCore:\n  Id: CDISC.SDTMIG.CG0217\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when variable TAETORD values don't match between Subject\n  Visits (SV) and Subject Elements (SE) datasets.\nOutcome:\n  Message: TAETORD values don't match between Subject Visits (SV) and Subject Elements\n    (SE) datasets.\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0217\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: If TAETORD and/or EPOCH are added, then the values\n                  must be those at the start of the visit.\n                Document: IG v3.4\n                Item: Assumption 11\n                Section: '5.5'\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - SV\n",
+    "created": "2021-10-06T19:47:39Z",
+    "creator": {
+        "id": "76170e05-ed88-410d-8cad-ecd247a9050b"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "TAETORD",
+                    "operator": "exists"
+                },
+                {
+                    "name": "SVSTDTC",
+                    "operator": "date_greater_than_or_equal_to",
+                    "value": "SESTDTC"
+                },
+                {
+                    "name": "SVSTDTC",
+                    "operator": "date_less_than_or_equal_to",
+                    "value": "SEENDTC"
+                },
+                {
+                    "name": "TAETORD",
+                    "operator": "not_equal_to",
+                    "value": "SE.TAETORD"
+                }
+            ]
+        },
+        "Match_Datasets": [
+            {
+                "Name": "SE",
+                "Keys": [
+                    "USUBJID"
+                ]
+            }
+        ],
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0217",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when variable TAETORD values don't match between Subject Visits (SV) and Subject Elements (SE) datasets.",
+        "Outcome": {
+            "Message": "TAETORD values don't match between Subject Visits (SV) and Subject Elements (SE) datasets."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0217",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "If TAETORD and/or EPOCH are added, then the values must be those at the start of the visit.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 11",
+                                        "Section": "5.5"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SV"
+                ]
+            }
+        }
+    }
+}

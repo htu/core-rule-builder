@@ -1,0 +1,76 @@
+{
+    "id": "20119937-ad63-44f7-80b9-f9ad869e2e5a",
+    "changed": "2022-02-15T21:26:54Z",
+    "content": "Check:\n  all:\n    - name: --PTCD\n      operator: is_contained_by\n      value:\n        - MedDRA preferred term code\nCore:\n  Id: CDISC.SDTMIG.CG0380\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when --PTCD  is not a valid MedDRA preferred term code\nOutcome:\n  Message: --PTCD  is not a valid MedDRA preferred term code\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0380\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The preferred term code assigned to the event from\n                  MedDRA.\n                Document: Model v2.0\n                Item: --PTCD\n                Section: Events\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - AE\n      - MH\n      - CE\n",
+    "created": "2021-11-06T09:31:24Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--PTCD",
+                    "operator": "is_contained_by",
+                    "value": [
+                        "MedDRA preferred term code"
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0380",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when --PTCD  is not a valid MedDRA preferred term code",
+        "Outcome": {
+            "Message": "--PTCD  is not a valid MedDRA preferred term code"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0380",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The preferred term code assigned to the event from MedDRA.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--PTCD",
+                                        "Section": "Events"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "AE",
+                    "MH",
+                    "CE"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+{
+    "id": "87b44236-8144-4c5b-a6d0-9cf0c86df641",
+    "changed": "2022-07-17T04:33:03Z",
+    "content": "Check:\n  all:\n    - name: --MODIFY\n      operator: empty\nCore:\n  Id: CDISC.SDTMIG.CG0099\n  Version: '1'\n  Status: Draft\nDescription: Trigger error if --TRT represents an alteration to the collected value\n  for coding purposes and --MODIFY is null\nOutcome:\n  Message: --MODIFY is null when --TRT represents an alteration to the collected value.\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0099\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: A value which represents an alteration to a collected\n                  value for coding purposes. Synonym Qualifier of --TRT.\n                Document: Model v2.0\n                Item: --MODIFY\n                Section: Interventions\nScope:\n  Classes:\n    Include:\n      - INTERVENTIONS\n  Domains:\n    Include:\n      - CM\n      - SU\n",
+    "created": "2021-10-29T06:12:43Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--MODIFY",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0099",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error if --TRT represents an alteration to the collected value for coding purposes and --MODIFY is null",
+        "Outcome": {
+            "Message": "--MODIFY is null when --TRT represents an alteration to the collected value."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0099",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "A value which represents an alteration to a collected value for coding purposes. Synonym Qualifier of --TRT.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--MODIFY",
+                                        "Section": "Interventions"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "CM",
+                    "SU"
+                ]
+            }
+        }
+    }
+}

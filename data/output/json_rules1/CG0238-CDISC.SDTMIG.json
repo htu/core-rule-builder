@@ -1,0 +1,85 @@
+{
+    "id": "0c89c656-931e-4db6-adbe-de71542f865b",
+    "changed": "2022-07-31T10:26:51Z",
+    "content": "Check:\n  all:\n    - any:\n        - name: --TEST\n          operator: contains_case_insensitive\n          value: date\n        - name: --TEST\n          operator: contains_case_insensitive\n          value: time\n    - name: --ORRES\n      operator: not_matches_regex\n      value: ^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$\nCore:\n  Id: CDISC.SDTMIG.CG0238\n  Version: '1'\n  Status: Draft\nDescription: Where -ORRES is a date or time, it must be entered in an ISO 8601 format\nOutcome:\n  Message: --ORRES date/time value is not in ISO 8601 date format\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0238\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: \"\\\"Dates are generally used only as timing variables,\\\n                  \\ ... but there may be occasions when it may be preferable \\n to\\\n                  \\ model a date as a result (--ORRES) in a Findings dataset. ...\\\n                  \\ this situation may occasionally occur when \\n a) a group of questions\\\n                  \\ (each of which has a date response) is asked and analyzed together;\\\n                  \\ or b) the Event(s) \\n and Intervention(s) in question are not\\\n                  \\ medically significant (often the case when included in questionnaires).\\\n                  \\ \\n Consider the following cases - Calculated due date, Date of\\\n                  \\ last day on the job, Date of high school graduation. \\n One approach\\\n                  \\ to modeling these data would be to place the text of the question\\\n                  \\ in --TEST and the response to the \\n question, a date represented\\\n                  \\ in ISO 8601 format, in --ORRES and --STRESC as long as these date\\\n                  \\ results do not \\n contain the dates of medically significant events\\\n                  \\ or interventions. Again, use extreme caution when storing dates\\\n                  \\ \\n as the results of Findings. Remember, in most cases, these\\\n                  \\ dates should be timing variables associated with a \\n record in\\\n                  \\ an Intervention or Events dataset.\\\"\"\n                Document: IG v3.4\n                Section: 4.4.9\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-16T12:07:33Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "any": [
+                        {
+                            "name": "--TEST",
+                            "operator": "contains_case_insensitive",
+                            "value": "date"
+                        },
+                        {
+                            "name": "--TEST",
+                            "operator": "contains_case_insensitive",
+                            "value": "time"
+                        }
+                    ]
+                },
+                {
+                    "name": "--ORRES",
+                    "operator": "not_matches_regex",
+                    "value": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0238",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Where -ORRES is a date or time, it must be entered in an ISO 8601 format",
+        "Outcome": {
+            "Message": "--ORRES date/time value is not in ISO 8601 date format"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0238",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "\"Dates are generally used only as timing variables, ... but there may be occasions when it may be preferable \n to model a date as a result (--ORRES) in a Findings dataset. ... this situation may occasionally occur when \n a) a group of questions (each of which has a date response) is asked and analyzed together; or b) the Event(s) \n and Intervention(s) in question are not medically significant (often the case when included in questionnaires). \n Consider the following cases - Calculated due date, Date of last day on the job, Date of high school graduation. \n One approach to modeling these data would be to place the text of the question in --TEST and the response to the \n question, a date represented in ISO 8601 format, in --ORRES and --STRESC as long as these date results do not \n contain the dates of medically significant events or interventions. Again, use extreme caution when storing dates \n as the results of Findings. Remember, in most cases, these dates should be timing variables associated with a \n record in an Intervention or Events dataset.\"",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.4.9"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

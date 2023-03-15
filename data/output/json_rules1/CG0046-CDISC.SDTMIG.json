@@ -1,0 +1,123 @@
+{
+    "id": "647fac8b-4dc0-4eed-ba04-1dea3fb3b392",
+    "changed": "2023-01-11T16:24:42.382Z",
+    "content": "Check:\n  all:\n    - name: --ENRTPT\n      operator: non_empty\n    - name: --ENTPT\n      operator: empty\nCore:\n  Id: CDISC.SDTMIG.CG0046\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when --ENRTPT is completed and --ENTPT is not completed.\nOutcome:\n  Message: --ENRTPT is completed, but --ENTPT is not completed.\n  Output Variables:\n    - --ENRTPT\n    - --ENTPT\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0046\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The characterization of the end of an observation\n                  relative to a reference time point.  The sponsor-defined reference\n                  time point is in --ENTPT.\n                Document: Model v2.0\n                Item: --ENRTPT\n                Section: Timing\n      - Name: SDTMIG\n        Version: '3.3'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0046\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Identifies the end of the observation as being before\n                  or after the sponsor-defined reference time point defined by variable\n                  --ENTPT.\n                Document: Model v1.7\n                Item: Table 2.2.5.1 --ENTPT\n                Section: 2.2.5 Timing Variables for All Classes\n      - Name: SDTMIG\n        Version: '3.2'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0046\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: (--ENRTPT) Identifies the end of the observation as\n                  being before or after the sponsor-defined reference time point defined\n                  by variable --ENTPT.\n                Document: Model v1.4\n                Item: Specification\n                Section: 2.2.5 Timing Variables for All Classes\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-07T09:18:14Z",
+    "creator": {
+        "id": "02c3c969-4787-4d57-b164-e2851035c0e8"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--ENRTPT",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "--ENTPT",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0046",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when --ENRTPT is completed and --ENTPT is not completed.",
+        "Outcome": {
+            "Message": "--ENRTPT is completed, but --ENTPT is not completed.",
+            "Output_Variables": [
+                "--ENRTPT",
+                "--ENTPT"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0046",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The characterization of the end of an observation relative to a reference time point.  The sponsor-defined reference time point is in --ENTPT.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--ENRTPT",
+                                        "Section": "Timing"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.3",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0046",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Identifies the end of the observation as being before or after the sponsor-defined reference time point defined by variable --ENTPT.",
+                                        "Document": "Model v1.7",
+                                        "Item": "Table 2.2.5.1 --ENTPT",
+                                        "Section": "2.2.5 Timing Variables for All Classes"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.2",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0046",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "(--ENRTPT) Identifies the end of the observation as being before or after the sponsor-defined reference time point defined by variable --ENTPT.",
+                                        "Document": "Model v1.4",
+                                        "Item": "Specification",
+                                        "Section": "2.2.5 Timing Variables for All Classes"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

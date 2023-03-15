@@ -1,0 +1,10 @@
+LICENSE.md
+README.md
+setup.py
+jsonrenamer/__init__.py
+jsonrenamer/json_file_renamer.py
+jsonrenamer/test_json2xlsx.py
+jsonrenamer.egg-info/PKG-INFO
+jsonrenamer.egg-info/SOURCES.txt
+jsonrenamer.egg-info/dependency_links.txt
+jsonrenamer.egg-info/top_level.txt

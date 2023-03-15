@@ -1,0 +1,79 @@
+{
+    "changed": "2022-09-22T08:17:42.626Z",
+    "content": "Check:\n  all:\n    - name: PCORRES\n      operator: less_than\n      value: PCLLOQ\n    - name: PCSTRESN\n      operator: non_empty\nCore:\n  Id: CDISC.SENDIG.194\n  Version: '1'\n  Status: Draft\nDescription: If the PCORRES result is less than the Lower Limit of Quantification,\n  then PCSTRESN should be null and not populated with the value of zero (0).\nOutcome:\n  Message: PCSTRESN may not be populated as PCORRES is less than PCLLOQ\n  Output Variables:\n    - PCORRES\n    - PCSTRESN\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '194'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: If the PCORRES result is less than the Lower Limit\n                  of Quantification (LLQ), then PCSTRESN should be null and not populated\n                  with the value of zero (0).\n                Document: IG v3.1\n                Section: 6.3.11.1\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - PC\n",
+    "created": "2022-09-22T08:17:42.626Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "PCORRES",
+                    "operator": "less_than",
+                    "value": "PCLLOQ"
+                },
+                {
+                    "name": "PCSTRESN",
+                    "operator": "non_empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.194",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "If the PCORRES result is less than the Lower Limit of Quantification, then PCSTRESN should be null and not populated with the value of zero (0).",
+        "Outcome": {
+            "Message": "PCSTRESN may not be populated as PCORRES is less than PCLLOQ",
+            "Output_Variables": [
+                "PCORRES",
+                "PCSTRESN"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "194",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "If the PCORRES result is less than the Lower Limit of Quantification (LLQ), then PCSTRESN should be null and not populated with the value of zero (0).",
+                                        "Document": "IG v3.1",
+                                        "Section": "6.3.11.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "PC"
+                ]
+            }
+        }
+    },
+    "id": "ae9b7cd8-2dce-403e-b659-ad6a299cddf7"
+}

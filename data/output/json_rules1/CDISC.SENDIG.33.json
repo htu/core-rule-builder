@@ -1,0 +1,74 @@
+{
+    "changed": "2022-09-11T06:30:11.047Z",
+    "content": "Check:\n  all:\n    - name: DOMAIN\n      operator: not_matches_regex\n      value: ^[A-Z0-9_]*$\nCore:\n  Id: CDISC.SENDIG.33\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when the value of DOMAIN contains non-uppercase characters\nOutcome:\n  Message: DOMAIN value must be uppercase\n  Output Variables:\n    - DOMAIN\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '33'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Two character domain identifier is in uppercase.\n                Document: IG v3.1\n                Section: 4.2.2\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2022-09-10T14:39:15.088Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "DOMAIN",
+                    "operator": "not_matches_regex",
+                    "value": "^[A-Z0-9_]*$"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.33",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when the value of DOMAIN contains non-uppercase characters",
+        "Outcome": {
+            "Message": "DOMAIN value must be uppercase",
+            "Output_Variables": [
+                "DOMAIN"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "33",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Two character domain identifier is in uppercase.",
+                                        "Document": "IG v3.1",
+                                        "Section": "4.2.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    },
+    "id": "4aeab4ad-5725-42fb-9a51-f00b47c0fccb"
+}

@@ -1,0 +1,74 @@
+{
+    "id": "77464f60-159b-4696-835c-4f5d01a9dd41",
+    "changed": "2022-02-15T21:29:02Z",
+    "content": "Check:\n  all:\n    - name: --ENTPT\n      operator: is_empty\n    - name: --ENRTPT\n      operator: is_empty\nCoreId: ValuePresenceExample\nDescription: Raise an error when --ENTPT is empty, --ENRTPT is also empty\nOutcome:\n  Message: --ENTPT is empty and --ENRTPT is also empty\nRule Type: Record Data\nSensitivity: Record\nVersion: '1'\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0354\n            Version: '1.1'\n            Citations:\n              - Cited Guidance: (--ENRTPT) Identifies the end of the observation as\n                  being before or after the sponsor-defined reference time point defined\n                  by variable --ENTPT.\n                Document: SDTM v1.4\n                Item: Specification\n                Section: 2.2.5 Timing Variables for All Classes\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\nCore:\n  Status: Draft\n",
+    "created": "2021-09-22T12:09:15Z",
+    "creator": {
+        "id": "92b43f00-2def-4c75-ba44-95ac37a97553"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--ENTPT",
+                    "operator": "is_empty"
+                },
+                {
+                    "name": "--ENRTPT",
+                    "operator": "is_empty"
+                }
+            ]
+        },
+        "CoreId": "ValuePresenceExample",
+        "Description": "Raise an error when --ENTPT is empty, --ENRTPT is also empty",
+        "Outcome": {
+            "Message": "--ENTPT is empty and --ENRTPT is also empty"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Version": "1",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0354"
+                                },
+                                "Version": "1.1",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "(--ENRTPT) Identifies the end of the observation as being before or after the sponsor-defined reference time point defined by variable --ENTPT.",
+                                        "Document": "SDTM v1.4",
+                                        "Item": "Specification",
+                                        "Section": "2.2.5 Timing Variables for All Classes"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        },
+        "Core": {
+            "Status": "Draft"
+        }
+    }
+}

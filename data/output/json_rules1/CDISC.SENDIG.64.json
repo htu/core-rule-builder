@@ -1,0 +1,74 @@
+{
+    "changed": "2022-09-13T08:53:21.992Z",
+    "content": "Check:\n  all:\n    - name: --TEST\n      operator: longer_than\n      value: 40\nCore:\n  Id: CDISC.SENDIG.64\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when length of --TEST is greater than 40.\nOutcome:\n  Message: Value length of --TEST is greater than 40.\n  Output Variables:\n    - --TEST\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '64'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Because of limitations of SAS v5 Transport files,\n                  the lengths of data values cannot exceed 200 characters. Because\n                  --TEST values may become column labels upon transformation, the\n                  SDTM additionally restricts them to 40 characters.\n                Document: IG v3.1\n                Section: 4.5.3\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2022-09-13T08:53:21.992Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--TEST",
+                    "operator": "longer_than",
+                    "value": 40
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.64",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when length of --TEST is greater than 40.",
+        "Outcome": {
+            "Message": "Value length of --TEST is greater than 40.",
+            "Output_Variables": [
+                "--TEST"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "64",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Because of limitations of SAS v5 Transport files, the lengths of data values cannot exceed 200 characters. Because --TEST values may become column labels upon transformation, the SDTM additionally restricts them to 40 characters.",
+                                        "Document": "IG v3.1",
+                                        "Section": "4.5.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    },
+    "id": "5a8c2271-8831-44ea-b8db-cd58d3a6048c"
+}

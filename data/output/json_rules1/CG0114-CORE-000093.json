@@ -1,0 +1,93 @@
+{
+    "id": "9f19d661-3c85-407b-8c77-c671f07c2778",
+    "changed": "2022-04-14T13:38:20Z",
+    "content": "Check:\n  all:\n    - name: --DOSU\n      operator: empty\n    - any:\n        - name: --DOSE\n          operator: non_empty\n        - name: --DOSTXT\n          operator: non_empty\n        - name: --DOSTOT\n          operator: non_empty\nCore:\n  Id: CORE-000093\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --DOSU = null and (--DOSE ^= null or --DOSTOT ^=\n  null or --DOSTXT ^= null)\nOutcome:\n  Message: Missing value for --DOSU, when --DOSE, --DOSTXT or --DOSTOT is provided\n  Output Variables:\n    - --DOSE\n    - --DOSTXT\n    - --DOSTOT\n    - --DOSU\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0114\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Units for --DOSE, --DOSTOT, or --DOSTXT\n                Document: Model v2.0\n                Item: --DOSU\n                Section: Interventions\nScope:\n  Classes:\n    Include:\n      - INTERVENTIONS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-06T18:28:40Z",
+    "creator": {
+        "id": "d0881041-369e-4940-b721-5b456d12101b"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--DOSU",
+                    "operator": "empty"
+                },
+                {
+                    "any": [
+                        {
+                            "name": "--DOSE",
+                            "operator": "non_empty"
+                        },
+                        {
+                            "name": "--DOSTXT",
+                            "operator": "non_empty"
+                        },
+                        {
+                            "name": "--DOSTOT",
+                            "operator": "non_empty"
+                        }
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000093",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --DOSU = null and (--DOSE ^= null or --DOSTOT ^= null or --DOSTXT ^= null)",
+        "Outcome": {
+            "Message": "Missing value for --DOSU, when --DOSE, --DOSTXT or --DOSTOT is provided",
+            "Output_Variables": [
+                "--DOSE",
+                "--DOSTXT",
+                "--DOSTOT",
+                "--DOSU"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0114",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Units for --DOSE, --DOSTOT, or --DOSTXT",
+                                        "Document": "Model v2.0",
+                                        "Item": "--DOSU",
+                                        "Section": "Interventions"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "id": "49f82ee4-7fd3-4d74-b84f-f48fd19766e4",
+    "changed": "2023-03-01T11:53:27.857Z",
+    "content": "Check:\n  all:\n    - name: USUBJID\n      operator: is_not_contained_by\n      value: $dm_usubjid\nOperations:\n  - operator: distinct\n    domain: DM\n    name: USUBJID\n    id: $dm_usubjid\nCore:\n  # Need to make yaml validation accept ADAMIG\n  # Will we need to prepend ADaM rules with \"AD0...\"? \n  # (column \"Check Number\" in ADaM_Conformance_Rules_v4.0 is 1-3 digits only, some with a \",1\" (e.g. \"37,01\") )\n  Id: CDISC.ADAMIG.AD0053\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when the values of USUBJID are not present in SDTM.DM\nExecutability: Fully Executable\nOutcome:\n  Message: The values of USUBJID are not present in SDTM.DM\n  Output Variables:\n    - USUBJID\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: ADaMIG\n        Version: '1.3'\n        References:\n  # Origin for ADaM/ADaMIG should be defined in yaml validation schema\n          - Origin: ADaM Conformance Rules\n            Rule Identifier:\n              Id: '53'\n              Version: '1'\n    # Version 4.0 for ADaM/ADaMIG should be allowed according to yaml validation schema\n            Version: '4.0'\n            Citations:\n              - Document: IG v1.3\n                Section: 3.1.1\n                Item: '3'\n                Cited Guidance: >-\n                  ADaM IG v1.3, Section 3.1.1, Item 3:  Any variable in an ADaM dataset\n                  whose name is the same as an SDTM variable must be a copy of the\n                  SDTM variable,\n                  and its label, meaning, and values must not be modified. ADaM adheres\n                  to a principle of harmonization known as  \"same name, same meaning,\n                  same values.\"\nScope:\n  Classes:\n    Include:\n      # What ADaM classes will be defined? ADSL, BDS, OCCDS, OTHER?\n      - ALL\n  Data Structures:\n    Include:\n      - ADAM OTHER\n      - ALL\n  Domains:\n    Include:\n      - ADSL\n      - DM\n",
+    "created": "2022-09-01T10:27:57Z",
+    "creator": {
+        "id": "ff3f6fbb-6aa3-4353-9941-60f9da14b0e4"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "USUBJID",
+                    "operator": "is_not_contained_by",
+                    "value": "$dm_usubjid"
+                }
+            ]
+        },
+        "Operations": [
+            {
+                "operator": "distinct",
+                "domain": "DM",
+                "name": "USUBJID",
+                "id": "$dm_usubjid"
+            }
+        ],
+        "Core": {
+            "Id": "CDISC.ADAMIG.AD0053",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when the values of USUBJID are not present in SDTM.DM",
+        "Executability": "Fully Executable",
+        "Outcome": {
+            "Message": "The values of USUBJID are not present in SDTM.DM",
+            "Output_Variables": [
+                "USUBJID"
+            ]
+        },
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "ADaMIG",
+                        "Version": "1.3",
+                        "References": [
+                            {
+                                "Origin": "ADaM Conformance Rules",
+                                "Version": "4.0",
+                                "Citations": [
+                                    {
+                                        "Document": "IG v1.3",
+                                        "Section": "3.1.1",
+                                        "Item": "3",
+                                        "Cited_Guidance": "ADaM IG v1.3, Section 3.1.1, Item 3:  Any variable in an ADaM dataset whose name is the same as an SDTM variable must be a copy of the SDTM variable, and its label, meaning, and values must not be modified. ADaM adheres to a principle of harmonization known as  \"same name, same meaning, same values.\""
+                                    }
+                                ],
+                                "Rule_Identifier": {
+                                    "Id": "53",
+                                    "Version": "1"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ADSL",
+                    "DM"
+                ]
+            },
+            "Data_Structures": {
+                "Include": [
+                    "ADAM OTHER",
+                    "ALL"
+                ]
+            }
+        },
+        "Rule_Type": "Record Data"
+    }
+}

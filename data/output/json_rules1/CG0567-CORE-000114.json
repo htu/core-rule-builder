@@ -1,0 +1,74 @@
+{
+    "id": "3dbd5f28-0c48-4d16-b54c-21d41ac2cc43",
+    "changed": "2022-03-22T12:35:52Z",
+    "content": "Check:\n  all:\n    - name: --EVDTYP\n      operator: exists\nCore:\n  Id: CORE-000114\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --EVDTYP is present in a dataset other than MH.\nOutcome:\n  Message: --EVDTYP is present in a dataset other than MH.\n  Output Variables:\n    - --EVDTYP\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0567\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: MH Domain only\n                Document: Model v2.0\n                Item: --EVDTYP\n                Section: Events\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Exclude:\n      - MH\n",
+    "created": "2021-10-08T12:07:23Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--EVDTYP",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000114",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --EVDTYP is present in a dataset other than MH.",
+        "Outcome": {
+            "Message": "--EVDTYP is present in a dataset other than MH.",
+            "Output_Variables": [
+                "--EVDTYP"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0567",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "MH Domain only",
+                                        "Document": "Model v2.0",
+                                        "Item": "--EVDTYP",
+                                        "Section": "Events"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Exclude": [
+                    "MH"
+                ]
+            }
+        }
+    }
+}

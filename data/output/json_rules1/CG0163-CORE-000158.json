@@ -1,0 +1,89 @@
+{
+    "id": "cd23516e-2790-42e9-b563-c780b20f8a4d",
+    "changed": "2022-07-17T09:50:20Z",
+    "content": "Check:\n  any:\n    - all:\n        - name: RDOMAIN\n          operator: non_empty\n        - name: RDOMAIN\n          operator: not_equal_to\n          value: DM\n          value_is_literal: true\n        - name: IDVAR\n          operator: empty\nCore:\n  Id: CORE-000158\n  Version: '1'\n  Status: Published\nDescription: IDVAR must be specified.\nOutcome:\n  Message: IDVAR should not be missing when RDOMAIN is not in (empty, DM).\n  Output Variables:\n    - RDOMAIN\n    - IDVAR\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0163\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Identifying variable in the parent dataset that identifies\n                  the record(s) to which the comment applies.  Examples AESEQ or CMGRPID.\n                  Used only when individual comments are related to domain records.  Null\n                  for comments collected on separate CRFs.\n                Document: IG v3.4\n                Item: Specification\n                Section: '5.1'\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - CO\n",
+    "created": "2021-10-18T09:04:48Z",
+    "creator": {
+        "id": "fd0c5f6f-7bc8-40a2-a9f9-9bbcf77833b9"
+    },
+    "json": {
+        "Check": {
+            "any": [
+                {
+                    "all": [
+                        {
+                            "name": "RDOMAIN",
+                            "operator": "non_empty"
+                        },
+                        {
+                            "name": "RDOMAIN",
+                            "operator": "not_equal_to",
+                            "value": "DM",
+                            "value_is_literal": true
+                        },
+                        {
+                            "name": "IDVAR",
+                            "operator": "empty"
+                        }
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000158",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "IDVAR must be specified.",
+        "Outcome": {
+            "Message": "IDVAR should not be missing when RDOMAIN is not in (empty, DM).",
+            "Output_Variables": [
+                "RDOMAIN",
+                "IDVAR"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0163",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Identifying variable in the parent dataset that identifies the record(s) to which the comment applies.  Examples AESEQ or CMGRPID. Used only when individual comments are related to domain records.  Null for comments collected on separate CRFs.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Specification",
+                                        "Section": "5.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "CO"
+                ]
+            }
+        }
+    }
+}

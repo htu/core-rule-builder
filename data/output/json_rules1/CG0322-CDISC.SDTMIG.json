@@ -1,0 +1,80 @@
+{
+    "id": "833541cd-a2cb-42b3-8468-b0a73a421135",
+    "changed": "2022-06-30T05:08:51Z",
+    "content": "Check:\n  all:\n    - name: ELEMENT\n      operator: contains\n      value: ARM\nMatch Datasets:\n  - Name: TA\n    Keys:\n      - ARM\nCore:\n  Id: CDISC.SDTMIG.CG0322\n  Version: '1'\n  Status: Draft\nDescription: When ELEMENT is associated with more than 1 arm, the ELEMENT value must\n  not refer to a specific ARM\nOutcome:\n  Message: ELEMENT value refers to a specific ARM when ELEMENT is associated with\n    more than 1 arm\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0322\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: TESTRL should be expressed without referring to Arm.\n                  If the Element appears in more than one Arm in the Trial Arms dataset,\n                  then the Element description (ELEMENT) must not refer to any Arms\n                Document: IG v3.4\n                Item: Assumption 8\n                Section: 7.2.2\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - TE\n",
+    "created": "2021-11-06T08:19:03Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "ELEMENT",
+                    "operator": "contains",
+                    "value": "ARM"
+                }
+            ]
+        },
+        "Match_Datasets": [
+            {
+                "Name": "TA",
+                "Keys": [
+                    "ARM"
+                ]
+            }
+        ],
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0322",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "When ELEMENT is associated with more than 1 arm, the ELEMENT value must not refer to a specific ARM",
+        "Outcome": {
+            "Message": "ELEMENT value refers to a specific ARM when ELEMENT is associated with more than 1 arm"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0322",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "TESTRL should be expressed without referring to Arm. If the Element appears in more than one Arm in the Trial Arms dataset, then the Element description (ELEMENT) must not refer to any Arms",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 8",
+                                        "Section": "7.2.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TE"
+                ]
+            }
+        }
+    }
+}

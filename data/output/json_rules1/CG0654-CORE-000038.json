@@ -1,0 +1,82 @@
+{
+    "id": "828558f4-eeba-45cd-881b-58701a0f5f8c",
+    "changed": "2022-04-14T02:28:10Z",
+    "content": "Check:\n  all:\n    - name: SVOCCUR\n      operator: non_empty\n    - name: SVPRESP\n      operator: not_equal_to\n      value: Y\nCore:\n  Id: CORE-000038\n  Version: '1'\n  Status: Published\nDescription: Raise an error when SVOCCUR is not null and SVPRESP is not \"Y\".\nOutcome:\n  Message: SVPRESP is not \"Y\" when SVOCCUR is populated.\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0654\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: An indication that the visit is planned. Values should\n                  be \"Y\" or null.\n                Document: SDTM v2.0\n                Item: SVPRESP\n                Section: Subject Visits\n              - Cited Guidance: An indication as to whether a prespecified (planned)\n                  visit has occurred.\n                Document: SDTM v2.0\n                Item: SVOCCUR\n                Section: Subject Visits\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - SV\n",
+    "created": "2021-10-03T09:43:43Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "SVOCCUR",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "SVPRESP",
+                    "operator": "not_equal_to",
+                    "value": "Y"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000038",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when SVOCCUR is not null and SVPRESP is not \"Y\".",
+        "Outcome": {
+            "Message": "SVPRESP is not \"Y\" when SVOCCUR is populated."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0654",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "An indication that the visit is planned. Values should be \"Y\" or null.",
+                                        "Document": "SDTM v2.0",
+                                        "Item": "SVPRESP",
+                                        "Section": "Subject Visits"
+                                    },
+                                    {
+                                        "Cited_Guidance": "An indication as to whether a prespecified (planned) visit has occurred.",
+                                        "Document": "SDTM v2.0",
+                                        "Item": "SVOCCUR",
+                                        "Section": "Subject Visits"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SV"
+                ]
+            }
+        }
+    }
+}

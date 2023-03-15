@@ -1,0 +1,76 @@
+{
+    "changed": "2023-01-10T14:39:50.419Z",
+    "content": "Check:\n  all:\n    # In order to apply to ALL variables, just leave out the first condition\r\n    - name: variable_name\n      operator: equal_to\n      value: VSTESTCD\n    - name: variable_label\n      operator: not_equal_to\n      # TODO: look up in the CDISC-Library API - see https://github.com/cdisc-org/cdisc-rules-engine/issues/243\r\n      value: Vital Signs Test Short Name\nCore:\n  Id: CDISC.SENDIG.6A\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when the variable label of VSTESTCD is not 'Vital Signs\n  Test Short Name'\nOutcome:\n  Message: The label of VSTESTCD is invalid\nRule Type: Variable Metadata Check\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: 6A\n              Version: '1'\n            Version: '2.0'\n# IMPORTANT TO PROVIDE THE RIGHT TYPE OF RULE CHECK HERE!\r\n            Citations:\n              - Cited Guidance: Metadata in Define-XML document should match both\n                  the SENDIG label and the label in the .xpt datasets\n                Document: SENDIG v3.1\n                Section: 3.2.2 | 4.21\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - VS\n",
+    "created": "2022-09-30T12:53:43.753Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "variable_name",
+                    "operator": "equal_to",
+                    "value": "VSTESTCD"
+                },
+                {
+                    "name": "variable_label",
+                    "operator": "not_equal_to",
+                    "value": "Vital Signs Test Short Name"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.6A",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when the variable label of VSTESTCD is not 'Vital Signs Test Short Name'",
+        "Outcome": {
+            "Message": "The label of VSTESTCD is invalid"
+        },
+        "Rule_Type": "Variable Metadata Check",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "6A",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Metadata in Define-XML document should match both the SENDIG label and the label in the .xpt datasets",
+                                        "Document": "SENDIG v3.1",
+                                        "Section": "3.2.2 | 4.21"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "VS"
+                ]
+            }
+        }
+    },
+    "id": "3bd7b838-b98d-41ea-b53f-8047a0b03cb4"
+}

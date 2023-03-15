@@ -1,0 +1,88 @@
+{
+    "id": "4e597cc8-42a3-4f85-9d6a-e437f9ab2ad8",
+    "changed": "2022-04-14T10:38:07Z",
+    "content": "Check:\n  all:\n    - name: MHENDTC\n      operator: non_empty\n    - name: MHENDTC\n      operator: date_greater_than_or_equal_to\n      value: RFSTDTC\nMatch Datasets:\n  - Name: DM\n    Keys:\n      - USUBJID\nCore:\n  Id: CDISC.SDTMIG.CG0078.dup\n  Version: '1'\n  Status: Draft\nDescription: Raise an issue, for MH domain, if MHENDTC ^=null and MHENDTC > DM.RFSTDTC\nOutcome:\n  Message: Non-missing MHENDTC is greater then DM.RFSTDTC. The medical history dataset\n    should include the subject's prior history at the start of the trial.\n  Output Variables:\n    - MHENDTC\n    - RFSTDTC\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0078\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: \"IG v3.3[2.6][Do not create separate domains based\\\n                  \\ on time; rather, represent both prior and current observations\\\n                  \\ in a domain (e.g., CM for all non-study medications). Note that\\\n                  \\ AE and MH are an exception to this best practice because of regulatory\\\n                  \\ reporting needs]|IG v3.3[4.2.6][Item 2.B.3.A (Discussion of --CAT/--SCAT):\\\n                  \\  Adverse Events (AE), Medical History (MH), and Clinical Events\\\n                  \\ (CE), for example, are conceptually the same data, the only differences\\\n                  \\ being when the event started relative to the study start and whether\\\n                  \\ the event is considered a regulatory reportable adverse event\\\n                  \\ in the study.]|IG v3.3[6.2][Domain Code Table: The medical history\\\n                  \\ dataset includes the subject's prior history at the start of the\\\n                  \\ trial.][MH: The medical history dataset includes the subject's\\\n                  \\ prior history at the start of the trial.]\"\n                Document: IG v3.4\n                Item: '[4.2.6]Assumption 2.B.3.a.'\n                Section: IG v3.3[2.6]|IG v3.3[4.2.6]|IG v3.3[6.2]\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - MH\n\n",
+    "created": "2022-01-19T21:32:52Z",
+    "creator": {
+        "id": "7de48ba7-1548-45ca-bfc8-3ad35590ae62"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "MHENDTC",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "MHENDTC",
+                    "operator": "date_greater_than_or_equal_to",
+                    "value": "RFSTDTC"
+                }
+            ]
+        },
+        "Match_Datasets": [
+            {
+                "Name": "DM",
+                "Keys": [
+                    "USUBJID"
+                ]
+            }
+        ],
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0078.dup",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an issue, for MH domain, if MHENDTC ^=null and MHENDTC > DM.RFSTDTC",
+        "Outcome": {
+            "Message": "Non-missing MHENDTC is greater then DM.RFSTDTC. The medical history dataset should include the subject's prior history at the start of the trial.",
+            "Output_Variables": [
+                "MHENDTC",
+                "RFSTDTC"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0078",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "IG v3.3[2.6][Do not create separate domains based on time; rather, represent both prior and current observations in a domain (e.g., CM for all non-study medications). Note that AE and MH are an exception to this best practice because of regulatory reporting needs]|IG v3.3[4.2.6][Item 2.B.3.A (Discussion of --CAT/--SCAT):  Adverse Events (AE), Medical History (MH), and Clinical Events (CE), for example, are conceptually the same data, the only differences being when the event started relative to the study start and whether the event is considered a regulatory reportable adverse event in the study.]|IG v3.3[6.2][Domain Code Table: The medical history dataset includes the subject's prior history at the start of the trial.][MH: The medical history dataset includes the subject's prior history at the start of the trial.]",
+                                        "Document": "IG v3.4",
+                                        "Item": "[4.2.6]Assumption 2.B.3.a.",
+                                        "Section": "IG v3.3[2.6]|IG v3.3[4.2.6]|IG v3.3[6.2]"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "MH"
+                ]
+            }
+        }
+    }
+}

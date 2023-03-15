@@ -1,0 +1,90 @@
+{
+    "changed": "2022-11-02T10:12:12.998Z",
+    "content": "Check:\n  all:\n    - name: MIDTC\n      operator: non_empty\n    - name: MISPEC\n      operator: non_empty\n    - name: MIORRES\n      operator: is_not_unique_set\n      value:\n        - USUBJID\n        - MISPEC\n        - MIDTC\nCore:\n  Id: CDISC.SENDIG.180\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when there is more than one record present for any particular\n  Microscopic Finding in the MI Domain, for a subject on a particular date.\n#The check for this rule was revised to NOT check the records where MIDTC is null\r\nOutcome:\n  Message: The Microscopic Finding test result is not unique for this subject and\n    date/time.\n  Output Variables:\n    - USUBJID\n    - MITESTCD\n    - MIORRES\n    - MISPEC\n    - MIDTC\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '180'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: One record per finding per specimen per subject\n                Document: SENDIG v3.1\n                Section: 6.3.7.1\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - MI\n",
+    "created": "2022-11-02T10:12:12.998Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "MIDTC",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "MISPEC",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "MIORRES",
+                    "operator": "is_not_unique_set",
+                    "value": [
+                        "USUBJID",
+                        "MISPEC",
+                        "MIDTC"
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.180",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when there is more than one record present for any particular Microscopic Finding in the MI Domain, for a subject on a particular date.",
+        "Outcome": {
+            "Message": "The Microscopic Finding test result is not unique for this subject and date/time.",
+            "Output_Variables": [
+                "USUBJID",
+                "MITESTCD",
+                "MIORRES",
+                "MISPEC",
+                "MIDTC"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "180",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "One record per finding per specimen per subject",
+                                        "Document": "SENDIG v3.1",
+                                        "Section": "6.3.7.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "MI"
+                ]
+            }
+        }
+    },
+    "id": "734bdf65-91a5-4371-b9f7-421e2b710f35"
+}

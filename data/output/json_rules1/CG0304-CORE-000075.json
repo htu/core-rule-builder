@@ -1,0 +1,73 @@
+{
+    "id": "f251a5ee-efc6-4a95-895e-e325c4b9a1f8",
+    "changed": "2022-03-17T10:10:31Z",
+    "content": "Check:\n  all:\n    - name: AEREASND\n      operator: exists\nCore:\n  Id: CORE-000075\n  Version: '1'\n  Status: Published\nDescription: Raise an error when AEREASND is present.\nOutcome:\n  Message: AEREASND is present.\n  Output Variables:\n    - AEREASND\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0304\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The following Qualifiers would not be used in AE,\n                  --OCCUR, --STAT, and--REASND. They are the only Qualifiers from\n                  the SDTM Events Class not in the AE domain. They are not permitted\n                  because the AE domain contains only records for adverse events that\n                  actually occurred.\n                Document: IG v3.4\n                Section: 6.2.1\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - AE\n",
+    "created": "2021-10-04T05:30:54Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "AEREASND",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000075",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when AEREASND is present.",
+        "Outcome": {
+            "Message": "AEREASND is present.",
+            "Output_Variables": [
+                "AEREASND"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0304",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The following Qualifiers would not be used in AE, --OCCUR, --STAT, and--REASND. They are the only Qualifiers from the SDTM Events Class not in the AE domain. They are not permitted because the AE domain contains only records for adverse events that actually occurred.",
+                                        "Document": "IG v3.4",
+                                        "Section": "6.2.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "AE"
+                ]
+            }
+        }
+    }
+}

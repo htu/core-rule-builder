@@ -1,0 +1,84 @@
+{
+    "changed": "2022-09-16T08:16:11.088Z",
+    "content": "Check:\n  all:\n    - name: SETCD\n      operator: non_empty\n    - name: SETCD\n      operator: is_not_contained_by\n      value: $tx_setcd\nOperations:\n  - domain: TX\n    id: $tx_setcd\n    name: SETCD\n    operator: distinct\nCore:\n  Id: CDISC.SENDIG.113\n  Version: '1'\n  Status: Draft\nDescription: The value of SETCD in DM must be one of the SETCD values in TX.\nOutcome:\n  Message: SETCD is not present in TX.SETCD\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '113'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Subject (animal) may belong to one and only one Trial\n                  Set.\n                Document: IG v3.1\n                Item: Specification\n                Section: 5.1.1.1\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - DM\n",
+    "created": "2022-09-16T08:10:52.221Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "SETCD",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "SETCD",
+                    "operator": "is_not_contained_by",
+                    "value": "$tx_setcd"
+                }
+            ]
+        },
+        "Operations": [
+            {
+                "domain": "TX",
+                "id": "$tx_setcd",
+                "name": "SETCD",
+                "operator": "distinct"
+            }
+        ],
+        "Core": {
+            "Id": "CDISC.SENDIG.113",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "The value of SETCD in DM must be one of the SETCD values in TX.",
+        "Outcome": {
+            "Message": "SETCD is not present in TX.SETCD"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "113",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Subject (animal) may belong to one and only one Trial Set.",
+                                        "Document": "IG v3.1",
+                                        "Item": "Specification",
+                                        "Section": "5.1.1.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "DM"
+                ]
+            }
+        }
+    },
+    "id": "d30a410b-dc01-4d35-b4c1-e82a1917108e"
+}

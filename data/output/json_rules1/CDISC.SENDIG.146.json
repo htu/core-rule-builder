@@ -1,0 +1,74 @@
+{
+    "changed": "2022-09-19T09:53:02.847Z",
+    "content": "Check:\n  all:\n    - name: --STAT\n      operator: empty\n    - name: --REASND\n      operator: non_empty\nCore:\n  Id: CDISC.SENDIG.146\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when --STAT is not populated and --REASND is populated\nOutcome:\n  Message: When --STAT is not populated, --REASND may not be populated.\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '146'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Used to indicate when a test is not done or result\n                  is missing. Should be null if a result exists in BWORRES.\n                Document: IG v3.1\n                Section: 6.3.1\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Exclude:\n      - SC\n",
+    "created": "2022-09-19T09:35:49.791Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--STAT",
+                    "operator": "empty"
+                },
+                {
+                    "name": "--REASND",
+                    "operator": "non_empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.146",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when --STAT is not populated and --REASND is populated",
+        "Outcome": {
+            "Message": "When --STAT is not populated, --REASND may not be populated."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "146",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Used to indicate when a test is not done or result is missing. Should be null if a result exists in BWORRES.",
+                                        "Document": "IG v3.1",
+                                        "Section": "6.3.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Exclude": [
+                    "SC"
+                ]
+            }
+        }
+    },
+    "id": "a4e1618c-b031-48d9-96d5-0a8cd07ac828"
+}

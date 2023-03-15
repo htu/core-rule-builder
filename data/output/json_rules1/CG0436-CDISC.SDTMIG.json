@@ -1,0 +1,85 @@
+{
+    "id": "e427baa9-813f-4e31-b77a-3c99cb593ed2",
+    "changed": "2022-11-29T16:30:24.267Z",
+    "content": "Check:\n  all:\n    - domain: is_not_contained_by\n      operator: get_dataset\n      value:\n        comparator: $MedDRA_SOC\n        target: --SOC\nCore:\n  Id: CDISC.SDTMIG.CG0436\n  Version: '1'\n  Status: Draft\nDescription: Verify that --SOC matches MedDRA primary system organ class\nOperations:\n  - domain: MedDRA\n    id: $MedDRA_SOC\n    name: SOC\n    operator: distinct\nOutcome:\n  Message: --SOC must equal MedDRA primary system organ class\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0436\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The system organ class from the primary hierarchy\n                  assigned in the MedDRA dictionary.\n                Document: Model v2.0\n                Item: --SOC\n                Section: Events\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - AE\n      - MH\n      - CE\n",
+    "created": "2021-12-15T17:27:22Z",
+    "creator": {
+        "id": "57474fac-237e-4693-bb37-7826b02737da"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "domain": "is_not_contained_by",
+                    "operator": "get_dataset",
+                    "value": {
+                        "comparator": "$MedDRA_SOC",
+                        "target": "--SOC"
+                    }
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0436",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Verify that --SOC matches MedDRA primary system organ class",
+        "Operations": [
+            {
+                "domain": "MedDRA",
+                "id": "$MedDRA_SOC",
+                "name": "SOC",
+                "operator": "distinct"
+            }
+        ],
+        "Outcome": {
+            "Message": "--SOC must equal MedDRA primary system organ class"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0436",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The system organ class from the primary hierarchy assigned in the MedDRA dictionary.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--SOC",
+                                        "Section": "Events"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "AE",
+                    "MH",
+                    "CE"
+                ]
+            }
+        }
+    }
+}

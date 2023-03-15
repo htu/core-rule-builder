@@ -1,0 +1,75 @@
+{
+    "id": "7bee4a72-5080-4245-bac6-c145443dcf31",
+    "changed": "2022-10-11T12:14:55.646Z",
+    "content": "Check:\n  all:\n    - name: --STREFC\n      operator: non_empty\n    - name: --STREFN\n      operator: empty\nCore:\n  Id: CDISC.SDTMIG.CG0550\n  Version: '1'\n  Status: Draft\nDescription: When --STREFC is populated, --STREFN should also be populated.\nOutcome:\n  Message: --STREFN is null when --STREFC is populated.\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0550\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Reference value for continuous or numeric results\n                  or findings in standard format or in standard units. --STREFN uses\n                  the same units as --STRESN, if applicable.\n                Document: SDTM v2.0\n                Item: --STREFN\n                Section: Findings\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-08T12:01:22Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--STREFC",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "--STREFN",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0550",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "When --STREFC is populated, --STREFN should also be populated.",
+        "Outcome": {
+            "Message": "--STREFN is null when --STREFC is populated."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0550",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Reference value for continuous or numeric results or findings in standard format or in standard units. --STREFN uses the same units as --STRESN, if applicable.",
+                                        "Document": "SDTM v2.0",
+                                        "Item": "--STREFN",
+                                        "Section": "Findings"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

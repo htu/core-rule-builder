@@ -1,0 +1,80 @@
+{
+    "changed": "2022-09-28T15:30:33.003Z",
+    "content": "Check:\n  all:\n    - name: --TPTREF\n      operator: empty\n    - name: --ELTM\n      operator: non_empty\nCore:\n  Id: CDISC.SENDIG.279\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when --TPTREF is empty, but --ELTM is not empty\nOutcome:\n  Message: --TPTREF is empty and --ELTM is not empty\n  Output Variables:\n    - --TPTREF\n    - --ELTM\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '279'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Time points can be represented using the time point\n                  variables, --TPT, --TPTNUM, --ELTM, and the time point anchors,\n                  --TPTREF (text description) and --RFTDTC (the date/time).; See also\n                  --ELTM CDISC Notes in Domain Tables (e.g., \"Planned elapsed time\n                  (in ISO 8601) format relative to the planned fixed reference (EXTPTREF).\")\n                Document: IG v3.1\n                Item: Specification\n                Section: 4.4.7\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n      - INTERVENTIONS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2022-09-28T13:44:26.217Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--TPTREF",
+                    "operator": "empty"
+                },
+                {
+                    "name": "--ELTM",
+                    "operator": "non_empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.279",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when --TPTREF is empty, but --ELTM is not empty",
+        "Outcome": {
+            "Message": "--TPTREF is empty and --ELTM is not empty",
+            "Output_Variables": [
+                "--TPTREF",
+                "--ELTM"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "279",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Time points can be represented using the time point variables, --TPT, --TPTNUM, --ELTM, and the time point anchors, --TPTREF (text description) and --RFTDTC (the date/time).; See also --ELTM CDISC Notes in Domain Tables (e.g., \"Planned elapsed time (in ISO 8601) format relative to the planned fixed reference (EXTPTREF).\")",
+                                        "Document": "IG v3.1",
+                                        "Item": "Specification",
+                                        "Section": "4.4.7"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS",
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    },
+    "id": "78378d6d-0fb4-4f08-934e-19c0d498f59c"
+}

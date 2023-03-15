@@ -1,0 +1,118 @@
+{
+    "id": "bc01c6c5-a1f1-4d84-9b93-0775f9c05763",
+    "changed": "2022-12-09T16:18:00.361Z",
+    "content": "Check:\n  all:\n    - name: --CAT\n      operator: equal_to\n      value: --BODSYS\nCore:\n  Id: CORE-000197\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --CAT = --BODSYS.\nOutcome:\n  Message: --CAT is equal to --BODSYS.\n  Output Variables:\n    - --TERM\n    - --CAT\n    - --BODSYS\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0339\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Values for --CAT and --SCAT should not be redundant\n                  with the domain  name or dictionary classification provided by --DECOD\n                  and --BODSYS.\n                Document: IG v3.4\n                Section: 4.2.6\n      - Name: SDTMIG\n        Version: '3.3'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0339\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Values for --CAT and --SCAT should not be redundant\n                  with the domain  name or dictionary classification provided by --DECOD\n                  and --BODSYS.\n                Document: IG v3.3\n                Section: 4.2.6\n      - Name: SDTMIG\n        Version: '3.2'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0339\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Values for --CAT and --SCAT should not be redundant\n                  with the domain  name or dictionary classification provided by --DECOD\n                  and --BODSYS.\n                Document: IG v3.2\n                Section: 4.1.2.6\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-04T10:02:11Z",
+    "creator": {
+        "id": "02c3c969-4787-4d57-b164-e2851035c0e8"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--CAT",
+                    "operator": "equal_to",
+                    "value": "--BODSYS"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000197",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --CAT = --BODSYS.",
+        "Outcome": {
+            "Message": "--CAT is equal to --BODSYS.",
+            "Output_Variables": [
+                "--TERM",
+                "--CAT",
+                "--BODSYS"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0339",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Values for --CAT and --SCAT should not be redundant with the domain  name or dictionary classification provided by --DECOD and --BODSYS.",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.2.6"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.3",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0339",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Values for --CAT and --SCAT should not be redundant with the domain  name or dictionary classification provided by --DECOD and --BODSYS.",
+                                        "Document": "IG v3.3",
+                                        "Section": "4.2.6"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.2",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0339",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Values for --CAT and --SCAT should not be redundant with the domain  name or dictionary classification provided by --DECOD and --BODSYS.",
+                                        "Document": "IG v3.2",
+                                        "Section": "4.1.2.6"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

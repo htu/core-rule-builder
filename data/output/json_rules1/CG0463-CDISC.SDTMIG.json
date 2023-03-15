@@ -1,0 +1,77 @@
+{
+    "id": "87e3a8a8-027c-46a4-8efe-0566dcb64ab5",
+    "changed": "2022-07-17T11:06:59Z",
+    "content": "Check:\n  all:\n    - name:\n      operator: is_not_contained_by\n      prefix: 2\n      value:\n    - name: --TRT\n      operator: exists\nCore:\n  Id: CDISC.SDTMIG.CG0463\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when --TRT is not present in custom interventions dataset\nOutcome:\n  Message: --TRT is not present in custom interventions dataset\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0463\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Include the Topic variable from the identified general\n                  observation class (e.g., --TESTCD for Findings) in the SDTM\n                Document: IG v3.4\n                Item: Assumption 3b\n                Section: '2.6'\nScope:\n  Classes:\n    Include:\n      - INTERVENTIONS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-08T10:23:50Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": null,
+                    "operator": "is_not_contained_by",
+                    "prefix": 2,
+                    "value": null
+                },
+                {
+                    "name": "--TRT",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0463",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when --TRT is not present in custom interventions dataset",
+        "Outcome": {
+            "Message": "--TRT is not present in custom interventions dataset"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0463",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Include the Topic variable from the identified general observation class (e.g., --TESTCD for Findings) in the SDTM",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 3b",
+                                        "Section": "2.6"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

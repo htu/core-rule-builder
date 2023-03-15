@@ -1,0 +1,80 @@
+{
+    "id": "3cfc777a-1bfc-440e-a4b6-cf8707a92ede",
+    "changed": "2022-03-15T22:52:41Z",
+    "content": "Check:\n  all:\n    - name: --SEQ\n      operator: is_not_unique_set\n      value:\n        - DOMAIN\n        - USUBJID\n        - --TESTCD\nCore:\n  Id: CDISC.SDTMIG.CG0019\n  Version: '1'\n  Status: Draft\nDescription: Trigger error if records are not unique as per sponsor defined key variables\n  as documented in the define.xml\nOutcome:\n  Message: Records are not unique as per sponsor defined key variables as documented\n    in the define.xml\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0019\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Note that the key variables shown in this table are\n                  examples only. A sponsor's actual key structure may be different.\n                Document: IG v3.4\n                Section: Table 3.2.1\n              - Cited Guidance: Since the purpose of this column is to aid reviewers\n                  in understanding the structure of a dataset, sponsors should list\n                  all of the natural keys (see definition below) for the dataset.\n                  These keys should define uniqueness for records within a dataset,\n                  and may define a record sort order. The identified keys for each\n                  dataset should be consistent with the description of the dataset\n                  structure as described in the Define-XML document.\n                Document: IG v3.4\n                Section: 3.2.1.1\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-06T04:43:52Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--SEQ",
+                    "operator": "is_not_unique_set",
+                    "value": [
+                        "DOMAIN",
+                        "USUBJID",
+                        "--TESTCD"
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0019",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error if records are not unique as per sponsor defined key variables as documented in the define.xml",
+        "Outcome": {
+            "Message": "Records are not unique as per sponsor defined key variables as documented in the define.xml"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0019",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Note that the key variables shown in this table are examples only. A sponsor's actual key structure may be different.",
+                                        "Document": "IG v3.4",
+                                        "Section": "Table 3.2.1"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Since the purpose of this column is to aid reviewers in understanding the structure of a dataset, sponsors should list all of the natural keys (see definition below) for the dataset. These keys should define uniqueness for records within a dataset, and may define a record sort order. The identified keys for each dataset should be consistent with the description of the dataset structure as described in the Define-XML document.",
+                                        "Document": "IG v3.4",
+                                        "Section": "3.2.1.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

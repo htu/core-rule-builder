@@ -1,0 +1,82 @@
+{
+    "changed": "2022-09-28T08:03:23.560Z",
+    "content": "Check:\n  all:\n    - name: TXPARMCD\n      operator: equal_to\n      value: ENVTEMPU\n    - name: TXVAL\n      operator: not_equal_to\n      value: C\n    - name: TXVAL\n      operator: not_equal_to\n      value: F\nCore:\n  Id: CDISC.SENDIG.244\n  Version: '1'\n  Status: Draft\nDescription: The units associated with the environmental temperature; only \"C\" or\n  \"F\" is acceptable.\nOutcome:\n  Message: The value of TXVAL is not may only be \"C\" or \"F\" for TXPARMCD=ENTEMPU\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '244'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The units associated with the environmental temperature;\n                  only \"C\" or \"F\" is acceptable.\n                Document: IG v3.1\n                Item: Specification\n                Section: 7.4.2\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - TX\n",
+    "created": "2022-09-28T07:55:43.731Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "TXPARMCD",
+                    "operator": "equal_to",
+                    "value": "ENVTEMPU"
+                },
+                {
+                    "name": "TXVAL",
+                    "operator": "not_equal_to",
+                    "value": "C"
+                },
+                {
+                    "name": "TXVAL",
+                    "operator": "not_equal_to",
+                    "value": "F"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.244",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "The units associated with the environmental temperature; only \"C\" or \"F\" is acceptable.",
+        "Outcome": {
+            "Message": "The value of TXVAL is not may only be \"C\" or \"F\" for TXPARMCD=ENTEMPU"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "244",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The units associated with the environmental temperature; only \"C\" or \"F\" is acceptable.",
+                                        "Document": "IG v3.1",
+                                        "Item": "Specification",
+                                        "Section": "7.4.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TX"
+                ]
+            }
+        }
+    },
+    "id": "568acd75-c9b9-4b95-beee-2ee0f70947a0"
+}

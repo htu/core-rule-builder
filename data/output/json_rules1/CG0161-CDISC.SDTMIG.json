@@ -1,0 +1,75 @@
+{
+    "id": "a4ab2705-6245-4228-8162-a37e23d8088a",
+    "changed": "2022-02-15T21:30:18Z",
+    "content": "Check:\n  all:\n    - name: RDEVID\n      operator: non_empty\n    - name: SREL\n      operator:\nCore:\n  Id: CDISC.SDTMIG.CG0161\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when RDEVID ^= null and SREL does not describe relationship\n  of associated person to device identified in RDEVID\nOutcome:\n  Message: SREL does not describe relationship of associated person to device identified\n    in RDEVID when RDEVID ^= null\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0161\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: If RSUBJID is populated, describes the relationship\n                  of the associated person(s) identified in APID to the subject or\n                  pool identified in RSUBJID. If RDEVID is populated, describes the\n                  relationship of the associated person(s) identified in APID to the\n                  device identified in RDEVID. If RSUBJID and RDEVID are null, SREL\n                  describes the relationship of the associated person(s) identified\n                  in APID to the study identified in STUDYID.\n                Document: AP Guide v1.0\n                Item: Specification\n                Section: 2.1.1\nScope:\n  Classes:\n    Include:\n      - ASSOCIATED PERSONS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-29T06:16:26Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "RDEVID",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "SREL",
+                    "operator": null
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0161",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when RDEVID ^= null and SREL does not describe relationship of associated person to device identified in RDEVID",
+        "Outcome": {
+            "Message": "SREL does not describe relationship of associated person to device identified in RDEVID when RDEVID ^= null"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0161",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "If RSUBJID is populated, describes the relationship of the associated person(s) identified in APID to the subject or pool identified in RSUBJID. If RDEVID is populated, describes the relationship of the associated person(s) identified in APID to the device identified in RDEVID. If RSUBJID and RDEVID are null, SREL describes the relationship of the associated person(s) identified in APID to the study identified in STUDYID.",
+                                        "Document": "AP Guide v1.0",
+                                        "Item": "Specification",
+                                        "Section": "2.1.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ASSOCIATED PERSONS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

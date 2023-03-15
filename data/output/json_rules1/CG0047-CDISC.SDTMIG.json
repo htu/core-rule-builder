@@ -1,0 +1,75 @@
+{
+    "id": "81cf0dee-9b06-4b45-972e-47388c7d8c3d",
+    "changed": "2022-02-15T21:29:21Z",
+    "content": "Check:\n  all:\n    - name:\n      operator:\n    - name: --MODIFY\n      operator: empty\nCore:\n  Id: CDISC.SDTMIG.CG0047\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when --TERM has been modified for coding and --MODIFY is\n  null\nOutcome:\n  Message: --MODIFY is not populated when --TERM has been modified for coding\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0047\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: A value which represents an alteration to a collected\n                  value for coding purposes. Synonym Qualifier of --TERM.\n                Document: Model v2.0\n                Item: --MODIFY\n                Section: Events\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-06T07:01:45Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": null,
+                    "operator": null
+                },
+                {
+                    "name": "--MODIFY",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0047",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when --TERM has been modified for coding and --MODIFY is null",
+        "Outcome": {
+            "Message": "--MODIFY is not populated when --TERM has been modified for coding"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0047",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "A value which represents an alteration to a collected value for coding purposes. Synonym Qualifier of --TERM.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--MODIFY",
+                                        "Section": "Events"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

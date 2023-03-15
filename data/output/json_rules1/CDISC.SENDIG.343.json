@@ -1,0 +1,78 @@
+{
+    "changed": "2022-10-02T10:01:20.224Z",
+    "content": "Check:\n  all:\n    - name: TSPARMCD\n      operator: equal_to\n      value: SNDCTVER\n    - name: TSPARMCD\n      operator: is_not_unique_set\n      value:\n        - DOMAIN\nCore:\n  Id: CDISC.SENDIG.343\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when there is more than record with TSPARMCD=SNDCTVER\nOutcome:\n  Message: Only one record with TSPARMCD=SNDCTVER is allowed\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '343'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Only a single record should be provided in the Trial\n                  Summary.\n                Document: IG v3.1\n                Section: 7.6.3\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - TS\n",
+    "created": "2022-10-02T10:01:20.224Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "TSPARMCD",
+                    "operator": "equal_to",
+                    "value": "SNDCTVER"
+                },
+                {
+                    "name": "TSPARMCD",
+                    "operator": "is_not_unique_set",
+                    "value": [
+                        "DOMAIN"
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.343",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when there is more than record with TSPARMCD=SNDCTVER",
+        "Outcome": {
+            "Message": "Only one record with TSPARMCD=SNDCTVER is allowed"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "343",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Only a single record should be provided in the Trial Summary.",
+                                        "Document": "IG v3.1",
+                                        "Section": "7.6.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TS"
+                ]
+            }
+        }
+    },
+    "id": "fb9b961e-1b88-4837-a1f9-e272479ecf40"
+}

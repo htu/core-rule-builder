@@ -1,0 +1,89 @@
+{
+    "changed": "2022-09-28T11:42:28.642Z",
+    "content": "Check:\n  any:\n    - all:\n        - name: QNAM\n          operator: is_not_unique_set\n          value:\n            - USUBJID\n    - all:\n        - name: QNAM\n          operator: is_not_unique_set\n          value:\n            - POOLID\nCore:\n  Id: CDISC.SENDIG.254\n  Version: '1'\n  Status: Draft\nDescription: There may be only be one record in a SUPP-- dataset with the same QNAM\n  value within USUBJID or POOLID.\nOutcome:\n  Message: Duplicate value of the combination of USUBJID or POOLID with QNAM\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '254'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: supp--.xpt, Supplemental Qualifiers for (domain name)\n                  - Relationship Datasets. One record per supplemental qualifier per\n                  related parent domain record(s), Tabulation.\n                Document: IG v3.1\n                Item: Specification\n                Section: '8.3'\nScope:\n  Classes:\n    Include:\n      - RELATIONSHIP\n  Domains:\n    Include:\n      - SUPP--\n",
+    "created": "2022-09-28T11:40:40.107Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "any": [
+                {
+                    "all": [
+                        {
+                            "name": "QNAM",
+                            "operator": "is_not_unique_set",
+                            "value": [
+                                "USUBJID"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "name": "QNAM",
+                            "operator": "is_not_unique_set",
+                            "value": [
+                                "POOLID"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.254",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "There may be only be one record in a SUPP-- dataset with the same QNAM value within USUBJID or POOLID.",
+        "Outcome": {
+            "Message": "Duplicate value of the combination of USUBJID or POOLID with QNAM"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "254",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "supp--.xpt, Supplemental Qualifiers for (domain name) - Relationship Datasets. One record per supplemental qualifier per related parent domain record(s), Tabulation.",
+                                        "Document": "IG v3.1",
+                                        "Item": "Specification",
+                                        "Section": "8.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "RELATIONSHIP"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SUPP--"
+                ]
+            }
+        }
+    },
+    "id": "30156ac9-5ccd-4f16-bb66-9c20943bac49"
+}

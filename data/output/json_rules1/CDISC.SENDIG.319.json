@@ -1,0 +1,79 @@
+{
+    "changed": "2022-09-30T15:59:39.477Z",
+    "content": "Check:\n  all:\n    - name: --DTC\n      operator: empty\n    - name: --DY\n      operator: empty\n    - name: --NOMDY\n      operator: empty\nCore:\n  Id: CDISC.SENDIG.319\n  Version: '1'\n  Status: Draft\nDescription: If --DTC and --DY were not collected, --NOMDY must be populated.\nOutcome:\n  Message: --DTC and --DY are not populated, so --NOMDY must be populated\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '319'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Information about the time of collection for any observation\n                  is needed to identify the record. CLDTC is Expected, and the data\n                  will, in most cases, contain CLDTC, CLDY, or both. However, some\n                  studies (e.g., legacy studies) may not collect CLDTC or CLDY; in\n                  those cases, CLNOMDY must be populated.\n                Document: IG v3.1\n                Section: 6.3.3.1\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - LB\n      - MI\n",
+    "created": "2022-09-30T15:58:54.538Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--DTC",
+                    "operator": "empty"
+                },
+                {
+                    "name": "--DY",
+                    "operator": "empty"
+                },
+                {
+                    "name": "--NOMDY",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.319",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "If --DTC and --DY were not collected, --NOMDY must be populated.",
+        "Outcome": {
+            "Message": "--DTC and --DY are not populated, so --NOMDY must be populated"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "319",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Information about the time of collection for any observation is needed to identify the record. CLDTC is Expected, and the data will, in most cases, contain CLDTC, CLDY, or both. However, some studies (e.g., legacy studies) may not collect CLDTC or CLDY; in those cases, CLNOMDY must be populated.",
+                                        "Document": "IG v3.1",
+                                        "Section": "6.3.3.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "LB",
+                    "MI"
+                ]
+            }
+        }
+    },
+    "id": "f579eeda-10c8-43d6-bc4b-355ef2dda81a"
+}

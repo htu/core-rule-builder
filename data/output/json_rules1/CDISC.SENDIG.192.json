@@ -1,0 +1,115 @@
+{
+    "changed": "2022-11-02T13:38:36.106Z",
+    "content": "Check:\n  any:\n    - all:\n        - name: PCDTC\n          operator: non_empty\n        - name: USUBJID\n          operator: non_empty\n        - name: PCTESTCD\n          operator: is_not_unique_set\n          value:\n            - USUBJID\n            - PCSPEC\n            - PCDTC\n    - all:\n        - name: PCDTC\n          operator: non_empty\n        - name: POOLID\n          operator: non_empty\n        - name: PCTESTCD\n          operator: is_not_unique_set\n          value:\n            - POOLID\n            - PCSPEC\n            - PCDTC\nCore:\n  Id: CDISC.SENDIG.192\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when there is more than one record present for any particular\n  Pharmacokinetics Concentration, in the PC Domain, for a subject or pool on a particular\n  date.\nOutcome:\n  Message: The Pharmacokinetics Concentration test is not unique for this subject\n    or pool and specimen and date/time.\n  Output Variables:\n    - USUBJID\n    - POOLID\n    - PCTESTCD\n    - PCSPEC\n    - PCDTC\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '192'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: One record per test per specimen per observation time\n                  per subject or pool\n                Document: SENDIG v3.1\n                Section: 6.3.11\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - PC\n",
+    "created": "2022-11-02T13:38:36.106Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "any": [
+                {
+                    "all": [
+                        {
+                            "name": "PCDTC",
+                            "operator": "non_empty"
+                        },
+                        {
+                            "name": "USUBJID",
+                            "operator": "non_empty"
+                        },
+                        {
+                            "name": "PCTESTCD",
+                            "operator": "is_not_unique_set",
+                            "value": [
+                                "USUBJID",
+                                "PCSPEC",
+                                "PCDTC"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "name": "PCDTC",
+                            "operator": "non_empty"
+                        },
+                        {
+                            "name": "POOLID",
+                            "operator": "non_empty"
+                        },
+                        {
+                            "name": "PCTESTCD",
+                            "operator": "is_not_unique_set",
+                            "value": [
+                                "POOLID",
+                                "PCSPEC",
+                                "PCDTC"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.192",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when there is more than one record present for any particular Pharmacokinetics Concentration, in the PC Domain, for a subject or pool on a particular date.",
+        "Outcome": {
+            "Message": "The Pharmacokinetics Concentration test is not unique for this subject or pool and specimen and date/time.",
+            "Output_Variables": [
+                "USUBJID",
+                "POOLID",
+                "PCTESTCD",
+                "PCSPEC",
+                "PCDTC"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "192",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "One record per test per specimen per observation time per subject or pool",
+                                        "Document": "SENDIG v3.1",
+                                        "Section": "6.3.11"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "PC"
+                ]
+            }
+        }
+    },
+    "id": "f3f876c4-8afa-4b90-846b-081803f737f3"
+}

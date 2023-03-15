@@ -1,0 +1,91 @@
+{
+    "id": "3e614de2-fe82-4a03-bb56-7051ad99569e",
+    "changed": "2022-03-08T01:33:22Z",
+    "content": "Check:\n  all:\n    - name: --SCAT\n      operator: non_empty\n    - name: --CAT\n      operator: empty\nCore:\n  Id: CORE-000103\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --SCAT is not empty, but --CAT is empty.\nOutcome:\n  Message: --CAT should not be null when --SCAT is populated\n  Output Variables:\n    - --CAT\n    - --SCAT\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0429\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: A further grouping or classification of the category\n                  for the topic of the finding, event, or intervention. The category\n                  is in --CAT.\n                Document: Model v2.0\n                Item: --SCAT\n                Section: Interventions\n              - Cited Guidance: A further grouping or classification of the category\n                  for the topic of the finding, event, or intervention. The category\n                  is in --CAT.\n                Document: Model v2.0\n                Item: --SCAT\n                Section: Events\n              - Cited Guidance: A further grouping or classification of the category\n                  for the topic of the finding, event, or intervention. The category\n                  is in --CAT.\n                Document: Model v2.0\n                Item: --SCAT\n                Section: Findings\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-06T21:42:59Z",
+    "creator": {
+        "id": "d0881041-369e-4940-b721-5b456d12101b"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--SCAT",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "--CAT",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000103",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --SCAT is not empty, but --CAT is empty.",
+        "Outcome": {
+            "Message": "--CAT should not be null when --SCAT is populated",
+            "Output_Variables": [
+                "--CAT",
+                "--SCAT"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0429",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "A further grouping or classification of the category for the topic of the finding, event, or intervention. The category is in --CAT.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--SCAT",
+                                        "Section": "Interventions"
+                                    },
+                                    {
+                                        "Cited_Guidance": "A further grouping or classification of the category for the topic of the finding, event, or intervention. The category is in --CAT.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--SCAT",
+                                        "Section": "Events"
+                                    },
+                                    {
+                                        "Cited_Guidance": "A further grouping or classification of the category for the topic of the finding, event, or intervention. The category is in --CAT.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--SCAT",
+                                        "Section": "Findings"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

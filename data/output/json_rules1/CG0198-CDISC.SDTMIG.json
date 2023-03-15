@@ -1,0 +1,74 @@
+{
+    "id": "505c9635-a7a7-4812-9813-162d5af430dc",
+    "changed": "2022-02-15T21:28:07Z",
+    "content": "Check:\n  all:\n    - name:\n      operator:\n    - name:\n      operator:\nCore:\n  Id: CDISC.SDTMIG.CG0198\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when relationship represented in RELREC is not a collected\n  relationship\nOutcome:\n  Message: Relationship represented in RELREC is not a collected relationship\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0198\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Relationships represented in RELREC are collected\n                  relationships, either by explicit references or check boxes on the\n                  CRF, or by design of the CRF, such as vital signs captured during\n                  an exercise stress test.\n                Document: IG v3.4\n                Section: '8.2'\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - RELREC\n",
+    "created": "2021-11-06T07:35:49Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": null,
+                    "operator": null
+                },
+                {
+                    "name": null,
+                    "operator": null
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0198",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when relationship represented in RELREC is not a collected relationship",
+        "Outcome": {
+            "Message": "Relationship represented in RELREC is not a collected relationship"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0198",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Relationships represented in RELREC are collected relationships, either by explicit references or check boxes on the CRF, or by design of the CRF, such as vital signs captured during an exercise stress test.",
+                                        "Document": "IG v3.4",
+                                        "Section": "8.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "RELREC"
+                ]
+            }
+        }
+    }
+}

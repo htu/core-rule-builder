@@ -1,0 +1,129 @@
+{
+    "changed": "2022-09-14T12:35:56.254Z",
+    "content": "Check:\n  any:\n    - all:\n        - name: --DUR\n          operator: non_empty\n        - name: --DUR\n          operator: not_matches_regex\n          value: ^-?P([0-9]+Y)?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.?[0-9]+)?S)?)?$\n        - name: --DUR\n          operator: not_matches_regex\n          value: ^-?P([0-9]+W)$\n    - all:\n        - name: --EVLINT\n          operator: non_empty\n        - name: --EVLINT\n          operator: not_matches_regex\n          value: ^-?P([0-9]+Y)?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.?[0-9]+)?S)?)?$\n        - name: --EVLINT\n          operator: not_matches_regex\n          value: ^-?P([0-9]+W)$\n    - all:\n        - name: --ELTM\n          operator: non_empty\n        - name: --ELTM\n          operator: not_matches_regex\n          value: ^-?P([0-9]+Y)?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.?[0-9]+)?S)?)?$\n        - name: --ELTM\n          operator: not_matches_regex\n          value: ^-?P([0-9]+W)$\nCore:\n  Id: CDISC.SENDIG.59\n  Version: '1'\n  Status: Draft\nDescription: --EVLINT, --ELTM, --DUR must be in ISO 8601 duration format, including\n  the additional format that allows the representation of  \"negative\" intervals of\n  time.\nOutcome:\n  Message: --DUR, --EVLINT or --ELTM is not in ISO 8601 Duration format\n  Output Variables:\n    - USUBJID\n    - --ELTM\n    - --EVLINT\n    - --DUR\nRule Type: Record Data\nSensitivity: Term\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '59'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: A fixed offset from the date provided by the variable\n                  referenced in TDANCVAR. This is used when the timing of planned\n                  cycles does not start on the exact day referen--EVLINT, --ELTM,\n                  --DUR must be in ISO 8601 duration format, including the additional\n                  format that allows the representation of  \"negative\" intervals of\n                  time\n                Document: IG v3.1\n                Item: Specification\n                Section: 7.3.2\nScope:\n  Classes:\n    Include:\n      - INTERVENTIONS\n      - FINDINGS\n      - EVENTS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2022-09-12T17:25:56.880Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "any": [
+                {
+                    "all": [
+                        {
+                            "name": "--DUR",
+                            "operator": "non_empty"
+                        },
+                        {
+                            "name": "--DUR",
+                            "operator": "not_matches_regex",
+                            "value": "^-?P([0-9]+Y)?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.?[0-9]+)?S)?)?$"
+                        },
+                        {
+                            "name": "--DUR",
+                            "operator": "not_matches_regex",
+                            "value": "^-?P([0-9]+W)$"
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "name": "--EVLINT",
+                            "operator": "non_empty"
+                        },
+                        {
+                            "name": "--EVLINT",
+                            "operator": "not_matches_regex",
+                            "value": "^-?P([0-9]+Y)?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.?[0-9]+)?S)?)?$"
+                        },
+                        {
+                            "name": "--EVLINT",
+                            "operator": "not_matches_regex",
+                            "value": "^-?P([0-9]+W)$"
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "name": "--ELTM",
+                            "operator": "non_empty"
+                        },
+                        {
+                            "name": "--ELTM",
+                            "operator": "not_matches_regex",
+                            "value": "^-?P([0-9]+Y)?([0-9]+M)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\\.?[0-9]+)?S)?)?$"
+                        },
+                        {
+                            "name": "--ELTM",
+                            "operator": "not_matches_regex",
+                            "value": "^-?P([0-9]+W)$"
+                        }
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.59",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "--EVLINT, --ELTM, --DUR must be in ISO 8601 duration format, including the additional format that allows the representation of  \"negative\" intervals of time.",
+        "Outcome": {
+            "Message": "--DUR, --EVLINT or --ELTM is not in ISO 8601 Duration format",
+            "Output_Variables": [
+                "USUBJID",
+                "--ELTM",
+                "--EVLINT",
+                "--DUR"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Term",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "59",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "A fixed offset from the date provided by the variable referenced in TDANCVAR. This is used when the timing of planned cycles does not start on the exact day referen--EVLINT, --ELTM, --DUR must be in ISO 8601 duration format, including the additional format that allows the representation of  \"negative\" intervals of time",
+                                        "Document": "IG v3.1",
+                                        "Item": "Specification",
+                                        "Section": "7.3.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "INTERVENTIONS",
+                    "FINDINGS",
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    },
+    "id": "73218248-0ec9-49e4-b17f-94547e54913f"
+}

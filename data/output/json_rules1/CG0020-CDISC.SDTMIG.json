@@ -1,0 +1,87 @@
+{
+    "id": "a5541ebe-2ab9-444d-9d69-fb8c5ca842d0",
+    "changed": "2022-02-15T21:30:18Z",
+    "content": "Check:\n  all:\n    - name:\n      operator:\n    - name:\n      operator: is_not_contained_by\n      value:\n        - codelist\n    - name:\n      operator: not_equal_to\n      value: MULTIPLE\nCore:\n  Id: CDISC.SDTMIG.CG0020\n  Version: '1'\n  Status: Draft\nDescription: Trigger error if the value of a variable, which is associated with an\n  extensible codelist, is in the associated codelist or equal to 'MULTIPLE'\nOutcome:\n  Message: Variable is not equal to value within the extensible codelist, nor equal\n    to MULTIPLE\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0020\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Conformance with the SDTMIG Domain Models is minimally\n                  indicated by following SDTM-specified controlled terminology and\n                  format guidelines for variables, when provided\n                Document: IG v3.4\n                Section: 3.2.2\n              - Cited Guidance: The SDTM permits one value for each Qualifier variable\n                  per record. If multiple values exist (e.g., due to a \"Check all\n                  that apply\" instruction on a CRF), then the value for the Qualifier\n                  variable should be \"MULTIPLE\" and SUPP-- should be used to store\n                  the individual responses.\n                Document: IG v3.4\n                Section: 4.2.8.3\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-06T04:44:08Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": null,
+                    "operator": null
+                },
+                {
+                    "name": null,
+                    "operator": "is_not_contained_by",
+                    "value": [
+                        "codelist"
+                    ]
+                },
+                {
+                    "name": null,
+                    "operator": "not_equal_to",
+                    "value": "MULTIPLE"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0020",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error if the value of a variable, which is associated with an extensible codelist, is in the associated codelist or equal to 'MULTIPLE'",
+        "Outcome": {
+            "Message": "Variable is not equal to value within the extensible codelist, nor equal to MULTIPLE"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0020",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Conformance with the SDTMIG Domain Models is minimally indicated by following SDTM-specified controlled terminology and format guidelines for variables, when provided",
+                                        "Document": "IG v3.4",
+                                        "Section": "3.2.2"
+                                    },
+                                    {
+                                        "Cited_Guidance": "The SDTM permits one value for each Qualifier variable per record. If multiple values exist (e.g., due to a \"Check all that apply\" instruction on a CRF), then the value for the Qualifier variable should be \"MULTIPLE\" and SUPP-- should be used to store the individual responses.",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.2.8.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

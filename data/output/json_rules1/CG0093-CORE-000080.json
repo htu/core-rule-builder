@@ -1,0 +1,89 @@
+{
+    "id": "6ce3902a-79a0-4525-9de8-79adba40e2ca",
+    "changed": "2022-03-15T17:08:32Z",
+    "content": "Check:\n  all:\n    - name: --ELTM\n      operator: not_exists\n    - name: --TPTNUM\n      operator: not_exists\n    - name: --TPT\n      operator: not_exists\n    - name: --TPTREF\n      operator: exists\nCore:\n  Id: CORE-000080\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --ELTM, --TPTNUM, and --TPT are not present in dataset,\n  but --TPTREF is present.\nOutcome:\n  Message: --TPTREF is present when --ELTM, --TPTNUM, and --TPT are not present.\n  Output Variables:\n    - --TPTREF\n    - --ELTM\n    - --TPTNUM\n    - --TPT\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0093\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The description of a time point that acts as a fixed\n                  reference for a series of planned time points, used for study data\n                  tabulation.\u00a0Description of the fixed reference point referred to\n                  by --ELTM, --TPTNUM, --TPT, --STINT, and --ENINT.\n                Document: Model v2.0\n                Section: Timing\n                Item: --TPTREF\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-04T05:40:12Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--ELTM",
+                    "operator": "not_exists"
+                },
+                {
+                    "name": "--TPTNUM",
+                    "operator": "not_exists"
+                },
+                {
+                    "name": "--TPT",
+                    "operator": "not_exists"
+                },
+                {
+                    "name": "--TPTREF",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000080",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --ELTM, --TPTNUM, and --TPT are not present in dataset, but --TPTREF is present.",
+        "Outcome": {
+            "Message": "--TPTREF is present when --ELTM, --TPTNUM, and --TPT are not present.",
+            "Output_Variables": [
+                "--TPTREF",
+                "--ELTM",
+                "--TPTNUM",
+                "--TPT"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0093",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The description of a time point that acts as a fixed reference for a series of planned time points, used for study data tabulation.\u00a0Description of the fixed reference point referred to by --ELTM, --TPTNUM, --TPT, --STINT, and --ENINT.",
+                                        "Document": "Model v2.0",
+                                        "Section": "Timing",
+                                        "Item": "--TPTREF"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "id": "0afbcfd4-2899-4e07-a557-1fbe7eaea1b9",
+    "changed": "2022-02-15T21:11:47Z",
+    "content": "Check:\n  all:\n    - name:\n      operator:\n    - name: RSUBJID\n      operator: is_not_contained_by\n      value: POOLDEF.POOLID\nCore:\n  Id: CDISC.SDTMIG.CG0158\n  Version: '1'\n  Status: Draft\nDescription: Trigger error if relationship described is to a pool and RSUBJID is not\n  in POOLDEF.POOLID\nOutcome:\n  Message: RSUBJID is not in POOLDEF.POOLID\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0158\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: RSUBJID will be populated with the USUBJID of the\n                  related subject or the POOLID of the related pool.\n                Document: AP Guide v1.0\n                Item: Specification\n                Section: 2.1.1\nScope:\n  Classes:\n    Include:\n      - ASSOCIATE PERSONS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-29T06:15:49Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": null,
+                    "operator": null
+                },
+                {
+                    "name": "RSUBJID",
+                    "operator": "is_not_contained_by",
+                    "value": "POOLDEF.POOLID"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0158",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error if relationship described is to a pool and RSUBJID is not in POOLDEF.POOLID",
+        "Outcome": {
+            "Message": "RSUBJID is not in POOLDEF.POOLID"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0158",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "RSUBJID will be populated with the USUBJID of the related subject or the POOLID of the related pool.",
+                                        "Document": "AP Guide v1.0",
+                                        "Item": "Specification",
+                                        "Section": "2.1.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ASSOCIATE PERSONS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "id": "189d254e-bbc7-49b9-8773-28d9e8ea2600",
+    "changed": "2022-03-09T19:53:39Z",
+    "content": "Check:\n  all:\n    - name: ACTARM\n      operator: empty\n    - name: ARMNRS\n      operator: empty\nCore:\n  Id: CORE-000224\n  Version: '1'\n  Status: Published\nDescription: Raise an error when ACTARM is empty and ARMNRS is not completed.\nOutcome:\n  Message: ACTARM is empty, but ARMNRS is not completed.\n  Output Variables:\n    - ACTARM\n    - ARMNRS\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0515\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: With the exception of studies which use multi-stage\n                  Arm assignments, must be a value of ARM in the Trial Arms Dataset.\n                  If the subject was not assigned to an Arm or followed a course not\n                  described by any planned Arm, ACTARM is null and ARMNRS is populated.\n                Document: IG v3.4\n                Item: Specification\n                Section: '5.2'\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - DM\n",
+    "created": "2021-11-17T20:29:34Z",
+    "creator": {
+        "id": "02c3c969-4787-4d57-b164-e2851035c0e8"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "ACTARM",
+                    "operator": "empty"
+                },
+                {
+                    "name": "ARMNRS",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000224",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when ACTARM is empty and ARMNRS is not completed.",
+        "Outcome": {
+            "Message": "ACTARM is empty, but ARMNRS is not completed.",
+            "Output_Variables": [
+                "ACTARM",
+                "ARMNRS"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0515",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "With the exception of studies which use multi-stage Arm assignments, must be a value of ARM in the Trial Arms Dataset. If the subject was not assigned to an Arm or followed a course not described by any planned Arm, ACTARM is null and ARMNRS is populated.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Specification",
+                                        "Section": "5.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "DM"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "id": "fd07b8d5-aeef-4a6e-908a-858cd0f41e50",
+    "changed": "2022-03-21T12:23:06Z",
+    "content": "Check:\n  all:\n    - name: variable_label\n      operator: longer_than\n      value: 40\nCore:\n  Id: CORE-000019\n  Version: '1'\n  Status: Published\nDescription: Raise and error if Variable label length > 40 characters\nOutcome:\n  Message: Variable label length should be less than or equal to 40 characters\nRule Type: Variable Metadata Check\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0311\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Variable descriptive names (labels), up to 40 characters,\n                  should be provided as data variable labels for all variables, including\n                  Supplemental Qualifier variables.\n                Document: IG v3.4\n                Section: 4.2.1\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-09-29T06:56:24Z",
+    "creator": {
+        "id": "aa629571-d619-478f-970b-a71d04d96a44"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "variable_label",
+                    "operator": "longer_than",
+                    "value": 40
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000019",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise and error if Variable label length > 40 characters",
+        "Outcome": {
+            "Message": "Variable label length should be less than or equal to 40 characters"
+        },
+        "Rule_Type": "Variable Metadata Check",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0311",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Variable descriptive names (labels), up to 40 characters, should be provided as data variable labels for all variables, including Supplemental Qualifier variables.",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.2.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

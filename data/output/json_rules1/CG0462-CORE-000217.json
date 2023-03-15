@@ -1,0 +1,90 @@
+{
+    "id": "bee5d15f-440c-46b5-a5d7-98cb04fe8255",
+    "changed": "2022-03-22T10:25:07Z",
+    "content": "Check:\n  all:\n    - name: ECDOSE\n      operator: empty\n    - name: ECOCCUR\n      operator: not_equal_to\n      value: N\n    - name: ECSTAT\n      operator: empty\n    - name: ECDOSTXT\n      operator: empty\nCore:\n  Id: CORE-000217\n  Version: '1'\n  Status: Published\nDescription: Raise an error when ECDOSE is empty, ECOCCUR is not equal to 'N', ECSTAT\n  is empty and ECDOSTXT is empty\nOutcome:\n  Message: ECDOSE is empty, ECOCCUR is not equal to 'N' and ECSTAT is empty, but ECDOSTXT\n    is also empty.\n  Output Variables:\n    - ECDOSE\n    - ECOCCUR\n    - ECSTAT\n    - ECDOSTXT\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0462\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Assumption 4a[For example, if 0 tablets are taken\n                  within a timeframe or 0 mL infused at a visit, then ECOCCUR = 'N'\n                  is the standard representation of the collected doses not taken,\n                  not given, or missed. Dose amount variables (e.g., ECDOSE, ECDOSTXT)\n                  must not be set to zero (0) as an alternative method for indicating\n                  doses not taken, not given, or missed.]|Assumption 4b[Qualifiers\n                  that indicate dose amount (e.g., ECDOSE, ECDOSTXT) may be populated\n                  with positive (non-zero) values in cases where the sponsor feels\n                  it is necessary and/or appropriate to represent specific dose amounts\n                  not taken, not given, or missed.]\n                Document: IG v3.4\n                Item: Assumption 4a|Assumption 4b\n                Section: 6.1.3.2\nScope:\n  Classes:\n    Include:\n      - INTERVENTIONS\n  Domains:\n    Include:\n      - EC\n",
+    "created": "2021-11-09T09:27:03Z",
+    "creator": {
+        "id": "ae6dbbf3-4c9a-4149-b596-8183766167d4"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "ECDOSE",
+                    "operator": "empty"
+                },
+                {
+                    "name": "ECOCCUR",
+                    "operator": "not_equal_to",
+                    "value": "N"
+                },
+                {
+                    "name": "ECSTAT",
+                    "operator": "empty"
+                },
+                {
+                    "name": "ECDOSTXT",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000217",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when ECDOSE is empty, ECOCCUR is not equal to 'N', ECSTAT is empty and ECDOSTXT is empty",
+        "Outcome": {
+            "Message": "ECDOSE is empty, ECOCCUR is not equal to 'N' and ECSTAT is empty, but ECDOSTXT is also empty.",
+            "Output_Variables": [
+                "ECDOSE",
+                "ECOCCUR",
+                "ECSTAT",
+                "ECDOSTXT"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0462",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Assumption 4a[For example, if 0 tablets are taken within a timeframe or 0 mL infused at a visit, then ECOCCUR = 'N' is the standard representation of the collected doses not taken, not given, or missed. Dose amount variables (e.g., ECDOSE, ECDOSTXT) must not be set to zero (0) as an alternative method for indicating doses not taken, not given, or missed.]|Assumption 4b[Qualifiers that indicate dose amount (e.g., ECDOSE, ECDOSTXT) may be populated with positive (non-zero) values in cases where the sponsor feels it is necessary and/or appropriate to represent specific dose amounts not taken, not given, or missed.]",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 4a|Assumption 4b",
+                                        "Section": "6.1.3.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "EC"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "id": "b3e0cddd-8059-4d49-ad50-478369ed6a17",
+    "changed": "2022-02-15T21:30:37Z",
+    "content": "Check:\n  all:\n    - name:\n      operator:\n    - name: RACE\n      operator: not_equal_to\n      value: UNKNOWN\nCore:\n  Id: CDISC.SDTMIG.CG0525\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when Sponsor collects Other, specify and chooses to map\n  the value to SUPPDM, and NOT - RACE = 'OTHER' or RACE = 'MULTIPLE'\nOutcome:\n  Message: ???\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0525\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: If the race was collected via an \"Other, Specify\"\n                  field and the sponsor chooses not to map the value as described\n                  in the current FDA guidance (see CDISC Notes for RACE in the domain\n                  specification), then the value of RACE should be \u201cOTHER\u201d.\n                Document: IG v3.4\n                Item: Assumption 6\n                Section: '5.2'\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - DM\n",
+    "created": "2021-11-08T10:25:25Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": null,
+                    "operator": null
+                },
+                {
+                    "name": "RACE",
+                    "operator": "not_equal_to",
+                    "value": "UNKNOWN"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0525",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when Sponsor collects Other, specify and chooses to map the value to SUPPDM, and NOT - RACE = 'OTHER' or RACE = 'MULTIPLE'",
+        "Outcome": {
+            "Message": "???"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0525",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "If the race was collected via an \"Other, Specify\" field and the sponsor chooses not to map the value as described in the current FDA guidance (see CDISC Notes for RACE in the domain specification), then the value of RACE should be \u201cOTHER\u201d.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 6",
+                                        "Section": "5.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "DM"
+                ]
+            }
+        }
+    }
+}

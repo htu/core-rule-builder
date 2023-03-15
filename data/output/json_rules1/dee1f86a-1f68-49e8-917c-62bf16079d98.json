@@ -1,0 +1,16 @@
+{
+    "id": "dee1f86a-1f68-49e8-917c-62bf16079d98",
+    "changed": "2022-02-15T21:31:37Z",
+    "content": "CoreId: CORE.CXXXX\nVersion: '1'\nCore:\n  Status: Draft\n",
+    "created": "2022-01-24T17:17:59Z",
+    "creator": {
+        "id": "60554b80-3a72-4301-885e-a15b8d390997"
+    },
+    "json": {
+        "CoreId": "CORE.CXXXX",
+        "Version": "1",
+        "Core": {
+            "Status": "Draft"
+        }
+    }
+}

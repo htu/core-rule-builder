@@ -1,0 +1,89 @@
+{
+    "id": "e1a8af1c-c133-4212-b8e3-5ed4525284af",
+    "changed": "2022-03-30T15:26:48Z",
+    "content": "Check:\n  all:\n    - name: SSSTRESC\n      operator: equal_to\n      value: DEAD\n    - name: DTHFL\n      operator: not_equal_to\n      value: Y\nMatch Datasets:\n  - Name: DM\n    Keys:\n      - USUBJID\nCore:\n  Id: CORE-000008\n  Version: '1'\n  Status: Published\nDescription: Raise an error when DTHFL not equal to \"Y\" and SS.SSSTRESC = \"DEAD\".\nOutcome:\n  Message: DTHFL is not \"Y\", when SS.SSSTRESC equals \"DEAD\"\n  Output Variables:\n    - DTHFL\n    - SSSTRESC\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0132\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: 4.5.8[4. If the subject's survival status is \"dead\",\n                  the Demographics (DM) variables DTHDTC and DTHFL must be appropriately\n                  populated.]|6.3.11[For example, if a subject's survival status is\n                  \"DEAD\", the date of death must be stored in DM and within a final\n                  disposition record in DS.].\n                Document: IG v3.4\n                Item: Accounting for Long-Term Follow-up|Assumption 1\n                Section: 4.5.8|6.3.11\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - SS\n",
+    "created": "2021-09-26T22:00:57Z",
+    "creator": {
+        "id": "d0881041-369e-4940-b721-5b456d12101b"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "SSSTRESC",
+                    "operator": "equal_to",
+                    "value": "DEAD"
+                },
+                {
+                    "name": "DTHFL",
+                    "operator": "not_equal_to",
+                    "value": "Y"
+                }
+            ]
+        },
+        "Match_Datasets": [
+            {
+                "Name": "DM",
+                "Keys": [
+                    "USUBJID"
+                ]
+            }
+        ],
+        "Core": {
+            "Id": "CORE-000008",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when DTHFL not equal to \"Y\" and SS.SSSTRESC = \"DEAD\".",
+        "Outcome": {
+            "Message": "DTHFL is not \"Y\", when SS.SSSTRESC equals \"DEAD\"",
+            "Output_Variables": [
+                "DTHFL",
+                "SSSTRESC"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0132",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "4.5.8[4. If the subject's survival status is \"dead\", the Demographics (DM) variables DTHDTC and DTHFL must be appropriately populated.]|6.3.11[For example, if a subject's survival status is \"DEAD\", the date of death must be stored in DM and within a final disposition record in DS.].",
+                                        "Document": "IG v3.4",
+                                        "Item": "Accounting for Long-Term Follow-up|Assumption 1",
+                                        "Section": "4.5.8|6.3.11"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SS"
+                ]
+            }
+        }
+    }
+}

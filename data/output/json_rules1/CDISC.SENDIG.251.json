@@ -1,0 +1,82 @@
+{
+    "changed": "2022-09-28T11:17:48.447Z",
+    "content": "Check:\n  all:\n    - name: TSPARMCD\n      operator: equal_to\n      value: SRANDOM\n    - name: TSVAL\n      operator: not_equal_to\n      value: Y\n    - name: TSVAL\n      operator: not_equal_to\n      value: N\nCore:\n  Id: CDISC.SENDIG.251\n  Version: '1'\n  Status: Draft\nDescription: When TSPARMCD=SRANDOM, the value of TSVAL must be either \"Y\" or \"N\".\nOutcome:\n  Message: The value of TSVAL is not \"Y\" or \"N\" for TSPARMCD=SRANDOM\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '251'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: TSVAL values associated with TSPARMCD=SRANDOM would\n                  be \"Y\" or \"N\".\n                Document: IG v3.1\n                Item: Specification\n                Section: 7.6.3\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - TS\n",
+    "created": "2022-09-28T11:15:23.951Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "TSPARMCD",
+                    "operator": "equal_to",
+                    "value": "SRANDOM"
+                },
+                {
+                    "name": "TSVAL",
+                    "operator": "not_equal_to",
+                    "value": "Y"
+                },
+                {
+                    "name": "TSVAL",
+                    "operator": "not_equal_to",
+                    "value": "N"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.251",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "When TSPARMCD=SRANDOM, the value of TSVAL must be either \"Y\" or \"N\".",
+        "Outcome": {
+            "Message": "The value of TSVAL is not \"Y\" or \"N\" for TSPARMCD=SRANDOM"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "251",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "TSVAL values associated with TSPARMCD=SRANDOM would be \"Y\" or \"N\".",
+                                        "Document": "IG v3.1",
+                                        "Item": "Specification",
+                                        "Section": "7.6.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TS"
+                ]
+            }
+        }
+    },
+    "id": "5745fbff-d779-427f-89e9-2d35106b9732"
+}

@@ -1,0 +1,73 @@
+{
+    "changed": "2022-09-13T09:50:40.092Z",
+    "content": "Check:\n  all:\n    - name: --DTC\n      operator: invalid_date\nCore:\n  Id: CDISC.SENDIG.66\n  Version: '1'\n  Status: Draft\nDescription: Variables that include dates (--DTC) are required to be presented according\n  to the international standard ISO 8601 date or date/time format\nOutcome:\n  Message: Variable value is not in ISO 8601 date / datetime format\n  Output Variables:\n    - --DTC\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: '66'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The SENDIG requires dates and times of day to be stored\n                  according to the international standard ISO 8601 (http://www.iso.org).\n                Document: IG v3.1\n                Section: '4.4'\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2022-09-13T09:35:46.929Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--DTC",
+                    "operator": "invalid_date"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.66",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Variables that include dates (--DTC) are required to be presented according to the international standard ISO 8601 date or date/time format",
+        "Outcome": {
+            "Message": "Variable value is not in ISO 8601 date / datetime format",
+            "Output_Variables": [
+                "--DTC"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "66",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The SENDIG requires dates and times of day to be stored according to the international standard ISO 8601 (http://www.iso.org).",
+                                        "Document": "IG v3.1",
+                                        "Section": "4.4"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    },
+    "id": "2ea55c8c-ebeb-4884-a5a5-ae44db30396a"
+}

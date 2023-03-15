@@ -1,0 +1,93 @@
+{
+    "id": "74476652-c816-4224-ba54-eb5d8ff1d864",
+    "changed": "2022-03-15T17:00:22Z",
+    "content": "Check:\n  all:\n    - name: --PRESP\n      operator: equal_to\n      value: Y\n    - name: --STAT\n      operator: empty\n    - name: --OCCUR\n      operator: exists\n    - name: --OCCUR\n      operator: empty\nCore:\n  Id: CORE-000018\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --PRESP is equal to \"Y\", --STAT is blank, --OCCUR\n  is present in dataset and --OCCUR is blank\nOutcome:\n  Message: --OCCUR is blank when --PRESP is equal to \"Y\" and --STAT is not provided.\n  Output Variables:\n    - --PRESP\n    - --OCCUR\n    - --STAT\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0086\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Events[--PRESP][An indication that the event was prospectively\n                  stated or detailed on the CRF. Values should be \"Y\" or null.]|Events|[--OCCUR][An\n                  indication as to whether a prespecified event has occurred.]|Events[--STAT][Used\n                  to indicate when a question about the occurrence of a prespecified\n                  event was not answered. Should be null or have a value of \"NOT DONE\".]|Interventions[--PRESP][An\n                  indication that the intervention was prospectively stated or detailed\n                  on the CRF. Values should be \"Y\" or null.]|Interventions[--OCCUR][An\n                  indication as to whether a prespecified intervention has occurred.]|Interventions[--STAT][Used\n                  to indicate when a question about the occurrence of a prespecified\n                  intervention was not answered. Should be null or have a value of\n                  \"NOT DONE\".]\n                Document: Model v2.0\n                Item: --PRESP|--OCCUR|--STAT\n                Section: Events|Interventions\nScope:\n  Classes:\n    Include:\n      - EVENTS\n      - INTERVENTIONS\n  Domains:\n    Exclude:\n      - AE\n      - DS\n      - DV\n      - EX\n",
+    "created": "2021-09-29T05:30:53Z",
+    "creator": {
+        "id": "fac95de6-5815-411a-a579-ddbc7ee4b97a"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--PRESP",
+                    "operator": "equal_to",
+                    "value": "Y"
+                },
+                {
+                    "name": "--STAT",
+                    "operator": "empty"
+                },
+                {
+                    "name": "--OCCUR",
+                    "operator": "exists"
+                },
+                {
+                    "name": "--OCCUR",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000018",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --PRESP is equal to \"Y\", --STAT is blank, --OCCUR is present in dataset and --OCCUR is blank",
+        "Outcome": {
+            "Message": "--OCCUR is blank when --PRESP is equal to \"Y\" and --STAT is not provided.",
+            "Output_Variables": [
+                "--PRESP",
+                "--OCCUR",
+                "--STAT"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0086",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Events[--PRESP][An indication that the event was prospectively stated or detailed on the CRF. Values should be \"Y\" or null.]|Events|[--OCCUR][An indication as to whether a prespecified event has occurred.]|Events[--STAT][Used to indicate when a question about the occurrence of a prespecified event was not answered. Should be null or have a value of \"NOT DONE\".]|Interventions[--PRESP][An indication that the intervention was prospectively stated or detailed on the CRF. Values should be \"Y\" or null.]|Interventions[--OCCUR][An indication as to whether a prespecified intervention has occurred.]|Interventions[--STAT][Used to indicate when a question about the occurrence of a prespecified intervention was not answered. Should be null or have a value of \"NOT DONE\".]",
+                                        "Document": "Model v2.0",
+                                        "Item": "--PRESP|--OCCUR|--STAT",
+                                        "Section": "Events|Interventions"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS",
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Exclude": [
+                    "AE",
+                    "DS",
+                    "DV",
+                    "EX"
+                ]
+            }
+        }
+    }
+}

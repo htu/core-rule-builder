@@ -1,0 +1,130 @@
+{
+    "id": "cbb46969-6523-49fc-b7f6-1640b489865b",
+    "changed": "2023-03-02T16:01:50.821Z",
+    "content": "Check:\n  all:\n    - name: RFSTDTC\n      operator: empty\n    - name: --STRF\n      operator: non_empty\nCore:\n  Id: CDISC.SDTMIG.CG0226\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when RFSTDTC in DM is empty and --STRF is not empty.\nMatch Datasets:\n  - Name: DM\n    Keys:\n      - USUBJID\nOutcome:\n  Message: RFSTDTC in DM dataset is empty but --STRF is completed.\n  Output Variables:\n    - --STRF\nRule Type: Record Data\nSensitivity: Record\nExecutability: Fully Executable\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0226\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The characterization of the start of an observation\n                  relative to the study reference period.\u00a0 The sponsor-defined reference\n                  period is a continuous period of time defined by a discrete starting  point\n                  and a discrete ending point represented by RFSTDTC and RFENDTC in\n                  Demographics.\n                Document: Model 2.0\n                Item: --STRF\n                Section: Timing\n      - Name: SDTMIG\n        Version: '3.3'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0226\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Identifies the start of the observation as being before,\n                  during, or after   the sponsor-defined reference period.\u00a0 The sponsor-defined\n                  reference period is a continuous period of time defined by a discrete\n                  starting point and a discrete ending point represented by RFSTDTC\n                  and RFENDTC in Demographics.\n                Document: Model 1.7\n                Item: 'Table 2.2.5.1: --STRF'\n                Section: 2.2.5\n      - Name: SDTMIG\n        Version: '3.2'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0226\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Identifies the start of the observation as being before,\n                  during, or after the sponsor-defined reference period.\u00a0 The sponsor-defined\n                  reference period is a continuous period of time defined by a discrete\n                  starting point and a discrete ending point represented by RFSTDTC\n                  and RFENDTC in Demographics.\n                Document: Model 1.4\n                Section: 2.2.5\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Exclude:\n      - DM\n",
+    "created": "2021-10-28T13:14:33Z",
+    "creator": {
+        "id": "02c3c969-4787-4d57-b164-e2851035c0e8"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "RFSTDTC",
+                    "operator": "empty"
+                },
+                {
+                    "name": "--STRF",
+                    "operator": "non_empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0226",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when RFSTDTC in DM is empty and --STRF is not empty.",
+        "Outcome": {
+            "Message": "RFSTDTC in DM dataset is empty but --STRF is completed.",
+            "Output_Variables": [
+                "--STRF"
+            ]
+        },
+        "Sensitivity": "Record",
+        "Executability": "Fully Executable",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Document": "Model 2.0",
+                                        "Item": "--STRF",
+                                        "Section": "Timing",
+                                        "Cited_Guidance": "The characterization of the start of an observation relative to the study reference period.\u00a0 The sponsor-defined reference period is a continuous period of time defined by a discrete starting  point and a discrete ending point represented by RFSTDTC and RFENDTC in Demographics."
+                                    }
+                                ],
+                                "Rule_Identifier": {
+                                    "Id": "CG0226",
+                                    "Version": "1"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.3",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Document": "Model 1.7",
+                                        "Item": "Table 2.2.5.1: --STRF",
+                                        "Section": "2.2.5",
+                                        "Cited_Guidance": "Identifies the start of the observation as being before, during, or after   the sponsor-defined reference period.\u00a0 The sponsor-defined reference period is a continuous period of time defined by a discrete starting point and a discrete ending point represented by RFSTDTC and RFENDTC in Demographics."
+                                    }
+                                ],
+                                "Rule_Identifier": {
+                                    "Id": "CG0226",
+                                    "Version": "1"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.2",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Document": "Model 1.4",
+                                        "Section": "2.2.5",
+                                        "Cited_Guidance": "Identifies the start of the observation as being before, during, or after the sponsor-defined reference period.\u00a0 The sponsor-defined reference period is a continuous period of time defined by a discrete starting point and a discrete ending point represented by RFSTDTC and RFENDTC in Demographics."
+                                    }
+                                ],
+                                "Rule_Identifier": {
+                                    "Id": "CG0226",
+                                    "Version": "1"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Exclude": [
+                    "DM"
+                ]
+            }
+        },
+        "Match_Datasets": [
+            {
+                "Name": "DM",
+                "Keys": [
+                    "USUBJID"
+                ]
+            }
+        ],
+        "Rule_Type": "Record Data"
+    }
+}

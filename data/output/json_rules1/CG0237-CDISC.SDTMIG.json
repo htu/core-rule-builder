@@ -1,0 +1,75 @@
+{
+    "id": "fae8bcfc-8522-4090-9f83-3b34632c5aa6",
+    "changed": "2022-07-17T04:54:31Z",
+    "content": "Check:\n  all:\n    - name: --DTC\n      operator: exists\n    - name:\n      operator:\nCore:\n  Id: CDISC.SDTMIG.CG0237\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when --DTC is present and not populated with the date/time\n  of recording/data acquisition\nOutcome:\n  Message: --DTC is present in dataset and is not populated with the date/time of\n    recording/data acquisition\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0237\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: For any domain based on the Findings general observation\n                  class, such as lab tests which are based on a specimen, the collection\n                  date is likely to be tied to when the specimen or source of the\n                  finding was captured, not necessarily when the data was recorded.\n                  in order to ensure that the critical timing information is always\n                  represented in the same variable, the --DTC variable is used to\n                  represent the time of specimen collection.\n                Document: IG v3.4\n                Section: 4.4.8\nScope:\n  Classes:\n    Include:\n      - EVENTS\n      - INTERVENTIONS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-30T10:30:08Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--DTC",
+                    "operator": "exists"
+                },
+                {
+                    "name": null,
+                    "operator": null
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0237",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when --DTC is present and not populated with the date/time of recording/data acquisition",
+        "Outcome": {
+            "Message": "--DTC is present in dataset and is not populated with the date/time of recording/data acquisition"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0237",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "For any domain based on the Findings general observation class, such as lab tests which are based on a specimen, the collection date is likely to be tied to when the specimen or source of the finding was captured, not necessarily when the data was recorded. in order to ensure that the critical timing information is always represented in the same variable, the --DTC variable is used to represent the time of specimen collection.",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.4.8"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS",
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

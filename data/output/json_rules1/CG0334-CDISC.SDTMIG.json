@@ -1,0 +1,78 @@
+{
+    "id": "82e54895-8999-49e7-8443-0f18cd7d473c",
+    "changed": "2022-07-17T11:05:42Z",
+    "content": "Check:\n  all:\n    #Condition: Dataset name begins with 'SUPP'\r\n    - name: dataset_name\n      operator: starts_with\n      value: SUPP\n    #Rule: Value of RDOMAIN equals characters 5 and 6 of the dataset name\r\n    - name: dataset_name\n      operator: ends_with #Not right 0 if this were 8 characters, we still need to only look at 5-6\r\n      suffix: 2\n      value: RDOMAIN\nCore:\n  Id: CDISC.SDTMIG.CG0334\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when RDOMAIN does not match characters 5 and 6 of the Supplementary\n  dataset name\nOutcome:\n  Message: RDOMAIN does not match characters 5 and 6 of the dataset name\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0334\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Supplemental Qualifier datasets for split domains\n                  would also be split. The nomenclature would include the additional\n                  one-to-two characters used to identify the split dataset (e.g.,\n                  SUPPQS36, SUPPFACM). The value of RDOMAIN in the SUPP-- datasets\n                  would be the two-character domain code (e.g., QS, FA).\n                Document: IG v3.4\n                Item: '7'\n                Section: 4.1.7\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - SUPP\n",
+    "created": "2021-11-06T08:35:16Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "dataset_name",
+                    "operator": "starts_with",
+                    "value": "SUPP"
+                },
+                {
+                    "name": "dataset_name",
+                    "operator": "ends_with",
+                    "suffix": 2,
+                    "value": "RDOMAIN"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0334",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when RDOMAIN does not match characters 5 and 6 of the Supplementary dataset name",
+        "Outcome": {
+            "Message": "RDOMAIN does not match characters 5 and 6 of the dataset name"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0334",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Supplemental Qualifier datasets for split domains would also be split. The nomenclature would include the additional one-to-two characters used to identify the split dataset (e.g., SUPPQS36, SUPPFACM). The value of RDOMAIN in the SUPP-- datasets would be the two-character domain code (e.g., QS, FA).",
+                                        "Document": "IG v3.4",
+                                        "Item": "7",
+                                        "Section": "4.1.7"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SUPP"
+                ]
+            }
+        }
+    }
+}

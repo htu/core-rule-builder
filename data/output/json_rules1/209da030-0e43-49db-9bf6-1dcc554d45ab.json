@@ -1,0 +1,14 @@
+{
+    "id": "209da030-0e43-49db-9bf6-1dcc554d45ab",
+    "changed": "2022-02-11T16:04:50Z",
+    "content": "Core:\n  Status: Draft\n",
+    "created": "2021-09-30T13:57:47Z",
+    "creator": {
+        "id": "2b4aeb2c-5005-4368-8540-ce8c88561cee"
+    },
+    "json": {
+        "Core": {
+            "Status": "Draft"
+        }
+    }
+}

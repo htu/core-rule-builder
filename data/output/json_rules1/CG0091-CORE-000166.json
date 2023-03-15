@@ -1,0 +1,79 @@
+{
+    "id": "c62a0287-c978-4951-8411-f71d56c59a97",
+    "changed": "2022-03-14T20:08:31Z",
+    "content": "Check:\n  all:\n    - name: --TPTNUM\n      operator: exists\n    - name: --TPT\n      operator: not_exists\nCore:\n  Id: CORE-000166\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --TPT is not present but --TPTNUM is present in dataset.\nOutcome:\n  Message: --TPT is not present when --TPTNUM is present in a dataset\n  Output Variables:\n    - --TPTNUM\n    - --TPT\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0091\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: '\"The description of the time when a protocol-defined\n                  activity is planned to occur, used for study data tabulation.\"'\n                Document: Model v2.0\n                Section: Timing\n                Item: --TPT\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-19T14:23:53Z",
+    "creator": {
+        "id": "57474fac-237e-4693-bb37-7826b02737da"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--TPTNUM",
+                    "operator": "exists"
+                },
+                {
+                    "name": "--TPT",
+                    "operator": "not_exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000166",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --TPT is not present but --TPTNUM is present in dataset.",
+        "Outcome": {
+            "Message": "--TPT is not present when --TPTNUM is present in a dataset",
+            "Output_Variables": [
+                "--TPTNUM",
+                "--TPT"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0091",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "\"The description of the time when a protocol-defined activity is planned to occur, used for study data tabulation.\"",
+                                        "Document": "Model v2.0",
+                                        "Section": "Timing",
+                                        "Item": "--TPT"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

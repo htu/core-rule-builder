@@ -1,0 +1,168 @@
+{
+    "id": "65bf562f-d6e1-4d05-aa8e-65bfab9cb640",
+    "changed": "2023-02-01T14:56:30.457Z",
+    "content": "Check:\n  all:\n    - name: --TOXGR\n      operator: not_exists\n    - name: --TOX           # checking failure criteria; when --TOXGR is not present, but --TOX is, there's a problem because --TOX is only supposed to be there to qualify --TOXGR\n      operator: exists\nCore:\n  Id: CORE-000023\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --TOXGR is not present in dataset, but --TOX is present\nOutcome:\n  Message: --TOX present in dataset even though --TOXGR is not\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0084\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Variable Qualifier of --TOXGR\n                Document: Model v2.0\n                Section: Events\n                Item: --TOX\n              - Cited Guidance: Variable Qualifier of --TOXGR\n                Document: Model v2.0\n                Section: Findings\n                Item: --TOX\n              - Cited Guidance: Variable Qualifier of --TOXGR\n                Document: Model v1.7\n                Section: 2.2.2\n              - Cited Guidance: Variable Qualifier of --TOXGR\n                Document: Model v1.4\n                Section: 2.2.2\n      - Name: SDTMIG\n        Version: '3.3'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0084\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Variable Qualifier of --TOXGR\n                Document: Model v2.0\n                Section: Events\n                Item: --TOX\n              - Cited Guidance: Variable Qualifier of --TOXGR\n                Document: Model v2.0\n                Section: Findings\n                Item: --TOX\n              - Cited Guidance: Variable Qualifier of --TOXGR\n                Document: Model v1.7\n                Section: 2.2.2\n              - Cited Guidance: Variable Qualifier of --TOXGR\n                Document: Model v1.4\n                Section: 2.2.2\n      - Name: SDTMIG\n        Version: '3.2'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0084\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Variable Qualifier of --TOXGR\n                Document: Model v2.0\n                Section: Events\n                Item: --TOX\n              - Cited Guidance: Variable Qualifier of --TOXGR\n                Document: Model v2.0\n                Section: Findings\n                Item: --TOX\n              - Cited Guidance: Variable Qualifier of --TOXGR\n                Document: Model v1.7\n                Section: 2.2.2\n              - Cited Guidance: Variable Qualifier of --TOXGR\n                Document: Model v1.4\n                Section: 2.2.2\nScope:\n  Classes:\n    Include:\n      - EVENTS\n      - FINDINGS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-09-29T16:42:31Z",
+    "creator": {
+        "id": "974960b0-eff4-4322-b188-3e73c20b47d0"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--TOXGR",
+                    "operator": "not_exists"
+                },
+                {
+                    "name": "--TOX",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000023",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --TOXGR is not present in dataset, but --TOX is present",
+        "Outcome": {
+            "Message": "--TOX present in dataset even though --TOXGR is not"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0084",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Variable Qualifier of --TOXGR",
+                                        "Document": "Model v2.0",
+                                        "Section": "Events",
+                                        "Item": "--TOX"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Variable Qualifier of --TOXGR",
+                                        "Document": "Model v2.0",
+                                        "Section": "Findings",
+                                        "Item": "--TOX"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Variable Qualifier of --TOXGR",
+                                        "Document": "Model v1.7",
+                                        "Section": "2.2.2"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Variable Qualifier of --TOXGR",
+                                        "Document": "Model v1.4",
+                                        "Section": "2.2.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.3",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0084",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Variable Qualifier of --TOXGR",
+                                        "Document": "Model v2.0",
+                                        "Section": "Events",
+                                        "Item": "--TOX"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Variable Qualifier of --TOXGR",
+                                        "Document": "Model v2.0",
+                                        "Section": "Findings",
+                                        "Item": "--TOX"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Variable Qualifier of --TOXGR",
+                                        "Document": "Model v1.7",
+                                        "Section": "2.2.2"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Variable Qualifier of --TOXGR",
+                                        "Document": "Model v1.4",
+                                        "Section": "2.2.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.2",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0084",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Variable Qualifier of --TOXGR",
+                                        "Document": "Model v2.0",
+                                        "Section": "Events",
+                                        "Item": "--TOX"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Variable Qualifier of --TOXGR",
+                                        "Document": "Model v2.0",
+                                        "Section": "Findings",
+                                        "Item": "--TOX"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Variable Qualifier of --TOXGR",
+                                        "Document": "Model v1.7",
+                                        "Section": "2.2.2"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Variable Qualifier of --TOXGR",
+                                        "Document": "Model v1.4",
+                                        "Section": "2.2.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS",
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "id": "1dc589f7-033c-4603-bbff-8636c1274a62",
+    "changed": "2022-02-15T21:12:03Z",
+    "content": "Check:\n  all:\n    - name:\n      operator:\n    - name:\n      operator:\nCore:\n  Id: CDISC.SDTMIG.CG0461\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when --HLGT is not on the path to MedDRA primary system\n  organ class\nOutcome:\n  Message: --HLGT is not on the path to MedDRA primary system organ class\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0461\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The high-level term code from the primary hierarchy\n                  assigned to the event from MedDRA.\n                Document: Model v2.0\n                Item: --HLTCD\n                Section: Events\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - AE\n      - CE\n      - MH\n",
+    "created": "2021-11-08T10:23:34Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": null,
+                    "operator": null
+                },
+                {
+                    "name": null,
+                    "operator": null
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0461",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when --HLGT is not on the path to MedDRA primary system organ class",
+        "Outcome": {
+            "Message": "--HLGT is not on the path to MedDRA primary system organ class"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0461",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The high-level term code from the primary hierarchy assigned to the event from MedDRA.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--HLTCD",
+                                        "Section": "Events"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "AE",
+                    "CE",
+                    "MH"
+                ]
+            }
+        }
+    }
+}

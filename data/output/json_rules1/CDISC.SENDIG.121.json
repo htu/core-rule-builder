@@ -1,0 +1,80 @@
+{
+    "changed": "2022-09-16T09:29:43.191Z",
+    "content": "Check:\n  all:\n    - name: IDVAR\n      operator: is_not_valid_relationship\n      context: RDOMAIN\n      value: IDVARVAL\nCore:\n  Id: CDISC.SENDIG.121\n  Version: '1'\n  Status: Draft\nDescription: When IDVAR and IDVARVAL are populated those referenced values must exist\n  in the parent domain identified in RDOMAIN.\nOutcome:\n  Message: IDVAR does not represent a variable present in the dataset identified in\n    RDOMAIN\n  Output Variables:\n    - RDOMAIN\n    - USUBJID\n    - IDVAR\n    - IDVARVAL\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '121'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Related to a specific parent record or group of parent\n                  records, in which case the value of the variable RDOMAIN is set\n                  to the DOMAIN code of the parent record(s), and the variables IDVAR\n                  and IDVARVAL are populated with the key variable name and value\n                  of the parent record(s). Assumptions for populating IDVAR and IDVARVAL\n                  are further described in Section 8.2.\n                Document: IG v.3.1\n                Item: Specification\n                Section: 5.2.1.1\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - CO\n      - RELREC\n",
+    "created": "2022-09-16T09:29:43.191Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "IDVAR",
+                    "operator": "is_not_valid_relationship",
+                    "context": "RDOMAIN",
+                    "value": "IDVARVAL"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.121",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "When IDVAR and IDVARVAL are populated those referenced values must exist in the parent domain identified in RDOMAIN.",
+        "Outcome": {
+            "Message": "IDVAR does not represent a variable present in the dataset identified in RDOMAIN",
+            "Output_Variables": [
+                "RDOMAIN",
+                "USUBJID",
+                "IDVAR",
+                "IDVARVAL"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "121",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Related to a specific parent record or group of parent records, in which case the value of the variable RDOMAIN is set to the DOMAIN code of the parent record(s), and the variables IDVAR and IDVARVAL are populated with the key variable name and value of the parent record(s). Assumptions for populating IDVAR and IDVARVAL are further described in Section 8.2.",
+                                        "Document": "IG v.3.1",
+                                        "Item": "Specification",
+                                        "Section": "5.2.1.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "CO",
+                    "RELREC"
+                ]
+            }
+        }
+    },
+    "id": "0ee81045-1ac3-40dd-8e0a-b929855a9e5a"
+}

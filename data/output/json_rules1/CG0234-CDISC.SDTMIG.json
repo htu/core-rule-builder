@@ -1,0 +1,99 @@
+{
+    "id": "405bea03-36b3-4b74-affe-22a3f2984bf9",
+    "changed": "2022-02-15T21:27:39Z",
+    "content": "Check:\n  all:\n    - name: --ENTPT\n      operator: non_empty\n    - name: --ENRTPT\n      operator: is_contained_by\n      value:\n        - BEFORE\n        - COINCIDENT\n        - ONGOING\n        - AFTER\n        - UNKNOWN\nCore:\n  Id: CDISC.SDTMIG.CG0234\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when --ENRTPT is not in ('BEFORE', 'COINCIDENT', 'ONGOING',\n  'AFTER', 'UNKNOWN')\nOutcome:\n  Message: --ENRTPT is not in ('BEFORE', 'COINCIDENT', 'ONGOING', 'AFTER', 'UNKNOWN')\n  Output Variables:\n    - --ENTPT\n    - --ENRTPT\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0234\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: \"If the reference time point corresponds to the date\\\n                  \\ of collection or assessment: Start values:  an observation can\\\n                  \\ start BEFORE that time point, can start COINCIDENT with that time\\\n                  \\ point, or it is  unknown (U) when it started. End values: an observation\\\n                  \\ can end BEFORE that time point, can end COINCIDENT  with that\\\n                  \\ time point, can be known that it didn't end but was ONGOING, or\\\n                  \\ it is unknown (U) at all when it  ended or if it was ongoing.\\\n                  \\ AFTER is not a valid value in this case because it would represent\\\n                  \\ an event  after the date of collection. If the reference time\\\n                  \\ point is prior to the date of collection or assessment: Start\\\n                  \\ values: an  observation can start BEFORE the reference point,\\\n                  \\ can start COINCIDENT with the reference point, can start  AFTER\\\n                  \\ the reference point, or it may not be known (U) when it started.\\\n                  \\ End values: an observation can end  BEFORE the reference point,\\\n                  \\ can end COINCIDENT with the reference point, can end AFTER the\\\n                  \\ reference point,  can be known that it didn't end but was ONGOING,\\\n                  \\ or it is unknown (U) when it ended or if it was ongoing.\"\n                Document: IG v3.4\n                Section: 4.4.7\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0235\n              Version: '1'\n            Version: '2.0'\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-16T11:24:50Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--ENTPT",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "--ENRTPT",
+                    "operator": "is_contained_by",
+                    "value": [
+                        "BEFORE",
+                        "COINCIDENT",
+                        "ONGOING",
+                        "AFTER",
+                        "UNKNOWN"
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0234",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when --ENRTPT is not in ('BEFORE', 'COINCIDENT', 'ONGOING', 'AFTER', 'UNKNOWN')",
+        "Outcome": {
+            "Message": "--ENRTPT is not in ('BEFORE', 'COINCIDENT', 'ONGOING', 'AFTER', 'UNKNOWN')",
+            "Output_Variables": [
+                "--ENTPT",
+                "--ENRTPT"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0234",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "If the reference time point corresponds to the date of collection or assessment: Start values:  an observation can start BEFORE that time point, can start COINCIDENT with that time point, or it is  unknown (U) when it started. End values: an observation can end BEFORE that time point, can end COINCIDENT  with that time point, can be known that it didn't end but was ONGOING, or it is unknown (U) at all when it  ended or if it was ongoing. AFTER is not a valid value in this case because it would represent an event  after the date of collection. If the reference time point is prior to the date of collection or assessment: Start values: an  observation can start BEFORE the reference point, can start COINCIDENT with the reference point, can start  AFTER the reference point, or it may not be known (U) when it started. End values: an observation can end  BEFORE the reference point, can end COINCIDENT with the reference point, can end AFTER the reference point,  can be known that it didn't end but was ONGOING, or it is unknown (U) when it ended or if it was ongoing.",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.4.7"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0235",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

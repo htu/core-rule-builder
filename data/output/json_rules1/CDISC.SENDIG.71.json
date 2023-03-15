@@ -1,0 +1,83 @@
+{
+    "changed": "2022-09-14T15:22:40.518Z",
+    "content": "Check:\n  all:\n    - name: --DY\n      operator: empty\n    - name: --STDY\n      operator: empty\n    - name: --ENDY\n      operator: empty\nCore:\n  Id: CDISC.SENDIG.71\n  Version: '1'\n  Status: Draft\nDescription: One of --DY, --STDY or --ENDY must be populated\nOutcome:\n  Message: One of --DY, --STDY or --ENDY must be populated\n  Output Variables:\n    - --DY\n    - --STDY\n    - --ENDY\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '71'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The Permissible Study Day variables (--DY, --STDY,\n                  and --ENDY) describe the relative day of the observation starting\n                  with the reference date as Day 1.\n                Document: IG v3.1\n                Section: 4.4.4\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2022-09-14T13:55:16.927Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--DY",
+                    "operator": "empty"
+                },
+                {
+                    "name": "--STDY",
+                    "operator": "empty"
+                },
+                {
+                    "name": "--ENDY",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.71",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "One of --DY, --STDY or --ENDY must be populated",
+        "Outcome": {
+            "Message": "One of --DY, --STDY or --ENDY must be populated",
+            "Output_Variables": [
+                "--DY",
+                "--STDY",
+                "--ENDY"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "71",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The Permissible Study Day variables (--DY, --STDY, and --ENDY) describe the relative day of the observation starting with the reference date as Day 1.",
+                                        "Document": "IG v3.1",
+                                        "Section": "4.4.4"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    },
+    "id": "cf0abf2f-b61e-4dc5-b5f7-00e7a5205429"
+}

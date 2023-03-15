@@ -1,0 +1,123 @@
+{
+    "id": "fe51acc0-d842-4d18-80fb-35665523ec81",
+    "changed": "2022-12-13T09:52:41.853Z",
+    "content": "Check:\n  all:\n    - name: --ENRTPT\n      operator: exists\n    - name: --ENTPT\n      operator: not_exists\nCore:\n  Id: CORE-000171\n  Version: '1'\n  Status: Published\nDescription: Raises an error when --ENRTPT is present in dataset but --ENTPT is not\n  present in dataset.\nOutcome:\n  Message: --ENTPT should be present when --ENRTPT is present in a dataset\n  Output Variables:\n    - --ENRTPT\n    - --ENTPT\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0058\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The description or date and/or time of a time point\n                  that acts as a fixed reference for characterizing the end of an\n                  observation. This is the sponsor-defined reference point referred\n                  to by --ENRTPT.\n                Document: Model v2.0\n                Section: Timing\n                Item: --ENTPT\n      - Name: SDTMIG\n        Version: '3.3'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0058\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Description or date/time in ISO 8601 or other character\n                  format of the sponsor-defined reference point referred to by --ENRTPT.\n                  Examples \"2003-12-25\" or \"VISIT 2\".\n                Document: Model v1.7\n                Section: 2.2.5 Timing Variables for All Classes\n                Item: Table 2.2.5.1, --ENTPT\n      - Name: SDTMIG\n        Version: '3.2'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0058\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: (--ENTPT) Description or date/time in ISO 8601 or\n                  other character format of the sponsor-defined reference point referred\n                  to by --ENRTPT. Examples \"2003-12-25\" or \"VISIT 2\".\n                Document: Model v1.4\n                Section: 2.2.5 Timing Variables for All Classes\n                Item: Specification\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-21T15:23:14Z",
+    "creator": {
+        "id": "57b54e45-6455-401d-bba2-4bd1de21716d"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--ENRTPT",
+                    "operator": "exists"
+                },
+                {
+                    "name": "--ENTPT",
+                    "operator": "not_exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000171",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raises an error when --ENRTPT is present in dataset but --ENTPT is not present in dataset.",
+        "Outcome": {
+            "Message": "--ENTPT should be present when --ENRTPT is present in a dataset",
+            "Output_Variables": [
+                "--ENRTPT",
+                "--ENTPT"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0058",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The description or date and/or time of a time point that acts as a fixed reference for characterizing the end of an observation. This is the sponsor-defined reference point referred to by --ENRTPT.",
+                                        "Document": "Model v2.0",
+                                        "Section": "Timing",
+                                        "Item": "--ENTPT"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.3",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0058",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Description or date/time in ISO 8601 or other character format of the sponsor-defined reference point referred to by --ENRTPT. Examples \"2003-12-25\" or \"VISIT 2\".",
+                                        "Document": "Model v1.7",
+                                        "Section": "2.2.5 Timing Variables for All Classes",
+                                        "Item": "Table 2.2.5.1, --ENTPT"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.2",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0058",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "(--ENTPT) Description or date/time in ISO 8601 or other character format of the sponsor-defined reference point referred to by --ENRTPT. Examples \"2003-12-25\" or \"VISIT 2\".",
+                                        "Document": "Model v1.4",
+                                        "Section": "2.2.5 Timing Variables for All Classes",
+                                        "Item": "Specification"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

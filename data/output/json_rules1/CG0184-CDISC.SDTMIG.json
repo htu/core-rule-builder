@@ -1,0 +1,80 @@
+{
+    "id": "06da4289-d37c-4b4c-a7dd-6f503b356057",
+    "changed": "2022-07-17T09:16:09Z",
+    "content": "Core:\n  Id: CDISC.SDTMIG.CG0184\n  Version: '1'\n  Status: Draft\nDescription: When LBORRES is a continuous measurement, LBSTNRC should be null\nSensitivity: Record\nRule Type: Record Data\nCheck:\n  all:\n    - name: LBORRES\n      operator: matches_regex\n      value: ^[1-9]\\d*(\\.\\d+)?$\n    - name: LBSTNRC\n      operator: non_empty\nOutcome:\n  Message: LBSTNRC is populated when LBORRES is a continuous measurement\n  Output Variables:\n    - USUBJID\n    - RFXENDTC\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0184\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Document: IG v3.4\n                Section: 6.3.5.6\n                Item: Specification\n                Cited Guidance: >-\n                  For normal range values that are character in ordinal scale or if\n                  categorical ranges were supplied (e.g., \"-1 to +1\", \"NEGATIVE TO\n                  TRACE\").\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - LB\n",
+    "created": "2022-02-05T06:10:34Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0184",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "When LBORRES is a continuous measurement, LBSTNRC should be null",
+        "Sensitivity": "Record",
+        "Rule_Type": "Record Data",
+        "Check": {
+            "all": [
+                {
+                    "name": "LBORRES",
+                    "operator": "matches_regex",
+                    "value": "^[1-9]\\d*(\\.\\d+)?$"
+                },
+                {
+                    "name": "LBSTNRC",
+                    "operator": "non_empty"
+                }
+            ]
+        },
+        "Outcome": {
+            "Message": "LBSTNRC is populated when LBORRES is a continuous measurement",
+            "Output_Variables": [
+                "USUBJID",
+                "RFXENDTC"
+            ]
+        },
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0184",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Document": "IG v3.4",
+                                        "Section": "6.3.5.6",
+                                        "Item": "Specification",
+                                        "Cited_Guidance": "For normal range values that are character in ordinal scale or if categorical ranges were supplied (e.g., \"-1 to +1\", \"NEGATIVE TO TRACE\")."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "LB"
+                ]
+            }
+        }
+    }
+}

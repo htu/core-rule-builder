@@ -1,0 +1,88 @@
+{
+    "id": "4215ddbe-83ea-43bb-b632-58e6caac76f7",
+    "changed": "2022-02-15T21:27:42Z",
+    "content": "Check:\n  all:\n    - name:\n      operator:\n    - name:\n      operator: is_not_contained_by\n      value:\n        - codelist\n    - name:\n      operator: not_equal_to\n      value: OTHER\nCore:\n  Id: CDISC.SDTMIG.CG0021\n  Version: '1'\n  Status: Draft\nDescription: Trigger error if the value of a variable, which is associated with an\n  extensible codelist, is in the associated codelist or equal to 'OTHER'\nOutcome:\n  Message: Variable is not equal to value within the extensible codelist, nor equal\n    to OTHER\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0021\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Conformance with the SDTMIG Domain Models is minimally\n                  indicated by following SDTM-specified controlled terminology and\n                  format guidelines for variables, when provided\n                Document: IG v3.4\n                Section: 3.2.2\n              - Cited Guidance: When the CRF includes a list of values for a qualifier\n                  field that includes \"Other\" and the \"Other\" is supplemented with\n                  a \"Specify\" free text field\n                Document: IG v3.4\n                Item:\n                Section: 4.2.7.1\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-06T04:44:16Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": null,
+                    "operator": null
+                },
+                {
+                    "name": null,
+                    "operator": "is_not_contained_by",
+                    "value": [
+                        "codelist"
+                    ]
+                },
+                {
+                    "name": null,
+                    "operator": "not_equal_to",
+                    "value": "OTHER"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0021",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error if the value of a variable, which is associated with an extensible codelist, is in the associated codelist or equal to 'OTHER'",
+        "Outcome": {
+            "Message": "Variable is not equal to value within the extensible codelist, nor equal to OTHER"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0021",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Conformance with the SDTMIG Domain Models is minimally indicated by following SDTM-specified controlled terminology and format guidelines for variables, when provided",
+                                        "Document": "IG v3.4",
+                                        "Section": "3.2.2"
+                                    },
+                                    {
+                                        "Cited_Guidance": "When the CRF includes a list of values for a qualifier field that includes \"Other\" and the \"Other\" is supplemented with a \"Specify\" free text field",
+                                        "Document": "IG v3.4",
+                                        "Item": null,
+                                        "Section": "4.2.7.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

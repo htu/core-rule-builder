@@ -1,0 +1,72 @@
+{
+    "id": "35e92b76-506c-408d-92d7-933b705ab126",
+    "changed": "2022-02-15T21:27:19Z",
+    "content": "Check:\n  all:\n    - name: MBTEST\n      operator: not_equal_to\n      value:\nCore:\n  Id: CDISC.SDTMIG.CG0610\n  Version: '1'\n  Status: Draft\nDescription: If the test is for culture characteristics, verify that MBTEST equals\n  the name of the  organism/antigen being characterized.\nOutcome:\n  Message: Test is for culture characteristics, but MBTEST is not the name of the  organism\n    or group of organisms.\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0610\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Culture characteristics covers concepts such as growth/no\n                  growth, colony quantification measures,  colony color, colony morphology,\n                  etc.... MBTESTCD/MBTEST should be the name of the organism or  group\n                  of organisms being characterized.\n                Document: SDTMIG v3.4\n                Item: Assumption 1\n                Section: 6.3.5.7.1\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - MB\n",
+    "created": "2021-12-14T00:35:02Z",
+    "creator": {
+        "id": "f9333394-14e8-48f3-9a3a-62f1e3cf098c"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "MBTEST",
+                    "operator": "not_equal_to",
+                    "value": null
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0610",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "If the test is for culture characteristics, verify that MBTEST equals the name of the  organism/antigen being characterized.",
+        "Outcome": {
+            "Message": "Test is for culture characteristics, but MBTEST is not the name of the  organism or group of organisms."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0610",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Culture characteristics covers concepts such as growth/no growth, colony quantification measures,  colony color, colony morphology, etc.... MBTESTCD/MBTEST should be the name of the organism or  group of organisms being characterized.",
+                                        "Document": "SDTMIG v3.4",
+                                        "Item": "Assumption 1",
+                                        "Section": "6.3.5.7.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "MB"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+{
+    "changed": "2022-09-29T12:30:23.168Z",
+    "content": "Check:\n  any:\n    - all:\n        - name: --STINT\n          operator: empty\n        - name: --ENINT\n          operator: non_empty\n    - all:\n        - name: --ENINT\n          operator: empty\n        - name: --STINT\n          operator: non_empty\nCore:\n  Id: CDISC.SENDIG.295\n  Version: '1'\n  Status: Draft\nDescription: WHEN --STINT ^= null OR --ENINT ^= null THEN --STINT ^= null  AND --ENINT\n  ^= null\nOutcome:\n  Message: --STINT and --ENINT must both be populated or none of them must be populated\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '295'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Time points with collections over a duration also\n                  typically include the --STINT and --ENINT variables, which specify\n                  the start and end of the period over which the assessment was evaluated,\n                  based on the --TPTREF anchor.\n                Document: IG v3.1\n                Section: 4.4.7.2.3\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2022-09-29T12:30:23.168Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "any": [
+                {
+                    "all": [
+                        {
+                            "name": "--STINT",
+                            "operator": "empty"
+                        },
+                        {
+                            "name": "--ENINT",
+                            "operator": "non_empty"
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "name": "--ENINT",
+                            "operator": "empty"
+                        },
+                        {
+                            "name": "--STINT",
+                            "operator": "non_empty"
+                        }
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.295",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "WHEN --STINT ^= null OR --ENINT ^= null THEN --STINT ^= null  AND --ENINT ^= null",
+        "Outcome": {
+            "Message": "--STINT and --ENINT must both be populated or none of them must be populated"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "295",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Time points with collections over a duration also typically include the --STINT and --ENINT variables, which specify the start and end of the period over which the assessment was evaluated, based on the --TPTREF anchor.",
+                                        "Document": "IG v3.1",
+                                        "Section": "4.4.7.2.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    },
+    "id": "aa41a5f6-fb71-4159-88a0-5beda84e141a"
+}

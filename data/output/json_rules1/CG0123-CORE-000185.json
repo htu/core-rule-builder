@@ -1,0 +1,75 @@
+{
+    "id": "9d5443f8-7cf2-4bfc-a8b3-546b8d42b16f",
+    "changed": "2022-04-14T11:23:17Z",
+    "content": "Check:\n  all:\n    - name: ACTARMCD\n      operator: longer_than\n      value: 20\nCore:\n  Id: CORE-000185\n  Version: '1'\n  Status: Published\nDescription: Trigger error if length of ACTARMCD is greater than 20 characters\nOutcome:\n  Message: Length of ACTARMCD is greater than 20 characters\n  Output Variables:\n    - ACTARMCD\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0123\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Code of actual Arm. ACTARMCD is limited to 20 characters.\n                  It is not subject to the character restrictions that apply to TESTCD.\n                Document: IG v3.4\n                Item: Specification\n                Section: '5.2'\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - DM\n",
+    "created": "2021-10-29T06:15:14Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "ACTARMCD",
+                    "operator": "longer_than",
+                    "value": 20
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000185",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Trigger error if length of ACTARMCD is greater than 20 characters",
+        "Outcome": {
+            "Message": "Length of ACTARMCD is greater than 20 characters",
+            "Output_Variables": [
+                "ACTARMCD"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0123",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Code of actual Arm. ACTARMCD is limited to 20 characters. It is not subject to the character restrictions that apply to TESTCD.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Specification",
+                                        "Section": "5.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "DM"
+                ]
+            }
+        }
+    }
+}

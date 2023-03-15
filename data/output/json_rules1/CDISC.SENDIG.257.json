@@ -1,0 +1,71 @@
+{
+    "changed": "2022-09-28T12:50:15.265Z",
+    "content": "Check:\n  all:\n    - name: QVAL\n      operator: empty\nCore:\n  Id: CDISC.SENDIG.257\n  Version: '1'\n  Status: Draft\nDescription: All records in the SUPP-- datasets must have a value for QVAL.\nOutcome:\n  Message: The record does not have a value for QVAL\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '257'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: All records in the SUPP-- datasets must have a value\n                  for QVAL.\n                Document: IG v3.1\n                Item: Specification\n                Section: '8.3'\nScope:\n  Classes:\n    Include:\n      - RELATIONSHIP\n  Domains:\n    Include:\n      - SUPP--\n",
+    "created": "2022-09-28T12:50:15.265Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "QVAL",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.257",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "All records in the SUPP-- datasets must have a value for QVAL.",
+        "Outcome": {
+            "Message": "The record does not have a value for QVAL"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "257",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "All records in the SUPP-- datasets must have a value for QVAL.",
+                                        "Document": "IG v3.1",
+                                        "Item": "Specification",
+                                        "Section": "8.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "RELATIONSHIP"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SUPP--"
+                ]
+            }
+        }
+    },
+    "id": "75c84c5a-1452-4b7d-bc93-e844ccde01ab"
+}

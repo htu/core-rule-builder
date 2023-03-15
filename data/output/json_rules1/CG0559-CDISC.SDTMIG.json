@@ -1,0 +1,82 @@
+{
+    "id": "fe712505-f9b3-409f-9378-b1e3a1508550",
+    "changed": "2022-05-11T11:55:48Z",
+    "content": "Check:\n  all:\n    - name: PPTESTCD\n      operator: contains_case_insensitive\n      value: norm by dose\n    - name: PPSTRESU\n      operator: does_not_use_valid_codelist_terms\n      value: PKUDMG\n    - name: PPSTRESU\n      operator: does_not_use_valid_codelist_terms\n      value: PKUDUG\nCore:\n  Id: CDISC.SDTMIG.CG0559\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when parameter is normalized by dose amount and terminology\n  of PPSTRESU is not a parameter normalized by dose amount\nOutcome:\n  Message: Parameter is normalized by dose amount and terminology of PPSTRESU is not\n    a parameter normalized by dose amount\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0559\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: There are separate codelists used for PPORRESU/PPSTRESU\n                  where the choice depends on whether the value of the pharmacokinetic\n                  parameter is normalized. Codelist PKUNIT is used for non-normalized\n                  parameters. Codelists PKUDMG and PKUDUG are used when parameters\n                  are normalized by dose amount in milligrams or micrograms respectively.\n                  Codelists PKUWG and PKUWKG are used when parameters are normalized\n                  by weight in grams or kilograms respectively. Multiple subset codelists\n                  were created for the unique unit expressions of the same concept\n                  across codelists, this approach allows study-context appropriate\n                  use of unit values for PK analysis subtypes\n                Document: IG v3.4\n                Item: Assumption 3\n                Section: 6.3.5.9.2\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - PP\n",
+    "created": "2021-11-08T10:29:55Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "PPTESTCD",
+                    "operator": "contains_case_insensitive",
+                    "value": "norm by dose"
+                },
+                {
+                    "name": "PPSTRESU",
+                    "operator": "does_not_use_valid_codelist_terms",
+                    "value": "PKUDMG"
+                },
+                {
+                    "name": "PPSTRESU",
+                    "operator": "does_not_use_valid_codelist_terms",
+                    "value": "PKUDUG"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0559",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when parameter is normalized by dose amount and terminology of PPSTRESU is not a parameter normalized by dose amount",
+        "Outcome": {
+            "Message": "Parameter is normalized by dose amount and terminology of PPSTRESU is not a parameter normalized by dose amount"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0559",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "There are separate codelists used for PPORRESU/PPSTRESU where the choice depends on whether the value of the pharmacokinetic parameter is normalized. Codelist PKUNIT is used for non-normalized parameters. Codelists PKUDMG and PKUDUG are used when parameters are normalized by dose amount in milligrams or micrograms respectively. Codelists PKUWG and PKUWKG are used when parameters are normalized by weight in grams or kilograms respectively. Multiple subset codelists were created for the unique unit expressions of the same concept across codelists, this approach allows study-context appropriate use of unit values for PK analysis subtypes",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 3",
+                                        "Section": "6.3.5.9.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "PP"
+                ]
+            }
+        }
+    }
+}

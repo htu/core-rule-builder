@@ -1,0 +1,113 @@
+{
+    "id": "627e8444-7d22-4ad7-b93e-db5bf68b08b1",
+    "changed": "2022-05-04T11:20:56Z",
+    "content": "Check:\n  all:\n    - name: USUBJID\n      operator: is_contained_by\n      value: $ex_usubjid\n    - name: RFXENDTC\n      operator: not_equal_to\n      value: $max_ex_exstdtc\n    - name: RFXENDTC\n      operator: not_equal_to\n      value: $max_ex_exendtc\nCore:\n  Id: CORE-000238\n  Version: '1'\n  Status: Published\nDescription: Raise an error when EX records are present for subject but RFXENDTC does\n  not equal the latest value of EX.EXSTDTC or EX.EXENDTC\nOperations:\n  - operator: distinct\n    domain: EX\n    name: USUBJID\n    id: $ex_usubjid\n  - operator: max_date\n    domain: EX\n    name: EXSTDTC\n    id: $max_ex_exstdtc\n    group:\n      - USUBJID\n  - operator: max_date\n    domain: EX\n    name: EXENDTC\n    id: $max_ex_exendtc\n    group:\n      - USUBJID\nOutcome:\n  Message: RFXENDTC does not equal the latest value of EX.EXSTDTC or EX.EXENDTC\n  Output Variables:\n    - RFXENDTC\n    - $max_ex_exstdtc\n    - $max_ex_exendtc\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0147\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Equal to the latest value of EXENDTC (or the latest\n                  value of EXSTDTC if EXENDTC was not collected or is missing).\n                Document: IG v3.4\n                Item: Specification\n                Section: '5.2'\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - DM\n",
+    "created": "2022-02-05T06:00:50Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "USUBJID",
+                    "operator": "is_contained_by",
+                    "value": "$ex_usubjid"
+                },
+                {
+                    "name": "RFXENDTC",
+                    "operator": "not_equal_to",
+                    "value": "$max_ex_exstdtc"
+                },
+                {
+                    "name": "RFXENDTC",
+                    "operator": "not_equal_to",
+                    "value": "$max_ex_exendtc"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000238",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when EX records are present for subject but RFXENDTC does not equal the latest value of EX.EXSTDTC or EX.EXENDTC",
+        "Operations": [
+            {
+                "operator": "distinct",
+                "domain": "EX",
+                "name": "USUBJID",
+                "id": "$ex_usubjid"
+            },
+            {
+                "operator": "max_date",
+                "domain": "EX",
+                "name": "EXSTDTC",
+                "id": "$max_ex_exstdtc",
+                "group": [
+                    "USUBJID"
+                ]
+            },
+            {
+                "operator": "max_date",
+                "domain": "EX",
+                "name": "EXENDTC",
+                "id": "$max_ex_exendtc",
+                "group": [
+                    "USUBJID"
+                ]
+            }
+        ],
+        "Outcome": {
+            "Message": "RFXENDTC does not equal the latest value of EX.EXSTDTC or EX.EXENDTC",
+            "Output_Variables": [
+                "RFXENDTC",
+                "$max_ex_exstdtc",
+                "$max_ex_exendtc"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0147",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Equal to the latest value of EXENDTC (or the latest value of EXSTDTC if EXENDTC was not collected or is missing).",
+                                        "Document": "IG v3.4",
+                                        "Item": "Specification",
+                                        "Section": "5.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "DM"
+                ]
+            }
+        }
+    }
+}

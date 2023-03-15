@@ -1,0 +1,84 @@
+{
+    "id": "53316620-644b-4d2e-ad95-356e4bddcb5c",
+    "changed": "2022-02-15T21:28:16Z",
+    "content": "Check:\n  all:\n    - name: dataset_name\n      operator: starts_with\n      value: FA\n    - name: dataset_name\n      operator: longer than\n      value: 2\n    - name: Characters in dataset name after \"FA\"\n      operator: is_contained_by\n      value:\n        - List of domains\nCore:\n  Id: CDISC.SDTMIG.CG0333\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when parent domain referenced in Findings About dataset\n  name is not present in the study\nOutcome:\n  Message: Parent domain referenced in Findings About dataset name is not present\n    in the study\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0333\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: 'If splitting Findings About by parent domain, then\n                  the dataset name would be the domain code, \"FA\", plus the two-character\n                  domain code for parent domain code (e.g., \"FACM\"). '\n                Document: IG v3.4\n                Item: '6'\n                Section: 4.1.7\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-06T08:32:30Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "dataset_name",
+                    "operator": "starts_with",
+                    "value": "FA"
+                },
+                {
+                    "name": "dataset_name",
+                    "operator": "longer than",
+                    "value": 2
+                },
+                {
+                    "name": "Characters in dataset name after \"FA\"",
+                    "operator": "is_contained_by",
+                    "value": [
+                        "List of domains"
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0333",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when parent domain referenced in Findings About dataset name is not present in the study",
+        "Outcome": {
+            "Message": "Parent domain referenced in Findings About dataset name is not present in the study"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0333",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "If splitting Findings About by parent domain, then the dataset name would be the domain code, \"FA\", plus the two-character domain code for parent domain code (e.g., \"FACM\"). ",
+                                        "Document": "IG v3.4",
+                                        "Item": "6",
+                                        "Section": "4.1.7"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

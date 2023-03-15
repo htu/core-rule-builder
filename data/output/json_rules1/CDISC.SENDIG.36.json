@@ -1,0 +1,80 @@
+{
+    "changed": "2022-09-11T08:00:18.504Z",
+    "content": "Check:\n  all:\n    - name: USUBJID\n      operator: empty\n    - name: POOLID\n      operator: empty\nCore:\n  Id: CDISC.SENDIG.36\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when both USUBJID and POOLID are empty\nOutcome:\n  Message: Both USUBJID and POOID are empty\n  Output Variables:\n    - USUBJID\n    - POOLID\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '36'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The unique subject identifier (USUBJID) or pool identifier\n                  (POOLID) is Required in all datasets containing subject-level or\n                  pool-level data, respectively.\n                Document: IG v3.1\n                Section: 4.2.3\nScope:\n  Classes:\n    Include:\n      - INTERVENTIONS\n      - FINDINGS\n      - EVENTS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2022-09-11T07:33:21.204Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "USUBJID",
+                    "operator": "empty"
+                },
+                {
+                    "name": "POOLID",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.36",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when both USUBJID and POOLID are empty",
+        "Outcome": {
+            "Message": "Both USUBJID and POOID are empty",
+            "Output_Variables": [
+                "USUBJID",
+                "POOLID"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "36",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The unique subject identifier (USUBJID) or pool identifier (POOLID) is Required in all datasets containing subject-level or pool-level data, respectively.",
+                                        "Document": "IG v3.1",
+                                        "Section": "4.2.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "INTERVENTIONS",
+                    "FINDINGS",
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    },
+    "id": "40499a4e-e414-4b57-85e3-66b81907de4e"
+}

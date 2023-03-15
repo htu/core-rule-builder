@@ -1,0 +1,79 @@
+{
+    "changed": "2022-09-22T10:09:38.916Z",
+    "content": "Check:\n  all:\n    - name: TEENRL\n      operator: empty\n    - name: TEDUR\n      operator: empty\nCore:\n  Id: CDISC.SENDIG.214\n  Version: '1'\n  Status: Draft\nDescription: Raise an error if TEDUR is null when TEENRL is null\nOutcome:\n  Message: TEDUR cannot be null when TEENRL is null\n  Output Variables:\n    - TEENRL\n    - TEDUR\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '214'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Either TEENRL or TEDUR must be present for each Element;\n                  both may be present.\n                Document: IG v3.1\n                Item: Specification\n                Section: 7.2.1\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - TE\n",
+    "created": "2022-09-22T10:09:38.916Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "TEENRL",
+                    "operator": "empty"
+                },
+                {
+                    "name": "TEDUR",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.214",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error if TEDUR is null when TEENRL is null",
+        "Outcome": {
+            "Message": "TEDUR cannot be null when TEENRL is null",
+            "Output_Variables": [
+                "TEENRL",
+                "TEDUR"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "214",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Either TEENRL or TEDUR must be present for each Element; both may be present.",
+                                        "Document": "IG v3.1",
+                                        "Item": "Specification",
+                                        "Section": "7.2.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TE"
+                ]
+            }
+        }
+    },
+    "id": "73db04b8-34c1-428f-b3a8-fb8a89334f34"
+}

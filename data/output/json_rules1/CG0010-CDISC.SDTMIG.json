@@ -1,0 +1,76 @@
+{
+    "id": "2a79216c-f322-4d0f-8602-e0a2d2a34ce8",
+    "changed": "2022-07-17T11:00:05Z",
+    "content": "Check:\n  all:\n    - name:\n      operator: not_equal_to\n      value:\n    - name:\n      operator: not_equal_to\n      value: Model Role for custom domains\nCore:\n  Id: CDISC.SDTMIG.CG0010\n  Version: '2'\n  Status: Draft\nDescription: Trigger warning when metadata attribute of variable role does not equal\n  the IG role for domain in IG, or model role (for custom domains)\nOutcome:\n  Message: Metadata attribute of variable role does not equal the IG role for domain\n    in IG, or model role (for custom domains)\nRule Type: Variable Metadata Check\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0010\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Each variable can be classified according to its Role.\n                  A Role determines the type of information conveyed by the variable\n                  about each distinct observation and how it can be used. Variables\n                  can be classified into five major roles.\n                Document: IG v3.4\n                Section: '2.1'\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-06T04:42:51Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": null,
+                    "operator": "not_equal_to",
+                    "value": null
+                },
+                {
+                    "name": null,
+                    "operator": "not_equal_to",
+                    "value": "Model Role for custom domains"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0010",
+            "Version": "2",
+            "Status": "Draft"
+        },
+        "Description": "Trigger warning when metadata attribute of variable role does not equal the IG role for domain in IG, or model role (for custom domains)",
+        "Outcome": {
+            "Message": "Metadata attribute of variable role does not equal the IG role for domain in IG, or model role (for custom domains)"
+        },
+        "Rule_Type": "Variable Metadata Check",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0010",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Each variable can be classified according to its Role. A Role determines the type of information conveyed by the variable about each distinct observation and how it can be used. Variables can be classified into five major roles.",
+                                        "Document": "IG v3.4",
+                                        "Section": "2.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

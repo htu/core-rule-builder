@@ -1,0 +1,89 @@
+{
+    "id": "94a625d4-c298-44c4-8ac4-dd26f24a319c",
+    "changed": "2022-07-17T04:48:39Z",
+    "content": "Check:\n  all:\n    - name: RSUBJID\n      operator: non_empty\n    - name: RSUBJID\n      operator: not_equal_to\n      value: POOLID\n    - name: RSUBJID\n      operator: is_not_contained_by\n      value: $dm_usubjid\nCore:\n  Id: CORE-000235\n  Version: '1'\n  Status: Published\nDescription: Verify that RSUBJID=DM.USUBJID when RSUBJID is populated and RSUBJID\n  is not equal to POOLID\nOperations:\n  - domain: DM\n    id: $dm_usubjid\n    name: USUBJID\n    operator: distinct\nOutcome:\n  Message: RSUBJID must equal DM.USUBJID when RSUBJID is populated and RSUBJID does\n    not equal POOLID\nRule Type: Record Data\nSensitivity: Value\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0367\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Identifier for a related study subject or pool of\n                  study subjects. The subject(s) may be human or animal. RSUBJID will\n                  be populated with the USUBJID of the related subject or the POOLID\n                  of the related pool. RSUBJID will be null for data about associated\n                  persons who are related to the study but not to any of the study\n                  subjects.\n                Document: Model v2.0\n                Item: RSUBJID\n                Section: Associated Persons\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Exclude:\n      - DM\n",
+    "created": "2021-12-15T16:50:26Z",
+    "creator": {
+        "id": "57474fac-237e-4693-bb37-7826b02737da"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "RSUBJID",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "RSUBJID",
+                    "operator": "not_equal_to",
+                    "value": "POOLID"
+                },
+                {
+                    "name": "RSUBJID",
+                    "operator": "is_not_contained_by",
+                    "value": "$dm_usubjid"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000235",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Verify that RSUBJID=DM.USUBJID when RSUBJID is populated and RSUBJID is not equal to POOLID",
+        "Operations": [
+            {
+                "domain": "DM",
+                "id": "$dm_usubjid",
+                "name": "USUBJID",
+                "operator": "distinct"
+            }
+        ],
+        "Outcome": {
+            "Message": "RSUBJID must equal DM.USUBJID when RSUBJID is populated and RSUBJID does not equal POOLID"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Value",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0367",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Identifier for a related study subject or pool of study subjects. The subject(s) may be human or animal. RSUBJID will be populated with the USUBJID of the related subject or the POOLID of the related pool. RSUBJID will be null for data about associated persons who are related to the study but not to any of the study subjects.",
+                                        "Document": "Model v2.0",
+                                        "Item": "RSUBJID",
+                                        "Section": "Associated Persons"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Exclude": [
+                    "DM"
+                ]
+            }
+        }
+    }
+}

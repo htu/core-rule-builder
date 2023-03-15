@@ -1,0 +1,78 @@
+{
+    "changed": "2022-10-02T09:47:54.227Z",
+    "content": "Check:\n  all:\n    - name: TSPARMCD\n      operator: equal_to\n      value: SDESIGN\n    - name: TSPARMCD\n      operator: is_not_unique_set\n      value:\n        - DOMAIN\nCore:\n  Id: CDISC.SENDIG.342\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when there is more than record with TSPARMCD=SDESIGN\nOutcome:\n  Message: Only one record with TSPARMCD=SDESIGN is allowed\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '342'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The most appropriate single value, as defined by the\n                  sponsor, should be included for Trial Summary purposes.\n                Document: IG v3.1\n                Section: 7.6.3\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - TS\n",
+    "created": "2022-10-02T09:47:54.227Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "TSPARMCD",
+                    "operator": "equal_to",
+                    "value": "SDESIGN"
+                },
+                {
+                    "name": "TSPARMCD",
+                    "operator": "is_not_unique_set",
+                    "value": [
+                        "DOMAIN"
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.342",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when there is more than record with TSPARMCD=SDESIGN",
+        "Outcome": {
+            "Message": "Only one record with TSPARMCD=SDESIGN is allowed"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "342",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The most appropriate single value, as defined by the sponsor, should be included for Trial Summary purposes.",
+                                        "Document": "IG v3.1",
+                                        "Section": "7.6.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TS"
+                ]
+            }
+        }
+    },
+    "id": "395c613b-e94c-4c0b-9795-077c61b8e33b"
+}

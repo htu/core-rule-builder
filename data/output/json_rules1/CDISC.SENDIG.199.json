@@ -1,0 +1,77 @@
+{
+    "changed": "2022-11-02T14:23:40.342Z",
+    "content": "Check:\n  all:\n    - name: SCTESTCD\n      operator: is_not_unique_set\n      value:\n        - USUBJID\nCore:\n  Id: CDISC.SENDIG.199\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when there is more than one record present for any particular\n  Subject Characteristics test for a subject.\n#The check for this rule was revised to NOT check the records where BGDTC is null\r\nOutcome:\n  Message: The Subject Characteristics test is not unique for this subject.\n  Output Variables:\n    - USUBJID\n    - SCTESTCD\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '199'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: One record per characteristic per subject\n                Document: SENDIG v3.1\n                Section: 6.3.13\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - SC\n",
+    "created": "2022-11-02T14:23:40.342Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "SCTESTCD",
+                    "operator": "is_not_unique_set",
+                    "value": [
+                        "USUBJID"
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.199",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when there is more than one record present for any particular Subject Characteristics test for a subject.",
+        "Outcome": {
+            "Message": "The Subject Characteristics test is not unique for this subject.",
+            "Output_Variables": [
+                "USUBJID",
+                "SCTESTCD"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "199",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "One record per characteristic per subject",
+                                        "Document": "SENDIG v3.1",
+                                        "Section": "6.3.13"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SC"
+                ]
+            }
+        }
+    },
+    "id": "fa958e84-c880-421a-bdd4-78f5a8c23d2a"
+}

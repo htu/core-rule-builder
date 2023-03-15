@@ -1,0 +1,93 @@
+{
+    "id": "206f189a-42aa-4bce-b2cf-e9d3a6d6651f",
+    "changed": "2022-10-11T13:42:58.221Z",
+    "content": "Check:\n  all:\n    - context: RDOMAIN\n      name: IDVAR\n      operator: is_not_valid_relationship\n      value: IDVARVAL\nCore:\n  Id: CORE-000206\n  Version: '1'\n  Status: Published\nDescription: When IDVAR is populated, IDVARVAL must equal a value of the variable\n  referenced by IDVAR within the domain referenced by RDOMAIN\nOutcome:\n  Message: IDVARVAL does not equal a value of variable=IDVAR in domain=RDOMAIN\n  Output Variables:\n    - RDOMAIN\n    - USUBJID\n    - IDVAR\n    - IDVARVAL\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0371\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Value of identifying variable of the parent record(s).\n                Document: Model v2.0\n                Item: IDVARVAL\n                Section: Comments\n              - Cited Guidance: Value of identifying variable of the parent record(s).\n                Document: Model v2.0\n                Item: IDVARVAL\n                Section: Supplemental Qualifiers\n              - Cited Guidance: Value of identifying variable described in IDVAR.\n                Document: Model v2.0\n                Item: IDVARVAL\n                Section: Related Records\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - CO\n      - SUPP--\n      - RELREC\n",
+    "created": "2021-11-06T09:49:09Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "context": "RDOMAIN",
+                    "name": "IDVAR",
+                    "operator": "is_not_valid_relationship",
+                    "value": "IDVARVAL"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000206",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "When IDVAR is populated, IDVARVAL must equal a value of the variable referenced by IDVAR within the domain referenced by RDOMAIN",
+        "Outcome": {
+            "Message": "IDVARVAL does not equal a value of variable=IDVAR in domain=RDOMAIN",
+            "Output_Variables": [
+                "RDOMAIN",
+                "USUBJID",
+                "IDVAR",
+                "IDVARVAL"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0371",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Value of identifying variable of the parent record(s).",
+                                        "Document": "Model v2.0",
+                                        "Item": "IDVARVAL",
+                                        "Section": "Comments"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Value of identifying variable of the parent record(s).",
+                                        "Document": "Model v2.0",
+                                        "Item": "IDVARVAL",
+                                        "Section": "Supplemental Qualifiers"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Value of identifying variable described in IDVAR.",
+                                        "Document": "Model v2.0",
+                                        "Item": "IDVARVAL",
+                                        "Section": "Related Records"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "CO",
+                    "SUPP--",
+                    "RELREC"
+                ]
+            }
+        }
+    }
+}

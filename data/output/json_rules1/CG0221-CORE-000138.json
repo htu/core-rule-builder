@@ -1,0 +1,108 @@
+{
+    "id": "45a7b688-3357-4d34-9ee2-0a2e34f1460b",
+    "changed": "2022-10-11T12:18:08.510Z",
+    "content": "Check:\n  any:\n    - all:\n        - name: --STDTC\n          operator: is_incomplete_date\n        - name: --STDY\n          operator: non_empty\n    - all:\n        - name: RFSTDTC\n          operator: is_incomplete_date\n        - name: --STDY\n          operator: non_empty\nMatch Datasets:\n  - Name: DM\n    Keys:\n      - USUBJID\nCore:\n  Id: CORE-000138\n  Version: '1'\n  Status: Published\nDescription: If --STDTC or DM.RFSTDTC does not contain a complete values, --STDY must\n  be null.\nOutcome:\n  Message: --STDY is not null when either --STDTC or DM.RFSTDTC do not contain complete\n    values in their date portion\n  Output Variables:\n    - USUBJID\n    - --STDTC\n    - RFSTDTC\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0221\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The permissible Study Day variables (--DY, --STDY,\n                  and --ENDY) describe the relative day of the observation starting\n                  with the reference date as Day 1. They are determined by comparing\n                  the date portion of the respective date/time variables (--DTC, --STDTC,\n                  and --ENDTC) to the date portion of the Subject Reference Start\n                  Date (RFSTDTC from the Demographics domain).\n                Document: IG v3.4\n                Section: 4.4.4\n              - Cited Guidance: All Study Day values are integers. Thus, to calculate\n                  Study Day. --DY = (date portion of --DTC) - (date portion of RFSTDTC)\n                  + 1 if --DTC is on or after RFSTDTC, --DY = (date portion of --DTC)\n                  - (date portion of RFSTDTC) if --DTC precedes RFSTDTC. This algorithm\n                  should be used across all domains.\n                Document: IG v3.4\n                Section: 4.4.4\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-16T10:58:54Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "any": [
+                {
+                    "all": [
+                        {
+                            "name": "--STDTC",
+                            "operator": "is_incomplete_date"
+                        },
+                        {
+                            "name": "--STDY",
+                            "operator": "non_empty"
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "name": "RFSTDTC",
+                            "operator": "is_incomplete_date"
+                        },
+                        {
+                            "name": "--STDY",
+                            "operator": "non_empty"
+                        }
+                    ]
+                }
+            ]
+        },
+        "Match_Datasets": [
+            {
+                "Name": "DM",
+                "Keys": [
+                    "USUBJID"
+                ]
+            }
+        ],
+        "Core": {
+            "Id": "CORE-000138",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "If --STDTC or DM.RFSTDTC does not contain a complete values, --STDY must be null.",
+        "Outcome": {
+            "Message": "--STDY is not null when either --STDTC or DM.RFSTDTC do not contain complete values in their date portion",
+            "Output_Variables": [
+                "USUBJID",
+                "--STDTC",
+                "RFSTDTC"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0221",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The permissible Study Day variables (--DY, --STDY, and --ENDY) describe the relative day of the observation starting with the reference date as Day 1. They are determined by comparing the date portion of the respective date/time variables (--DTC, --STDTC, and --ENDTC) to the date portion of the Subject Reference Start Date (RFSTDTC from the Demographics domain).",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.4.4"
+                                    },
+                                    {
+                                        "Cited_Guidance": "All Study Day values are integers. Thus, to calculate Study Day. --DY = (date portion of --DTC) - (date portion of RFSTDTC) + 1 if --DTC is on or after RFSTDTC, --DY = (date portion of --DTC) - (date portion of RFSTDTC) if --DTC precedes RFSTDTC. This algorithm should be used across all domains.",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.4.4"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

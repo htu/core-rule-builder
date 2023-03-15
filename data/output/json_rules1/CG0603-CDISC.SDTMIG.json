@@ -1,0 +1,70 @@
+{
+    "id": "814c72bf-c3b4-4acf-a7fa-10f6ddd57233",
+    "changed": "2022-05-11T11:39:19Z",
+    "content": "Check:\n  all:\n    - name:\n      operator: ''\nCore:\n  Id: CDISC.SDTMIG.CG0603\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when parent record exists and DECOD ^= null, and --OBJ\n  does not equal --DECOD\nOutcome:\n  Message: -OBJ does not equal --DECOD of the parent record\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0603\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: When findings are collected about an event or intervention,\n                  and the name of the event or intervention is collected in an\u00a0\"Other,\n                  specify\" CRF field, the value in --OBJ variable depends on whether\n                  the FA record has a parent\u00a0record and whether the \"Other, specify\"\n                  value was coded.\n                Document: SDTMIG v3.4\n                Section: 4.2.7.4\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - FA\n",
+    "created": "2022-05-11T11:39:19Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": null,
+                    "operator": ""
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0603",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when parent record exists and DECOD ^= null, and --OBJ does not equal --DECOD",
+        "Outcome": {
+            "Message": "-OBJ does not equal --DECOD of the parent record"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0603",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "When findings are collected about an event or intervention, and the name of the event or intervention is collected in an\u00a0\"Other, specify\" CRF field, the value in --OBJ variable depends on whether the FA record has a parent\u00a0record and whether the \"Other, specify\" value was coded.",
+                                        "Document": "SDTMIG v3.4",
+                                        "Section": "4.2.7.4"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "FA"
+                ]
+            }
+        }
+    }
+}

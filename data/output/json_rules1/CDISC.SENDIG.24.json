@@ -1,0 +1,78 @@
+{
+    "changed": "2022-09-09T13:36:41.175Z",
+    "content": "Check:\n  all:\n    - name: ETCD\n      operator: longer_than\n      value: 8\nCore:\n  Id: CDISC.SENDIG.24\n  Version: '1'\n  Status: Draft\nDescription: The length of ETCD should be no greater than 8\nOutcome:\n  Message: ETCD value is greater than 8\n  Output Variables:\n    - ETCD\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: '24'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: ETCD (the companion to ELEMENT), SETCD (the short\n                  name of a specific Trial Set), and TSPARMCD (the companion to TSPARM)\n                  are limited to 8 characters\n                Document: IG v3.1\n                Item: Specification\n                Section: 4.2.1\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - TA\n      - TE\n      - SE\n",
+    "created": "2022-09-09T13:36:41.175Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "ETCD",
+                    "operator": "longer_than",
+                    "value": 8
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.24",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "The length of ETCD should be no greater than 8",
+        "Outcome": {
+            "Message": "ETCD value is greater than 8",
+            "Output_Variables": [
+                "ETCD"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "24",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "ETCD (the companion to ELEMENT), SETCD (the short name of a specific Trial Set), and TSPARMCD (the companion to TSPARM) are limited to 8 characters",
+                                        "Document": "IG v3.1",
+                                        "Item": "Specification",
+                                        "Section": "4.2.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN",
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TA",
+                    "TE",
+                    "SE"
+                ]
+            }
+        }
+    },
+    "id": "48c0d769-2120-4baa-a214-915be639c6ba"
+}

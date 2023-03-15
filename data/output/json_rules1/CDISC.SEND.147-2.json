@@ -1,0 +1,167 @@
+{
+    "id": "70de0154-a318-481f-a432-84ecb6149b61",
+    "changed": "2022-02-15T21:28:57Z",
+    "content": "Check:\n  any:\n    - name: --BLFL\n      operator: empty\n    - name: --BLFL\n      operator: equal_to\n      value: Y\nCore:\n  Id: CDISC.SEND.147\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when --BLFL value is not populated with either \"Y\" or\n  null\nOutcome:\n  Message: --BLFL value must either be \"Y\" or null\nRule Type: Record Data\nScopes: {}\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: v3.0\n        References:\n          - Origin: SEND Conformance Rules\n            Rule Identifier:\n              Id: SEND147\n              Version: '1'\n            Version: '4.0'\n            Citations:\n              - Cited Guidance: A baseline indicator may be used to calculate differences\n                  or changes from baseline. Value should be Y or null. The baseline\n                  flag is sponsor-defined.\n                Document: SENDIG v3.0\n                Section: 6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes\n              - Cited Guidance: A baseline indicator may be used to calculate differences\n                  or changes from baseline. Value should be Y or null. The baseline\n                  flag is sponsor-defined.\n                Document: SENDIG v3.1\n                Section: 6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes\n              - Cited Guidance: A baseline indicator may be used to calculate differences\n                  or changes from baseline. Value should be Y or null. The baseline\n                  flag is sponsor-defined.\n                Document: SENDIG v3.1.1\n                Section: 6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SEND Conformance Rules\n            Rule Identifier:\n              Id: SEND147\n              Version: '1'\n            Version: '4.0'\n            Citations:\n              - Cited Guidance: A baseline indicator may be used to calculate differences\n                  or changes from baseline. Value should be Y or null. The baseline\n                  flag is sponsor-defined.\n                Document: SENDIG v3.0\n                Section: 6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes\n              - Cited Guidance: A baseline indicator may be used to calculate differences\n                  or changes from baseline. Value should be Y or null. The baseline\n                  flag is sponsor-defined.\n                Document: SENDIG v3.1\n                Section: 6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes\n              - Cited Guidance: A baseline indicator may be used to calculate differences\n                  or changes from baseline. Value should be Y or null. The baseline\n                  flag is sponsor-defined.\n                Document: SENDIG v3.1.1\n                Section: 6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes\n      - Name: SENDIG\n        Version: 3.1.1\n        References:\n          - Origin: SEND Conformance Rules\n            Rule Identifier:\n              Id: SEND147\n              Version: '1'\n            Version: '4.0'\n            Citations:\n              - Cited Guidance: A baseline indicator may be used to calculate differences\n                  or changes from baseline. Value should be Y or null. The baseline\n                  flag is sponsor-defined.\n                Document: SENDIG v3.0\n                Section: 6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes\n              - Cited Guidance: A baseline indicator may be used to calculate differences\n                  or changes from baseline. Value should be Y or null. The baseline\n                  flag is sponsor-defined.\n                Document: SENDIG v3.1\n                Section: 6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes\n              - Cited Guidance: A baseline indicator may be used to calculate differences\n                  or changes from baseline. Value should be Y or null. The baseline\n                  flag is sponsor-defined.\n                Document: SENDIG v3.1.1\n                Section: 6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes\n      - Name: SENDIG-DART\n        Version: '1.1'\n        References:\n          - Origin: SEND Conformance Rules\n            Rule Identifier:\n              Id: SEND147\n              Version: '1'\n            Version: '4.0'\n            Citations:\n              - Cited Guidance: A baseline indicator may be used to calculate differences\n                  or changes from baseline. Value should be Y or null. The baseline\n                  flag is sponsor-defined.\n                Document: SENDIG v3.0\n                Section: 6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes\n              - Cited Guidance: A baseline indicator may be used to calculate differences\n                  or changes from baseline. Value should be Y or null. The baseline\n                  flag is sponsor-defined.\n                Document: SENDIG v3.1\n                Section: 6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes\n              - Cited Guidance: A baseline indicator may be used to calculate differences\n                  or changes from baseline. Value should be Y or null. The baseline\n                  flag is sponsor-defined.\n                Document: SENDIG v3.1.1\n                Section: 6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes\n",
+    "created": "2021-10-25T19:56:30Z",
+    "creator": {
+        "id": "5042c868-b79a-415d-b5aa-12e6474ce80c"
+    },
+    "json": {
+        "Check": {
+            "any": [
+                {
+                    "name": "--BLFL",
+                    "operator": "empty"
+                },
+                {
+                    "name": "--BLFL",
+                    "operator": "equal_to",
+                    "value": "Y"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SEND.147",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when --BLFL value is not populated with either \"Y\" or null",
+        "Outcome": {
+            "Message": "--BLFL value must either be \"Y\" or null"
+        },
+        "Rule_Type": "Record Data",
+        "Scopes": {},
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "v3.0",
+                        "References": [
+                            {
+                                "Origin": "SEND Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "SEND147",
+                                    "Version": "1"
+                                },
+                                "Version": "4.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "A baseline indicator may be used to calculate differences or changes from baseline. Value should be Y or null. The baseline flag is sponsor-defined.",
+                                        "Document": "SENDIG v3.0",
+                                        "Section": "6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes"
+                                    },
+                                    {
+                                        "Cited_Guidance": "A baseline indicator may be used to calculate differences or changes from baseline. Value should be Y or null. The baseline flag is sponsor-defined.",
+                                        "Document": "SENDIG v3.1",
+                                        "Section": "6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes"
+                                    },
+                                    {
+                                        "Cited_Guidance": "A baseline indicator may be used to calculate differences or changes from baseline. Value should be Y or null. The baseline flag is sponsor-defined.",
+                                        "Document": "SENDIG v3.1.1",
+                                        "Section": "6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SEND Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "SEND147",
+                                    "Version": "1"
+                                },
+                                "Version": "4.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "A baseline indicator may be used to calculate differences or changes from baseline. Value should be Y or null. The baseline flag is sponsor-defined.",
+                                        "Document": "SENDIG v3.0",
+                                        "Section": "6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes"
+                                    },
+                                    {
+                                        "Cited_Guidance": "A baseline indicator may be used to calculate differences or changes from baseline. Value should be Y or null. The baseline flag is sponsor-defined.",
+                                        "Document": "SENDIG v3.1",
+                                        "Section": "6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes"
+                                    },
+                                    {
+                                        "Cited_Guidance": "A baseline indicator may be used to calculate differences or changes from baseline. Value should be Y or null. The baseline flag is sponsor-defined.",
+                                        "Document": "SENDIG v3.1.1",
+                                        "Section": "6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1.1",
+                        "References": [
+                            {
+                                "Origin": "SEND Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "SEND147",
+                                    "Version": "1"
+                                },
+                                "Version": "4.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "A baseline indicator may be used to calculate differences or changes from baseline. Value should be Y or null. The baseline flag is sponsor-defined.",
+                                        "Document": "SENDIG v3.0",
+                                        "Section": "6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes"
+                                    },
+                                    {
+                                        "Cited_Guidance": "A baseline indicator may be used to calculate differences or changes from baseline. Value should be Y or null. The baseline flag is sponsor-defined.",
+                                        "Document": "SENDIG v3.1",
+                                        "Section": "6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes"
+                                    },
+                                    {
+                                        "Cited_Guidance": "A baseline indicator may be used to calculate differences or changes from baseline. Value should be Y or null. The baseline flag is sponsor-defined.",
+                                        "Document": "SENDIG v3.1.1",
+                                        "Section": "6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SENDIG-DART",
+                        "Version": "1.1",
+                        "References": [
+                            {
+                                "Origin": "SEND Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "SEND147",
+                                    "Version": "1"
+                                },
+                                "Version": "4.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "A baseline indicator may be used to calculate differences or changes from baseline. Value should be Y or null. The baseline flag is sponsor-defined.",
+                                        "Document": "SENDIG v3.0",
+                                        "Section": "6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes"
+                                    },
+                                    {
+                                        "Cited_Guidance": "A baseline indicator may be used to calculate differences or changes from baseline. Value should be Y or null. The baseline flag is sponsor-defined.",
+                                        "Document": "SENDIG v3.1",
+                                        "Section": "6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes"
+                                    },
+                                    {
+                                        "Cited_Guidance": "A baseline indicator may be used to calculate differences or changes from baseline. Value should be Y or null. The baseline flag is sponsor-defined.",
+                                        "Document": "SENDIG v3.1.1",
+                                        "Section": "6.3.1 Body Weight - BW, Variable Name BWBLFL, CDISC Notes"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

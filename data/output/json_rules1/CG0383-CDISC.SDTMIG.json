@@ -1,0 +1,76 @@
+{
+    "id": "c2ce0993-7060-4fa2-82de-3340e240a7e0",
+    "changed": "2022-02-15T21:30:59Z",
+    "content": "Check:\n  all:\n    - name: --HLGT\n      operator: is_contained_by\n      value:\n        - MedDRA high level group TERM\nCore:\n  Id: CDISC.SDTMIG.CG0383\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when --HLGT  is not a valid MedDRA high level group TERM\nOutcome:\n  Message: --HLGT  is not a valid MedDRA high level group TERM\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0383\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The high-level group term from the primary hierarchy\n                  assigned to the event from MedDRA.\n                Document: Model v2.0\n                Item: --HLGT\n                Section: Events\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - AE\n      - MH\n      - CE\n",
+    "created": "2021-11-06T09:28:54Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--HLGT",
+                    "operator": "is_contained_by",
+                    "value": [
+                        "MedDRA high level group TERM"
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0383",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when --HLGT  is not a valid MedDRA high level group TERM",
+        "Outcome": {
+            "Message": "--HLGT  is not a valid MedDRA high level group TERM"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0383",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The high-level group term from the primary hierarchy assigned to the event from MedDRA.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--HLGT",
+                                        "Section": "Events"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "AE",
+                    "MH",
+                    "CE"
+                ]
+            }
+        }
+    }
+}

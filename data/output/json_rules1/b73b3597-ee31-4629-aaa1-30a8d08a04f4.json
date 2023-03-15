@@ -1,0 +1,10 @@
+{
+    "id": "b73b3597-ee31-4629-aaa1-30a8d08a04f4",
+    "changed": "2022-03-01T15:06:16Z",
+    "content": "Authority:\r\n  Organization: CDISC\r\nCheck:\r\n      all:\r\n        - name: \"--SOCCD\"\r\n          operator: \"is_not_contained_by\"\r\n          value: \"$MedDRA_SOCCD\"\r\n           \r\nReferences:\r\n  - Origin: SDTM and SDTMIG Conformance Rules\r\n    Version: \"2.0\"\r\n    Rule Identifier:\r\n        Id: CG0437\r\n        Version: \"1\"\r\nDescription: Verify that --SOCCD matches MedDRA primary system organ class code\r\nSensitivity: Value\r\nSeverity: Error                     :\r\nScopes:\r\n  Standards:\r\n    - Name: SDTMIG\r\n      Version: \"3.4\"\r\n  Classes:\r\n    # {Source Class: EVT}\r\n    Include:\r\n      - Events\r\n  Domains:\r\n    # {Source Domains: AE, MH, CE}\r\n    Include:\r\n      - AE\r\n      - MH\r\n      - CE\r\n#need operator/function to cross check and verify dataset --SOCCD against MedDRA SOCCD (any dictionary #lookup) ,drafting using the logic of the cross dataset check for now\r\nRule Type: External Dictionaries  \r\n \r\nOperations:\r\n  - operator: \"distinct\"\r\n    domain: \"<MedDRA>\"\r\n    name: \"SOCCD\"\r\n    id: \"$<MedDRA>_SOCCD\"\r\nOutcome:\r\n  Message: --SOCCD must equal MedDRA primary system organ class --SOCCD\r\nCitations:\r\n  - Document: Model v2.0\r\n    Section: Events\r\n    Item: --SOCCD\r\n    Cited Guidance: >-\r\n      The system organ class code from the primary hierarchy assigned in the MedDRA dictionary.\r\n",
+    "created": "2021-12-16T15:48:12Z",
+    "creator": {
+        "id": "57474fac-237e-4693-bb37-7826b02737da"
+    },
+    "json": {}
+}

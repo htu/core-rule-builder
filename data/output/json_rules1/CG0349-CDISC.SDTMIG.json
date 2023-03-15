@@ -1,0 +1,99 @@
+{
+    "id": "c441c663-b6fc-4b6d-912b-5015f1e8ebfd",
+    "changed": "2022-02-15T21:31:04Z",
+    "content": "Check:\n  all:\n    - name: DOMAIN\n      operator: is_not_contained_by\n      value:\n        - CT.DOMAIN\n    - name: Variable\n      operator: is_not_contained_by\n      value:\n        - STUDYID\n        - DOMAIN\n        - USUBJID\n        - POOLID\n        - SPDEVID\n        - VISIT\n        - VISITNUM\n        - VISITDY\n        - ELEMENT\n        - TAETORD\n        - EPOCH\n    - name: Variable\n      operator: prefix_matches_regex\n      prefix: 2\n      value: DOMAIN\nCore:\n  Id: CDISC.SDTMIG.CG0349\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when prefixed variable within custom domain does not match\n  the DOMAIN value\nOutcome:\n  Message: Prefixed variable within custom domain does not match the DOMAIN value\nRule Type: Record Data\nSensitivity: Variable\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0349\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: 'The following variables are exceptions to the philosophy\n                  that all variable names are prefixed with the Domain Identifier:\n                  -Required Identifiers (STUDYID, DOMAIN, USUBJID) -Commonly used\n                  grouping and merge Keys (e.g., VISIT, VISITNUM, VISITDY) All Demographics\n                  domain (DM) variables other than DMDTC and DMDY -All variables in\n                  RELREC and SUPPQUAL, and some variables in Comments and Trial Design\n                  datasets. Required Identifiers are not prefixed because they are\n                  usually used as keys when merging/joining observations. The --SEQ\n                  and the optional Identifiers --GRPID and --REFID are prefixed because\n                  they may be used as keys when relating observations across domains.'\n                Document: IG v3.4\n                Item:\n                Section: 4.2.2\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n      - INTERVENTIONS\n      - EVENTS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-06T08:49:10Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "DOMAIN",
+                    "operator": "is_not_contained_by",
+                    "value": [
+                        "CT.DOMAIN"
+                    ]
+                },
+                {
+                    "name": "Variable",
+                    "operator": "is_not_contained_by",
+                    "value": [
+                        "STUDYID",
+                        "DOMAIN",
+                        "USUBJID",
+                        "POOLID",
+                        "SPDEVID",
+                        "VISIT",
+                        "VISITNUM",
+                        "VISITDY",
+                        "ELEMENT",
+                        "TAETORD",
+                        "EPOCH"
+                    ]
+                },
+                {
+                    "name": "Variable",
+                    "operator": "prefix_matches_regex",
+                    "prefix": 2,
+                    "value": "DOMAIN"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0349",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when prefixed variable within custom domain does not match the DOMAIN value",
+        "Outcome": {
+            "Message": "Prefixed variable within custom domain does not match the DOMAIN value"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Variable",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0349",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The following variables are exceptions to the philosophy that all variable names are prefixed with the Domain Identifier: -Required Identifiers (STUDYID, DOMAIN, USUBJID) -Commonly used grouping and merge Keys (e.g., VISIT, VISITNUM, VISITDY) All Demographics domain (DM) variables other than DMDTC and DMDY -All variables in RELREC and SUPPQUAL, and some variables in Comments and Trial Design datasets. Required Identifiers are not prefixed because they are usually used as keys when merging/joining observations. The --SEQ and the optional Identifiers --GRPID and --REFID are prefixed because they may be used as keys when relating observations across domains.",
+                                        "Document": "IG v3.4",
+                                        "Item": null,
+                                        "Section": "4.2.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS",
+                    "INTERVENTIONS",
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

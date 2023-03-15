@@ -1,0 +1,74 @@
+{
+    "id": "51f11e11-8ef0-4767-876c-4f6d9bb73073",
+    "changed": "2022-02-15T21:28:13Z",
+    "content": "Check:\n  all:\n    - name:\n      operator:\n    - name:\n      operator:\nCore:\n  Id: CDISC.SDTMIG.CG0173\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when collected data fits a Qualifier variable listed in\n  SDTM Sections 2.2.1, 2.2.2, or 2.2.3, and are represented in the Findings About\n  domain, and the name of the variable is used as FATESTCD\nOutcome:\n  Message: collected data fits a Qualifier variable listed in SDTM Sections 2.2.1,\n    2.2.2, or 2.2.3, and are represented in the Findings About domain, and the name\n    of the variable is used as FATESTCD\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0173\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: 'When collected data fit a Qualifier variable listed\n                  in SDTM: Sections 3.1.1, 3.1.2, or 3.1.3, and are represented in\n                  the Findings About domain, then the name of the variable should\n                  be used as the value of FATESTCD.'\n                Document: IG v3.4\n                Section: 6.4.3\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - FA\n",
+    "created": "2021-10-29T06:17:24Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": null,
+                    "operator": null
+                },
+                {
+                    "name": null,
+                    "operator": null
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0173",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when collected data fits a Qualifier variable listed in SDTM Sections 2.2.1, 2.2.2, or 2.2.3, and are represented in the Findings About domain, and the name of the variable is used as FATESTCD",
+        "Outcome": {
+            "Message": "collected data fits a Qualifier variable listed in SDTM Sections 2.2.1, 2.2.2, or 2.2.3, and are represented in the Findings About domain, and the name of the variable is used as FATESTCD"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0173",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "When collected data fit a Qualifier variable listed in SDTM: Sections 3.1.1, 3.1.2, or 3.1.3, and are represented in the Findings About domain, then the name of the variable should be used as the value of FATESTCD.",
+                                        "Document": "IG v3.4",
+                                        "Section": "6.4.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "FA"
+                ]
+            }
+        }
+    }
+}

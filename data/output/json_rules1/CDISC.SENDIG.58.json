@@ -1,0 +1,83 @@
+{
+    "changed": "2022-09-13T05:12:46.421Z",
+    "content": "Check:\n  all:\n    - name: --ENDTC\n      operator: non_empty\n    - name: --DTC\n      operator: non_empty\n    - name: --DTC\n      operator: date_greater_than\n      value: --ENDTC\nCore:\n  Id: CDISC.SENDIG.58\n  Version: '1'\n  Status: Draft\nDescription: Raise and error when --ENDTC before --DTC\nOutcome:\n  Message: --ENDTC must be greater than or equal to --DTC\n  Output Variables:\n    - --ENDTC\n    - --DTC\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '58'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: If both --DTC and --ENDTC are collected, durations\n                  can be calculated by the difference in these two values...\n                Document: IG v3.1\n                Section: 4.4.3\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2022-09-12T15:01:55.611Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--ENDTC",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "--DTC",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "--DTC",
+                    "operator": "date_greater_than",
+                    "value": "--ENDTC"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.58",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise and error when --ENDTC before --DTC",
+        "Outcome": {
+            "Message": "--ENDTC must be greater than or equal to --DTC",
+            "Output_Variables": [
+                "--ENDTC",
+                "--DTC"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "58",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "If both --DTC and --ENDTC are collected, durations can be calculated by the difference in these two values...",
+                                        "Document": "IG v3.1",
+                                        "Section": "4.4.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    },
+    "id": "64082d78-4a75-42ad-b53d-c4a7b21d6139"
+}

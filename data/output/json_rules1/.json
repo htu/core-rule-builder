@@ -1,0 +1,253 @@
+{
+    "changed": "2023-02-23T17:28:20.094Z",
+    "content": "Authorities: \r\n  - Organization: CDISC\r\n    Standards:\r\n      - Name: ADaMIG\r\n        References:\r\n          - Citations:\r\n              - Cited Guidance: 'In developing naming conventions, sponsors should consider the requirements noted in the eCTD guidance document as well as the need to conform to the SAS Transport format requirements (e.g., the total length of the name cannot exceed 8 characters).'\r\n                Document: 'Model v2.1'\r\n                Item: ''\r\n                Section: '4.1.2'\r\n              - Cited Guidance: 'To ensure compliance with SAS Version 5 transport file format and Oracle constraints, all ADaM variable names must be no more than 8 characters in length, start with a letter (not underscore), and be composed only of letters (A-Z), underscore (_), and numerals (0-9). All ADaM variable labels must be no more than 40 characters in length. All ADaM character variables must be no more than 200 characters in length.'\r\n                Document: 'ADaM IG v1.3'\r\n                Item: '1'\r\n                Section: '3.1.1'\r\n            Criteria:\r\n              Logical Expression:\r\n                Condition: ''\r\n                Rule: '16'\r\n              Plain Language Expression: ''\r\n              Type: Failure\r\n            Origin: ADaM Conformance Rules\r\n            Related Rules:\r\n              - Id: ''\r\n                Relationship: Related \r\n            Release Notes: ''\r\n            Rule Identifier:\r\n              Id: '16'\r\n              Version: '1'\r\n            Validator Rule Message: ''\r\n            Version: '4.0'\r\n        Version: '1.3'\r\n\r\n  - Organization: CDISC\r\n    Standards:\r\n      - Name: ADaMIG\r\n        References:\r\n          - Citations:\r\n              - Cited Guidance: 'In developing naming conventions, sponsors should consider the requirements noted in the eCTD guidance document as well as the need to conform to the SAS Transport format requirements (e.g., the total length of the name cannot exceed 8 characters).'\r\n                Document: 'Model v2.1'\r\n                Item: ''\r\n                Section: '4.1.2'\r\n              - Cited Guidance: 'To ensure compliance with SAS Version 5 transport file format and Oracle constraints, all ADaM variable names must be no more than 8 characters in length, start with a letter (not underscore), and be composed only of letters (A-Z), underscore (_), and numerals (0-9). All ADaM variable labels must be no more than 40 characters in length. All ADaM character variables must be no more than 200 characters in length.'\r\n                Document: 'ADaM IG v1.2'\r\n                Item: '1'\r\n                Section: 'Section 3.1.1'\r\n            Criteria:\r\n              Logical Expression:\r\n                Condition: ''\r\n                Rule: '16'\r\n              Plain Language Expression: ''\r\n              Type: Failure\r\n            Origin: ADaM Conformance Rules\r\n            Related Rules:\r\n              - Id: ''\r\n                Relationship: Related \r\n            Release Notes: ''\r\n            Rule Identifier:\r\n              Id: '16'\r\n              Version: '1'\r\n            Validator Rule Message: ''\r\n            Version: '4.0'\r\n        Version: '1.2'\r\n\r\n\r\n  - Organization: CDISC\r\n    Standards:\r\n      - Name: ADaMIG\r\n        References:\r\n          - Citations:\r\n              - Cited Guidance: 'In developing naming conventions, sponsors should consider the requirements noted in the eCTD guidance document as well as the need to conform to the SAS Transport format requirements (e.g., the total length of the name cannot exceed 8 characters).'\r\n                Document: 'Model v2.1'\r\n                Item: ''\r\n                Section: '4.1.2'\r\n              - Cited Guidance: 'To ensure compliance with SAS Version 5 transport file format and Oracle constraints, all ADaM variable names must be no more than 8 characters in length, start with a letter (not underscore), and be composed only of letters (A-Z), underscore (_), and numerals (0-9). All ADaM variable labels must be no more than 40 characters in length. All ADaM character variables must be no more than 200 characters in length.'\r\n                Document: 'ADaM IG v1.1'\r\n                Item: '1'\r\n                Section: 'Section 3.1.1'\r\n            Criteria:\r\n              Logical Expression:\r\n                Condition: ''\r\n                Rule: '16'\r\n              Plain Language Expression: ''\r\n              Type: Failure\r\n            Origin: ADaM Conformance Rules\r\n            Related Rules:\r\n              - Id: ''\r\n                Relationship: Related \r\n            Release Notes: ''\r\n            Rule Identifier:\r\n              Id: '16'\r\n              Version: '1'\r\n            Validator Rule Message: ''\r\n            Version: '4.0'\r\n        Version: '1.1'\r\n\r\n\r\n  - Organization: CDISC\r\n    Standards:\r\n      - Name: ADaMIG\r\n        References:\r\n          - Citations:\r\n              - Cited Guidance: 'In developing naming conventions, sponsors should consider the requirements noted in the eCTD guidance document as well as the need to conform to the SAS Transport format requirements (e.g., the total length of the name cannot exceed 8 characters).'\r\n                Document: 'Model v2.1'\r\n                Item: ''\r\n                Section: '4.1.2'\r\n              - Cited Guidance: 'To ensure compliance with SAS Transport file and Oracle constraints, all ADaM variable names must be no more than 8 characters in length, start with a letter (not underscore), and be comprised only of letters (A-Z), underscore (_), and numerals (0-9). All ADaM variable labels must be no more than 40 characters in length. All ADaM character variables must be no more than 200 characters in length.'\r\n                Document: 'ADaM IG v1.0'\r\n                Item: '5 (General Variable Naming Conventions)'\r\n                Section: '3'\r\n            Criteria:\r\n              Logical Expression:\r\n                Condition: ''\r\n                Rule: '16'\r\n              Plain Language Expression: ''\r\n              Type: Failure\r\n            Origin: ADaM Conformance Rules\r\n            Related Rules:\r\n              - Id: ''\r\n                Relationship: Related \r\n            Release Notes: ''\r\n            Rule Identifier:\r\n              Id: '16'\r\n              Version: '1'\r\n            Validator Rule Message: ''\r\n            Version: '4.0'\r\n        Version: '1.0'\r\n\r\n\r\nCheck:\r\n   all:\r\n         - name: variable_label\r\n           operator: longer_than\r\n           value: 40\r\n           \r\nCore:\r\n  Id: ''\r\n  Version: '1'\r\n  Status: Draft \r\nDescription: ''\r\nExecutability: Fully Executable \r\nOutcome:\r\n  Message: 'Label must be less than 40 charatcters'\r\n  #Output Variables:\r\n    # - SUBJID  \r\n    # - CRIT1   #how do we specify varibales that fail this criteria!!!\r\n    # - CRIT1FL #how do we specify varibales that fail this criteria!!!\r\nRule Type: Variable Metadata Check \r\nScope:\r\n  Data Structures:\r\n    Include:\r\n      - ALL\r\n  Datasets:\r\n    Include:\r\n      - ALL\r\n  Domains:\r\n    Include:\r\n      - ALL\r\n    include_split_datasets: true\r\n  Subclasses:\r\n    Include:\r\n      - ALL\r\nSensitivity: Record \r\n",
+    "created": "2023-02-21T17:39:21.594Z",
+    "creator": {
+        "id": "57474fac-237e-4693-bb37-7826b02737da"
+    },
+    "json": {
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "ADaMIG",
+                        "References": [
+                            {
+                                "Citations": [
+                                    {
+                                        "Document": "Model v2.1",
+                                        "Item": "",
+                                        "Section": "4.1.2",
+                                        "Cited_Guidance": "In developing naming conventions, sponsors should consider the requirements noted in the eCTD guidance document as well as the need to conform to the SAS Transport format requirements (e.g., the total length of the name cannot exceed 8 characters)."
+                                    },
+                                    {
+                                        "Document": "ADaM IG v1.3",
+                                        "Item": "1",
+                                        "Section": "3.1.1",
+                                        "Cited_Guidance": "To ensure compliance with SAS Version 5 transport file format and Oracle constraints, all ADaM variable names must be no more than 8 characters in length, start with a letter (not underscore), and be composed only of letters (A-Z), underscore (_), and numerals (0-9). All ADaM variable labels must be no more than 40 characters in length. All ADaM character variables must be no more than 200 characters in length."
+                                    }
+                                ],
+                                "Criteria": {
+                                    "Type": "Failure",
+                                    "Logical_Expression": {
+                                        "Condition": "",
+                                        "Rule": "16"
+                                    },
+                                    "Plain_Language_Expression": ""
+                                },
+                                "Origin": "ADaM Conformance Rules",
+                                "Version": "4.0",
+                                "Related_Rules": [
+                                    {
+                                        "Id": "",
+                                        "Relationship": "Related"
+                                    }
+                                ],
+                                "Release_Notes": "",
+                                "Rule_Identifier": {
+                                    "Id": "16",
+                                    "Version": "1"
+                                },
+                                "Validator_Rule_Message": ""
+                            }
+                        ],
+                        "Version": "1.3"
+                    }
+                ]
+            },
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "ADaMIG",
+                        "References": [
+                            {
+                                "Citations": [
+                                    {
+                                        "Document": "Model v2.1",
+                                        "Item": "",
+                                        "Section": "4.1.2",
+                                        "Cited_Guidance": "In developing naming conventions, sponsors should consider the requirements noted in the eCTD guidance document as well as the need to conform to the SAS Transport format requirements (e.g., the total length of the name cannot exceed 8 characters)."
+                                    },
+                                    {
+                                        "Document": "ADaM IG v1.2",
+                                        "Item": "1",
+                                        "Section": "Section 3.1.1",
+                                        "Cited_Guidance": "To ensure compliance with SAS Version 5 transport file format and Oracle constraints, all ADaM variable names must be no more than 8 characters in length, start with a letter (not underscore), and be composed only of letters (A-Z), underscore (_), and numerals (0-9). All ADaM variable labels must be no more than 40 characters in length. All ADaM character variables must be no more than 200 characters in length."
+                                    }
+                                ],
+                                "Criteria": {
+                                    "Type": "Failure",
+                                    "Logical_Expression": {
+                                        "Condition": "",
+                                        "Rule": "16"
+                                    },
+                                    "Plain_Language_Expression": ""
+                                },
+                                "Origin": "ADaM Conformance Rules",
+                                "Version": "4.0",
+                                "Related_Rules": [
+                                    {
+                                        "Id": "",
+                                        "Relationship": "Related"
+                                    }
+                                ],
+                                "Release_Notes": "",
+                                "Rule_Identifier": {
+                                    "Id": "16",
+                                    "Version": "1"
+                                },
+                                "Validator_Rule_Message": ""
+                            }
+                        ],
+                        "Version": "1.2"
+                    }
+                ]
+            },
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "ADaMIG",
+                        "References": [
+                            {
+                                "Citations": [
+                                    {
+                                        "Document": "Model v2.1",
+                                        "Item": "",
+                                        "Section": "4.1.2",
+                                        "Cited_Guidance": "In developing naming conventions, sponsors should consider the requirements noted in the eCTD guidance document as well as the need to conform to the SAS Transport format requirements (e.g., the total length of the name cannot exceed 8 characters)."
+                                    },
+                                    {
+                                        "Document": "ADaM IG v1.1",
+                                        "Item": "1",
+                                        "Section": "Section 3.1.1",
+                                        "Cited_Guidance": "To ensure compliance with SAS Version 5 transport file format and Oracle constraints, all ADaM variable names must be no more than 8 characters in length, start with a letter (not underscore), and be composed only of letters (A-Z), underscore (_), and numerals (0-9). All ADaM variable labels must be no more than 40 characters in length. All ADaM character variables must be no more than 200 characters in length."
+                                    }
+                                ],
+                                "Criteria": {
+                                    "Type": "Failure",
+                                    "Logical_Expression": {
+                                        "Condition": "",
+                                        "Rule": "16"
+                                    },
+                                    "Plain_Language_Expression": ""
+                                },
+                                "Origin": "ADaM Conformance Rules",
+                                "Version": "4.0",
+                                "Related_Rules": [
+                                    {
+                                        "Id": "",
+                                        "Relationship": "Related"
+                                    }
+                                ],
+                                "Release_Notes": "",
+                                "Rule_Identifier": {
+                                    "Id": "16",
+                                    "Version": "1"
+                                },
+                                "Validator_Rule_Message": ""
+                            }
+                        ],
+                        "Version": "1.1"
+                    }
+                ]
+            },
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "ADaMIG",
+                        "References": [
+                            {
+                                "Citations": [
+                                    {
+                                        "Document": "Model v2.1",
+                                        "Item": "",
+                                        "Section": "4.1.2",
+                                        "Cited_Guidance": "In developing naming conventions, sponsors should consider the requirements noted in the eCTD guidance document as well as the need to conform to the SAS Transport format requirements (e.g., the total length of the name cannot exceed 8 characters)."
+                                    },
+                                    {
+                                        "Document": "ADaM IG v1.0",
+                                        "Item": "5 (General Variable Naming Conventions)",
+                                        "Section": "3",
+                                        "Cited_Guidance": "To ensure compliance with SAS Transport file and Oracle constraints, all ADaM variable names must be no more than 8 characters in length, start with a letter (not underscore), and be comprised only of letters (A-Z), underscore (_), and numerals (0-9). All ADaM variable labels must be no more than 40 characters in length. All ADaM character variables must be no more than 200 characters in length."
+                                    }
+                                ],
+                                "Criteria": {
+                                    "Type": "Failure",
+                                    "Logical_Expression": {
+                                        "Condition": "",
+                                        "Rule": "16"
+                                    },
+                                    "Plain_Language_Expression": ""
+                                },
+                                "Origin": "ADaM Conformance Rules",
+                                "Version": "4.0",
+                                "Related_Rules": [
+                                    {
+                                        "Id": "",
+                                        "Relationship": "Related"
+                                    }
+                                ],
+                                "Release_Notes": "",
+                                "Rule_Identifier": {
+                                    "Id": "16",
+                                    "Version": "1"
+                                },
+                                "Validator_Rule_Message": ""
+                            }
+                        ],
+                        "Version": "1.0"
+                    }
+                ]
+            }
+        ],
+        "Check": {
+            "all": [
+                {
+                    "name": "variable_label",
+                    "operator": "longer_than",
+                    "value": 40
+                }
+            ]
+        },
+        "Core": {
+            "Id": "",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "",
+        "Executability": "Fully Executable",
+        "Outcome": {
+            "Message": "Label must be less than 40 charatcters"
+        },
+        "Scope": {
+            "Datasets": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ],
+                "include_split_datasets": true
+            },
+            "Subclasses": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Data_Structures": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        },
+        "Sensitivity": "Record",
+        "Rule_Type": "Variable Metadata Check"
+    },
+    "id": "2e1e616b-f2e9-4550-96c3-c16e8c0207eb"
+}

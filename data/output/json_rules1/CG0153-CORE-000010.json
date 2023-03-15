@@ -1,0 +1,76 @@
+{
+    "id": "88021157-13ad-4f10-86f9-ac2428ee1184",
+    "changed": "2022-03-14T20:07:32Z",
+    "content": "Check:\n  all:\n    - name: ARMCD\n      operator: matches_regex\n      value: ^(.){21,}$\nCore:\n  Id: CORE-000010\n  Version: '1'\n  Status: Published\nDescription: Verify ARMCD value length is <= 20\nOutcome:\n  Message: ARMCD value length is greater than 20\n  Output Variables:\n    - ARMCD\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0153\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: ARMCD is limited to 20 characters and does not have\n                  the character restrictions that apply to --TESTCD\n                Document: SDTMIG v3.4\n                Section: 4.2.1\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - DM\n      - TA\n",
+    "created": "2021-09-27T17:06:57Z",
+    "creator": {
+        "id": "24709aaa-3e57-4ee4-a635-6006b165bb1b"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "ARMCD",
+                    "operator": "matches_regex",
+                    "value": "^(.){21,}$"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000010",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Verify ARMCD value length is <= 20",
+        "Outcome": {
+            "Message": "ARMCD value length is greater than 20",
+            "Output_Variables": [
+                "ARMCD"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0153",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "ARMCD is limited to 20 characters and does not have the character restrictions that apply to --TESTCD",
+                                        "Document": "SDTMIG v3.4",
+                                        "Section": "4.2.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE",
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "DM",
+                    "TA"
+                ]
+            }
+        }
+    }
+}

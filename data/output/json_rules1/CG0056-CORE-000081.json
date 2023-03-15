@@ -1,0 +1,194 @@
+{
+    "id": "e6adc78d-0645-43cd-abc7-e2986c7b6443",
+    "changed": "2023-01-24T20:06:51.787Z",
+    "content": "Check:\n  all:\n    - name: --PRESP\n      operator: not_exists\n    - name: --STAT\n      operator: exists\nCore:\n  Id: CORE-000081\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --PRESP is not present but --STAT is present.\nOutcome:\n  Message: --STAT is present when --PRESP is not present.\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0056\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: --PRESP, an indication that the event was prospectively\n                  stated or detailed on the CRF. --STAT, used to indicate when a question\n                  about the occurrence of a prespecified event was not answered.\n                Document: SDTM v2.0\n                Section: Events\n              - Cited Guidance: --PRESP, an indication that the intervention was prospectively\n                  stated or detailed on the CRF.  --STAT, used to indicate when a\n                  question about the occurrence of a prespecified intervention was\n                  not answered.\n                Document: SDTM v2.0\n                Section: Interventions\n              - Cited Guidance: Model v1.7[2.2.1 (Interventions )][ (--PRESP Used\n                  when a specific intervention is pre-specified on a CRF. Values should\n                  be \"Y\" or null.]|\n                Document: SDTM v1.7\n                Section: Model v1.7[2.2.1 (Interventions )]\n              - Cited Guidance: Model v1.7[2.2.2 (Events)][--PRESP Used to indicate\n                  whether the event describe by --TERM was pre-specified on a CRF.\n                  Value is Y for pre-specified events, null for spontaneously reported\n                  events. --STAT Used to indicate when a question about the occurrence\n                  of a pre-specified event was not answered. Should be null or hav\n                  a value of NOT DONE]\n                Document: SDTM v1.7\n                Section: Model v1.7[2.2.2 (Events)]\n              - Cited Guidance: Model v1.4[2.2.1 (Interventions )][ (--PRESP Used\n                  when a specific intervention is pre-specified on a CRF. Values should\n                  be \"Y\" or null.]\n                Document: SDTM v1.4\n                Section: Model v1.4[2.2.1 (Interventions)\n              - Cited Guidance: Model v1.4[2.2.2 (Events)][--PRESP Used to indicate\n                  whether the event describe by --TERM was pre-specified on a CRF.\n                  Value is Y for pre-specified events, null for spontaneously reported\n                  events. --STAT Used to indicate when a question about the occurrence\n                  of a pre-specified event was not answered. Should be null or hav\n                  a value of NOT DONE]\n                Document: SDTM v1.4\n                Section: Model v1.4[2.2.2 (Events)]\n      - Name: SDTMIG\n        Version: '3.3'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0056\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: --PRESP, an indication that the event was prospectively\n                  stated or detailed on the CRF. --STAT, used to indicate when a question\n                  about the occurrence of a prespecified event was not answered.\n                Document: SDTM v2.0\n                Section: Events\n              - Cited Guidance: --PRESP, an indication that the intervention was prospectively\n                  stated or detailed on the CRF.  --STAT, used to indicate when a\n                  question about the occurrence of a prespecified intervention was\n                  not answered.\n                Document: SDTM v2.0\n                Section: Interventions\n              - Cited Guidance: Model v1.7[2.2.1 (Interventions )][ (--PRESP Used\n                  when a specific intervention is pre-specified on a CRF. Values should\n                  be \"Y\" or null.]|\n                Document: SDTM v1.7\n                Section: Model v1.7[2.2.1 (Interventions )]\n              - Cited Guidance: Model v1.7[2.2.2 (Events)][--PRESP Used to indicate\n                  whether the event describe by --TERM was pre-specified on a CRF.\n                  Value is Y for pre-specified events, null for spontaneously reported\n                  events. --STAT Used to indicate when a question about the occurrence\n                  of a pre-specified event was not answered. Should be null or hav\n                  a value of NOT DONE]\n                Document: SDTM v1.7\n                Section: Model v1.7[2.2.2 (Events)]\n              - Cited Guidance: Model v1.4[2.2.1 (Interventions )][ (--PRESP Used\n                  when a specific intervention is pre-specified on a CRF. Values should\n                  be \"Y\" or null.]\n                Document: SDTM v1.4\n                Section: Model v1.4[2.2.1 (Interventions)\n              - Cited Guidance: Model v1.4[2.2.2 (Events)][--PRESP Used to indicate\n                  whether the event describe by --TERM was pre-specified on a CRF.\n                  Value is Y for pre-specified events, null for spontaneously reported\n                  events. --STAT Used to indicate when a question about the occurrence\n                  of a pre-specified event was not answered. Should be null or hav\n                  a value of NOT DONE]\n                Document: SDTM v1.4\n                Section: Model v1.4[2.2.2 (Events)]\n      - Name: SDTMIG\n        Version: '3.2'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0056\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: --PRESP, an indication that the event was prospectively\n                  stated or detailed on the CRF. --STAT, used to indicate when a question\n                  about the occurrence of a prespecified event was not answered.\n                Document: SDTM v2.0\n                Section: Events\n              - Cited Guidance: --PRESP, an indication that the intervention was prospectively\n                  stated or detailed on the CRF.  --STAT, used to indicate when a\n                  question about the occurrence of a prespecified intervention was\n                  not answered.\n                Document: SDTM v2.0\n                Section: Interventions\n              - Cited Guidance: Model v1.7[2.2.1 (Interventions )][ (--PRESP Used\n                  when a specific intervention is pre-specified on a CRF. Values should\n                  be \"Y\" or null.]|\n                Document: SDTM v1.7\n                Section: Model v1.7[2.2.1 (Interventions )]\n              - Cited Guidance: Model v1.7[2.2.2 (Events)][--PRESP Used to indicate\n                  whether the event describe by --TERM was pre-specified on a CRF.\n                  Value is Y for pre-specified events, null for spontaneously reported\n                  events. --STAT Used to indicate when a question about the occurrence\n                  of a pre-specified event was not answered. Should be null or hav\n                  a value of NOT DONE]\n                Document: SDTM v1.7\n                Section: Model v1.7[2.2.2 (Events)]\n              - Cited Guidance: Model v1.4[2.2.1 (Interventions )][ (--PRESP Used\n                  when a specific intervention is pre-specified on a CRF. Values should\n                  be \"Y\" or null.]\n                Document: SDTM v1.4\n                Section: Model v1.4[2.2.1 (Interventions)\n              - Cited Guidance: Model v1.4[2.2.2 (Events)][--PRESP Used to indicate\n                  whether the event describe by --TERM was pre-specified on a CRF.\n                  Value is Y for pre-specified events, null for spontaneously reported\n                  events. --STAT Used to indicate when a question about the occurrence\n                  of a pre-specified event was not answered. Should be null or hav\n                  a value of NOT DONE]\n                Document: SDTM v1.4\n                Section: Model v1.4[2.2.2 (Events)]\nScope:\n  Classes:\n    Include:\n      - EVENTS\n      - INTERVENTIONS\n  Domains:\n    Exclude:\n      - DS\n      - DV\n      - EX\n",
+    "created": "2021-10-04T05:43:40Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--PRESP",
+                    "operator": "not_exists"
+                },
+                {
+                    "name": "--STAT",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000081",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --PRESP is not present but --STAT is present.",
+        "Outcome": {
+            "Message": "--STAT is present when --PRESP is not present."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0056",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "--PRESP, an indication that the event was prospectively stated or detailed on the CRF. --STAT, used to indicate when a question about the occurrence of a prespecified event was not answered.",
+                                        "Document": "SDTM v2.0",
+                                        "Section": "Events"
+                                    },
+                                    {
+                                        "Cited_Guidance": "--PRESP, an indication that the intervention was prospectively stated or detailed on the CRF.  --STAT, used to indicate when a question about the occurrence of a prespecified intervention was not answered.",
+                                        "Document": "SDTM v2.0",
+                                        "Section": "Interventions"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Model v1.7[2.2.1 (Interventions )][ (--PRESP Used when a specific intervention is pre-specified on a CRF. Values should be \"Y\" or null.]|",
+                                        "Document": "SDTM v1.7",
+                                        "Section": "Model v1.7[2.2.1 (Interventions )]"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Model v1.7[2.2.2 (Events)][--PRESP Used to indicate whether the event describe by --TERM was pre-specified on a CRF. Value is Y for pre-specified events, null for spontaneously reported events. --STAT Used to indicate when a question about the occurrence of a pre-specified event was not answered. Should be null or hav a value of NOT DONE]",
+                                        "Document": "SDTM v1.7",
+                                        "Section": "Model v1.7[2.2.2 (Events)]"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Model v1.4[2.2.1 (Interventions )][ (--PRESP Used when a specific intervention is pre-specified on a CRF. Values should be \"Y\" or null.]",
+                                        "Document": "SDTM v1.4",
+                                        "Section": "Model v1.4[2.2.1 (Interventions)"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Model v1.4[2.2.2 (Events)][--PRESP Used to indicate whether the event describe by --TERM was pre-specified on a CRF. Value is Y for pre-specified events, null for spontaneously reported events. --STAT Used to indicate when a question about the occurrence of a pre-specified event was not answered. Should be null or hav a value of NOT DONE]",
+                                        "Document": "SDTM v1.4",
+                                        "Section": "Model v1.4[2.2.2 (Events)]"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.3",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0056",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "--PRESP, an indication that the event was prospectively stated or detailed on the CRF. --STAT, used to indicate when a question about the occurrence of a prespecified event was not answered.",
+                                        "Document": "SDTM v2.0",
+                                        "Section": "Events"
+                                    },
+                                    {
+                                        "Cited_Guidance": "--PRESP, an indication that the intervention was prospectively stated or detailed on the CRF.  --STAT, used to indicate when a question about the occurrence of a prespecified intervention was not answered.",
+                                        "Document": "SDTM v2.0",
+                                        "Section": "Interventions"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Model v1.7[2.2.1 (Interventions )][ (--PRESP Used when a specific intervention is pre-specified on a CRF. Values should be \"Y\" or null.]|",
+                                        "Document": "SDTM v1.7",
+                                        "Section": "Model v1.7[2.2.1 (Interventions )]"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Model v1.7[2.2.2 (Events)][--PRESP Used to indicate whether the event describe by --TERM was pre-specified on a CRF. Value is Y for pre-specified events, null for spontaneously reported events. --STAT Used to indicate when a question about the occurrence of a pre-specified event was not answered. Should be null or hav a value of NOT DONE]",
+                                        "Document": "SDTM v1.7",
+                                        "Section": "Model v1.7[2.2.2 (Events)]"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Model v1.4[2.2.1 (Interventions )][ (--PRESP Used when a specific intervention is pre-specified on a CRF. Values should be \"Y\" or null.]",
+                                        "Document": "SDTM v1.4",
+                                        "Section": "Model v1.4[2.2.1 (Interventions)"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Model v1.4[2.2.2 (Events)][--PRESP Used to indicate whether the event describe by --TERM was pre-specified on a CRF. Value is Y for pre-specified events, null for spontaneously reported events. --STAT Used to indicate when a question about the occurrence of a pre-specified event was not answered. Should be null or hav a value of NOT DONE]",
+                                        "Document": "SDTM v1.4",
+                                        "Section": "Model v1.4[2.2.2 (Events)]"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.2",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0056",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "--PRESP, an indication that the event was prospectively stated or detailed on the CRF. --STAT, used to indicate when a question about the occurrence of a prespecified event was not answered.",
+                                        "Document": "SDTM v2.0",
+                                        "Section": "Events"
+                                    },
+                                    {
+                                        "Cited_Guidance": "--PRESP, an indication that the intervention was prospectively stated or detailed on the CRF.  --STAT, used to indicate when a question about the occurrence of a prespecified intervention was not answered.",
+                                        "Document": "SDTM v2.0",
+                                        "Section": "Interventions"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Model v1.7[2.2.1 (Interventions )][ (--PRESP Used when a specific intervention is pre-specified on a CRF. Values should be \"Y\" or null.]|",
+                                        "Document": "SDTM v1.7",
+                                        "Section": "Model v1.7[2.2.1 (Interventions )]"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Model v1.7[2.2.2 (Events)][--PRESP Used to indicate whether the event describe by --TERM was pre-specified on a CRF. Value is Y for pre-specified events, null for spontaneously reported events. --STAT Used to indicate when a question about the occurrence of a pre-specified event was not answered. Should be null or hav a value of NOT DONE]",
+                                        "Document": "SDTM v1.7",
+                                        "Section": "Model v1.7[2.2.2 (Events)]"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Model v1.4[2.2.1 (Interventions )][ (--PRESP Used when a specific intervention is pre-specified on a CRF. Values should be \"Y\" or null.]",
+                                        "Document": "SDTM v1.4",
+                                        "Section": "Model v1.4[2.2.1 (Interventions)"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Model v1.4[2.2.2 (Events)][--PRESP Used to indicate whether the event describe by --TERM was pre-specified on a CRF. Value is Y for pre-specified events, null for spontaneously reported events. --STAT Used to indicate when a question about the occurrence of a pre-specified event was not answered. Should be null or hav a value of NOT DONE]",
+                                        "Document": "SDTM v1.4",
+                                        "Section": "Model v1.4[2.2.2 (Events)]"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS",
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Exclude": [
+                    "DS",
+                    "DV",
+                    "EX"
+                ]
+            }
+        }
+    }
+}

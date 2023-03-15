@@ -1,0 +1,126 @@
+{
+    "id": "8b8d5692-6f96-4951-b5b3-7be1f9bd1d55",
+    "changed": "2023-01-20T16:33:17.668Z",
+    "content": "Check:\n  all:\n    - name: --PRESP\n      operator: non_empty\n    - name: --PRESP\n      operator: not_equal_to\n      value: Y\nCore:\n  Id: CDISC.SDTMIG.CG0085\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when --PRESP does not equal 'Y' or is not empty.\nOutcome:\n  Message: --PRESP does not equal 'Y' or is not empty.\n  Output Variables:\n    - --PRESP\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0085\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Events[--PRESP][Value is \"Y\" for prespecified events,\n                  null for spontaneously reported events.] Interventions[--PRESP][Values\n                  should be \"Y\" or null.]\n                Document: Model v2.0\n                Item: --PRESP\n                Section: Events|Interventions\n      - Name: SDTMIG\n        Version: '3.3'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0085\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Model v1.7[2.2.1 (Interventions )][--PRESP; Values\n                  should be \"Y\" or null.] | Model v1.7[2.2.2 (Events)][--PRESP; Values\n                  should be \"Y\" or null.]\n                Document: Model v1.7\n                Item: ''\n                Section: Model v1.7[2.2.1 (Interventions)]|Model v1.7[2.2.2 (Events)]\n      - Name: SDTMIG\n        Version: '3.2'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0085\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Model v1.4[2.2.1 (Interventions )][--PRESP; Values\n                  should be \"Y\" or null.] |Model v1.4[2.2.2 (Events)][--PRESP; Values\n                  should be \"Y\" or null.]\n                Document: Model v1.4\n                Item: ''\n                Section: Model v1.4[2.2.1 (Interventions)]|Model v1.4[2.2.2 (Events)]\nScope:\n  Classes:\n    Include:\n      - EVENTS\n      - INTERVENTIONS\n  Domains:\n    Exclude:\n      - DS\n      - DV\n      - EX\n",
+    "created": "2021-10-13T13:24:10Z",
+    "creator": {
+        "id": "02c3c969-4787-4d57-b164-e2851035c0e8"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--PRESP",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "--PRESP",
+                    "operator": "not_equal_to",
+                    "value": "Y"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0085",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when --PRESP does not equal 'Y' or is not empty.",
+        "Outcome": {
+            "Message": "--PRESP does not equal 'Y' or is not empty.",
+            "Output_Variables": [
+                "--PRESP"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0085",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Events[--PRESP][Value is \"Y\" for prespecified events, null for spontaneously reported events.] Interventions[--PRESP][Values should be \"Y\" or null.]",
+                                        "Document": "Model v2.0",
+                                        "Item": "--PRESP",
+                                        "Section": "Events|Interventions"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.3",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0085",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Model v1.7[2.2.1 (Interventions )][--PRESP; Values should be \"Y\" or null.] | Model v1.7[2.2.2 (Events)][--PRESP; Values should be \"Y\" or null.]",
+                                        "Document": "Model v1.7",
+                                        "Item": "",
+                                        "Section": "Model v1.7[2.2.1 (Interventions)]|Model v1.7[2.2.2 (Events)]"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.2",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0085",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Model v1.4[2.2.1 (Interventions )][--PRESP; Values should be \"Y\" or null.] |Model v1.4[2.2.2 (Events)][--PRESP; Values should be \"Y\" or null.]",
+                                        "Document": "Model v1.4",
+                                        "Item": "",
+                                        "Section": "Model v1.4[2.2.1 (Interventions)]|Model v1.4[2.2.2 (Events)]"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS",
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Exclude": [
+                    "DS",
+                    "DV",
+                    "EX"
+                ]
+            }
+        }
+    }
+}

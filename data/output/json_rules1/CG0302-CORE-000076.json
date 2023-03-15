@@ -1,0 +1,71 @@
+{
+    "id": "54d55056-72f9-4e35-85ec-42504817cd75",
+    "changed": "2022-03-09T21:14:51Z",
+    "content": "Check:\n  all:\n    - name: TRPORTOT\n      operator: exists\nCore:\n  Id: CORE-000076\n  Version: '1'\n  Status: Published\nDescription: Raise an error when TRPORTOT is present.\nOutcome:\n  Message: TRPORTOT is present.\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0302\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The TR domain does not include anatomical location\n                  information on each measurement/assessment record, because this\n                  would be a duplication of information already represented in TU.\n                  The multi-domain approach to representing oncology assessment data\n                  was developed largely to reduce duplication of stored information.\n                Document: IG v3.4\n                Section: 6.3.12.2\n                Item: TR Description/Overview\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - TR\n",
+    "created": "2021-10-04T05:32:19Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "TRPORTOT",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000076",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when TRPORTOT is present.",
+        "Outcome": {
+            "Message": "TRPORTOT is present."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0302",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The TR domain does not include anatomical location information on each measurement/assessment record, because this would be a duplication of information already represented in TU. The multi-domain approach to representing oncology assessment data was developed largely to reduce duplication of stored information.",
+                                        "Document": "IG v3.4",
+                                        "Section": "6.3.12.2",
+                                        "Item": "TR Description/Overview"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TR"
+                ]
+            }
+        }
+    }
+}

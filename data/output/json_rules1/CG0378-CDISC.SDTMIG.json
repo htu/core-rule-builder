@@ -1,0 +1,76 @@
+{
+    "id": "f28ca8aa-c495-4936-af9e-ec289d8f1173",
+    "changed": "2022-02-15T21:32:18Z",
+    "content": "Check:\n  all:\n    - name: --LLTCD\n      operator: is_contained_by\n      value:\n        - MedDRA lowest level code\nCore:\n  Id: CDISC.SDTMIG.CG0378\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when --LLTCD  is not a valid MedDRA lowest level code\nOutcome:\n  Message: --LLTCD  is not a valid MedDRA lowest level code\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0378\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The lowest-level term code assigned to the event from\n                  MedDRA.\n                Document: Model v2.0\n                Item: --LLTCD\n                Section: Events\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - AE\n      - MH\n      - CE\n",
+    "created": "2021-11-06T09:33:54Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--LLTCD",
+                    "operator": "is_contained_by",
+                    "value": [
+                        "MedDRA lowest level code"
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0378",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when --LLTCD  is not a valid MedDRA lowest level code",
+        "Outcome": {
+            "Message": "--LLTCD  is not a valid MedDRA lowest level code"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0378",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The lowest-level term code assigned to the event from MedDRA.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--LLTCD",
+                                        "Section": "Events"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "AE",
+                    "MH",
+                    "CE"
+                ]
+            }
+        }
+    }
+}

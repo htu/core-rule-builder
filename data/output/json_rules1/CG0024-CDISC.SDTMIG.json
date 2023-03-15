@@ -1,0 +1,79 @@
+{
+    "id": "d574667c-27a2-4ee3-a01f-344e47790e47",
+    "changed": "2022-07-17T04:30:16Z",
+    "content": "Check:\n  all:\n    - name: --LNKGRP\n      operator: multiple_references\n      value: $VALUE_COUNTS\nOperations:\n  - id: $VALUE_COUNTS\n    name: --LNKGRP\n    operator: variable_value_counts\nCore:\n  Id: CDISC.SDTMIG.CG0024\n  Version: '1'\n  Status: Draft\nDescription: When --LNKID is present in a domain, it must also be present in another\n  domain\nOutcome:\n  Message: --LNKID is present in only one domain.\nRule Type: Record Data\nSensitivity: Domain\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0024\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: --LNKID is a grouping identifier used to identify\n                  a record in one domain that is related to records in another domain,\n                  often forming a one-to-many relationship.\n                Document: IG v3.4\n                Item: 2.E.1\n                Section: 4.2.6\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-30T10:38:59Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--LNKGRP",
+                    "operator": "multiple_references",
+                    "value": "$VALUE_COUNTS"
+                }
+            ]
+        },
+        "Operations": [
+            {
+                "id": "$VALUE_COUNTS",
+                "name": "--LNKGRP",
+                "operator": "variable_value_counts"
+            }
+        ],
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0024",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "When --LNKID is present in a domain, it must also be present in another domain",
+        "Outcome": {
+            "Message": "--LNKID is present in only one domain."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Domain",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0024",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "--LNKID is a grouping identifier used to identify a record in one domain that is related to records in another domain, often forming a one-to-many relationship.",
+                                        "Document": "IG v3.4",
+                                        "Item": "2.E.1",
+                                        "Section": "4.2.6"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "changed": "2022-09-29T10:32:29.166Z",
+    "content": "Check:\n  all:\n    - name: --STDTC\n      operator: empty\n    - name: --STDY\n      operator: empty\nCore:\n  Id: CDISC.SENDIG.291\n  Version: '1'\n  Status: Draft\nDescription: Either --STDTC or --STDY must be populated.\nOutcome:\n  Message: Neither --STDTC nor --STDY is populated\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '291'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: In general, all domains based on the three general\n                  observation classes should have at least one Timing variable. In\n                  the Events or Interventions general observation class, this could\n                  be the start date of the event or intervention\u2026This domain should\n                  contain one record per constant dosing interval per subject per\n                  administration site (as identified in FOCID). A constant dosing\n                  interval is sponsor defined and represents a specific period of\n                  time during which a subject was treated with a specific lot at a\n                  constant dose level.\n                Document: IG v3.1\n                Section: 4.4|6.1.1.1\nScope:\n  Classes:\n    Include:\n      - INTERVENTIONS\n  Domains:\n    Include:\n      - EX\n",
+    "created": "2022-09-29T10:32:29.166Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--STDTC",
+                    "operator": "empty"
+                },
+                {
+                    "name": "--STDY",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.291",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Either --STDTC or --STDY must be populated.",
+        "Outcome": {
+            "Message": "Neither --STDTC nor --STDY is populated"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "291",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "In general, all domains based on the three general observation classes should have at least one Timing variable. In the Events or Interventions general observation class, this could be the start date of the event or intervention\u2026This domain should contain one record per constant dosing interval per subject per administration site (as identified in FOCID). A constant dosing interval is sponsor defined and represents a specific period of time during which a subject was treated with a specific lot at a constant dose level.",
+                                        "Document": "IG v3.1",
+                                        "Section": "4.4|6.1.1.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "EX"
+                ]
+            }
+        }
+    },
+    "id": "c9cbbb37-5b88-48c2-8466-a4efe6d7c021"
+}

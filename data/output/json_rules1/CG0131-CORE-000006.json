@@ -1,0 +1,79 @@
+{
+    "id": "76b5e3e0-4bb1-4e06-9f52-32d21804ec88",
+    "changed": "2022-03-05T19:06:38Z",
+    "content": "Check:\n  all:\n    - name: DTHFL\n      operator: not_equal_to\n      value: Y\n    - name: DTHFL\n      operator: non_empty\nCore:\n  Id: CORE-000006\n  Version: '1'\n  Status: Published\nDescription: Raise an error when DTHFL ^= \"Y\" and not null\nOutcome:\n  Message: DTHFL is not \"Y\" or null\n  Output Variables:\n    - DTHFL\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0131\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Should be \"Y\" or null\n                Document: Model v2.0\n                Section: Demographics\n                Item: DTHFL\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - DM\n",
+    "created": "2021-09-26T03:32:21Z",
+    "creator": {
+        "id": "d0881041-369e-4940-b721-5b456d12101b"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "DTHFL",
+                    "operator": "not_equal_to",
+                    "value": "Y"
+                },
+                {
+                    "name": "DTHFL",
+                    "operator": "non_empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000006",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when DTHFL ^= \"Y\" and not null",
+        "Outcome": {
+            "Message": "DTHFL is not \"Y\" or null",
+            "Output_Variables": [
+                "DTHFL"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0131",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Should be \"Y\" or null",
+                                        "Document": "Model v2.0",
+                                        "Section": "Demographics",
+                                        "Item": "DTHFL"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "DM"
+                ]
+            }
+        }
+    }
+}

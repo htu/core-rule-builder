@@ -1,0 +1,75 @@
+{
+    "id": "b79c596d-c8a1-4f4d-be6c-24bf694ee596",
+    "changed": "2022-04-13T21:38:17Z",
+    "content": "Check:\n  all:\n    - name: TSVAL\n      operator: empty\n    - name: TSVALNF\n      operator: empty\nCore:\n  Id: CORE-000149\n  Version: '1'\n  Status: Published\nDescription: Trigger error when TSVAL is null and TSVALNF is null\nOutcome:\n  Message: TSVALNF is null when TSVAL is null.\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0259\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: TSVAL can only be null when TSVALNF is populated.\n                Document: IG v3.4\n                Item: Specification\n                Section: 7.4.2\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - TS\n",
+    "created": "2021-10-17T05:05:02Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "TSVAL",
+                    "operator": "empty"
+                },
+                {
+                    "name": "TSVALNF",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000149",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Trigger error when TSVAL is null and TSVALNF is null",
+        "Outcome": {
+            "Message": "TSVALNF is null when TSVAL is null."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0259",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "TSVAL can only be null when TSVALNF is populated.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Specification",
+                                        "Section": "7.4.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TS"
+                ]
+            }
+        }
+    }
+}

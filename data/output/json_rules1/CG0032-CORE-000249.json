@@ -1,0 +1,145 @@
+{
+    "id": "f57f5e25-f232-4234-908d-d473b7af9986",
+    "changed": "2023-01-25T10:14:06.314Z",
+    "content": "Check:\n  all:\n    - name: VISITDY\n      operator: exists\n    - name: VISITNUM\n      operator: is_contained_by\n      value: $tv_visitnum\n    - name: VISITDY\n      operator: not_equal_to\n      value: TV.VISITDY\nMatch Datasets:\n  - Name: TV\n    Keys:\n      - VISITNUM\nCore:\n  Id: CORE-000249\n  Version: '1'\n  Status: Published\nDescription: Verify that visitdy is planned and exists in TV\nOperations:\n  - domain: TV\n    id: $tv_visitnum\n    name: VISITNUM\n    operator: distinct\nOutcome:\n  Message: Visit Day cannot be found in Trial Visit (TV) domain\n  Output Variables:\n    - VISITDY\n    - VISITNUM\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0032\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: For planned visits, values of VISIT, VISITNUM, and\n                  VISITDY must be those defined in the Trial Visits (TV) dataset (Section\n                  7.3.1, Trial Visits).\n                Document: IG v3.4\n                Item: ''\n                Section: 4.4.5\n      - Name: SDTMIG\n        Version: '3.3'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0032\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: For planned visits, values of VISIT, VISITNUM, and\n                  VISITDY must be those defined in the Trial Visits dataset,\n                Document: IG v3.3\n                Item: ''\n                Section: 4.4.5\n      - Name: SDTMIG\n        Version: '3.2'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0032\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: For planned visits, values of VISIT, VISITNUM, and\n                  VISITDY must be those defined in the Trial Visits dataset,\n                Document: IG v3.2\n                Item: ''\n                Section: 4.1.4.5\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Exclude:\n      - TV\n",
+    "created": "2022-03-01T14:36:17Z",
+    "creator": {
+        "id": "57474fac-237e-4693-bb37-7826b02737da"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "VISITDY",
+                    "operator": "exists"
+                },
+                {
+                    "name": "VISITNUM",
+                    "operator": "is_contained_by",
+                    "value": "$tv_visitnum"
+                },
+                {
+                    "name": "VISITDY",
+                    "operator": "not_equal_to",
+                    "value": "TV.VISITDY"
+                }
+            ]
+        },
+        "Match_Datasets": [
+            {
+                "Name": "TV",
+                "Keys": [
+                    "VISITNUM"
+                ]
+            }
+        ],
+        "Core": {
+            "Id": "CORE-000249",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Verify that visitdy is planned and exists in TV",
+        "Operations": [
+            {
+                "domain": "TV",
+                "id": "$tv_visitnum",
+                "name": "VISITNUM",
+                "operator": "distinct"
+            }
+        ],
+        "Outcome": {
+            "Message": "Visit Day cannot be found in Trial Visit (TV) domain",
+            "Output_Variables": [
+                "VISITDY",
+                "VISITNUM"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0032",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "For planned visits, values of VISIT, VISITNUM, and VISITDY must be those defined in the Trial Visits (TV) dataset (Section 7.3.1, Trial Visits).",
+                                        "Document": "IG v3.4",
+                                        "Item": "",
+                                        "Section": "4.4.5"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.3",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0032",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "For planned visits, values of VISIT, VISITNUM, and VISITDY must be those defined in the Trial Visits dataset,",
+                                        "Document": "IG v3.3",
+                                        "Item": "",
+                                        "Section": "4.4.5"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.2",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0032",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "For planned visits, values of VISIT, VISITNUM, and VISITDY must be those defined in the Trial Visits dataset,",
+                                        "Document": "IG v3.2",
+                                        "Item": "",
+                                        "Section": "4.1.4.5"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Exclude": [
+                    "TV"
+                ]
+            }
+        }
+    }
+}

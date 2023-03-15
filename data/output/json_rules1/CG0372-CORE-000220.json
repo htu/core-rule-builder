@@ -1,0 +1,81 @@
+{
+    "id": "400c2f10-66ce-42d4-a53f-8fea3d53ee60",
+    "changed": "2022-03-22T10:14:54Z",
+    "content": "Check:\n  any:\n    - name: --TESTCD\n      operator: not_matches_regex\n      value: ^[A-Z_][A-Z0-9_]{0,7}$\n    - name: IETESTCD\n      operator: not_matches_regex\n      value: ^[A-Z_][A-Z0-9_]{0,7}$\nCore:\n  Id: CORE-000220\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --TESTCD > 8 chars or contains more than only letters,\n  numbers and underscores, or starts with a number.\nOutcome:\n  Message: --TESTCD > 8 chars or contains more than only letters, numbers, underscores,\n    or starts with a number.\n  Output Variables:\n    - --TESTCD\n    - IETESTCD\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0372\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Values of --TESTCD must be limited to 8 characters;\n                  and cannot start with a number; nor can they contain characters\n                  other than letters; numbers; or underscores\n                Document: IG v3.4\n                Section: 4.2.1\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-17T16:14:38Z",
+    "creator": {
+        "id": "02c3c969-4787-4d57-b164-e2851035c0e8"
+    },
+    "json": {
+        "Check": {
+            "any": [
+                {
+                    "name": "--TESTCD",
+                    "operator": "not_matches_regex",
+                    "value": "^[A-Z_][A-Z0-9_]{0,7}$"
+                },
+                {
+                    "name": "IETESTCD",
+                    "operator": "not_matches_regex",
+                    "value": "^[A-Z_][A-Z0-9_]{0,7}$"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000220",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --TESTCD > 8 chars or contains more than only letters, numbers and underscores, or starts with a number.",
+        "Outcome": {
+            "Message": "--TESTCD > 8 chars or contains more than only letters, numbers, underscores, or starts with a number.",
+            "Output_Variables": [
+                "--TESTCD",
+                "IETESTCD"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0372",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Values of --TESTCD must be limited to 8 characters; and cannot start with a number; nor can they contain characters other than letters; numbers; or underscores",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.2.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS",
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

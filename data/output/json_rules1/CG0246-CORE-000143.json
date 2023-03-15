@@ -1,0 +1,90 @@
+{
+    "id": "c2533c33-65d3-4edd-a09c-99b79f54c90d",
+    "changed": "2022-10-11T13:53:58.664Z",
+    "content": "Check:\n  all:\n    - name: ETCD\n      operator: longer_than\n      value: 8\nCore:\n  Id: CORE-000143\n  Version: '1'\n  Status: Published\nDescription: The length of ETCD should be no greater than 8\nOutcome:\n  Message: ETCD value is greater than 8\n  Output Variables:\n    - ETCD\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0246\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: ETCD (the companion to ELEMENT) is limited to 8 characters\n                Document: IG v3.4\n                Item: Specification\n                Section: '5.3'\n              - Cited Guidance: ETCD (the companion to ELEMENT) is limited to 8 characters\n                Document: IG v3.4\n                Item: Specification\n                Section: 7.2.1\n              - Cited Guidance: ETCD (the companion to ELEMENT) is limited to 8 characters\n                Document: IG v3.4\n                Item: Specification\n                Section: 7.2.2\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - TA\n      - TE\n      - SE\n",
+    "created": "2021-10-17T04:30:35Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "ETCD",
+                    "operator": "longer_than",
+                    "value": 8
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000143",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "The length of ETCD should be no greater than 8",
+        "Outcome": {
+            "Message": "ETCD value is greater than 8",
+            "Output_Variables": [
+                "ETCD"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0246",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "ETCD (the companion to ELEMENT) is limited to 8 characters",
+                                        "Document": "IG v3.4",
+                                        "Item": "Specification",
+                                        "Section": "5.3"
+                                    },
+                                    {
+                                        "Cited_Guidance": "ETCD (the companion to ELEMENT) is limited to 8 characters",
+                                        "Document": "IG v3.4",
+                                        "Item": "Specification",
+                                        "Section": "7.2.1"
+                                    },
+                                    {
+                                        "Cited_Guidance": "ETCD (the companion to ELEMENT) is limited to 8 characters",
+                                        "Document": "IG v3.4",
+                                        "Item": "Specification",
+                                        "Section": "7.2.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN",
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TA",
+                    "TE",
+                    "SE"
+                ]
+            }
+        }
+    }
+}

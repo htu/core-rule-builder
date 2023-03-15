@@ -1,0 +1,72 @@
+{
+    "id": "ff87815e-f334-4fe8-8d90-16fac5c81c03",
+    "changed": "2022-02-15T21:32:41Z",
+    "content": "Check:\n  all:\n    - name: EXOCCUR\n      operator: not_equal_to\n      value: N\nCore:\n  Id: NicTest\n  Version: '1'\n  Status: Draft\nDescription: Verify the value for ECDOSE is less than 0\nOutcome:\n  Message: ECDOSE is less than or equal to 0\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.3'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: Demo\n              Version: '1.0'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: For example, if 0 tablets are taken within a timeframe\n                  or 0 mL infused at a visit, then ECOCCUR = 'N' is the standard representation\n                  of the collected doses not taken, not given, or missed. Dose amount\n                  variables (e.g., ECDOSE, ECDOSTXT) must not be set to zero (0) as\n                  an alternative method for indicating doses not taken, not given,\n                  or missed.\n                Document: SDTMIG v3.3\n                Item: Assumption 4a\n                Section: 6.1.3.2\nScope:\n  Classes:\n    Include:\n      - INTERVENTIONS\n  Domains:\n    Include:\n      - EC\n",
+    "created": "2021-09-21T14:20:50Z",
+    "creator": {
+        "id": "92b43f00-2def-4c75-ba44-95ac37a97553"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "EXOCCUR",
+                    "operator": "not_equal_to",
+                    "value": "N"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "NicTest",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Verify the value for ECDOSE is less than 0",
+        "Outcome": {
+            "Message": "ECDOSE is less than or equal to 0"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.3",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "Demo",
+                                    "Version": "1.0"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "For example, if 0 tablets are taken within a timeframe or 0 mL infused at a visit, then ECOCCUR = 'N' is the standard representation of the collected doses not taken, not given, or missed. Dose amount variables (e.g., ECDOSE, ECDOSTXT) must not be set to zero (0) as an alternative method for indicating doses not taken, not given, or missed.",
+                                        "Document": "SDTMIG v3.3",
+                                        "Item": "Assumption 4a",
+                                        "Section": "6.1.3.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "EC"
+                ]
+            }
+        }
+    }
+}

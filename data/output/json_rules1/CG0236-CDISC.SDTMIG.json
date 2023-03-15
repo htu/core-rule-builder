@@ -1,0 +1,70 @@
+{
+    "id": "503227f9-66b8-4ff9-89b2-4bdfe1de9c47",
+    "changed": "2022-02-15T21:28:06Z",
+    "content": "Check:\n  all:\n    - name:\n      operator:\nCore:\n  Id: CDISC.SDTMIG.CG0236\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when --DTC is date/time of recording/acquisition, not date/time\n  of specimen collection or observation\nOutcome:\n  Message: --DTC is date/time of recording/acquisition, not date/time of specimen\n    collection or observation\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0236\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: For any domain based on the Findings general observation\n                  class, such as lab tests which are based on a specimen, the collection\n                  date is likely to be tied to when the specimen or source of the\n                  finding was captured, not necessarily when the data was recorded.\n                  in order to ensure that the critical timing information is always\n                  represented in the same variable, the --DTC variable is used to\n                  represent the time of specimen collection.\n                Document: IG v3.4\n                Section: 4.4.8\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-30T10:27:21Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": null,
+                    "operator": null
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0236",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when --DTC is date/time of recording/acquisition, not date/time of specimen collection or observation",
+        "Outcome": {
+            "Message": "--DTC is date/time of recording/acquisition, not date/time of specimen collection or observation"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0236",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "For any domain based on the Findings general observation class, such as lab tests which are based on a specimen, the collection date is likely to be tied to when the specimen or source of the finding was captured, not necessarily when the data was recorded. in order to ensure that the critical timing information is always represented in the same variable, the --DTC variable is used to represent the time of specimen collection.",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.4.8"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

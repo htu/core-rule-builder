@@ -1,0 +1,75 @@
+{
+    "changed": "2022-09-19T09:38:12.273Z",
+    "content": "Check:\n  all:\n    - name: --BLFL\n      operator: non_empty\n    - name: --BLFL\n      operator: not_equal_to\n      value: Y\nCore:\n  Id: CDISC.SENDIG.147\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when --BLFL is populated and the value is different from\n  \"Y\"\nOutcome:\n  Message: --BLFL value must either be 'Y' or null\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '147'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: A baseline indicator may be used to calculate differences\n                  or changes from baseline. Value should be Y or null. The baseline\n                  flag is sponsor-defined.\n                Document: IG v3.1\n                Section: 6.3.1\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2022-09-19T09:36:14.081Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--BLFL",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "--BLFL",
+                    "operator": "not_equal_to",
+                    "value": "Y"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.147",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when --BLFL is populated and the value is different from \"Y\"",
+        "Outcome": {
+            "Message": "--BLFL value must either be 'Y' or null"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "147",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "A baseline indicator may be used to calculate differences or changes from baseline. Value should be Y or null. The baseline flag is sponsor-defined.",
+                                        "Document": "IG v3.1",
+                                        "Section": "6.3.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    },
+    "id": "4b89c96f-2a6d-4a9d-9c8e-a1d0d7924b54"
+}

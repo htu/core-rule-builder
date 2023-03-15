@@ -1,0 +1,76 @@
+{
+    "id": "bb943093-8f50-4b04-a699-3b881ac7ebfa",
+    "changed": "2022-07-14T16:00:41Z",
+    "content": "Check:\n  all:\n    - name: SEUPDES\n      operator: non_empty\n    - name: ETCD\n      operator: not_equal_to\n      value: UNPLAN\nCore:\n  Id: CORE-000095\n  Version: '1'\n  Status: Published\nDescription: Raise an error when SEUPDES ^= null, ETCD ^= 'UNPLAN'\nOutcome:\n  Message: ETCD is not 'UNPLAN', when SEUPDES is not empty\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0211\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: If the sponsor decides that the subject's experience\n                  for a particular period of time cannot be represented with one of\n                  the planned Elements, then that period of time should be represented\n                  as an unplanned Element. The value of ETCD for an unplanned Element\n                  is \"UNPLAN\" and SEUPDES should be populated with a description of\n                  the unplanned Element.\n                Document: IG v3.4\n                Item: Assumption 4\n                Section: '5.3'\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - SE\n",
+    "created": "2021-10-06T19:28:43Z",
+    "creator": {
+        "id": "76170e05-ed88-410d-8cad-ecd247a9050b"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "SEUPDES",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "ETCD",
+                    "operator": "not_equal_to",
+                    "value": "UNPLAN"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000095",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when SEUPDES ^= null, ETCD ^= 'UNPLAN'",
+        "Outcome": {
+            "Message": "ETCD is not 'UNPLAN', when SEUPDES is not empty"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0211",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "If the sponsor decides that the subject's experience for a particular period of time cannot be represented with one of the planned Elements, then that period of time should be represented as an unplanned Element. The value of ETCD for an unplanned Element is \"UNPLAN\" and SEUPDES should be populated with a description of the unplanned Element.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 4",
+                                        "Section": "5.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SE"
+                ]
+            }
+        }
+    }
+}

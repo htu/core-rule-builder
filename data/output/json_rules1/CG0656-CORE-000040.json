@@ -1,0 +1,90 @@
+{
+    "id": "ab095fc7-01df-463f-8c41-5782f482dddd",
+    "changed": "2022-05-18T20:13:44Z",
+    "content": "Check:\n  all:\n    - name: SVPRESP\n      operator: empty\n    - name: VISITNUM\n      operator: is_contained_by\n      value: $tv_visitnum\nCore:\n  Id: CORE-000040\n  Version: '1'\n  Status: Published\nDescription: Raise an error when SVPRESP is null and VISITNUM is present in TV.VISITNUM\nOperations:\n  - domain: TV\n    id: $tv_visitnum\n    name: VISITNUM\n    operator: distinct\nOutcome:\n  Message: VISITNUM for unplanned visit is present in TV.\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0656\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Value is \"Y\" for planned visits, null for unplanned\n                  visits.\n                Document: SDTMIG v3.4\n                Item: SVPRESP\n                Section: '5.5'\n              - Cited Guidance: The values of VISITNUM in the TV dataset are the valid\n                  values of VISITNUM for planned Visits. Any values of VISITNUM that\n                  appear in subject-level datasets that are not in the TV dataset\n                  are assumed to correspond to unplanned Visits. This applies, in\n                  particular, to the subject-level Subject Visits (SV) dataset; see\n                  SV under Section 5, Models for Special-Purpose Domains, for additional\n                  information about handling unplanned Visits.\n                Document: SDTMIG v3.4\n                Item: Assumption 6\n                Section: 7.3.1\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - SV\n",
+    "created": "2021-10-03T09:59:16Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "SVPRESP",
+                    "operator": "empty"
+                },
+                {
+                    "name": "VISITNUM",
+                    "operator": "is_contained_by",
+                    "value": "$tv_visitnum"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000040",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when SVPRESP is null and VISITNUM is present in TV.VISITNUM",
+        "Operations": [
+            {
+                "domain": "TV",
+                "id": "$tv_visitnum",
+                "name": "VISITNUM",
+                "operator": "distinct"
+            }
+        ],
+        "Outcome": {
+            "Message": "VISITNUM for unplanned visit is present in TV."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0656",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Value is \"Y\" for planned visits, null for unplanned visits.",
+                                        "Document": "SDTMIG v3.4",
+                                        "Item": "SVPRESP",
+                                        "Section": "5.5"
+                                    },
+                                    {
+                                        "Cited_Guidance": "The values of VISITNUM in the TV dataset are the valid values of VISITNUM for planned Visits. Any values of VISITNUM that appear in subject-level datasets that are not in the TV dataset are assumed to correspond to unplanned Visits. This applies, in particular, to the subject-level Subject Visits (SV) dataset; see SV under Section 5, Models for Special-Purpose Domains, for additional information about handling unplanned Visits.",
+                                        "Document": "SDTMIG v3.4",
+                                        "Item": "Assumption 6",
+                                        "Section": "7.3.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SV"
+                ]
+            }
+        }
+    }
+}

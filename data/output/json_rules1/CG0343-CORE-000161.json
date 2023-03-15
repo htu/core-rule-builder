@@ -1,0 +1,74 @@
+{
+    "id": "ea040c10-e0ae-4500-ba65-11bedc4f980f",
+    "changed": "2022-03-03T08:26:59Z",
+    "content": "Check:\n  all:\n    - name: --TERM\n      operator: equal_to\n      value: OTHER\nCore:\n  Id: CORE-000161\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --TERM = 'OTHER'\nOutcome:\n  Message: --TERM is equal to 'OTHER'\n  Output Variables:\n    - --TERM\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0343\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: 'Events: \"Other, Specify\" for Events may be handled\n                  similarly to Interventions. --TERM should be populated with the\n                  description of the event found in the specified text and --PRESP\n                  could be used to distinguish between prespecified and free text\n                  responses.'\n                Document: IG v3.4\n                Section: 4.2.7.3\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-19T08:47:21Z",
+    "creator": {
+        "id": "ae6dbbf3-4c9a-4149-b596-8183766167d4"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--TERM",
+                    "operator": "equal_to",
+                    "value": "OTHER"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000161",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --TERM = 'OTHER'",
+        "Outcome": {
+            "Message": "--TERM is equal to 'OTHER'",
+            "Output_Variables": [
+                "--TERM"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0343",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Events: \"Other, Specify\" for Events may be handled similarly to Interventions. --TERM should be populated with the description of the event found in the specified text and --PRESP could be used to distinguish between prespecified and free text responses.",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.2.7.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

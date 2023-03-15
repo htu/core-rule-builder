@@ -1,0 +1,74 @@
+{
+    "id": "74ea5298-9cb4-4c81-99db-64bb82b921e4",
+    "changed": "2022-03-21T12:12:29Z",
+    "content": "Check:\n  all:\n    - name: --TPTNUM\n      operator: exists\n    - name: --TPT\n      operator: not_exists\nCore:\n  Id: CORE-000029\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --TPTNUM exists in a dataset and --TPT does not exist.\nOutcome:\n  Message: --TPTNUM exists in a dataset, but --TPT does not exist. When time points\n    are represented in SDTMIG domains, both --TPT and --TPTNUM must be used.\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0661\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: When time points are represented in SDTMIG domains,\n                  both --TPT and --TPTNUM must be used.\n                Document: IG v3.4\n                Section: 4.4.10\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-09-30T13:53:50Z",
+    "creator": {
+        "id": "58534b88-88e7-41a5-be67-a4d0742ed999"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--TPTNUM",
+                    "operator": "exists"
+                },
+                {
+                    "name": "--TPT",
+                    "operator": "not_exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000029",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --TPTNUM exists in a dataset and --TPT does not exist.",
+        "Outcome": {
+            "Message": "--TPTNUM exists in a dataset, but --TPT does not exist. When time points are represented in SDTMIG domains, both --TPT and --TPTNUM must be used."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0661",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "When time points are represented in SDTMIG domains, both --TPT and --TPTNUM must be used.",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.4.10"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

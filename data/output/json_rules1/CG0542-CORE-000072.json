@@ -1,0 +1,70 @@
+{
+    "id": "615e77ca-e151-4853-b740-5953742550ae",
+    "changed": "2022-03-17T19:28:03Z",
+    "content": "Check:\n  all:\n    - name: --BEATNO\n      operator: exists\nCore:\n  Id: CORE-000072\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --BEATNO is present.\nOutcome:\n  Message: --BEATNO is present.\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0542\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: --BEATNO is to be used in the EG domain only.\n                Document: SDTM v2.0\n                Section: Findings\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Exclude:\n      - EG\n",
+    "created": "2021-10-04T05:24:33Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--BEATNO",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000072",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --BEATNO is present.",
+        "Outcome": {
+            "Message": "--BEATNO is present."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0542",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "--BEATNO is to be used in the EG domain only.",
+                                        "Document": "SDTM v2.0",
+                                        "Section": "Findings"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Exclude": [
+                    "EG"
+                ]
+            }
+        }
+    }
+}

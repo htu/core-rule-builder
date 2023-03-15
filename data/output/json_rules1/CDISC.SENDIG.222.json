@@ -1,0 +1,83 @@
+{
+    "changed": "2022-09-22T13:08:47.532Z",
+    "content": "Check:\n  all:\n    - name: ETCD\n      operator: non_empty\n    - name: ETCD\n      operator: is_not_contained_by\n      value: $te_etcd\nOperations:\n  - domain: TE\n    id: $te_etcd\n    name: ETCD\n    operator: distinct\nCore:\n  Id: CDISC.SENDIG.222\n  Version: '1'\n  Status: Draft\nDescription: The values of ETCD used in the Trial Arms dataset must match values for\n  the same Element in the Trial Elements dataset.\nOutcome:\n  Message: TA.ETCD is not present in TE.ETCD\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '222'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The values of ETCD used in the Trial Arms dataset\n                  must match values for the same Element in the Trial Elements dataset.\n                Document: IG v3.1\n                Section: 7.2.1.1\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - TA\n",
+    "created": "2022-09-22T13:08:47.532Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "ETCD",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "ETCD",
+                    "operator": "is_not_contained_by",
+                    "value": "$te_etcd"
+                }
+            ]
+        },
+        "Operations": [
+            {
+                "domain": "TE",
+                "id": "$te_etcd",
+                "name": "ETCD",
+                "operator": "distinct"
+            }
+        ],
+        "Core": {
+            "Id": "CDISC.SENDIG.222",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "The values of ETCD used in the Trial Arms dataset must match values for the same Element in the Trial Elements dataset.",
+        "Outcome": {
+            "Message": "TA.ETCD is not present in TE.ETCD"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "222",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The values of ETCD used in the Trial Arms dataset must match values for the same Element in the Trial Elements dataset.",
+                                        "Document": "IG v3.1",
+                                        "Section": "7.2.1.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TA"
+                ]
+            }
+        }
+    },
+    "id": "8098db75-3cf9-4f92-bca8-f831e7231224"
+}

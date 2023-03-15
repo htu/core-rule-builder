@@ -1,0 +1,117 @@
+{
+    "id": "7f88b3f3-98e3-422b-becc-531862d97b59",
+    "changed": "2022-03-17T17:29:28Z",
+    "content": "Check:\n  all:\n    - name: --PRESP\n      operator: equal_to\n      value: Y\n    - name: --OCCUR\n      operator: empty\n    - name: --STAT\n      operator: not_exists\nCore:\n  Id: CORE-000118\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --PRESP is equal to 'Y' and --OCCUR is empty and\n  --STAT is not present in dataset.\nOutcome:\n  Message: --STAT is not present in dataset when --PRESP is equal to \"Y\" and --OCCUR\n    is blank\n  Output Variables:\n    - --PRESP\n    - --OCCUR\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0404\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: An indication that the event was prospectively stated\n                  or detailed on the CRF\n                Document: SDTM v2.0\n                Item: --PRESP\n                Section: Events\n              - Cited Guidance: An indication as to whether a prespecified event has\n                  occurred\n                Document: SDTM v2.0\n                Item: --OCCUR\n                Section: Events\n              - Cited Guidance: Used to indicate when a question about the occurrence\n                  of a prespecified event was not answered. Should be null or have\n                  a value of 'NOT DONE'\n                Document: Model v2.0\n                Item: --STAT\n                Section: Events\n              - Cited Guidance: An indication that the intervention was prospectively\n                  stated or detailed on the CRF\n                Document: Model v2.0\n                Item: --PRESP\n                Section: Interventions\n              - Cited Guidance: An indication as to whether a prespecified intervention\n                  has occurred.\n                Document: Model v2.0\n                Item: --OCCUR\n                Section: Interventions\n              - Cited Guidance: Used to indicate when a question about the occurrence\n                  of a prespecified intervention was not answered. Should be null\n                  or have a value of 'NOT DONE'\n                Document: Model v2.0\n                Item: --STAT\n                Section: Interventions\nScope:\n  Classes:\n    Include:\n      - EVENTS\n      - INTERVENTIONS\n  Domains:\n    Exclude:\n      - DS\n      - DV\n      - EX\n",
+    "created": "2021-10-12T00:16:33Z",
+    "creator": {
+        "id": "aa629571-d619-478f-970b-a71d04d96a44"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--PRESP",
+                    "operator": "equal_to",
+                    "value": "Y"
+                },
+                {
+                    "name": "--OCCUR",
+                    "operator": "empty"
+                },
+                {
+                    "name": "--STAT",
+                    "operator": "not_exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000118",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --PRESP is equal to 'Y' and --OCCUR is empty and --STAT is not present in dataset.",
+        "Outcome": {
+            "Message": "--STAT is not present in dataset when --PRESP is equal to \"Y\" and --OCCUR is blank",
+            "Output_Variables": [
+                "--PRESP",
+                "--OCCUR"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0404",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "An indication that the event was prospectively stated or detailed on the CRF",
+                                        "Document": "SDTM v2.0",
+                                        "Item": "--PRESP",
+                                        "Section": "Events"
+                                    },
+                                    {
+                                        "Cited_Guidance": "An indication as to whether a prespecified event has occurred",
+                                        "Document": "SDTM v2.0",
+                                        "Item": "--OCCUR",
+                                        "Section": "Events"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Used to indicate when a question about the occurrence of a prespecified event was not answered. Should be null or have a value of 'NOT DONE'",
+                                        "Document": "Model v2.0",
+                                        "Item": "--STAT",
+                                        "Section": "Events"
+                                    },
+                                    {
+                                        "Cited_Guidance": "An indication that the intervention was prospectively stated or detailed on the CRF",
+                                        "Document": "Model v2.0",
+                                        "Item": "--PRESP",
+                                        "Section": "Interventions"
+                                    },
+                                    {
+                                        "Cited_Guidance": "An indication as to whether a prespecified intervention has occurred.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--OCCUR",
+                                        "Section": "Interventions"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Used to indicate when a question about the occurrence of a prespecified intervention was not answered. Should be null or have a value of 'NOT DONE'",
+                                        "Document": "Model v2.0",
+                                        "Item": "--STAT",
+                                        "Section": "Interventions"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS",
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Exclude": [
+                    "DS",
+                    "DV",
+                    "EX"
+                ]
+            }
+        }
+    }
+}

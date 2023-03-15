@@ -1,0 +1,71 @@
+{
+    "id": "abcffc09-b50f-46a2-bea0-0baba8d3e3c1",
+    "changed": "2022-02-15T21:30:26Z",
+    "content": "Check:\n  all:\n    - context: DOMAIN\n      name: RDOMAIN\n      operator: is_not_valid_reference\nCore:\n  Id: CDISC.SDTMIG.CG0373\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when SUPP--.RDOMAIN does not represent a dataset present\n  in the study\nOutcome:\n  Message: SUPP--.RDOMAIN does not represent a dataset present in the study\nRule Type: Record Data\nSensitivity: Study\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0373\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: There is a one-to-one correspondence between a domain\n                  dataset and it's Supplemental Qualifier dataset by creating one\n                  SUPPQUAL for each domain dataset. The single SUPPQUAL dataset option\n                  that was introduced in SDTMIG v3.1.1 is now deprecated.  The set\n                  of Supplemental Qualifiers for each domain is included in a separate\n                  dataset with the name SUPP-- where \u201c--\u201c denotes the source domain\n                  which the supplemental Qualifiers relate back to.\n                Document: IG v3.2\n                Section: 8.4.2\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - SUPP\n",
+    "created": "2021-11-06T09:44:41Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "context": "DOMAIN",
+                    "name": "RDOMAIN",
+                    "operator": "is_not_valid_reference"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0373",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when SUPP--.RDOMAIN does not represent a dataset present in the study",
+        "Outcome": {
+            "Message": "SUPP--.RDOMAIN does not represent a dataset present in the study"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Study",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0373",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "There is a one-to-one correspondence between a domain dataset and it's Supplemental Qualifier dataset by creating one SUPPQUAL for each domain dataset. The single SUPPQUAL dataset option that was introduced in SDTMIG v3.1.1 is now deprecated.  The set of Supplemental Qualifiers for each domain is included in a separate dataset with the name SUPP-- where \u201c--\u201c denotes the source domain which the supplemental Qualifiers relate back to.",
+                                        "Document": "IG v3.2",
+                                        "Section": "8.4.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SUPP"
+                ]
+            }
+        }
+    }
+}

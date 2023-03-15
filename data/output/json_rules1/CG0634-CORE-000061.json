@@ -1,0 +1,70 @@
+{
+    "id": "d0684227-2285-4628-8fbb-eb975f0d4894",
+    "changed": "2022-03-17T21:21:11Z",
+    "content": "Check:\n  all:\n    - name: RPPLENDY\n      operator: exists\nCore:\n  Id: CORE-000061\n  Version: '1'\n  Status: Published\nDescription: Raise an error when RPPLENDY is present.\nOutcome:\n  Message: RPPLENDY is present.\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0634\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: RPPLENDY is not be used in human clinical trials.\n                Document: SDTM v2.0\n                Section: Timing\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-04T04:56:58Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "RPPLENDY",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000061",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when RPPLENDY is present.",
+        "Outcome": {
+            "Message": "RPPLENDY is present."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0634",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "RPPLENDY is not be used in human clinical trials.",
+                                        "Document": "SDTM v2.0",
+                                        "Section": "Timing"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

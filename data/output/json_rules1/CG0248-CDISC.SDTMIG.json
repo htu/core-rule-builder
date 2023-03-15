@@ -1,0 +1,75 @@
+{
+    "id": "34633cfe-cb1d-45fc-ae06-6fa168d4fc24",
+    "changed": "2022-07-30T11:23:46Z",
+    "content": "Check:\n  all:\n    - name: TAETORD\n      operator: not_matches_regex\n      value: (-?[1-9]\\d*|0)$\nCore:\n  Id: CDISC.SDTMIG.CG0248\n  Version: '1'\n  Status: Draft\nDescription: TAETORD must be an integer\nOutcome:\n  Message: TAETORD is not an integer\n  Output Variables:\n    - TAETORD\nRule Type: Record Data\nSensitivity: Value\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0248\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: TAETORD is an integer.\n                Document: IG v3.4\n                Item: Assumption 1\n                Section: 7.2.1\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - TA\n",
+    "created": "2021-10-17T04:40:01Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "TAETORD",
+                    "operator": "not_matches_regex",
+                    "value": "(-?[1-9]\\d*|0)$"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0248",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "TAETORD must be an integer",
+        "Outcome": {
+            "Message": "TAETORD is not an integer",
+            "Output_Variables": [
+                "TAETORD"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Value",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0248",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "TAETORD is an integer.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 1",
+                                        "Section": "7.2.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TA"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "changed": "2022-09-21T14:11:20.895Z",
+    "content": "Check:\n  all:\n    - name: MATEST\n      operator: equal_to\n      value: Gross Pathological Examination\n    - name: MASPEC\n      operator: empty\nCore:\n  Id: CDISC.SENDIG.177\n  Version: '1'\n  Status: Draft\nDescription: When MATEST is \"Gross Pathological Examination\" MASPEC is required.\nOutcome:\n  Message: When MATEST is 'Gross Pathological Examination' then MASPEC is required.\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '177'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: MASPEC defines the base organ or tissue examined and\n                  is required when MATEST is 'Gross Pathological Examination'. It\n                  should not be used when MATEST is 'Clinical Signs Follow-up'.\n                Document: SENDIG v3.1\n                Section: Section 6.3.7.1\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - MA\n",
+    "created": "2022-09-21T14:11:20.895Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "MATEST",
+                    "operator": "equal_to",
+                    "value": "Gross Pathological Examination"
+                },
+                {
+                    "name": "MASPEC",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.177",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "When MATEST is \"Gross Pathological Examination\" MASPEC is required.",
+        "Outcome": {
+            "Message": "When MATEST is 'Gross Pathological Examination' then MASPEC is required."
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "177",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "MASPEC defines the base organ or tissue examined and is required when MATEST is 'Gross Pathological Examination'. It should not be used when MATEST is 'Clinical Signs Follow-up'.",
+                                        "Document": "SENDIG v3.1",
+                                        "Section": "Section 6.3.7.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "MA"
+                ]
+            }
+        }
+    },
+    "id": "7a0b5171-f1c3-4201-84a2-398a6eefb2cd"
+}

@@ -1,0 +1,73 @@
+{
+    "id": "817096e8-3e20-44bd-937f-1918ea0232dc",
+    "changed": "2022-03-17T13:52:34Z",
+    "content": "Check:\n  all:\n    - name: --STDTC\n      operator: exists\nCore:\n  Id: CORE-000207\n  Version: '1'\n  Status: Published\nDescription: Trigger error when --STDTC is present in a Findings general observation\n  class\nOutcome:\n  Message: --STDTC is present in a Findings general observation class\n  Output Variables:\n    - --STDTC\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0467\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Note that --STDTC should not be used in the Findings\n                  general observation class and is therefore blank in the following\n                  table.\n                Document: IG v3.4\n                Section: 4.4.8\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-08T10:24:20Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--STDTC",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000207",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Trigger error when --STDTC is present in a Findings general observation class",
+        "Outcome": {
+            "Message": "--STDTC is present in a Findings general observation class",
+            "Output_Variables": [
+                "--STDTC"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0467",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Note that --STDTC should not be used in the Findings general observation class and is therefore blank in the following table.",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.4.8"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

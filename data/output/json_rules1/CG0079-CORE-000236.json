@@ -1,0 +1,99 @@
+{
+    "id": "07bd32a3-69d7-4e06-b8f6-b438df9f6daf",
+    "changed": "2022-04-14T10:53:22Z",
+    "content": "Check:\n  all:\n    - name: MHSTDTC\n      operator: non_empty\n    - name: MHSTDTC\n      operator: date_greater_than_or_equal_to\n      value: RFSTDTC\nMatch Datasets:\n  - Name: DM\n    Keys:\n      - USUBJID\nCore:\n  Id: CORE-000236\n  Version: '1'\n  Status: Published\nDescription: Raise an issue if MHSTDTC has a non-empty date that later than DM.RFSTDTC\nOutcome:\n  Message: MHSTDTC ^= null and MHSTDTC is on or after the DM.RFSTDTC. The medical\n    history dataset should include the subject's prior history at the start of the\n    trial.\n  Output Variables:\n    - MHSTDTC\n    - RFSTDTC\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0079\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Do not create separate domains based on time; rather,\n                  represent both prior and current observations in a domain (e.g.,\n                  CM for all non-study medications). Note that Adverse Events and\n                  Medical History are an exception to this best practice because of\n                  regulatory reporting needs.\n                Document: IG v3.4\n                Item: '1'\n                Section: '2.6'\n              - Cited Guidance: Adverse Events (AE), Medical History (MH), and Clinical\n                  Events (CE), for example, are conceptually the same data, the only\n                  differences being when the event started relative to the study start\n                  and whether the event is considered a regulatory-reportable adverse\n                  event in the study.\n                Document: SDTMIG v3.4\n                Item: 3a\n                Section: 4.2.6\n              - Cited Guidance: An events domain that contains data that includes\n                  the subject's prior medical history at the start of the trial.\n                Document: SDTMIG v3.4\n                Section: '6.2'\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - MH\n",
+    "created": "2022-01-19T21:09:23Z",
+    "creator": {
+        "id": "7de48ba7-1548-45ca-bfc8-3ad35590ae62"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "MHSTDTC",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "MHSTDTC",
+                    "operator": "date_greater_than_or_equal_to",
+                    "value": "RFSTDTC"
+                }
+            ]
+        },
+        "Match_Datasets": [
+            {
+                "Name": "DM",
+                "Keys": [
+                    "USUBJID"
+                ]
+            }
+        ],
+        "Core": {
+            "Id": "CORE-000236",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an issue if MHSTDTC has a non-empty date that later than DM.RFSTDTC",
+        "Outcome": {
+            "Message": "MHSTDTC ^= null and MHSTDTC is on or after the DM.RFSTDTC. The medical history dataset should include the subject's prior history at the start of the trial.",
+            "Output_Variables": [
+                "MHSTDTC",
+                "RFSTDTC"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0079",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Do not create separate domains based on time; rather, represent both prior and current observations in a domain (e.g., CM for all non-study medications). Note that Adverse Events and Medical History are an exception to this best practice because of regulatory reporting needs.",
+                                        "Document": "IG v3.4",
+                                        "Item": "1",
+                                        "Section": "2.6"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Adverse Events (AE), Medical History (MH), and Clinical Events (CE), for example, are conceptually the same data, the only differences being when the event started relative to the study start and whether the event is considered a regulatory-reportable adverse event in the study.",
+                                        "Document": "SDTMIG v3.4",
+                                        "Item": "3a",
+                                        "Section": "4.2.6"
+                                    },
+                                    {
+                                        "Cited_Guidance": "An events domain that contains data that includes the subject's prior medical history at the start of the trial.",
+                                        "Document": "SDTMIG v3.4",
+                                        "Section": "6.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "MH"
+                ]
+            }
+        }
+    }
+}

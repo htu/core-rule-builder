@@ -1,0 +1,77 @@
+{
+    "changed": "2022-09-29T13:18:23.557Z",
+    "content": "Check:\n  all:\n    - name: --USCHFL\n      operator: non_empty\n    - name: --USCHFL\n      operator: not_equal_to\n      value: Y\nCore:\n  Id: CDISC.SENDIG.303\n  Version: '1'\n  Status: Draft\nDescription: --USCHFL must be either Y or null\nOutcome:\n  Message: --USCHFL must be either Y or null\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '303'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The Unscheduled Flag (--USCHFL) variable is populated\n                  when the timing of a performed test or observation was not driven\n                  by the study schedule. | Expected values are Y or null.\n                Document: IG v3.1\n                Section: '4.2.9|6.2.1 '\nScope:\n  Classes:\n    Include:\n      - FINDINGS\n      - EVENTS\n      - INTERVENTIONS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2022-09-29T13:15:51.767Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--USCHFL",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "--USCHFL",
+                    "operator": "not_equal_to",
+                    "value": "Y"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.303",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "--USCHFL must be either Y or null",
+        "Outcome": {
+            "Message": "--USCHFL must be either Y or null"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "303",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The Unscheduled Flag (--USCHFL) variable is populated when the timing of a performed test or observation was not driven by the study schedule. | Expected values are Y or null.",
+                                        "Document": "IG v3.1",
+                                        "Section": "4.2.9|6.2.1 "
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "FINDINGS",
+                    "EVENTS",
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    },
+    "id": "788ae7d1-3bea-46b8-aac4-b0304cbc5b7e"
+}

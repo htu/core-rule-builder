@@ -1,0 +1,92 @@
+{
+    "id": "bd747224-07ec-4465-8326-b861a2e007e3",
+    "changed": "2022-06-29T11:44:32Z",
+    "content": "Check:\n  all:\n    - name: $ta_element\n      operator: is_not_unique_relationship\n      value: $ta_epoch\n    - name: ELEMENT\n      operator: contains\n      value: $ta_epoch\nOperations:\n  - domain: TA\n    id: $ta_element\n    name: ELEMENT\n    operator: distinct\n  - domain: TA\n    id: $ta_epoch\n    name: EPOCH\n    operator: distinct\nCore:\n  Id: CDISC.SDTMIG.CG0323\n  Version: '1'\n  Status: Draft\nDescription: When ELEMENT is associated with more than 1 EPOCH, ELEMENT should not\n  refer to a specific EPOCH.\nOutcome:\n  Message: ELEMENT refers to a specific EPOCH when ELEMENT is associated with more\n    than 1 EPOCH\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0323\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: TESTRL should be expressed without referring to Epoch.\n                  If the Element appears in more than one Epoch in the Trial Arms\n                  dataset, then the Element description (ELEMENT) must not refer to\n                  any Epochs.\n                Document: IG v3.4\n                Item: Assumption 9\n                Section: 7.2.2\nScope:\n  Classes:\n    Include:\n      - TRIAL DESIGN\n  Domains:\n    Include:\n      - TA\n      - TE\n",
+    "created": "2021-11-06T08:20:48Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "$ta_element",
+                    "operator": "is_not_unique_relationship",
+                    "value": "$ta_epoch"
+                },
+                {
+                    "name": "ELEMENT",
+                    "operator": "contains",
+                    "value": "$ta_epoch"
+                }
+            ]
+        },
+        "Operations": [
+            {
+                "domain": "TA",
+                "id": "$ta_element",
+                "name": "ELEMENT",
+                "operator": "distinct"
+            },
+            {
+                "domain": "TA",
+                "id": "$ta_epoch",
+                "name": "EPOCH",
+                "operator": "distinct"
+            }
+        ],
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0323",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "When ELEMENT is associated with more than 1 EPOCH, ELEMENT should not refer to a specific EPOCH.",
+        "Outcome": {
+            "Message": "ELEMENT refers to a specific EPOCH when ELEMENT is associated with more than 1 EPOCH"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0323",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "TESTRL should be expressed without referring to Epoch. If the Element appears in more than one Epoch in the Trial Arms dataset, then the Element description (ELEMENT) must not refer to any Epochs.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 9",
+                                        "Section": "7.2.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "TRIAL DESIGN"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "TA",
+                    "TE"
+                ]
+            }
+        }
+    }
+}

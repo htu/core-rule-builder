@@ -1,0 +1,124 @@
+{
+    "id": "8b0bedaa-3c96-48b0-bdd7-a25858545f6c",
+    "changed": "2023-01-24T19:49:45.500Z",
+    "content": "Check:\n  all:\n    - name: --PTCD\n      operator: non_empty\n    - name: --DECOD\n      operator: empty\nCore:\n  Id: CDISC.SDTMIG.CG0050\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when --DECOD is not populated but --PTCD is populated\nOutcome:\n  Message: --DECOD should be populated when --PTCD is populated\n  Output Variables:\n    - --TERM\n    - --PTCD\n    - --DECOD\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0050\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The preferred term code assigned to the event from\n                  MedDRA.\n                Document: Model v2.0\n                Item: --PTCD\n                Section: Events\n      - Name: SDTMIG\n        Version: '3.3'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0050\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: MedDRA Preferred Term code.\n                Document: Model v1.7\n                Item: --PTCD\n                Section: 2.2.2\n      - Name: SDTMIG\n        Version: '3.2'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0050\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: MedDRA Preferred Term code.\n                Document: Model v1.4\n                Item: --PTCD\n                Section: 2.2.2\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-11T16:33:27Z",
+    "creator": {
+        "id": "58534b88-88e7-41a5-be67-a4d0742ed999"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--PTCD",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "--DECOD",
+                    "operator": "empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0050",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when --DECOD is not populated but --PTCD is populated",
+        "Outcome": {
+            "Message": "--DECOD should be populated when --PTCD is populated",
+            "Output_Variables": [
+                "--TERM",
+                "--PTCD",
+                "--DECOD"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0050",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The preferred term code assigned to the event from MedDRA.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--PTCD",
+                                        "Section": "Events"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.3",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0050",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "MedDRA Preferred Term code.",
+                                        "Document": "Model v1.7",
+                                        "Item": "--PTCD",
+                                        "Section": "2.2.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.2",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0050",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "MedDRA Preferred Term code.",
+                                        "Document": "Model v1.4",
+                                        "Item": "--PTCD",
+                                        "Section": "2.2.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

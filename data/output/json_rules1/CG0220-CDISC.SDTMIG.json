@@ -1,0 +1,91 @@
+{
+    "id": "fd045d7c-223d-4a5c-9e79-0308e3bc0743",
+    "changed": "2022-07-30T12:25:28Z",
+    "content": "Check:\n  all:\n    #Restrict check to records where --STDTC has a complete date and RFSTDTC has a complete date\n    - any:\n        - name: --STDTC\n          operator: is_complete_date\n        - name: RFSTDTC\n          operator: is_complete_date\n    #Check --STDY derivation\n    - name: --STDY\n      operator: equal_to\n      value: $val_stdy\nOperations:\n  - name: RFSTDTC\n    operator: dy\n    domain: DM\n    id: $val_stdy\nCore:\n  Id: CDISC.SDTMIG.CG0220\n  Version: '1'\n  Status: Draft\nDescription: Study day must be calculated using the algorithm detailed in the SDTMIG.\nOutcome:\n  Message: --STDY is not properly calculated per study day algorithm\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0220\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The permissible Study Day variables (--DY, --STDY,\n                  and --ENDY) describe the relative day of the observation  starting\n                  with the reference date as Day 1.  They are determined by comparing\n                  the date portion of the respective date/time variables  (--DTC,\n                  --STDTC, and --ENDTC) to the date portion of the Subject Reference\n                  Start Date  (RFSTDTC from the Demographics domain). All Study Day\n                  values are integers.  Thus, to calculate Study Day, --DY = (date\n                  portion of --DTC) - (date portion of RFSTDTC) + 1 if --DTC is on\n                  or after RFSTDTC,  --DY = (date portion of --DTC) - (date portion\n                  of RFSTDTC) if --DTC precedes RFSTDTC.  This algorithm should be\n                  used across all domains.\n                Document: IG v3.4\n                Section: 4.4.4\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Exclude:\n      - DM\n",
+    "created": "2021-10-16T10:31:45Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "any": [
+                        {
+                            "name": "--STDTC",
+                            "operator": "is_complete_date"
+                        },
+                        {
+                            "name": "RFSTDTC",
+                            "operator": "is_complete_date"
+                        }
+                    ]
+                },
+                {
+                    "name": "--STDY",
+                    "operator": "equal_to",
+                    "value": "$val_stdy"
+                }
+            ]
+        },
+        "Operations": [
+            {
+                "name": "RFSTDTC",
+                "operator": "dy",
+                "domain": "DM",
+                "id": "$val_stdy"
+            }
+        ],
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0220",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Study day must be calculated using the algorithm detailed in the SDTMIG.",
+        "Outcome": {
+            "Message": "--STDY is not properly calculated per study day algorithm"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0220",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The permissible Study Day variables (--DY, --STDY, and --ENDY) describe the relative day of the observation  starting with the reference date as Day 1.  They are determined by comparing the date portion of the respective date/time variables  (--DTC, --STDTC, and --ENDTC) to the date portion of the Subject Reference Start Date  (RFSTDTC from the Demographics domain). All Study Day values are integers.  Thus, to calculate Study Day, --DY = (date portion of --DTC) - (date portion of RFSTDTC) + 1 if --DTC is on or after RFSTDTC,  --DY = (date portion of --DTC) - (date portion of RFSTDTC) if --DTC precedes RFSTDTC.  This algorithm should be used across all domains.",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.4.4"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Exclude": [
+                    "DM"
+                ]
+            }
+        }
+    }
+}

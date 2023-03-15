@@ -1,0 +1,135 @@
+{
+    "id": "82fdbbe9-37c5-47ae-b974-9210187c4329",
+    "changed": "2023-03-01T13:52:42.425Z",
+    "content": "Check:\n  all:\n    - name: variable_name\n      operator: longer_than\n      value: 8\nCore:\n  Id: CDISC.SENDIG.2\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when variable name length is greater than 8.\nOutcome:\n  Message: Variable name length is greater than 8.\nRule Type: Variable Metadata Check\nSensitivity: Dataset\nExecutability: Fully Executable\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1.1'\n        References:\n          - Origin: SEND Conformance Rules\n            Rule Identifier:\n              Id: '2'\n              Version: '1'\n            Version: '4.0'\n            Citations:\n              - Cited Guidance: The Variable Name (limited to 8 characters for compatibility\n                  with the SAS v5 Transport format).\n                Document: IG v3.1.1\n                Section: 3.2.2\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SEND Conformance Rules\n            Rule Identifier:\n              Id: '2'\n              Version: '1'\n            Version: '4.0'\n            Citations:\n              - Cited Guidance: The Variable Name (limited to 8 characters for compatibility\n                  with the SAS v5 Transport format).\n                Document: IG v3.1\n                Section: 3.2.2\n      - Name: SENDIG\n        Version: '3.0'\n        References:\n          - Origin: SEND Conformance Rules\n            Rule Identifier:\n              Id: '2'\n              Version: '1'\n            Version: '4.0'\n            Citations:\n              - Cited Guidance: The Variable Name (limited to 8 characters for compatibility\n                  with the SAS v5 Transport format).\n                Document: IG v3.0\n                Section: 3.2.2\n      - Name: SENDIG-DART\n        Version: '1.1'\n        References:\n          - Origin: SEND Conformance Rules\n            Rule Identifier:\n              Id: '2'\n              Version: '1'\n            Version: '4.0'\n            Citations:\n              - Cited Guidance: The Variable Name (limited to 8 characters for compatibility\n                  with the SAS v5 Transport format).\n                Document: IG v1.1\n                Section: 3.2.2\n\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2022-09-07T10:11:31Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "variable_name",
+                    "operator": "longer_than",
+                    "value": 8
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.2",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when variable name length is greater than 8.",
+        "Outcome": {
+            "Message": "Variable name length is greater than 8."
+        },
+        "Sensitivity": "Dataset",
+        "Executability": "Fully Executable",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1.1",
+                        "References": [
+                            {
+                                "Origin": "SEND Conformance Rules",
+                                "Version": "4.0",
+                                "Citations": [
+                                    {
+                                        "Document": "IG v3.1.1",
+                                        "Section": "3.2.2",
+                                        "Cited_Guidance": "The Variable Name (limited to 8 characters for compatibility with the SAS v5 Transport format)."
+                                    }
+                                ],
+                                "Rule_Identifier": {
+                                    "Id": "2",
+                                    "Version": "1"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SEND Conformance Rules",
+                                "Version": "4.0",
+                                "Citations": [
+                                    {
+                                        "Document": "IG v3.1",
+                                        "Section": "3.2.2",
+                                        "Cited_Guidance": "The Variable Name (limited to 8 characters for compatibility with the SAS v5 Transport format)."
+                                    }
+                                ],
+                                "Rule_Identifier": {
+                                    "Id": "2",
+                                    "Version": "1"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.0",
+                        "References": [
+                            {
+                                "Origin": "SEND Conformance Rules",
+                                "Version": "4.0",
+                                "Citations": [
+                                    {
+                                        "Document": "IG v3.0",
+                                        "Section": "3.2.2",
+                                        "Cited_Guidance": "The Variable Name (limited to 8 characters for compatibility with the SAS v5 Transport format)."
+                                    }
+                                ],
+                                "Rule_Identifier": {
+                                    "Id": "2",
+                                    "Version": "1"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SENDIG-DART",
+                        "Version": "1.1",
+                        "References": [
+                            {
+                                "Origin": "SEND Conformance Rules",
+                                "Version": "4.0",
+                                "Citations": [
+                                    {
+                                        "Document": "IG v1.1",
+                                        "Section": "3.2.2",
+                                        "Cited_Guidance": "The Variable Name (limited to 8 characters for compatibility with the SAS v5 Transport format)."
+                                    }
+                                ],
+                                "Rule_Identifier": {
+                                    "Id": "2",
+                                    "Version": "1"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        },
+        "Rule_Type": "Variable Metadata Check"
+    }
+}

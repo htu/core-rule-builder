@@ -1,0 +1,80 @@
+{
+    "id": "6f396eca-bd3c-456a-9c88-c648692d8f58",
+    "changed": "2022-03-22T10:48:06Z",
+    "content": "Check:\n  all:\n    - name: IDVAR\n      operator: empty\n    - name: IDVARVAL\n      operator: non_empty\nCore:\n  Id: CORE-000218\n  Version: '1'\n  Status: Published\nDescription: Raise an error when IDVAR is empty and IDVARVAL is not empty\nOutcome:\n  Message: IDVAR is empty but IDVARVAL is not empty\n  Output Variables:\n    - IDVAR\n    - IDVARVAL\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0465\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Comments[Value of identifying variable of the parent\n                  record(s).]|Supplemental Qualifiers[Value of identifying variable\n                  of the parent record(s).]\n                Document: Model v2.0\n                Item: IDVARVAL\n                Section: Comments|Supplemental Qualifiers\nScope:\n  Classes:\n    Include:\n      - SPECIAL-PURPOSE\n  Domains:\n    Include:\n      - CO\n      - SUPP--\n",
+    "created": "2021-11-09T09:33:27Z",
+    "creator": {
+        "id": "ae6dbbf3-4c9a-4149-b596-8183766167d4"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "IDVAR",
+                    "operator": "empty"
+                },
+                {
+                    "name": "IDVARVAL",
+                    "operator": "non_empty"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000218",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when IDVAR is empty and IDVARVAL is not empty",
+        "Outcome": {
+            "Message": "IDVAR is empty but IDVARVAL is not empty",
+            "Output_Variables": [
+                "IDVAR",
+                "IDVARVAL"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0465",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Comments[Value of identifying variable of the parent record(s).]|Supplemental Qualifiers[Value of identifying variable of the parent record(s).]",
+                                        "Document": "Model v2.0",
+                                        "Item": "IDVARVAL",
+                                        "Section": "Comments|Supplemental Qualifiers"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "SPECIAL-PURPOSE"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "CO",
+                    "SUPP--"
+                ]
+            }
+        }
+    }
+}

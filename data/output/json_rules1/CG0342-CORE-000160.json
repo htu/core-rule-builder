@@ -1,0 +1,74 @@
+{
+    "id": "bb1e4ca8-0a4f-443b-8b88-c99caa0acbb5",
+    "changed": "2022-03-03T08:26:10Z",
+    "content": "Check:\n  all:\n    - name: --TRT\n      operator: equal_to\n      value: OTHER\nCore:\n  Id: CORE-000160\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --TRT = 'OTHER'\nOutcome:\n  Message: --TRT is equal to 'OTHER'\n  Output Variables:\n    - --TRT\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0342\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: 'Interventions: If a list of specific treatments is\n                  provided along with \"Other, Specify\", --TRT should be populated\n                  with the name of the treatment found in the specified text.'\n                Document: IG v3.4\n                Section: 4.2.7.3\nScope:\n  Classes:\n    Include:\n      - INTERVENTIONS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-19T08:44:44Z",
+    "creator": {
+        "id": "ae6dbbf3-4c9a-4149-b596-8183766167d4"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--TRT",
+                    "operator": "equal_to",
+                    "value": "OTHER"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000160",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --TRT = 'OTHER'",
+        "Outcome": {
+            "Message": "--TRT is equal to 'OTHER'",
+            "Output_Variables": [
+                "--TRT"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0342",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Interventions: If a list of specific treatments is provided along with \"Other, Specify\", --TRT should be populated with the name of the treatment found in the specified text.",
+                                        "Document": "IG v3.4",
+                                        "Section": "4.2.7.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "INTERVENTIONS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,93 @@
+{
+    "id": "ccc9af71-8942-4a32-9317-ac39415267f0",
+    "changed": "2022-07-17T11:02:11Z",
+    "content": "Check:\n  all:\n    - name: --LOC\n      operator: not_exists\n    - name: --DIR\n      operator: exists\nCore:\n  Id: CORE-000098\n  Version: '1'\n  Status: Published\nDescription: Raise an error when --LOC does not exists in a dataset, --DIR exists.\nOutcome:\n  Message: --DIR variable is present, when --LOC variable does not exist in a dataset.\n  Output Variables:\n    - --LOC\n    - --DIR\nRule Type: Record Data\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0116\n              Version: '2'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: Variable Qualifer of --LOC.\n                Document: Model v2.0\n                Item: --DIR\n                Section: Events\n              - Cited Guidance: Variable Qualifer of --LOC.\n                Document: Model v2.0\n                Item: --DIR\n                Section: Interventions\n              - Cited Guidance: Variable Qualifer of --LOC.\n                Document: Model v2.0\n                Item: --DIR\n                Section: Findings\nScope:\n  Classes:\n    Include:\n      - INTERVENTIONS\n      - FINDINGS\n      - EVENTS\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-06T20:18:38Z",
+    "creator": {
+        "id": "d0881041-369e-4940-b721-5b456d12101b"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "--LOC",
+                    "operator": "not_exists"
+                },
+                {
+                    "name": "--DIR",
+                    "operator": "exists"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CORE-000098",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when --LOC does not exists in a dataset, --DIR exists.",
+        "Outcome": {
+            "Message": "--DIR variable is present, when --LOC variable does not exist in a dataset.",
+            "Output_Variables": [
+                "--LOC",
+                "--DIR"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0116",
+                                    "Version": "2"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "Variable Qualifer of --LOC.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--DIR",
+                                        "Section": "Events"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Variable Qualifer of --LOC.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--DIR",
+                                        "Section": "Interventions"
+                                    },
+                                    {
+                                        "Cited_Guidance": "Variable Qualifer of --LOC.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--DIR",
+                                        "Section": "Findings"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "INTERVENTIONS",
+                    "FINDINGS",
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "changed": "2022-09-28T12:38:34.435Z",
+    "content": "Check:\n  all:\n    - name: QORIG\n      operator: non_empty\n    - name: QORIG\n      operator: not_equal_to\n      value: COLLECTED\n    - name: QORIG\n      operator: not_equal_to\n      value: DERIVED\n    - name: QORIG\n      operator: not_equal_to\n      value: OTHER\n    - name: QORIG\n      operator: not_equal_to\n      value: NOT AVAILABLE\nCore:\n  Id: CDISC.SENDIG.255\n  Version: '1'\n  Status: Draft\nDescription: QORIG is used to indicate the origin of the data. Possible values are\n  COLLECTED, DERIVED, OTHER, and NOT AVAILABLE.\nOutcome:\n  Message: When populated QORIG may only have one of the values COLLECTED, DERIVED,\n    OTHER, and NOT AVAILABLE\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SENDIG\n        Version: '3.1'\n        References:\n          - Origin: SDTM and SENDIG Conformance Rules\n            Rule Identifier:\n              Id: '255'\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: QORIG is used to indicate the origin of the data.\n                  Possible values are COLLECTED, DERIVED, OTHER, and NOT AVAILABLE.\n                Document: IG v3.1\n                Item: Specification\n                Section: '8.3'\nScope:\n  Classes:\n    Include:\n      - RELATIONSHIP\n  Domains:\n    Include:\n      - SUPP--\n",
+    "created": "2022-09-28T12:36:24.611Z",
+    "creator": {
+        "id": "dc8bf014-df32-4631-8684-9a09a16c5071"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "QORIG",
+                    "operator": "non_empty"
+                },
+                {
+                    "name": "QORIG",
+                    "operator": "not_equal_to",
+                    "value": "COLLECTED"
+                },
+                {
+                    "name": "QORIG",
+                    "operator": "not_equal_to",
+                    "value": "DERIVED"
+                },
+                {
+                    "name": "QORIG",
+                    "operator": "not_equal_to",
+                    "value": "OTHER"
+                },
+                {
+                    "name": "QORIG",
+                    "operator": "not_equal_to",
+                    "value": "NOT AVAILABLE"
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SENDIG.255",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "QORIG is used to indicate the origin of the data. Possible values are COLLECTED, DERIVED, OTHER, and NOT AVAILABLE.",
+        "Outcome": {
+            "Message": "When populated QORIG may only have one of the values COLLECTED, DERIVED, OTHER, and NOT AVAILABLE"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SENDIG",
+                        "Version": "3.1",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SENDIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "255",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "QORIG is used to indicate the origin of the data. Possible values are COLLECTED, DERIVED, OTHER, and NOT AVAILABLE.",
+                                        "Document": "IG v3.1",
+                                        "Item": "Specification",
+                                        "Section": "8.3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "RELATIONSHIP"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "SUPP--"
+                ]
+            }
+        }
+    },
+    "id": "bd0cca10-816a-40c0-9810-a99c8c81cae3"
+}

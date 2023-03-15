@@ -1,0 +1,263 @@
+{
+    "id": "7cb29a28-7a48-4f8f-abc8-d0b4c1112f32",
+    "changed": "2022-02-15T21:29:09Z",
+    "content": "Check:\n  any:\n    - all:\n        - name: define_dataset_class\n          operator: str_equal_to\n          value: TRIAL DESIGN\n        - name: define_dataset_name\n          operator: is_not_contained_by\n          value:\n            - TA\n            - TD\n            - TE\n            - TI\n            - TM\n            - TS\n            - TV\n    - all:\n        - name: define_dataset_class\n          operator: str_equal_to\n          value: SPECIAL-PURPOSE\n        - name: define_dataset_name\n          operator: is_not_contained_by\n          value:\n            - CO\n            - DM\n            - SE\n            - SM\n            - SV\n    - all:\n        - name: define_dataset_class\n          operator: str_equal_to\n          value: INTERVENTIONS\n        - name: define_dataset_name\n          operator: is_not_contained_by\n          value:\n            - AG\n            - CM\n            - EC\n            - EX\n            - ML\n            - PR\n            - SU\n    - all:\n        - name: define_dataset_class\n          operator: str_equal_to\n          value: EVENTS\n        - name: define_dataset_name\n          operator: is_not_contained_by\n          value:\n            - AE\n            - BE\n            - CE\n            - DS\n            - DV\n            - HO\n            - MH\n    - all:\n        - name: define_dataset_class\n          operator: str_equal_to\n          value: FINDINGS\n        - name: define_dataset_name\n          operator: is_not_contained_by\n          value:\n            - BS\n            - CP\n            - CV\n            - DA\n            - DD\n            - EG\n            - FT\n            - GF\n            - IE\n            - IS\n            - LB\n            - MB\n            - MI\n            - MK\n            - MS\n            - NV\n            - OE\n            - PC\n            - PE\n            - PP\n            - QS\n            - RE\n            - RP\n            - RS\n            - SC\n            - SS\n            - TR\n            - TU\n            - UR\n            - VS\n    - all:\n        - name: define_dataset_class\n          operator: str_equal_to\n          value: FINDINGS ABOUT\n        - name: define_dataset_name\n          operator: is_not_contained_by\n          value:\n            - FA\n            - SR\n    - all:\n        - all:\n            - name: define_dataset_class\n              operator: str_equal_to\n              value: RELATIONSHIP\n        - any:\n            - name: define_dataset_name\n              operator: is_not_contained_by\n              value:\n                - RELREC\n                - RELSPEC\n                - RELSUB\n                - SUPPQUAL\n            - name: define_dataset_name\n              operator: starts_with\n              value: SUPP\n    - all:\n        - name: define_dataset_class\n          operator: str_equal_to\n          value: STUDY REFERENCE\n        - name: define_dataset_name\n          operator: is_not_contained_by\n          value:\n            - OI\nCore:\n  Id: CDISC.SDTMIG.CG0312\n  Version: '1'\n  Status: Draft\nDescription: Raise an error when custom domains use the reserved or modelled standard\n  names\nOutcome:\n  Message: Custom domains use the reserved or modelled standard names.\nRule Type: Dataset Metadata Check against Define XML\nSensitivity: Domain\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0312\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: \"'A custom domain may only be created if the data\\\n                  \\ are different in nature and do not fit into an existing published\\\n                  \\ domain.'\"\n                Document: IG v3.4\n                Item: NA\n                Section: '2.6'\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-10-28T14:31:24Z",
+    "creator": {
+        "id": "76170e05-ed88-410d-8cad-ecd247a9050b"
+    },
+    "json": {
+        "Check": {
+            "any": [
+                {
+                    "all": [
+                        {
+                            "name": "define_dataset_class",
+                            "operator": "str_equal_to",
+                            "value": "TRIAL DESIGN"
+                        },
+                        {
+                            "name": "define_dataset_name",
+                            "operator": "is_not_contained_by",
+                            "value": [
+                                "TA",
+                                "TD",
+                                "TE",
+                                "TI",
+                                "TM",
+                                "TS",
+                                "TV"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "name": "define_dataset_class",
+                            "operator": "str_equal_to",
+                            "value": "SPECIAL-PURPOSE"
+                        },
+                        {
+                            "name": "define_dataset_name",
+                            "operator": "is_not_contained_by",
+                            "value": [
+                                "CO",
+                                "DM",
+                                "SE",
+                                "SM",
+                                "SV"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "name": "define_dataset_class",
+                            "operator": "str_equal_to",
+                            "value": "INTERVENTIONS"
+                        },
+                        {
+                            "name": "define_dataset_name",
+                            "operator": "is_not_contained_by",
+                            "value": [
+                                "AG",
+                                "CM",
+                                "EC",
+                                "EX",
+                                "ML",
+                                "PR",
+                                "SU"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "name": "define_dataset_class",
+                            "operator": "str_equal_to",
+                            "value": "EVENTS"
+                        },
+                        {
+                            "name": "define_dataset_name",
+                            "operator": "is_not_contained_by",
+                            "value": [
+                                "AE",
+                                "BE",
+                                "CE",
+                                "DS",
+                                "DV",
+                                "HO",
+                                "MH"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "name": "define_dataset_class",
+                            "operator": "str_equal_to",
+                            "value": "FINDINGS"
+                        },
+                        {
+                            "name": "define_dataset_name",
+                            "operator": "is_not_contained_by",
+                            "value": [
+                                "BS",
+                                "CP",
+                                "CV",
+                                "DA",
+                                "DD",
+                                "EG",
+                                "FT",
+                                "GF",
+                                "IE",
+                                "IS",
+                                "LB",
+                                "MB",
+                                "MI",
+                                "MK",
+                                "MS",
+                                "NV",
+                                "OE",
+                                "PC",
+                                "PE",
+                                "PP",
+                                "QS",
+                                "RE",
+                                "RP",
+                                "RS",
+                                "SC",
+                                "SS",
+                                "TR",
+                                "TU",
+                                "UR",
+                                "VS"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "name": "define_dataset_class",
+                            "operator": "str_equal_to",
+                            "value": "FINDINGS ABOUT"
+                        },
+                        {
+                            "name": "define_dataset_name",
+                            "operator": "is_not_contained_by",
+                            "value": [
+                                "FA",
+                                "SR"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "all": [
+                                {
+                                    "name": "define_dataset_class",
+                                    "operator": "str_equal_to",
+                                    "value": "RELATIONSHIP"
+                                }
+                            ]
+                        },
+                        {
+                            "any": [
+                                {
+                                    "name": "define_dataset_name",
+                                    "operator": "is_not_contained_by",
+                                    "value": [
+                                        "RELREC",
+                                        "RELSPEC",
+                                        "RELSUB",
+                                        "SUPPQUAL"
+                                    ]
+                                },
+                                {
+                                    "name": "define_dataset_name",
+                                    "operator": "starts_with",
+                                    "value": "SUPP"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "name": "define_dataset_class",
+                            "operator": "str_equal_to",
+                            "value": "STUDY REFERENCE"
+                        },
+                        {
+                            "name": "define_dataset_name",
+                            "operator": "is_not_contained_by",
+                            "value": [
+                                "OI"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0312",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Raise an error when custom domains use the reserved or modelled standard names",
+        "Outcome": {
+            "Message": "Custom domains use the reserved or modelled standard names."
+        },
+        "Rule_Type": "Dataset Metadata Check against Define XML",
+        "Sensitivity": "Domain",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0312",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "'A custom domain may only be created if the data are different in nature and do not fit into an existing published domain.'",
+                                        "Document": "IG v3.4",
+                                        "Item": "NA",
+                                        "Section": "2.6"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

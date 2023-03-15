@@ -1,0 +1,71 @@
+{
+    "id": "c35088bc-49ea-4f85-8352-810d65abdb13",
+    "changed": "2022-06-28T12:07:09Z",
+    "content": "Check:\n  all:\n    - name: dataset_size\n      operator: equal_to\n      value: 0\nCore:\n  Id: CDISC.SDTMIG.CG0408\n  Version: '1'\n  Status: Draft\nDescription: Trigger error when a dataset has no records\nOutcome:\n  Message: Dataset has no record\nRule Type: Dataset Metadata Check\nSensitivity: Dataset\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0408\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: In the event that no records are present in a dataset\n                  (e.g., a small PK study where no subjects took concomitant medications),\n                  the empty dataset should not be submitted and should not be described\n                  in the Define-XML document.\n                Document: IG v3.4\n                Section: '3.2'\nScope:\n  Classes:\n    Include:\n      - ALL\n  Domains:\n    Include:\n      - ALL\n",
+    "created": "2021-11-06T09:17:25Z",
+    "creator": {
+        "id": "ff471ff8-f131-4cf5-9712-c79cce6301a1"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "dataset_size",
+                    "operator": "equal_to",
+                    "value": 0
+                }
+            ]
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0408",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when a dataset has no records",
+        "Outcome": {
+            "Message": "Dataset has no record"
+        },
+        "Rule_Type": "Dataset Metadata Check",
+        "Sensitivity": "Dataset",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0408",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "In the event that no records are present in a dataset (e.g., a small PK study where no subjects took concomitant medications), the empty dataset should not be submitted and should not be described in the Define-XML document.",
+                                        "Document": "IG v3.4",
+                                        "Section": "3.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "ALL"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "ALL"
+                ]
+            }
+        }
+    }
+}

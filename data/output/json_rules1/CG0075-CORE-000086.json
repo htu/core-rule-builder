@@ -1,0 +1,83 @@
+{
+    "id": "ae44d163-acce-486b-bf5d-f191c726e37f",
+    "changed": "2022-03-17T11:32:04Z",
+    "content": "Check:\n  all:\n    - name: DVSTDTC\n      operator: date_less_than\n      value: RFICDTC\nMatch Datasets:\n  - Name: DM\n    Keys:\n      - USUBJID\nCore:\n  Id: CORE-000086\n  Version: '1'\n  Status: Published\nDescription: Raise an error when DVSTDTC is earlier than RFICDTC in DM.\nOutcome:\n  Message: DVSTDTC is earlier than RFICDTC in DM.\n  Output Variables:\n    - DVSTDTC\nRule Type: Record Data\nSensitivity: Record\nAuthorities:\n  - Organization: CDISC\n    Standards:\n      - Name: SDTMIG\n        Version: '3.4'\n        References:\n          - Origin: SDTM and SDTMIG Conformance Rules\n            Rule Identifier:\n              Id: CG0075\n              Version: '1'\n            Version: '2.0'\n            Citations:\n              - Cited Guidance: The intent of the domain model is to capture protocol\n                  deviations that occurred during the course of the study (see ICH\n                  E3 Section 10.2 at http://www.ich.org/fileadmin/Public_Web_Site/ICH_Products/Guidelines/Efficacy/E3/E3_Guideline.pdf).\n                  Usually these are deviations that occur after the subject has been\n                  randomized or received the first treatment.\n                Document: IG v3.4\n                Item: Assumption 1\n                Section: 6.2.7\nScope:\n  Classes:\n    Include:\n      - EVENTS\n  Domains:\n    Include:\n      - DV\n",
+    "created": "2021-10-05T19:10:24Z",
+    "creator": {
+        "id": "ae6dbbf3-4c9a-4149-b596-8183766167d4"
+    },
+    "json": {
+        "Check": {
+            "all": [
+                {
+                    "name": "DVSTDTC",
+                    "operator": "date_less_than",
+                    "value": "RFICDTC"
+                }
+            ]
+        },
+        "Match_Datasets": [
+            {
+                "Name": "DM",
+                "Keys": [
+                    "USUBJID"
+                ]
+            }
+        ],
+        "Core": {
+            "Id": "CORE-000086",
+            "Version": "1",
+            "Status": "Published"
+        },
+        "Description": "Raise an error when DVSTDTC is earlier than RFICDTC in DM.",
+        "Outcome": {
+            "Message": "DVSTDTC is earlier than RFICDTC in DM.",
+            "Output_Variables": [
+                "DVSTDTC"
+            ]
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0075",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The intent of the domain model is to capture protocol deviations that occurred during the course of the study (see ICH E3 Section 10.2 at http://www.ich.org/fileadmin/Public_Web_Site/ICH_Products/Guidelines/Efficacy/E3/E3_Guideline.pdf). Usually these are deviations that occur after the subject has been randomized or received the first treatment.",
+                                        "Document": "IG v3.4",
+                                        "Item": "Assumption 1",
+                                        "Section": "6.2.7"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVENTS"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "DV"
+                ]
+            }
+        }
+    }
+}
