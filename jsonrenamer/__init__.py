@@ -1,1 +1,1 @@
-from .jsonrenamer.json_file_renamer import JsonFileRenamer
+from .json_file_renamer import JsonFileRenamer

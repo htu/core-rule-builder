@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="rulebuilder",
+    name="jsonrenamer",
     version="0.1.0",
     author="Hanming Tu",
     author_email="hanming.tu@gmail.com",
-    description="A tool for building CDISC Core rules",
+    description="A tool for renaming JSON files based on their contents",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/htu/core-rule-builder/rulebuilder",
+    url="https://github.com/htu/core-rule-builder/tree/main/jsonrenamer",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -20,7 +20,8 @@ setup(
     ],
     python_requires=">=3.6",
     install_requires=[
-        "pandas==1.5.3",
-        "ruamel.yaml == 0.17.21"
+        "re",
+        "pandas",
+        "json"
     ],
 )

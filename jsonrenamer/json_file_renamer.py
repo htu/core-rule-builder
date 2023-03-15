@@ -1,6 +1,16 @@
+# Purpose: Rename the json files based on json.Core.Id value and 
+#          json.Authorities.Standards.References.Rule_Identifier.Id  
+# History: MM/DD/YYYY (developer) - description
+#   03/13/2023 (htu) - converted from the rename_json_files in 
+#              the rule-transformations repo  
+#   03/14/2023 (htu) - added extract_rules and write_rules2xlsx
+# 
+
 import os
 import json
 import re 
+import pandas as pd
+
 
 class JsonFileRenamer:
     def __init__(self, input_folder_path, output_folder_path):
@@ -13,7 +23,7 @@ class JsonFileRenamer:
         # Get the value of Core.Id from the JSON file if it exists, otherwise use the original filename
         core_id = None 
         if "json" in j_data and "Core" in j_data["json"]:
-            core_id = json_data["json"]["Core"].get("Id")
+            core_id = j_data["json"]["Core"].get("Id")
         return core_id
 
     def get_rule_id(self, j_data):
@@ -87,3 +97,82 @@ class JsonFileRenamer:
         print(f"Total: {self.stat_cnts['total']}\nRenamed: {self.stat_cnts['renamed']}")
         print(f"Skipped: {self.stat_cnts['skipped']}\nDupped: {self.stat_cnts['dupped']}")
         print(f"RuleID Used: {self.stat_cnts['ruleid_used']}\nCoreID Used: {self.stat_cnts['coreid_used']}")
+
+
+    def extract_rules(self):
+        # Create an empty dataframe
+        df = pd.DataFrame(columns=["core_id","rule_id","id", "created", "changed", 
+                                   "json.Core.Id", "json.Core.Version",
+                                   "json.Core.Status", "json.Rule_Type", "json.Sensitivity",
+                                   "json.Description", "json.Outcome", "json.Authorities",
+                                   "json.Scope", "json.Scope.Classes.Include", 
+                                   "json.Scope.Domains.Include",
+                                   "json.Check", "content"])
+
+        # Loop through all JSON files in the folder
+        rows = []
+        for filename in os.listdir(self.input_folder_path):
+            if filename.endswith(".json"):
+                # Read JSON file
+                with open(os.path.join(self.input_folder_path, filename)) as f:
+                    data = json.load(f)
+
+                # Extract required fields if they exist
+                row = {"core_id": None, "rule_id": None, "id": None, "created": None, "changed": None, 
+                       "json.Core.Id": None,
+                       "json.Core.Version": None, "json.Core.Status": None, "json.Rule_Type": None,
+                       "json.Sensitivity": None, "json.Description": None, "json.Outcome": None,
+                       "json.Authorities": None, "json.Scope": None, "json.Scope.Classes.Include": None,
+                       "json.Scope.Domains.Include": None, "json.Check": None, "content": None}
+                core_id = self.get_core_id(data)
+                rule_id = self.get_rule_id(data)
+
+                row.update({"core_id": core_id})
+                row.update({"rule_id": rule_id})
+                row.update({"id": data.get("id")})
+                row.update({"created": data.get("created")})
+                row.update({"changed": data.get("changed")})
+                row.update({"json.Core.Id": data.get(
+                    "json", {}).get("Core", {}).get("Id")})
+                row.update({"json.Core.Version": data.get(
+                    "json", {}).get("Core", {}).get("Version")})
+                row.update({"json.Core.Status": data.get(
+                    "json", {}).get("Core", {}).get("Status")})
+                row.update({"json.Rule_Type": data.get("json", {}).get("Rule_Type")})
+                row.update({"json.Sensitivity": data.get(
+                    "json", {}).get("Sensitivity")})
+                row.update({"json.Description": data.get(
+                    "json", {}).get("Description")})
+                row.update({"json.Outcome": data.get("json", {}).get("Outcome")})
+                row.update({"json.Authorities": data.get(
+                    "json", {}).get("Authorities")})
+                row.update({"json.Scope": data.get("json", {}).get("Scope")})
+                row.update({"json.Scope.Classes.Include": data.get("json", {}).get(
+                    "Scope", {}).get("Classes", {}).get("Include")})
+                row.update({"json.Scope.Domains.Include": data.get("json", {}).get(
+                    "Scope", {}).get("Domains", {}).get("Include")})
+                row.update({"json.Check": data.get("json", {}).get("Check")})
+                row.update({"content": data.get("content")})
+
+                # Append row to list of rows
+                rows.append(row)
+
+        # Create dataframe from list of rows
+        df = pd.DataFrame.from_records(rows)
+        return df 
+    
+
+    def write_rules2xlsx(self, xlsx_file, df_rules = None ):
+        # Write dataframe to xlsx file
+        if not os.path.exists(self.output_folder_path):
+            os.makedirs(self.output_folder_path)
+
+        opf_name = os.path.join(self.output_folder_path, xlsx_file)
+
+        if df_rules is None:  
+            df_rules = self.extract_rules()
+        df_rules.to_excel(opf_name, index=False)
+        print(f"Output to {opf_name}")
+
+
+# End of the file

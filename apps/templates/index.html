@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Core Rule Builder</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <h1>Core Rule Builder</h1>
+  <form method="POST">
+    <table>
+      <tr>
+        <td><label for="organization">Organization:</label></td>
+        <td colspan="3">
+          <select id="organization" name="organization">
+            {% for org in organizations %}
+            <option value="{{ org }}">{{ org }}</option>
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="standard">Standard:</label></td>
+        <td colspan="3">
+          <select id="standard" name="standard">
+            {% for std in standards %}
+            <option value="{{ std }}">{{ std }}</option>
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="version">Version:</label></td>
+        <td colspan="3">
+          <select id="version" name="version">
+            {% for ver in versions %}
+            <option value="{{ ver }}">{{ ver }}</option>
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="domain">Domain:</label></td>
+        <td colspan="3">
+          <select id="domain" name="domain">
+            {% for dom in domains %}
+            <option value="{{ dom }}">{{ dom }}</option>
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="rule">Rule:</label></td>
+        <td colspan="3">
+          <select id="rule" name="rule">
+            {% for rul in rules %}
+            <option value="{{ rul }}">{{ rul }}</option>
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Build Rules: </td>
+        <td><input type="text" id="var_name" name="var_name" value="Variable Name">
+            <select id="var_name" name="varname">
+              {% for val in variables %}
+              <option value="{{ val }}">{{ val }}</option>
+              {% endfor %}
+            </select>
+        </td>
+        <td>
+          <select id="operator" name="operator">
+            <option value="equal">Equal</option>
+            <option value="not_equal">Not Equal</option>
+            <option value="greater_than">Greater Than</option>
+            <option value="less_than">Less Than</option>
+          </select>
+        </td>
+        <td><input type="text" id="value" name="value"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Submit"></td>
+      </tr>
+    </table>
+  </form>
+</body>
+
+</html>

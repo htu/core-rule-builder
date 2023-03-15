@@ -20,7 +20,8 @@ setup(
     ],
     python_requires=">=3.6",
     install_requires=[
-        "pandas==1.5.3",
-        "ruamel.yaml == 0.17.21"
+        "re",
+        "pandas",
+        "json"
     ],
 )
