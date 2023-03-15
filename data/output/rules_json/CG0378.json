@@ -1,0 +1,113 @@
+{
+    "id": "f28ca8aa-c495-4936-af9e-ec289d8f1173",
+    "created": "2021-11-06T09:33:54Z",
+    "changed": "2023-03-15T16:53:41Z",
+    "creator": {
+        "id": "dd0f9aa3-68f9-4825-84a4-86c8303daaff"
+    },
+    "content": "changed: '2023-03-15T16:53:41Z'\ncontent: null\ncreated: '2021-11-06T09:33:54Z'\ncreator:\n  id: dd0f9aa3-68f9-4825-84a4-86c8303daaff\nid: f28ca8aa-c495-4936-af9e-ec289d8f1173\njson:\n  Authorities:\n  - Organization: CDISC\n    Standards:\n    - Name: SDTMIG\n      References:\n      - Citations:\n        - Cited_Guidance: MedDRA Lowest Level Term.\n          Document: Model v1.4\n          Item: ''\n          Section: 2.2.2\n        Origin: SDTM and SDTMIG Conformance Rules\n        Rule_Identifier:\n          Id: CG0378\n          Version: '1'\n        Version: '2.0'\n      Version: '3.2'\n    - Name: SDTMIG\n      References:\n      - Citations:\n        - Cited_Guidance: MedDRA Lowest Level Term.\n          Document: Model v1.7\n          Item: ''\n          Section: 2.2.2\n        Origin: SDTM and SDTMIG Conformance Rules\n        Rule_Identifier:\n          Id: CG0378\n          Version: '1'\n        Version: '2.0'\n      Version: '3.3'\n    - Name: SDTMIG\n      References:\n      - Citations:\n        - Cited_Guidance: The lowest-level term code assigned to the event from MedDRA.\n          Document: Model v2.0\n          Item: --LLTCD\n          Section: Events\n        Origin: SDTM and SDTMIG Conformance Rules\n        Rule_Identifier:\n          Id: CG0378\n          Version: '1'\n        Version: '2.0'\n      Version: '3.4'\n  Check:\n    Check: null\n  Core:\n    Id: CDISC.SDTMIG.CG0378\n    Status: Draft\n    Version: '1'\n  Description: Trigger error when --LLTCD not equal to MedDRA lowest level code\n  Executability: null\n  Outcome:\n    Message: --LLTCD not equal to MedDRA lowest level code\n  Rule_Type: Record Data\n  Scope:\n    Classes:\n      Include:\n      - EVT\n    Domains:\n      Include:\n      - AE\n      - CE\n      - MH\n  Sensitivity: Record\n",
+    "json": {
+        "Check": {
+            "Check": null
+        },
+        "Core": {
+            "Id": "CDISC.SDTMIG.CG0378",
+            "Version": "1",
+            "Status": "Draft"
+        },
+        "Description": "Trigger error when --LLTCD not equal to MedDRA lowest level code",
+        "Outcome": {
+            "Message": "--LLTCD not equal to MedDRA lowest level code"
+        },
+        "Rule_Type": "Record Data",
+        "Sensitivity": "Record",
+        "Authorities": [
+            {
+                "Organization": "CDISC",
+                "Standards": [
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.2",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0378",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "MedDRA Lowest Level Term.",
+                                        "Document": "Model v1.4",
+                                        "Item": "",
+                                        "Section": "2.2.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.3",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0378",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "MedDRA Lowest Level Term.",
+                                        "Document": "Model v1.7",
+                                        "Item": "",
+                                        "Section": "2.2.2"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SDTMIG",
+                        "Version": "3.4",
+                        "References": [
+                            {
+                                "Origin": "SDTM and SDTMIG Conformance Rules",
+                                "Rule_Identifier": {
+                                    "Id": "CG0378",
+                                    "Version": "1"
+                                },
+                                "Version": "2.0",
+                                "Citations": [
+                                    {
+                                        "Cited_Guidance": "The lowest-level term code assigned to the event from MedDRA.",
+                                        "Document": "Model v2.0",
+                                        "Item": "--LLTCD",
+                                        "Section": "Events"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "Scope": {
+            "Classes": {
+                "Include": [
+                    "EVT"
+                ]
+            },
+            "Domains": {
+                "Include": [
+                    "AE",
+                    "CE",
+                    "MH"
+                ]
+            }
+        },
+        "Executability": null
+    }
+}
