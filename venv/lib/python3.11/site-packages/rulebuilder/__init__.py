@@ -2,6 +2,7 @@ from .get_authorities import get_authorities
 from .get_check import get_check
 from .get_core import get_core
 from .get_desc import get_desc
+from .echo_msg import echo_msg 
 from .get_executability import get_executability
 from .get_existing_rule import get_existing_rule
 from .get_rtype import get_rtype

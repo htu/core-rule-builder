@@ -3,15 +3,16 @@
 # History: MM/DD/YYYY (developer) - description
 #   03/14/2023 (htu) - initial coding 
 #   03/15/2023 (htu) - change "import yaml" to "import ruamel.yaml as yaml"
-#  
+#   03/16/2023 (htu) - extracted get_creator_id out and created _get_creator_id 
+#                    - extracted get_schema out and created _get_schema 
+#   03/17/2023 (htu) - extracted read_rules out and created _read_rules 
+#   
 
-import pandas as pd
-import ruamel.yaml as yaml
-import json
 import ssl
-import urllib.request
-
-from .proc_sdtm_rules import proc_sdtm_rules
+from .proc_sdtm_rules   import proc_sdtm_rules
+from .get_creator_id    import get_creator_id
+from .get_schema        import get_schema
+from .read_rules        import read_rules
 
 
 class SDTMRuleBuilder:
@@ -22,53 +23,58 @@ class SDTMRuleBuilder:
                 existing_rule_dir="./data/output/json_rules1",
                 output_dir="./data/output"
                  ):
-        # Variables:
-        #   yaml_file           - contain rule definitions 
-        #   core_base_url       - Core rule schema 
-        #   creator_url         - to get user GUID
-        #   existing_rule_dir   - folder containing all the existing rules
-        #   output_dir          - folder where the new or updated rules will be output to
-        # 
+        """
+        ==========
+        __init__
+        ==========
+        This method initializes the class.
+
+        Parameters:
+        -----------
+        yaml_file: str
+            a YAML file containing rule definitions 
+        core_base_url: str
+            a URL pointing to Core Rule Schema  
+        creator_url: str
+            a URL pointing to a authoritication page to get user GUID
+        existing_rule_dir: str
+            a folder containing all the existing rules
+        output_dir: str
+            a folder where the new or updated rules will be output to
+        
+        returns
+        -------
+            None 
+
+        Raises
+        ------
+        ValueError
+            None
+        
+        """
         self.yaml_file          = yaml_file 
         self.core_base_url      = core_base_url
         self.creator_url        = creator_url
         self.existing_rule_dir  = existing_rule_dir
         self.output_dir         = output_dir
 
-    def get_schema(self,base_url=None):
-        url = self.core_base_url if base_url is None else base_url 
-        # Fetch the contents of the URL and parse it as JSON
-        with urllib.request.urlopen(url) as response:
-            raw_data = response.read().decode()
-            json_data = json.loads(raw_data)
-        return json_data
+    def _get_schema(self,base_url=None):
+        if base_url is None:
+            base_url = self.core_base_url
+        return get_schema(base_url)
+        
 
-    def get_creator_id(self,creator_url=None):
-        ctr_url = self.creator_url if creator_url is None else creator_url 
-        with urllib.request.urlopen(ctr_url) as rsp:
-            raw_data = rsp.read().decode()
-            creator_data = json.loads(raw_data)
-        print(f"Creator Data: {creator_data}")
-        if creator_data.get("clientPrincipal") is None:
-            creator_id = "dd0f9aa3-68f9-4825-84a4-86c8303daaff"
-        else:
-            creator_id = creator_data["clientPrincipal"].get("userId")
-            if creator_id is None:
-                creator_id = "dd0f9aa3-68f9-4825-84a4-86c8303daaff"
-            else:
-                print(f"creator_data['clientPrincipal'].get('userDetails')")
-        return creator_id 
+    def _get_creator_id(self,creator_url=None):
+        if creator_url is None: 
+            creator_url = self.creator_url
+        return get_creator_id(creator_url)
+    
 
-    def read_rules(self, yaml_file=None):
-        yaml_file = self.yaml_file if yaml_file is None else yaml_file 
-        # 1.2 Read rule definition file (YAML file)
-        with open(yaml_file, "r") as f:
-            yaml_data = yaml.safe_load(f)
-        # print(yaml_data[0])
+    def _read_rules(self, yaml_file=None):
+        if yaml_file is None:
+            yaml_file = self.yaml_file 
+        return read_rules(yaml_file)
 
-        # Create DataFrame from YAML data
-        df_yaml = pd.DataFrame(yaml_data)
-        return df_yaml 
 
     def build(self, rule_list=None):
         ssl._create_default_https_context = ssl._create_unverified_context
