@@ -8,6 +8,7 @@
 #     2. added echo_msg to display the progress  
 #   03/17/2023 (htu) - used isin for filtering selected rules 
 #                    - added doctring and test case
+# 
 #  
 
 import ruamel.yaml as yaml
@@ -53,6 +54,32 @@ def proc_sdtm_rules(df_data, rule_template, rule_ids: list,
     ------
     ValueError
         None
+
+    Comments from Gerry Campion:  
+    01. For the yaml files, only the contents within the json property are 
+        required. The other properties are only required in the json file.
+    02. The property names in the yaml file should not have underscores. The 
+        property names in the json file should have underscores.
+    03. I recommend copying the sample yaml rule into the rule editor. The 
+        schema will alert you of most of the structure issues.
+    04. Variable, Condition, and Rule columns should be mapped to comments in
+        the beginning of the YAML file (comments start with #) (see table 
+        above). These won't appear in the json property in the json file 
+        because json does not allow comments.
+    05. I would like to see an example with different Class and Domain other 
+        than ALL
+    06. If Item is empty, don't include the Item property for the citation
+    07. Replace Check: Check: null with Check: null
+    08. Don't add Core.Id
+    09. Description and Outcome.Message - I'm curious how you are generating 
+        these?
+    10. Rule Type and Sensitivity should be left null
+    11. I noticed these samples include rules merged from multiple rows in 
+        the source spreadsheet. I was expecting to see a sample for each row 
+        in the spreadsheet. Then, a second step would merge the rules from 
+        multiple rows for each rule id and also merge them with the rule ids 
+        in the core database. Is this following a different strategy?
+
 
     """
     # 1. get inputs
@@ -106,7 +133,12 @@ def proc_sdtm_rules(df_data, rule_template, rule_ids: list,
         rule_data = df_selected[df_data["Rule ID"] == rule_id]
         a_json = proc_each_sdtm_rule(rule_data,rule_template, rule_id, in_rule_folder)
         a_json["content"] = None 
-        a_yaml = yaml.dump(a_json, default_flow_style=False)
+        # Only get json for YAML
+        dict_yaml = a_json["json"]
+        print(f"Dict Keys: {dict_yaml.keys()}")
+        # Replace "_" with " " for columns
+        # df_yaml.columns = df_yaml.columns.str.replace("_", " ")
+        a_yaml = yaml.dump(dict_yaml, default_flow_style=False)
         output_rule2file(rule_id, a_json, a_yaml, out_rule_folder)
 
     # Collect basic stats and print them out
@@ -136,8 +168,8 @@ if __name__ == "__main__":
         "json": {}
     }
     # rule_list = ["CG0373", "CG0378", "CG0379"]
-    # rule_list = ["CG0001"]
-    rule_list = []
+    rule_list = ["CG0001"]
+    # rule_list = []
 
     # 1. Test with basic parameters
     v_stp = 1.0 
