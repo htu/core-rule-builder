@@ -3,6 +3,8 @@
 # History: MM/DD/YYYY (developer) - description
 #   03/14/2023 (htu) - ported from proc_rules_sdtm as get_authorities module
 #   03/17/2023 (htu) - added docstring and test case 
+#   03/21/2023 (htu) - added v_item to check and skip citation if it is None 
+#     06. If Item is empty, don't include the Item property for the citation
 #    
 
 import os 
@@ -81,6 +83,7 @@ def get_authorities(rule_data):
     for row in df_rules.itertuples(index=False):
         i += 1
         v_stp = 2.1
+        v_item          = df_rules.iloc[i]["Item"]
         rule_id         = df_rules.iloc[i]["Rule ID"]
         v_msg = print(f"  {i:02d} Rule ID - {rule_id}")
         echo_msg(v_prg, v_stp, v_msg,3)
@@ -90,8 +93,13 @@ def get_authorities(rule_data):
                    "Item": df_rules.iloc[i]["Item"],
                    "Section": df_rules.iloc[i]["Section"]
                    }
-        r_cits.append(r_a_cit) 
+
         v_stp = 2.2
+        if not v_item:  # Check if "Item" is empty
+            del r_a_cit["Item"]  # Remove "Item" key from r_a_cit dictionary
+        r_cits.append(r_a_cit) 
+
+        v_stp = 2.3
         v_msg = "Row {" + str(i) + "}: " + str(r_a_cit)
         echo_msg(v_prg, v_stp, v_msg,5)
         # print(f"Row {i}: {r_a_cit}") 
@@ -104,6 +112,8 @@ def get_authorities(rule_data):
                    "Citations": [r_a_cit]
                    }
         r_refs.append(r_a_ref) 
+
+        v_stp = 2.4
         r_a_std = {"Name": "SDTMIG",
                    "Version": df_rules.iloc[i]["SDTMIG Version"],
                    "References": [r_a_ref]
@@ -122,7 +132,8 @@ if __name__ == "__main__":
     # set input parameters
     v_prg = __name__ + "::get_authorities"
     os.environ["g_lvl"] = "3"
-    yaml_file = "./data/target/SDTM_and_SDTMIG_Conformance_Rules_v2.0.yaml"
+    r_dir = "/Volumes/HiMacData/GitHub/data/core-rule-builder"
+    yaml_file = r_dir + "/data/target/SDTM_and_SDTMIG_Conformance_Rules_v2.0.yaml"
     df_data = read_rules(yaml_file)
 
     # 1. Test with basic parameters

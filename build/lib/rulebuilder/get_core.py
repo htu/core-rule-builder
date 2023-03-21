@@ -3,6 +3,8 @@
 # History: MM/DD/YYYY (developer) - description
 #   03/14/2023 (htu) - ported from proc_rules_sdtm as get_core module
 #   03/17/2023 (htu) - added docstring and test cases
+#   03/21/2023 (htu) - 
+#     08. Don't add Core.Id
 #    
 
 
@@ -46,9 +48,9 @@ def get_core(rule_id: str = None, org: str = "CDISC", std: str = "SDTMIG"):
         echo_msg(v_prg, v_stp, v_msg, 0)
         return {}
 
-    core_id = org + '.' + std + '.' + rule_id 
+    # core_id = org + '.' + std + '.' + rule_id 
     r_json= {
-            "Id": core_id,
+        #    "Id": core_id,
             "Version": "1",
             "Status": "Draft"
     }

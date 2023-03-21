@@ -8,6 +8,10 @@
 #     2. added echo_msg to display the progress  
 #   03/17/2023 (htu) - used isin for filtering selected rules 
 #                    - added doctring and test case
+#   03/20/2023 (htu) - 
+#     1. worked on issues 01 and 02 and added rename_keys 
+#     2. added cnt_published 
+# 
 #  
 
 import ruamel.yaml as yaml
@@ -17,6 +21,7 @@ from rulebuilder.read_rules import read_rules
 from rulebuilder.get_creator_id import get_creator_id
 from rulebuilder.proc_each_sdtm_rule import proc_each_sdtm_rule
 from rulebuilder.output_rule2file import output_rule2file
+from rulebuilder.rename_keys import rename_keys 
 
 def proc_sdtm_rules(df_data, rule_template, rule_ids: list,
                      in_rule_folder, out_rule_folder) -> None:
@@ -54,6 +59,32 @@ def proc_sdtm_rules(df_data, rule_template, rule_ids: list,
     ValueError
         None
 
+    Comments from Gerry Campion:  
+    *01. For the yaml files, only the contents within the json property are 
+        required. The other properties are only required in the json file.
+    *02. The property names in the yaml file should not have underscores. The 
+        property names in the json file should have underscores.
+    03. I recommend copying the sample yaml rule into the rule editor. The 
+        schema will alert you of most of the structure issues.
+    04. Variable, Condition, and Rule columns should be mapped to comments in
+        the beginning of the YAML file (comments start with #) (see table 
+        above). These won't appear in the json property in the json file 
+        because json does not allow comments.
+    05. I would like to see an example with different Class and Domain other 
+        than ALL
+    *06. If Item is empty, don't include the Item property for the citation
+    *07. Replace Check: Check: null with Check: null
+    *08. Don't add Core.Id
+    09. Description and Outcome.Message - I'm curious how you are generating 
+        these?
+    10. Rule Type and Sensitivity should be left null
+    11. I noticed these samples include rules merged from multiple rows in 
+        the source spreadsheet. I was expecting to see a sample for each row 
+        in the spreadsheet. Then, a second step would merge the rules from 
+        multiple rows for each rule id and also merge them with the rule ids 
+        in the core database. Is this following a different strategy?
+
+
     """
     # 1. get inputs
     v_prg = __name__ 
@@ -83,6 +114,7 @@ def proc_sdtm_rules(df_data, rule_template, rule_ids: list,
     echo_msg(v_prg, v_stp, v_msg,1)
 
     # Loop through each Rule ID and print out required information
+    cnt_published = 0
     for rule_id, group in grouped_data:
         # if rule_id not in rule_ids: continue 
         num_records = group.shape[0]
@@ -104,15 +136,21 @@ def proc_sdtm_rules(df_data, rule_template, rule_ids: list,
             # print(f"Section: {sections}\nItem: {items}\n")
         rule_data = None 
         rule_data = df_selected[df_data["Rule ID"] == rule_id]
-        a_json = proc_each_sdtm_rule(rule_data,rule_template, rule_id, in_rule_folder)
+        a_json = proc_each_sdtm_rule(rule_data,rule_template, rule_id, in_rule_folder,cnt_published)
         a_json["content"] = None 
-        a_yaml = yaml.dump(a_json, default_flow_style=False)
+        # Only get json for YAML
+        dict_yaml = a_json["json"]
+        print(f"Dict Keys: {dict_yaml.keys()}")
+        # Replace "_" with " " for columns
+        d_yaml = rename_keys(dict_yaml, '_', ' ')
+        a_yaml = yaml.dump(d_yaml, default_flow_style=False)
         output_rule2file(rule_id, a_json, a_yaml, out_rule_folder)
 
     # Collect basic stats and print them out
     num_unique_rule_id = grouped_data.ngroups
     print(f"Number of Records Processed: {num_records_processed}")
-    print(f"Number of Unique Rule ID: {num_unique_rule_id}")
+    print(f"   Number of Unique Rule ID: {num_unique_rule_id}")
+    print(f"     Number of Published ID: {cnt_published}")
 
 
 # Test cases
@@ -120,11 +158,12 @@ if __name__ == "__main__":
     # set input parameters 
     os.environ["g_lvl"] = "3"
     v_prg = __name__ + "::proc_sdtm_rules"
-    yaml_file = "./data/target/SDTM_and_SDTMIG_Conformance_Rules_v2.0.yaml"
+    r_dir = "/Volumes/HiMacData/GitHub/data/core-rule-builder"
+    yaml_file =  r_dir + "/data/target/SDTM_and_SDTMIG_Conformance_Rules_v2.0.yaml"
     core_base_url = "https://raw.githubusercontent.com/cdisc-org/conformance-rules-editor/main/public/schema/CORE-base.json"
     creator_url="https://rule-editor.cdisc.org/.auth/me"
-    existing_rule_dir="./data/output/json_rules1"
-    output_dir="./data/output"
+    existing_rule_dir=r_dir + "/data/output/json_rules1"
+    output_dir= r_dir + "/data/output"
     df_yaml = read_rules(yaml_file)
     creator_id = get_creator_id(creator_url)
     json_obj = {
@@ -136,8 +175,8 @@ if __name__ == "__main__":
         "json": {}
     }
     # rule_list = ["CG0373", "CG0378", "CG0379"]
-    # rule_list = ["CG0001"]
-    rule_list = []
+    rule_list = ["CG0001"]
+    # rule_list = []
 
     # 1. Test with basic parameters
     v_stp = 1.0 

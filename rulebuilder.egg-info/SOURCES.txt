@@ -22,6 +22,8 @@ rulebuilder/output_rule2file.py
 rulebuilder/proc_each_sdtm_rule.py
 rulebuilder/proc_sdtm_rules.py
 rulebuilder/read_rules.py
+rulebuilder/rename_dict_keys.py
+rulebuilder/rename_keys.py
 rulebuilder/sdtmrulebuilder.py
 rulebuilder.egg-info/PKG-INFO
 rulebuilder.egg-info/SOURCES.txt

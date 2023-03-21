@@ -2,6 +2,9 @@
 # -----------------------------------------------------------------------------
 # History: MM/DD/YYYY (developer) - description
 #   03/14/2023 (htu) - ported from proc_rules_sdtm as proc_each_sdtm_rule module
+#   03/21/2023 (htu) - 
+#     1. resolved: 07. Replace Check: Check: null with Check: null
+#     2. added v_status and return existing rule if it is Published
 #    
 
 from .get_existing_rule import get_existing_rule
@@ -20,7 +23,7 @@ from .get_check import get_check
 
 
 
-def proc_each_sdtm_rule (rule_data,rule_tmp, rule_id: str, in_rule_folder):
+def proc_each_sdtm_rule (rule_data,rule_tmp, rule_id: str, in_rule_folder,cnt_published):
     print (f"Rule_ID: {rule_id}")
     # print (f"Rule Data: {rule_data}")
     # print(f"Schema Data: {rule_tmp.keys()}")
@@ -28,7 +31,11 @@ def proc_each_sdtm_rule (rule_data,rule_tmp, rule_id: str, in_rule_folder):
     
     # get existing rule if it exists
     json_exist_rule = get_existing_rule(rule_id, in_rule_folder)
-
+    v_status = json_exist_rule.get("json",{}).get("Core",{}).get("Status")
+    if v_status == "Published":
+        cnt_published += 1
+        return json_exist_rule
+    
     # get rule GUID 
     rule_obj["id"] = get_rule_guid(json_exist_rule)
     
@@ -62,7 +69,8 @@ def proc_each_sdtm_rule (rule_data,rule_tmp, rule_id: str, in_rule_folder):
     rule_obj["json"]["Executability"] = get_executability(rule_data)
 
     # get checks
-    rule_obj["json"]["Check"] = {"Check": get_check(rule_data)}  
+    # rule_obj["json"]["Check"] = {"Check": get_check(rule_data)}  
+    rule_obj["json"]["Check"] = get_check(rule_data)  
 
     # print out the result 
     # print(json.dumps(rule_obj, indent=4))
