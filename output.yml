@@ -1,0 +1,6 @@
+# name: This is a comment for the name field
+name: John
+# age: This is a comment for the age field
+age: 30
+# city: This is a comment for the city field
+city: New York

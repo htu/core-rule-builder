@@ -13,6 +13,7 @@ rulebuilder/get_creator_id.py
 rulebuilder/get_desc.py
 rulebuilder/get_executability.py
 rulebuilder/get_existing_rule.py
+rulebuilder/get_jmsg.py
 rulebuilder/get_rtype.py
 rulebuilder/get_rule_guid.py
 rulebuilder/get_schema.py
@@ -24,6 +25,7 @@ rulebuilder/proc_sdtm_rules.py
 rulebuilder/read_rules.py
 rulebuilder/rename_dict_keys.py
 rulebuilder/rename_keys.py
+rulebuilder/replace_operator.py
 rulebuilder/sdtmrulebuilder.py
 rulebuilder.egg-info/PKG-INFO
 rulebuilder.egg-info/SOURCES.txt

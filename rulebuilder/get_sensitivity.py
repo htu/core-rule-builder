@@ -3,11 +3,14 @@
 # History: MM/DD/YYYY (developer) - description
 #   03/14/2023 (htu) - ported from proc_rules_sdtm as get_sensitivity module
 #   03/15/2023 (htu) - added "import re"
-#   03/21/2023 (htu) -
+#   03/21/2023 (htu) - added docstring and test cases
 #     10. Rule Type and Sensitivity should be left null
 #    
 
 import re 
+import json 
+from rulebuilder.echo_msg import echo_msg
+from rulebuilder.read_rules import read_rules
 
 def get_sensitivity(rule_data):
     """
@@ -62,5 +65,37 @@ def get_sensitivity(rule_data):
             print(f"No match found from {r_condition}")
     return r_str
 
+
+# Test cases
+if __name__ == "__main__":
+    # set input parameters
+    v_prg = __name__ + "::get_check"
+    os.environ["g_lvl"] = "3"
+    r_dir = "/Volumes/HiMacData/GitHub/data/core-rule-builder"
+    yaml_file = r_dir + "/data/target/SDTM_and_SDTMIG_Conformance_Rules_v2.0.yaml"
+    df_data = read_rules(yaml_file)
+
+    # 1. Test with basic parameters
+    v_stp = 1.0
+    echo_msg(v_prg, v_stp, "Test Case 01: Basic Parameter", 1)
+    rule_data = pd.DataFrame()
+    r_json = get_sensitivity(rule_data)
+    # print out the result
+    print(json.dumps(r_json, indent=4))
+
+    # Expected output:
+
+   # 2. Test with parameters
+    v_stp = 2.0
+    echo_msg(v_prg, v_stp, "Test Case 02: With one rule id", 1)
+    rule_id = "CG0001"
+    rule_data = df_data[df_data["Rule ID"] == rule_id]
+    r_json = get_sensitivity(rule_data)
+    # print out the result
+    print(json.dumps(r_json, indent=4))
+
+    # Expected output:
+
+# End of File
 
     

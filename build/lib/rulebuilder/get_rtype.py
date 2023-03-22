@@ -4,6 +4,8 @@
 #   03/14/2023 (htu) - ported from proc_rules_sdtm as get_rtype module
 #   03/15/2023 (htu) - added "import re"
 #   03/17/2023 (htu) - added docstring and test case
+#   03/21/2023 (htu) -
+#     10. Rule Type and Sensitivity should be left null
 #    
 
 import re 
@@ -50,6 +52,9 @@ def get_rtype(rule_data):
     v_stp = 1.0
     v_msg = "Setting parameters..."
     echo_msg(v_prg, v_stp, v_msg, 2)
+    if not rule_data.empty: 
+        return None
+
     v_stp = 1.1
     v_msg = "Input parameter rule_data is empty."
     if rule_data.empty:
@@ -87,7 +92,8 @@ if __name__ == "__main__":
     # set input parameters
     v_prg = __name__ + "::get_rtype"
     os.environ["g_lvl"] = "3"
-    yaml_file = "./data/target/SDTM_and_SDTMIG_Conformance_Rules_v2.0.yaml"
+    r_dir = "/Volumes/HiMacData/GitHub/data/core-rule-builder"
+    yaml_file = r_dir + "/data/target/SDTM_and_SDTMIG_Conformance_Rules_v2.0.yaml"
     df_data = read_rules(yaml_file)
 
     # 1. Test with basic parameters

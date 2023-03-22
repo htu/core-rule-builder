@@ -53,7 +53,8 @@ if __name__ == "__main__":
     # set input parameters
     v_prg = __name__ + "::get_check"
     os.environ["g_lvl"] = "3"
-    yaml_file = "./data/target/SDTM_and_SDTMIG_Conformance_Rules_v2.0.yaml"
+    r_dir = "/Volumes/HiMacData/GitHub/data/core-rule-builder"
+    yaml_file = r_dir + "/data/target/SDTM_and_SDTMIG_Conformance_Rules_v2.0.yaml"
     df_data = read_rules(yaml_file)
 
     # 1. Test with basic parameters
