@@ -5,14 +5,18 @@
 #   03/15/2023 (htu) - added "import re"
 #   03/21/2023 (htu) - added docstring and test cases
 #     10. Rule Type and Sensitivity should be left null
+#   03/22/2023 (htu) - added exist_rule_data
 #    
 
+import os
 import re 
 import json 
+import pandas as pd 
 from rulebuilder.echo_msg import echo_msg
 from rulebuilder.read_rules import read_rules
 
-def get_sensitivity(rule_data):
+
+def get_sensitivity(rule_data, exist_rule_data: dict = {}):
     """
     ===============
     get_sensitivity
@@ -24,6 +28,11 @@ def get_sensitivity(rule_data):
     rule_data: dataframe
         a data frame containng all the records for a rule. It can be obtained from
         read_rules and select the records from the rule definition data frame.
+    
+    existing_rule_data: dict 
+        a data frame containng all the records for a rule that already developed. It 
+        can be read from the existing rule folder using get_existing_rule. 
+
 
     returns
     -------
@@ -45,24 +54,25 @@ def get_sensitivity(rule_data):
 
     """
  
-    if not rule_data.empty:
+    if rule_data.empty:
         return None
 
-
-    r_condition = rule_data.iloc[0]["Condition"]
-    # r_rule = rule_data.iloc[0]["Rule"]
-    r_str = "Record"
-    if r_condition is not None:
-        pattern = r"^(study|dataset|domain|variable|term)"
-        # Use the re.search() method to search for the pattern in the input string
-        match = re.search(pattern, r_condition, re.IGNORECASE)
-        # Check if a match was found
-        if match:
-            # Convert the matched keyword to lowercase and capitalize the first letter
-            r_str = match.group(1).lower().capitalize()
-        else:
-            # No match found
-            print(f"No match found from {r_condition}")
+    r_str = exist_rule_data.get("json", {}).get("Sensitivity")
+    if r_str is None: 
+        r_condition = rule_data.iloc[0]["Condition"]
+        # r_rule = rule_data.iloc[0]["Rule"]
+        r_str = "Record"
+        if r_condition is not None:
+            pattern = r"^(study|dataset|domain|variable|term)"
+            # Use the re.search() method to search for the pattern in the input string
+            match = re.search(pattern, r_condition, re.IGNORECASE)
+            # Check if a match was found
+            if match:
+                # Convert the matched keyword to lowercase and capitalize the first letter
+                r_str = match.group(1).lower().capitalize()
+            else:
+                # No match found
+                print(f"No match found from {r_condition}")
     return r_str
 
 

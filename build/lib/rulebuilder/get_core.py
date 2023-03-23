@@ -11,8 +11,10 @@
 import os
 import json
 from rulebuilder.echo_msg import echo_msg
+from rulebuilder.get_existing_rule import get_existing_rule
 
-def get_core(rule_id: str = None, org: str = "CDISC", std: str = "SDTMIG"):
+
+def get_core(rule_id: str = None, org: str = "CDISC", std: str = "SDTMIG", exist_rule_data:dict={}):
     """
     ===============
     get_core
@@ -27,6 +29,9 @@ def get_core(rule_id: str = None, org: str = "CDISC", std: str = "SDTMIG"):
         Organization name or abbreviation
     std: str
         Standard name or abbreviation
+    existing_rule_data: dict 
+        a data frame containng all the records for a rule that already developed. It 
+        can be read from the existing rule folder using get_existing_rule. 
 
     returns
     -------
@@ -48,12 +53,15 @@ def get_core(rule_id: str = None, org: str = "CDISC", std: str = "SDTMIG"):
         echo_msg(v_prg, v_stp, v_msg, 0)
         return {}
 
-    # core_id = org + '.' + std + '.' + rule_id 
-    r_json= {
-        #    "Id": core_id,
+    d2_json =  exist_rule_data
+    r_json = d2_json.get("json",{}).get("Core")
+    core_id = org + '.' + std + '.' + rule_id 
+    if r_json is None: 
+        r_json= {
+            "Id": core_id,
             "Version": "1",
             "Status": "Draft"
-    }
+        }
     return r_json
 
 
@@ -62,6 +70,8 @@ if __name__ == "__main__":
     # set input parameters
     v_prg = __name__ + "::get_core"
     os.environ["g_lvl"] = "3"
+    r_dir = "/Volumes/HiMacData/GitHub/data/core-rule-builder"
+    existing_rule_dir = r_dir + "/data/output/json_rules1"
 
     # 1. Test with basic parameters
     v_stp = 1.0
@@ -76,7 +86,8 @@ if __name__ == "__main__":
     v_stp = 2.0
     echo_msg(v_prg, v_stp, "Test Case 02: With one rule id", 1)
     rule_id = "CG0001"
-    r_json = get_core(rule_id, "FDA","Conformance Rule v1")
+    d2_data = get_existing_rule(rule_id, existing_rule_dir)
+    r_json = get_core(rule_id, exist_rule_data=d2_data)
     # print out the result
     print(json.dumps(r_json, indent=4))
 

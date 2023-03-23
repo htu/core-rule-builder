@@ -2,6 +2,7 @@
 # -----------------------------------------------------------------------------
 # History: MM/DD/YYYY (developer) - description
 #   03/21/2023 (htu) - extracted out from get_desc 
+#   03/22/2023 (htu) - added exist_rule_data 
 #
 
 import pandas as pd
@@ -10,12 +11,18 @@ from rulebuilder.echo_msg import echo_msg
 from rulebuilder.replace_operator import replace_operator
 
 
-def get_jmsg(rule_data):
+def get_jmsg(rule_data, exist_rule_data: dict = {}):
     """
     Returns a JSON message string based on the given rule data.
 
-    Args:
-        rule_data: A Pandas DataFrame containing the rule data.
+    Paramgers:
+    ----------
+    rule_data: dataframe 
+        A Pandas DataFrame containing the rule data.
+        
+    existing_rule_data: dict 
+        a data frame containng all the records for a rule that already developed. It 
+        can be read from the existing rule folder using get_existing_rule. 
 
     Returns:
         A JSON message string.
@@ -27,24 +34,25 @@ def get_jmsg(rule_data):
     v_stp = 1.0
     v_msg = "Getting Message for json.Message..."
     echo_msg(v_prg, v_stp, v_msg, 3)
-
-    r_condition = rule_data.iloc[0]["Condition"]
-    r_rule = rule_data.iloc[0]["Rule"]
-    # Debugging print statement
-    v_stp = 1.2
-    v_msg = " . r_condition: " + str(r_condition) + ", r_rule: " + r_rule
-    echo_msg(v_prg, v_stp, v_msg, 3)
-    r_desc1 = replace_operator(r_condition)
-    r_desc2 = replace_operator(r_rule)
-    # Debugging print statement
-    v_stp = 1.3
-    v_msg = " . r_desc1: " + str(r_desc1) + ", r_desc2: " + str(r_desc2)
-    echo_msg(v_prg, v_stp, v_msg, 4)
-    r_desc3 = r_desc2 if r_desc1 is None else r_desc1 + " and " + r_desc2
-    v_stp = 1.4
-    v_msg = " . r_desc3: " + str(r_desc3)        # Debugging print statement
-    echo_msg(v_prg, v_stp, v_msg, 3)
-    return r_desc3
+    r_str = exist_rule_data.get("json", {}).get("Message")
+    if r_str is None: 
+        r_condition = rule_data.iloc[0]["Condition"]
+        r_rule = rule_data.iloc[0]["Rule"]
+        # Debugging print statement
+        v_stp = 1.2
+        v_msg = " . r_condition: " + str(r_condition) + ", r_rule: " + r_rule
+        echo_msg(v_prg, v_stp, v_msg, 3)
+        r_desc1 = replace_operator(r_condition)
+        r_desc2 = replace_operator(r_rule)
+        # Debugging print statement
+        v_stp = 1.3
+        v_msg = " . r_desc1: " + str(r_desc1) + ", r_desc2: " + str(r_desc2)
+        echo_msg(v_prg, v_stp, v_msg, 4)
+        r_str = r_desc2 if r_desc1 is None else r_desc1 + " and " + r_desc2
+        v_stp = 1.4
+        v_msg = " . r_desc3: " + str(r_str)        # Debugging print statement
+        echo_msg(v_prg, v_stp, v_msg, 3)
+    return r_str
 
 
 # Test cases

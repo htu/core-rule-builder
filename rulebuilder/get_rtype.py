@@ -6,6 +6,7 @@
 #   03/17/2023 (htu) - added docstring and test case
 #   03/21/2023 (htu) -
 #     10. Rule Type and Sensitivity should be left null
+#   03/22/2023 (htu) - added exist_rule_data
 #    
 
 import re 
@@ -13,8 +14,10 @@ import os
 import pandas as pd 
 from rulebuilder.echo_msg import echo_msg
 from rulebuilder.read_rules import read_rules
+from rulebuilder.get_existing_rule import get_existing_rule
 
-def get_rtype(rule_data):
+
+def get_rtype(rule_data, exist_rule_data: dict = {}):
     """
     ===============
     get_rtype
@@ -26,6 +29,11 @@ def get_rtype(rule_data):
     rule_data: dataframe
         a data frame containng all the records for a rule. It can be obtained from
         read_rules and select the records from the rule definition data frame.
+    
+    existing_rule_data: dict 
+        a data frame containng all the records for a rule that already developed. It 
+        can be read from the existing rule folder using get_existing_rule. 
+
 
     returns
     -------
@@ -52,38 +60,39 @@ def get_rtype(rule_data):
     v_stp = 1.0
     v_msg = "Setting parameters..."
     echo_msg(v_prg, v_stp, v_msg, 2)
-    if not rule_data.empty: 
-        return None
+    # if not rule_data.empty: 
+    #    return None
 
     v_stp = 1.1
     v_msg = "Input parameter rule_data is empty."
     if rule_data.empty:
         echo_msg(v_prg, v_stp, v_msg, 0)
         return None
-    
-    r_condition = rule_data.iloc[0]["Condition"]
-    # r_rule = rule_data.iloc[0]["Rule"]
-    if r_condition is None:
-        v_stp = 1.2
-        v_msg = "No Condition is found in the rule definition."
-        echo_msg(v_prg, v_stp, v_msg, 0)
-        return None
-    r_str = "Record Data"
-    pattern = r"^(study|dataset)"
-    # Use the re.search() method to search for the pattern in the input string
-    match = re.search(pattern, r_condition, re.IGNORECASE)
-    # Check if a match was found
-    if match:
-        v_stp = 2.1
-        # Convert the matched keyword to lowercase and capitalize the first letter
-        r_str = match.group(1).lower().capitalize()
-        v_msg = "Found a match."
-        echo_msg(v_prg, v_stp, v_msg, 3)
-    else:
-        # No match found
-        v_stp = 2.2
-        v_msg = print (f"No match found from '{r_condition}'")
-        echo_msg(v_prg, v_stp, v_msg, 3)
+    r_str = exist_rule_data.get("json", {}).get("Rule_Type")
+    if r_str is None: 
+        r_condition = rule_data.iloc[0]["Condition"]
+        # r_rule = rule_data.iloc[0]["Rule"]
+        if r_condition is None:
+            v_stp = 1.2
+            v_msg = "No Condition is found in the rule definition."
+            echo_msg(v_prg, v_stp, v_msg, 0)
+            return None
+        r_str = "Record Data"
+        pattern = r"^(study|dataset)"
+        # Use the re.search() method to search for the pattern in the input string
+        match = re.search(pattern, r_condition, re.IGNORECASE)
+        # Check if a match was found
+        if match:
+            v_stp = 2.1
+            # Convert the matched keyword to lowercase and capitalize the first letter
+            r_str = match.group(1).lower().capitalize()
+            v_msg = "Found a match."
+            echo_msg(v_prg, v_stp, v_msg, 3)
+        else:
+            # No match found
+            v_stp = 2.2
+            v_msg = print (f"No match found from '{r_condition}'")
+            echo_msg(v_prg, v_stp, v_msg, 3)
     return r_str 
 
 

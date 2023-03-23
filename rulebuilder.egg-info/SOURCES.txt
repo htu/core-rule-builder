@@ -5,6 +5,11 @@ setup_rulebuilder.py
 jsonrenamer/__init__.py
 jsonrenamer/json_file_renamer.py
 rulebuilder/__init__.py
+rulebuilder/build_rule_yaml v1.py
+rulebuilder/build_rule_yaml.py
+rulebuilder/convert_json_to_yaml v1.py
+rulebuilder/convert_json_to_yaml v2.py
+rulebuilder/convert_json_to_yaml.py
 rulebuilder/echo_msg.py
 rulebuilder/get_authorities.py
 rulebuilder/get_check.py

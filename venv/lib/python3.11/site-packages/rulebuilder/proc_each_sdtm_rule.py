@@ -44,29 +44,35 @@ def proc_each_sdtm_rule (rule_data,rule_tmp, rule_id: str, in_rule_folder,cnt_pu
     rule_obj["changed"] = json_exist_rule.get("changed") 
     
     # get json Core 
-    rule_obj["json"]["Core"] = get_core(rule_id)
+    rule_obj["json"]["Core"] = get_core(
+        rule_id, exist_rule_data=json_exist_rule)
     
     # get json Description
     # print(f"Rule Data: {rule_data.iloc[0]['Condition']}")
-    rule_obj["json"]["Description"] = get_desc(rule_data)
+    rule_obj["json"]["Description"] = get_desc(
+        rule_data, exist_rule_data=json_exist_rule)
 
     # get json Message 
-    rule_obj["json"]["Outcome"] = {"Message": get_jmsg(rule_data)} 
+    v_jmsg = get_jmsg(rule_data, exist_rule_data=json_exist_rule)
+    rule_obj["json"]["Outcome"] = {"Message": v_jmsg}
 
     # get json Rule_Type
-    rule_obj["json"]["Rule_Type"] = get_rtype(rule_data)
+    rule_obj["json"]["Rule_Type"] = get_rtype(
+        rule_data, exist_rule_data=json_exist_rule)
     
     # get json Sensitivity
-    rule_obj["json"]["Sensitivity"] = get_sensitivity(rule_data)
+    rule_obj["json"]["Sensitivity"] = get_sensitivity(
+        rule_data, exist_rule_data=json_exist_rule)
 
     # get json Authorities 
-    rule_obj["json"]["Authorities"] = get_authorities(rule_data)
+    rule_obj["json"]["Authorities"] = get_authorities(
+        rule_data, exist_rule_data=json_exist_rule)
 
     # get json Scope       
     rule_obj["json"]["Scope"] = get_scope(rule_data)
 
     # get json Exeutability 
-    rule_obj["json"]["Executability"] = get_executability(rule_data)
+    # rule_obj["json"]["Executability"] = get_executability(rule_data)
 
     # get checks
     # rule_obj["json"]["Check"] = {"Check": get_check(rule_data)}  

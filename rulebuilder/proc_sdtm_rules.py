@@ -11,6 +11,7 @@
 #   03/20/2023 (htu) - 
 #     1. worked on issues 01 and 02 and added rename_keys 
 #     2. added cnt_published 
+#   03/22/2023 (htu) - used build_rule_yaml to get a_yaml 
 # 
 #  
 
@@ -21,7 +22,7 @@ from rulebuilder.read_rules import read_rules
 from rulebuilder.get_creator_id import get_creator_id
 from rulebuilder.proc_each_sdtm_rule import proc_each_sdtm_rule
 from rulebuilder.output_rule2file import output_rule2file
-from rulebuilder.rename_keys import rename_keys 
+from rulebuilder.build_rule_yaml import build_rule_yaml
 
 def proc_sdtm_rules(df_data, rule_template, rule_ids: list,
                      in_rule_folder, out_rule_folder) -> None:
@@ -66,7 +67,7 @@ def proc_sdtm_rules(df_data, rule_template, rule_ids: list,
         property names in the json file should have underscores.
     03. I recommend copying the sample yaml rule into the rule editor. The 
         schema will alert you of most of the structure issues.
-    04. Variable, Condition, and Rule columns should be mapped to comments in
+    *04. Variable, Condition, and Rule columns should be mapped to comments in
         the beginning of the YAML file (comments start with #) (see table 
         above). These won't appear in the json property in the json file 
         because json does not allow comments.
@@ -138,12 +139,13 @@ def proc_sdtm_rules(df_data, rule_template, rule_ids: list,
         rule_data = df_selected[df_data["Rule ID"] == rule_id]
         a_json = proc_each_sdtm_rule(rule_data,rule_template, rule_id, in_rule_folder,cnt_published)
         a_json["content"] = None 
-        # Only get json for YAML
-        dict_yaml = a_json["json"]
-        print(f"Dict Keys: {dict_yaml.keys()}")
-        # Replace "_" with " " for columns
-        d_yaml = rename_keys(dict_yaml, '_', ' ')
-        a_yaml = yaml.dump(d_yaml, default_flow_style=False)
+        # # Only get json for YAML
+        # dict_yaml = a_json["json"]
+        # print(f"Dict Keys: {dict_yaml.keys()}")
+        # # Replace "_" with " " for columns
+        # d_yaml = rename_keys(dict_yaml, '_', ' ')
+        # a_yaml = yaml.dump(d_yaml, default_flow_style=False)
+        a_yaml = build_rule_yaml(rule_data,a_json)
         output_rule2file(rule_id, a_json, a_yaml, out_rule_folder)
 
     # Collect basic stats and print them out

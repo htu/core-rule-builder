@@ -4,6 +4,7 @@
 #   03/14/2023 (htu) - ported from proc_rules_sdtm as output_rule2file module
 #   03/15/2023 (htu) - added yaml_data as required input variable 
 #   03/21/2023 (htu) - added docstring and test cases  
+#   03/22/2023 (htu) - added v_status 
 
 import os
 import json
@@ -22,9 +23,12 @@ def output_rule2file(rule_id, json_data, yaml_data, output_dir) -> None:
     Returns:
     None.
     """
+    # Form a file name 
+    v_status = json_data.get("json", {}).get("Core", {}).get("Status")
+    yaml_fn = rule_id + "-" + v_status + ".yaml"
     # Write YAML data to a file
     yaml_path = output_dir + '/rules_yaml'
-    yaml_fn = rule_id + ".yaml"
+    
     fn_yaml = yaml_path + '/' + yaml_fn
     if not os.path.exists(yaml_path):
         os.makedirs(yaml_path)

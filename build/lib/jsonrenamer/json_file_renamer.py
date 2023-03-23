@@ -38,7 +38,7 @@ class JsonFileRenamer:
                     rule_id = j_refr[0]["Rule_Identifier"].get("Id")
         return rule_id 
 
-    def get_file_name(self, filename, fn_root, core_id, rule_id):
+    def get_file_name(self, filename, fn_root, core_id, rule_id,r_status):
         if core_id is None and rule_id is not None and re.match("^CG", rule_id):
             fn_root = rule_id
             self.stat_cnts["ruleid_used"] += 1
@@ -58,7 +58,7 @@ class JsonFileRenamer:
                     self.stat_cnts["renamed"] += 1
                 else:
                     self.stat_cnts["coreid_used"] += 1
-        r_filename = fn_root + ".json"
+        r_filename = fn_root + "-" + str(r_status) + ".json"
         return r_filename
 
     def rename_files(self):
@@ -76,11 +76,13 @@ class JsonFileRenamer:
                     print(f" - Processing {f.name}...")
                     json_data = json.load(f)
                     # Get the value
+                    v_status = json_data.get(
+                        "json", {}).get("Core", {}).get("Status")
                     core_id = self.get_core_id(json_data)
                     fn_root = core_id
                     # get rule id for each file
                     rule_id = self.get_rule_id(json_data)
-                    new_filename = self.get_file_name(filename, fn_root, core_id, rule_id) 
+                    new_filename = self.get_file_name(filename, fn_root, core_id, rule_id, v_status) 
                     # we need to check if the target file exists
                     if os.path.exists(os.path.join(self.output_folder_path, new_filename)):
                         self.stat_cnts["dupped"] += 1 

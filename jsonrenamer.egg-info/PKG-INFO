@@ -2,7 +2,7 @@ Metadata-Version: 2.1
 Name: jsonrenamer
 Version: 0.1.0
 Summary: A tool for renaming JSON files based on their contents
-Home-page: https://github.com/yourusername/jsonrenamer
+Home-page: https://github.com/htu/core-rule-builder/tree/main/jsonrenamer
 Author: Hanming Tu
 Author-email: hanming.tu@gmail.com
 Classifier: Programming Language :: Python :: 3

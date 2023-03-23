@@ -44,7 +44,7 @@ def get_check(rule_data):
         echo_msg(v_prg, v_stp, v_msg,0)
         return {}
 
-    r_json = None
+    r_json = {}
     return r_json
 
 

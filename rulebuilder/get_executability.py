@@ -6,5 +6,10 @@
 
 
 def get_executability(rule_data):
-    r_json = None
+    # 0: "Fully Executable"
+    # 1: "Partially Executable"
+    # 2: "Partially Executable - Possible Overreporting"
+    # 3: "Partially Executable - Possible Underreporting"
+
+    r_json = "Partially Executable"
     return r_json
