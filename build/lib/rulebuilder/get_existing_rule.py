@@ -2,6 +2,7 @@
 # -----------------------------------------------------------------------------
 # History: MM/DD/YYYY (developer) - description
 #   03/14/2023 (htu) - ported from proc_rules_sdtm as get_existing_rule module
+#   03/23/2023 (htu) - added "status" 
 #    
 
 import os
@@ -22,9 +23,11 @@ def get_existing_rule(rule_id, in_rule_folder):
         r_json = {
             "id": str(uuid.uuid4()),
             "created": now_utc.strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "changed": now_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
+            "changed": now_utc.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "status": "new"
         }
     else:
         r_json = json_data
         r_json["changed"] = now_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
+        r_json["status"] = "exist"
     return r_json 

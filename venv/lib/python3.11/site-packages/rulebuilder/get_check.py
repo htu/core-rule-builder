@@ -3,6 +3,7 @@
 # History: MM/DD/YYYY (developer) - description
 #   03/14/2023 (htu) - ported from proc_rules_sdtm as get_check module
 #   03/17/2023 (htu) - added docstring and test cases
+#   03/23/2023 (htu) - added exist_rule_data to get existing check 
 #    
 
 import os
@@ -11,7 +12,8 @@ import pandas as pd
 from rulebuilder.echo_msg import echo_msg
 from rulebuilder.read_rules import read_rules
 
-def get_check(rule_data):
+
+def get_check(rule_data, exist_rule_data: dict = {}):
     """
     ===============
     get_check
@@ -44,7 +46,13 @@ def get_check(rule_data):
         echo_msg(v_prg, v_stp, v_msg,0)
         return {}
 
-    r_json = {}
+    r_json = exist_rule_data.get("json", {}).get("Check")
+    if r_json is not None:
+        return r_json
+
+    r_json = {
+        "all": []
+    }
     return r_json
 
 
@@ -70,7 +78,8 @@ if __name__ == "__main__":
    # 2. Test with parameters
     v_stp = 2.0
     echo_msg(v_prg, v_stp, "Test Case 02: With one rule id", 1)
-    rule_id = "CG0001"
+    # rule_id = "CG0001"
+    rule_id = "CG0180"
     rule_data = df_data[df_data["Rule ID"] == rule_id]
     r_json = get_check(rule_data)
     # print out the result

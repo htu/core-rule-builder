@@ -38,7 +38,7 @@ def read_rules(yaml_file=None):
        v_step = 1.2
        echo_msg(v_prg, v_step, "File - " + yaml_file + " does not exist.", 0)
        return None
-    v_msg = "Readming from " + yaml_file + "..."
+    v_msg = "Reading from " + yaml_file + "..."
     echo_msg(v_prg, v_step, v_msg, 2)
     # 1.2 Read rule definition file (YAML file)
     with open(yaml_file, "r") as f:

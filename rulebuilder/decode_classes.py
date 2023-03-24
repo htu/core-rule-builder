@@ -3,6 +3,7 @@
 # History: MM/DD/YYYY (developer) - description
 #   03/22/2023 (htu) - initial coding 
 #   03/23/2023 (htu) - added proc_ap_fa,dc_class and proc_exclude
+#   03/23/2023 (htu) - updated v_pat to capture spaces between not and ()
 
 import os
 import re 
@@ -28,26 +29,55 @@ def decode_classes(df_data, df_map = None):
                       "SPC": "SPECIAL PURPOSE", "TDM": "TRIAL DESIGN", "AP": "ASSOCIATE PERSONS"
                 },
             "fa": {"FND:FA": "FINDINGS ABOUT"},
-            "v_pat": re.compile("NOT\(([\w ,]+)\)")
+            "v_pat": re.compile("NOT\s*\(([\w ,]+)\)", re.IGNORECASE)
         }
     v_pat = re.compile(
-        "NOT\(([\w ,]+)\)") if not df_map.get("v_pat") else df_map.get("v_pat")
+        "NOT\s*\(([\w ,]+)\)", re.IGNORECASE) if not df_map.get("v_pat") else df_map.get("v_pat")
 
     # 2. define sub functiokns 
     # print(f"FF: {fa_class['FND:FA']}")
     def proc_ap_fa (i,v_class, v_domain):
         r_bool  = False
-        # 4.1.a process FA and FND
+        # 4.1.a process AP and ALL
         if v_class in ("AP") and v_domain in ("ALL"):
-            df.iloc[i]["Class"] = "ALL"
-            df.iloc[i]["Domain"] = "AP--"
+            df.iloc[i]["Class"] = ["ALL"]
+            df.iloc[i]["Domain"] = ["AP--"]
             r_bool = True
         
-        # 4.1.b process FA and FND
+        # 4.1.b process NOT (AP) and ALL
+        m1 = re.search(v_pat, v_class) 
+        m2 = re.search(v_pat, v_domain)
+        if m1:
+            s1 = m1.group(1).upper()
+            # print(f" . M1: {m1} --> {s1}") 
+            if s1 == "AP" and v_domain == "ALL":
+                df.iloc[i]["Class"] = ["ALL"]
+                df.iloc[i]["Domain"] = []
+                df.iloc[i]["Domains_Exclude"] = ["AP--"]
+                r_bool = True
+            if s1 == "FND" and v_domain == "FA":
+                k2 = s1 + ":" + v_domain
+                df.iloc[i]["Class"] = []
+                df.iloc[i]["Domain"] = ["ALL"]
+                df.iloc[i]["Classes_Exclude"] = [df_map["fa"].get(k2)] 
+                r_bool = True
+
+        # 4.1.c process FND and FA
         k1 = v_class + ":" + v_domain
         if k1 == "FND:FA":
-            df.iloc[i]["Class"] = df_map["fa"].get(k1)
+            df.iloc[i]["Class"] = [df_map["fa"].get(k1)]
             r_bool = True
+        
+        # 4.1.d process Not (FND) and FA
+        if m2: 
+            s2 = m2.group(1).upper()
+            k2 = s2 + ":" + v_domain
+            # print(f" . M2: {m2} --> {s2}")
+            if s2 == "FND" and v_domain == "FA":
+                df.iloc[i]["Domain"] = ["ALL"]
+                df.iloc[i]["Classes_Exclude"] = [df_map["fa"].get(k2)]
+                r_bool = True
+        
         return r_bool 
 
 
@@ -91,15 +121,20 @@ def decode_classes(df_data, df_map = None):
         # End of proc_exclude 
 
     # 3. add two columns in df
-    df['Classes_Exclude'] = pd.Series([None] * len(df))
-    df['Domains_Exclude'] = pd.Series([None] * len(df))
+    # df['Classes_Exclude'] = pd.Series([None] * len(df))
+    # df['Domains_Exclude'] = pd.Series([None] * len(df))
+
+    df.loc[:, 'Classes_Exclude'] = pd.Series([None] * len(df))
+    df.loc[:, 'Domains_Exclude'] = pd.Series([None] * len(df))
 
     # 4. loop through each record 
     # for row in df.itertuples(index=False):
     for i, row in df.iterrows():
+        v_ruleid = row.get("Rule ID")
         v_class = row.Class.upper().strip()
         v_domain = row.Domain.upper().strip()
-        print(f"Row - {i} - Class: {v_class}, Domain: {v_domain}")
+        print(
+            f"{__name__}: Row {i} ({v_ruleid}) - Class: {v_class}\n    Domain: {v_domain}")
         # 4.1 mapping AP and its domain FA and its class
         if proc_ap_fa(i, v_class, v_domain):
             continue
@@ -120,8 +155,12 @@ if __name__ == "__main__":
     d1 = {"1": "One", "2": "Two", "5": "Five"}
 
     # Sample DataFrame
-    df_data = pd.DataFrame({"Class": ["AP", "EVT, INT,  XX ", " FND ", "Not(AP)", "NOT(APRELSUB, POOLDEF, FA)","EVT, INT"],
-                            "Domain": ["ALL", "NOT(DS, DV, EX)", "FA", "ALL", "Domain", "NOT(AE, DS, DV, EX)"]})
+#    df_data = pd.DataFrame({"Class": ["AP", "EVT, INT,  XX ", " FND ", "Not(AP)", "NOT(APRELSUB, POOLDEF, FA)","EVT, INT"],
+#                            "Domain": ["ALL", "NOT(DS, DV, EX)", "FA", "ALL", "Domain", "NOT(AE, DS, DV, EX)"]})
+    df_data = pd.DataFrame({"Class": ["Not (AP)", "NOT (FND)","ALL"],
+                            "Domain": ["ALL","FA","Not (DS,EX,CM)"]
+                        })
+
     d1 = decode_classes(df_data)
     print(f"D1: {d1}")
 

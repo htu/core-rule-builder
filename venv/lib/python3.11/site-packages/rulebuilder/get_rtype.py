@@ -59,7 +59,7 @@ def get_rtype(rule_data, exist_rule_data: dict = {}):
     v_prg = __name__
     v_stp = 1.0
     v_msg = "Setting parameters..."
-    echo_msg(v_prg, v_stp, v_msg, 2)
+    echo_msg(v_prg, v_stp, v_msg, 3)
     # if not rule_data.empty: 
     #    return None
 
@@ -87,12 +87,12 @@ def get_rtype(rule_data, exist_rule_data: dict = {}):
             # Convert the matched keyword to lowercase and capitalize the first letter
             r_str = match.group(1).lower().capitalize()
             v_msg = "Found a match."
-            echo_msg(v_prg, v_stp, v_msg, 3)
+            echo_msg(v_prg, v_stp, v_msg, 4)
         else:
             # No match found
             v_stp = 2.2
-            v_msg = print (f"No match found from '{r_condition}'")
-            echo_msg(v_prg, v_stp, v_msg, 3)
+            v_msg = "No match found from '" + r_condition + "'"
+            echo_msg(v_prg, v_stp, v_msg, 4)
     return r_str 
 
 

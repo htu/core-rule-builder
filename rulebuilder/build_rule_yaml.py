@@ -6,6 +6,8 @@
 #         the beginning of the YAML file (comments start with #) (see table 
 #         above). These won't appear in the json property in the json file 
 #         because json does not allow comments.
+#   03/24/2023 (htu) - added for loop and commented out and added docstring 
+# 
 
 
 import os
@@ -18,15 +20,39 @@ from rulebuilder.get_creator_id import get_creator_id
 from rulebuilder.proc_each_sdtm_rule import proc_each_sdtm_rule
 
 def build_rule_yaml (df_rule_data, js_rule_data):
+    """
+    Given a pandas DataFrame `df_rule_data` containing information about a SDTM rule,
+    and a dictionary `js_rule_data` containing the JSON representation of that rule,
+    returns a string containing the YAML representation of the rule, including comments
+    based on the values in `df_rule_data`.
+
+    Args:
+        df_rule_data (pandas.DataFrame): A DataFrame containing information about a SDTM rule.
+        js_rule_data (dict): A dictionary containing the JSON representation of the rule.
+
+    Returns:
+        str: A string containing the YAML representation of the rule, including comments
+        based on the values in `df_rule_data`.
+    """
     # Only get json for YAML
     df_data = df_rule_data 
     dict_yaml = js_rule_data.get("json")
-    print(f"Dict Keys: {dict_yaml.keys()}")
+    # print(f"Dict Keys: {dict_yaml.keys()}")
     # Replace "_" with " " for columns
     d_yaml = rename_keys(dict_yaml, '_', ' ')
     s_cmts  = "# Variable: " + df_data.iloc[0]["Variable"] + "\n"
     s_cmts += "# Condition: " + df_data.iloc[0]["Condition"] + "\n"
     s_cmts += "# Rule: " + df_data.iloc[0]["Rule"] + "\n"
+
+    # for i, row in df_data.iterrows():
+    #     v_ver   = row.get("Variable")
+    #     v_ig    = row.get("SDTMIG Version")
+    #     v_cond  = row.get("Condition")
+    #     v_rule  = row.get("Rule")
+    #     s_cmts += "# Variable (" + str(v_ig) + "): " + v_ver
+    #     s_cmts += "# Condition (" + str(v_ig) + "): " + v_cond
+    #     s_cmts += "# Rule (" + str(v_ig) + "): " + v_rule
+    
     # convert YAML into string
     s_yl = yaml.YAML()
     s_yl.indent(mapping=2, sequence=4, offset=2)
@@ -42,7 +68,7 @@ def build_rule_yaml (df_rule_data, js_rule_data):
 
     # Read the YAML-formatted string from the text stream
     s_yaml = s_cmts + text_stream.read()
-    print(s_yaml)
+    # print(s_yaml)
 
     # a_yaml = yaml.dump(d_yaml, default_flow_style=False)
     # print(a_yaml)

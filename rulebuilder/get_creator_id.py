@@ -4,10 +4,10 @@
 #   03/16/2023 (htu) - Extracted out from sdtmrulebuilder 
 #                    - added docstring and echo_msg 
 #
-import urllib.request
-import json
-from rulebuilder.echo_msg import echo_msg 
 import os 
+import json
+import urllib.request
+from rulebuilder.echo_msg import echo_msg 
 
 def get_creator_id(creator_url=None):
     """

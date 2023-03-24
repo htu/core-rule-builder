@@ -1,5 +1,7 @@
 # 03/15/2023: to filter out data
 data/ 
+# 03/23/2023
+baks/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

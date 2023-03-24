@@ -12,6 +12,7 @@
 #     1. worked on issues 01 and 02 and added rename_keys 
 #     2. added cnt_published 
 #   03/22/2023 (htu) - used build_rule_yaml to get a_yaml 
+#   03/24/2023 (htu) - added reset_index(drop=True) to resolve subset index issue
 # 
 #  
 
@@ -136,7 +137,9 @@ def proc_sdtm_rules(df_data, rule_template, rule_ids: list,
             # print(f"SDTMIG Version: {sdtmig_versions}\nDocument: {documents}")
             # print(f"Section: {sections}\nItem: {items}\n")
         rule_data = None 
-        rule_data = df_selected[df_data["Rule ID"] == rule_id]
+        # rule_data = df_selected[df_data["Rule ID"] == rule_id]
+        rule_data = df_selected[df_selected["Rule ID"] == rule_id]
+        rule_data = rule_data.reset_index(drop=True)
         a_json = proc_each_sdtm_rule(rule_data,rule_template, rule_id, in_rule_folder,cnt_published)
         a_json["content"] = None 
         # # Only get json for YAML

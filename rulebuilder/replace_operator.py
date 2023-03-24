@@ -2,6 +2,7 @@
 # -----------------------------------------------------------------------------
 # History: MM/DD/YYYY (developer) - description
 #   03/21/2023 (htu) - initial coding 
+#   03/24/2023 (htu) - modified i_dict 
 #    
 #
 
@@ -22,7 +23,8 @@ def replace_operator(i_str, i_dict = None):
         return None
     
     if i_dict is None or (isinstance(i_dict, dict) and not bool(i_dict)):
-        i_dict = {"=": "not equal to", "^=": "is", "in": "not in"}
+        i_dict = {"=": " not equal to ", "^=": " is ", "in\s+\(": " not in (",
+                  "\s+no\s+": " have "}
 
     pattern = re.compile("|".join(map(re.escape, i_dict.keys())))
     return pattern.sub(lambda x: i_dict[x.group()], i_str)

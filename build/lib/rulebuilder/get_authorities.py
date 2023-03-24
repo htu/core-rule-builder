@@ -57,7 +57,7 @@ def get_authorities(rule_data, exist_rule_data: dict = {}):
     df_rules = rule_data
     d2_rules = exist_rule_data
     d2_auth  = d2_rules.get("json",{}).get("Authorities") 
-    print(f"Authorities: {d2_auth}")
+    # print(f"Authorities: {d2_auth}")
 
     # define authorities variables 
     r_a_cit = {"Cited_Guidance": None,
@@ -88,19 +88,27 @@ def get_authorities(rule_data, exist_rule_data: dict = {}):
     v_stp = 2.0
     v_msg = "Looping through each row of the rule records..."
     echo_msg(v_prg, v_stp, v_msg,2)
-    i = -1
-    for row in df_rules.itertuples(index=False):
-        i += 1
+    # i = -1
+    # for row in df_rules.itertuples(index=False):
+    for i, row in df_rules.iterrows():
+        # i += 1
         v_stp = 2.1
-        v_item          = df_rules.iloc[i]["Item"]
-        rule_id         = df_rules.iloc[i]["Rule ID"]
+        # v_item          = df_rules.iloc[i]["Item"]
+        # rule_id         = df_rules.iloc[i]["Rule ID"]
+        v_item = row.get("Item")
+        rule_id = row.get("Rule ID")
         v_msg = print(f"  {i:02d} Rule ID - {rule_id}")
         echo_msg(v_prg, v_stp, v_msg,3)
 
-        r_a_cit = {"Cited_Guidance": df_rules.iloc[i]["Cited Guidance"],
-                   "Document": df_rules.iloc[i]["Document"],
-                   "Item": df_rules.iloc[i]["Item"],
-                   "Section": df_rules.iloc[i]["Section"]
+        # r_a_cit = {"Cited_Guidance": df_rules.iloc[i]["Cited Guidance"],
+        #            "Document": df_rules.iloc[i]["Document"],
+        #            "Item": df_rules.iloc[i]["Item"],
+        #            "Section": df_rules.iloc[i]["Section"]
+        #            }
+        r_a_cit = {"Cited_Guidance": row.get("Cited Guidance"),
+                   "Document": row.get("Document"),
+                   "Item": v_item,
+                   "Section": row.get("Section")
                    }
 
         v_stp = 2.2
@@ -112,10 +120,11 @@ def get_authorities(rule_data, exist_rule_data: dict = {}):
         v_msg = "Row {" + str(i) + "}: " + str(r_a_cit)
         echo_msg(v_prg, v_stp, v_msg,5)
         # print(f"Row {i}: {r_a_cit}") 
+        v_rule_version = row.get("Rule Version")
         r_a_ref = {"Origin": "SDTM and SDTMIG Conformance Rules",
                    "Rule_Identifier": {
                        "Id": rule_id,
-                       "Version": df_rules.iloc[i]["Rule Version"]
+                       "Version": v_rule_version
                    },
                    "Version": "2.0",
                    "Citations": [r_a_cit]
@@ -123,7 +132,8 @@ def get_authorities(rule_data, exist_rule_data: dict = {}):
         r_refs.append(r_a_ref) 
 
         v_stp = 2.4
-        v_sdtmig_version = df_rules.iloc[i]["SDTMIG Version"]
+        # v_sdtmig_version = df_rules.iloc[i]["SDTMIG Version"]
+        v_sdtmig_version = row.get("SDTMIG Version")
         r_a_std = {"Name": "SDTMIG",
                    "Version": v_sdtmig_version,
                    "References": [r_a_ref]
@@ -136,7 +146,7 @@ def get_authorities(rule_data, exist_rule_data: dict = {}):
             for auth_std in d2_auth:
                 for standard in auth_std["Standards"]:
                     # Print the version of the standard
-                    d2_sdtmig_version = standard['Version']
+                    d2_sdtmig_version = standard.get('Version')
                     v_msg = " . SDTMIG Versions: " + str(v_sdtmig_version) + "->" + str(d2_sdtmig_version)
                     echo_msg(v_prg, v_stp, v_msg,2)
                     if d2_sdtmig_version == v_sdtmig_version:

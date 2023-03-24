@@ -41,7 +41,7 @@ def get_jmsg(rule_data, exist_rule_data: dict = {}):
         # Debugging print statement
         v_stp = 1.2
         v_msg = " . r_condition: " + str(r_condition) + ", r_rule: " + r_rule
-        echo_msg(v_prg, v_stp, v_msg, 3)
+        echo_msg(v_prg, v_stp, v_msg, 4)
         r_desc1 = replace_operator(r_condition)
         r_desc2 = replace_operator(r_rule)
         # Debugging print statement
@@ -51,7 +51,7 @@ def get_jmsg(rule_data, exist_rule_data: dict = {}):
         r_str = r_desc2 if r_desc1 is None else r_desc1 + " and " + r_desc2
         v_stp = 1.4
         v_msg = " . r_desc3: " + str(r_str)        # Debugging print statement
-        echo_msg(v_prg, v_stp, v_msg, 3)
+        echo_msg(v_prg, v_stp, v_msg, 4)
     return r_str
 
 
