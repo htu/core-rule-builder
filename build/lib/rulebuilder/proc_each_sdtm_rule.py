@@ -8,6 +8,7 @@
 #   03/22/2023 (htu) - added logic to use json_exist_rule
 #   03/23/2023 (htu) - added test cases and get creator_id from existing rule
 #   03/24/2023 (htu) - added json_exist_rule to get_check
+#   03/29/2023 (htu) - changed from json_exist_rule to rule_obj
 #    
 
 import os 
@@ -34,51 +35,51 @@ def proc_each_sdtm_rule (rule_data,rule_tmp, rule_id: str, in_rule_folder,cnt_pu
 
     # print (f"Rule Data: {rule_data}")
     # print(f"Schema Data: {rule_tmp.keys()}")
-    rule_obj = rule_tmp
+    rule_obj = rule_tmp         # it is from existing rule now 
     
     # get existing rule if it exists
-    json_exist_rule = get_existing_rule(rule_id, in_rule_folder)
-    v_status = json_exist_rule.get("json",{}).get("Core",{}).get("Status")
-    v_creator_id = json_exist_rule.get("creator", {}).get("id")
+    # json_exist_rule = get_existing_rule(rule_id, in_rule_folder)
+    v_status = rule_obj.get("json", {}).get("Core", {}).get("Status")
+    v_creator_id = rule_obj.get("creator", {}).get("id")
     v_msg = "  Rule_ID: " + str(rule_id) + "; Status: " + str(v_status)
     v_msg += "; CreatorID: " + str(v_creator_id) 
     echo_msg(v_prg, v_stp, v_msg, 3)
-    rule_obj["status"] = json_exist_rule.get("status")
     if v_creator_id is not None:
        rule_obj["creator"]["id"] = v_creator_id
-    v_autho = get_authorities(rule_data, exist_rule_data=json_exist_rule)
+
+    v_autho = get_authorities(rule_data, exist_rule_data=rule_obj)
     if v_status == "Published":
         cnt_published += 1
-        json_exist_rule["json"]["Authorities"] = v_autho 
-        return json_exist_rule
+        rule_obj["json"]["Authorities"] = v_autho
+        return rule_obj
     
     # get rule GUID 
-    rule_obj["id"] = get_rule_guid(json_exist_rule)
+    rule_obj["id"] = get_rule_guid(rule_obj)
     
     # format the date and time as a string in the format "2023-03-08T12:00:00Z"
-    rule_obj["created"] = json_exist_rule.get("created")
+    rule_obj["created"] = rule_obj.get("created")
     # rule_obj["changed"] = json_exist_rule.get("changed") 
     
     # get json Core 
     rule_obj["json"]["Core"] = get_core(
-        rule_id, exist_rule_data=json_exist_rule)
+        rule_id, exist_rule_data=rule_obj)
     
     # get json Description
     # print(f"Rule Data: {rule_data.iloc[0]['Condition']}")
     rule_obj["json"]["Description"] = get_desc(
-        rule_data, exist_rule_data=json_exist_rule)
+        rule_data, exist_rule_data=rule_obj)
 
     # get json Message 
-    v_jmsg = get_jmsg(rule_data, exist_rule_data=json_exist_rule)
+    v_jmsg = get_jmsg(rule_data, exist_rule_data=rule_obj)
     rule_obj["json"]["Outcome"] = {"Message": v_jmsg}
 
     # get json Rule_Type
     rule_obj["json"]["Rule_Type"] = get_rtype(
-        rule_data, exist_rule_data=json_exist_rule)
+        rule_data, exist_rule_data=rule_obj)
     
     # get json Sensitivity
     rule_obj["json"]["Sensitivity"] = get_sensitivity(
-        rule_data, exist_rule_data=json_exist_rule)
+        rule_data, exist_rule_data=rule_obj)
 
     # get json Authorities 
     rule_obj["json"]["Authorities"] = v_autho
@@ -92,7 +93,7 @@ def proc_each_sdtm_rule (rule_data,rule_tmp, rule_id: str, in_rule_folder,cnt_pu
     # get checks
     # rule_obj["json"]["Check"] = {"Check": get_check(rule_data)}  
     rule_obj["json"]["Check"] = get_check(
-        rule_data, exist_rule_data=json_exist_rule)
+        rule_data, exist_rule_data=rule_obj)
 
     # print out the result 
     # print(json.dumps(rule_obj, indent=4))

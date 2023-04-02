@@ -4,6 +4,11 @@
 <head>
   <title>Core Rule Builder</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+  </head>
 </head>
 
 <body>
@@ -58,10 +63,11 @@
             <option value="{{ rul }}">{{ rul }}</option>
             {% endfor %}
           </select>
+          <input type="submit" value="Build">
         </td>
       </tr>
       <tr>
-        <td>Build Rules: </td>
+        <td>Build Check: </td>
         <td><input type="text" id="var_name" name="var_name" value="Variable Name">
             <select id="var_name" name="varname">
               {% for val in variables %}
@@ -80,11 +86,63 @@
         <td><input type="text" id="value" name="value"></td>
       </tr>
       <tr>
+        <td>Check Text:</td>
+      <td colspan="3">
+        <textarea id="chk_text" name="chk_text" rows="4" cols="50">
+        </textarea>
+      </td>
+      </tr>
+      <tr>
         <td></td>
         <td><input type="submit" value="Submit"></td>
       </tr>
     </table>
   </form>
+
+
+  <div id="myTable"></div>
+  <script>
+    var data = [{
+      type: 'table',
+      header: {
+        values: ['Column 1', 'Column 2', 'Column 3'],
+        align: "center",
+        line: { width: 1, color: 'black' },
+        fill: { color: 'grey' }
+      },
+      cells: {
+        values: [[1, 2, 3], [4, 5, 6], [7, 8, 9]],
+        align: "center",
+        line: { color: "black", width: 1 },
+        font: { family: "Arial", size: 12, color: ["black"] }
+      }
+    }]
+    Plotly.newPlot('myTable', data)
+  </script>
+
+<table id="example" class="display" style="width:100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+</table>
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+      'ajax': '/data',
+      'columns': [
+        { 'data': 'name' },
+        { 'data': 'age' },
+        { 'data': 'gender' }
+      ]
+    });
+  });
+</script>
+
+  
 </body>
 
 </html>

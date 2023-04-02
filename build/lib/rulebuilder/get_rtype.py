@@ -14,7 +14,7 @@ import os
 import pandas as pd 
 from rulebuilder.echo_msg import echo_msg
 from rulebuilder.read_rules import read_rules
-from rulebuilder.get_existing_rule import get_existing_rule
+# from rulebuilder.get_existing_rule import get_existing_rule
 
 
 def get_rtype(rule_data, exist_rule_data: dict = {}):
@@ -27,11 +27,11 @@ def get_rtype(rule_data, exist_rule_data: dict = {}):
     Parameters:
     -----------
     rule_data: dataframe
-        a data frame containng all the records for a rule. It can be obtained from
+        a data frame containing all the records for a rule. It can be obtained from
         read_rules and select the records from the rule definition data frame.
     
     existing_rule_data: dict 
-        a data frame containng all the records for a rule that already developed. It 
+        a data frame containing all the records for a rule that already developed. It 
         can be read from the existing rule folder using get_existing_rule. 
 
 
@@ -78,7 +78,7 @@ def get_rtype(rule_data, exist_rule_data: dict = {}):
             echo_msg(v_prg, v_stp, v_msg, 0)
             return None
         r_str = "Record Data"
-        pattern = r"^(study|dataset)"
+        pattern = r"^(Dataset Metadata Check|Define-XML)"
         # Use the re.search() method to search for the pattern in the input string
         match = re.search(pattern, r_condition, re.IGNORECASE)
         # Check if a match was found

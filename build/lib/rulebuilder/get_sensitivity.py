@@ -63,7 +63,8 @@ def get_sensitivity(rule_data, exist_rule_data: dict = {}):
         # r_rule = rule_data.iloc[0]["Rule"]
         r_str = "Record"
         if r_condition is not None:
-            pattern = r"^(study|dataset|domain|variable|term)"
+            # pattern = r"^(study|dataset|domain|variable|term)"
+            pattern = r"^(dataset|record)"
             # Use the re.search() method to search for the pattern in the input string
             match = re.search(pattern, r_condition, re.IGNORECASE)
             # Check if a match was found
