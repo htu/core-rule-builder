@@ -23,8 +23,13 @@ def replace_operator(i_str, i_dict = None):
         return None
     
     if i_dict is None or (isinstance(i_dict, dict) and not bool(i_dict)):
-        i_dict = {"=": " not equal to ", "^=": " is ", "in\s+\(": " not in (",
-                  "\s+no\s+": " have "}
+        i_dict = {"\s+=\s+":    " not equal to ", 
+                  "\s+^=\s+":   " is ", 
+                  "in\s+\(":    " not in (",
+                  "\s+no\s+":   " have ", 
+                  "\s+>\s+":    "  equal to or less than ",
+                  "\s+<=\s+":   " granter than "
+                  }
 
     pattern = re.compile("|".join(map(re.escape, i_dict.keys())))
     return pattern.sub(lambda x: i_dict[x.group()], i_str)

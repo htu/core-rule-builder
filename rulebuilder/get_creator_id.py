@@ -49,7 +49,8 @@ def get_creator_id(creator_url=None):
                 creator_id = default_id
             return creator_id
     except urllib.error.URLError as e:
-        print(f"Error opening URL: {ctr_url}\nError message: {e.reason}")
+        print(f" . Error opening URL: {ctr_url}\n . Error message: {e.reason}")
+        print("The above message can be ignored. ")
         echo_msg(prg, v_step, v_msg, 0)
         return default_id
 

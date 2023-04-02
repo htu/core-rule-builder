@@ -77,9 +77,10 @@ if __name__ == "__main__":
     echo_msg(v_prg, v_stp, "Test Case 02: Basic Parameter", 1)
     rb = RuleBuilder()
     # rb.process(r_ids=["CG0180"])
-    rb.process(r_ids=["CG0196"])
+    # rb.process(r_ids=["CG0196"])
     # rb.process(r_ids=["CG0017"])        # Class with Not (AP) 
     # rb.process(r_ids=["CG0156"])
     # rb.process(r_ids=["CG0165","CG0319"])  # these two do not exist
-
+    # rb.process(r_ids=[])    # to process all 
+    rb.process(r_ids=["CG0006"])
 # End of File

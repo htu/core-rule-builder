@@ -8,6 +8,7 @@
 import os 
 import pandas as pd
 import ruamel.yaml as yaml
+from dotenv import load_dotenv
 from rulebuilder.echo_msg import echo_msg
 
 
@@ -65,8 +66,11 @@ if __name__ == "__main__":
     # 2. Test reading a file 
     v_step = 2.0
     echo_msg(v_prg, v_step, "Test Case 02: read a file", 1)
-    r_dir = "/Volumes/HiMacData/GitHub/data/core-rule-builder"
-    yaml_file=r_dir + "/data/target/SDTM_and_SDTMIG_Conformance_Rules_v2.0.yaml"
+    load_dotenv()
+    yaml_file = os.getenv("yaml_file")
     rr = read_rules(yaml_file) 
     print(rr.iloc[0])
+    print(f"Shape[0]: {rr.shape[0]}")
+    rr = rr[rr["SDTMIG Version"].isin(["3.2", "3.3"]) and rr["Class"].isin(["EVT"])]
+    print(f"Shape[0]: {rr.shape[0]}") 
     # print the first row in the data frame 

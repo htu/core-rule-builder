@@ -4,6 +4,7 @@
 #   03/15/2023 (htu) - initial coding based on echo_msg from R
 #   03/16/2023 (htu) - added test cases
 #   03/17/2023 (htu) - removed "\n" from fmt
+#   03/30/2023 (htu) - added logic to write to a file 
 #
 import os
 import re
@@ -65,13 +66,14 @@ def echo_msg(prg, step, msg, lvl=0, fn=None):
     and non-web environments.
 
     """
-    fmt = "%s: %.1f - %s"
+    fmt = "%s: %.3f - %s"
     f1 = "<h2>%s</h2>"
     f2 = '<font color="%s">%s</font>'
     g_lvl = os.getenv("g_lvl")          # message level
     d_lvl = os.getenv("d_lvl")          # debug level
     logfn = os.getenv("log_fn")         # log file name
-    wrt2log = os.getenv("write2log")    # whether to write to log file 
+    w2log = os.getenv("write2log")    # whether to write to log file: 1 - Yes, 0 - No 
+    wrt2log = 0 if w2log is None else int(w2log)
     query_str = os.getenv("QUERY_STRING")
     http_host = os.getenv("HTTP_HOST")
     is_web = bool(query_str and http_host)
@@ -102,7 +104,10 @@ def echo_msg(prg, step, msg, lvl=0, fn=None):
 
     if lvl <= int(d_lvl) or lvl <= int(g_lvl):
         print(fmt % (prg, step, msg))
-        if ofn and wrt2log:
+        if ofn and wrt2log >= 1:
+            if not os.path.isfile(ofn):
+                msg = "Logging to: " + ofn 
+                print(fmt % (__name__, 5, msg) )
             with open(ofn, "a") as f:
                 f.write(fmt % (prg, step, msg))
                 f.write("\n")

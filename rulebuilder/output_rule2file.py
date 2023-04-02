@@ -12,6 +12,7 @@
 import os
 import json
 from rulebuilder.echo_msg import echo_msg
+from ruamel.yaml import YAML
 
 
 def output_rule2file(rule_id, json_data, yaml_data, output_dir) -> None:

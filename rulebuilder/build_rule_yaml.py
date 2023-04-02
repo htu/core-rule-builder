@@ -7,12 +7,15 @@
 #         above). These won't appear in the json property in the json file 
 #         because json does not allow comments.
 #   03/24/2023 (htu) - added for loop and commented out and added docstring 
+#   03/29/2023 (htu) - used new rename_keys function to reserve comments
+#   03/30/2023 (htu) - check and test the commentMap
 # 
 
 
 import os
 import io
 import ruamel.yaml as yaml 
+from ruamel.yaml import YAML
 from rulebuilder.echo_msg import echo_msg
 from rulebuilder.read_rules import read_rules
 from rulebuilder.rename_keys import rename_keys 
@@ -34,25 +37,28 @@ def build_rule_yaml (df_rule_data, js_rule_data):
         str: A string containing the YAML representation of the rule, including comments
         based on the values in `df_rule_data`.
     """
+    y1 = YAML()
+    y1.indent(mapping=2, sequence=4, offset=2)
+    y1.preserve_quotes = True
+
     # Only get json for YAML
     df_data = df_rule_data 
     dict_yaml = js_rule_data.get("json")
     # print(f"Dict Keys: {dict_yaml.keys()}")
     # Replace "_" with " " for columns
-    d_yaml = rename_keys(dict_yaml, '_', ' ')
+    d_yaml = dict_yaml
+    # print(f"--------------- D_YAML1 ---------------")
+    # print(type(d_yaml))
+    # y1.dump(d_yaml, sys.stdout)
+    rename_keys(d_yaml, '_', ' ')
+    # print(f"--------------- D_YAML2 ---------------")
+    # print(type(d_yaml))
+    # y1.dump(d_yaml, sys.stdout)
+    
     s_cmts  = "# Variable: " + df_data.iloc[0]["Variable"] + "\n"
     s_cmts += "# Condition: " + df_data.iloc[0]["Condition"] + "\n"
     s_cmts += "# Rule: " + df_data.iloc[0]["Rule"] + "\n"
 
-    # for i, row in df_data.iterrows():
-    #     v_ver   = row.get("Variable")
-    #     v_ig    = row.get("SDTMIG Version")
-    #     v_cond  = row.get("Condition")
-    #     v_rule  = row.get("Rule")
-    #     s_cmts += "# Variable (" + str(v_ig) + "): " + v_ver
-    #     s_cmts += "# Condition (" + str(v_ig) + "): " + v_cond
-    #     s_cmts += "# Rule (" + str(v_ig) + "): " + v_rule
-    
     # convert YAML into string
     s_yl = yaml.YAML()
     s_yl.indent(mapping=2, sequence=4, offset=2)

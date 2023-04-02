@@ -4,6 +4,7 @@
 #   03/22/2023 (htu) - initial coding 
 #   03/23/2023 (htu) - added proc_ap_fa,dc_class and proc_exclude
 #   03/23/2023 (htu) - updated v_pat to capture spaces between not and ()
+#   03/30/2023 (htu) - commented out prints 
 
 import os
 import re 
@@ -133,8 +134,8 @@ def decode_classes(df_data, df_map = None):
         v_ruleid = row.get("Rule ID")
         v_class = row.Class.upper().strip()
         v_domain = row.Domain.upper().strip()
-        print(
-            f"{__name__}: Row {i} ({v_ruleid}) - Class: {v_class}\n    Domain: {v_domain}")
+        # print(
+        #     f"{__name__}: Row {i} ({v_ruleid}) - Class: {v_class}\n    Domain: {v_domain}")
         # 4.1 mapping AP and its domain FA and its class
         if proc_ap_fa(i, v_class, v_domain):
             continue
