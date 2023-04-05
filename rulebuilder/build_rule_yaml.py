@@ -9,6 +9,7 @@
 #   03/24/2023 (htu) - added for loop and commented out and added docstring 
 #   03/29/2023 (htu) - used new rename_keys function to reserve comments
 #   03/30/2023 (htu) - check and test the commentMap
+#   04/05/2023 (htu) - added logic to skip adding comments 
 # 
 
 
@@ -73,7 +74,8 @@ def build_rule_yaml (df_rule_data, js_rule_data):
     text_stream.seek(0)
 
     # Read the YAML-formatted string from the text stream
-    s_yaml = s_cmts + text_stream.read()
+    ts = text_stream.read()
+    s_yaml = ts if ts.startswith("# Variable: ") else s_cmts + ts 
     # print(s_yaml)
 
     # a_yaml = yaml.dump(d_yaml, default_flow_style=False)

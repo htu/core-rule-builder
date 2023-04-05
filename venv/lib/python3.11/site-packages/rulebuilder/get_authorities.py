@@ -6,6 +6,7 @@
 #   03/21/2023 (htu) - added v_item to check and skip citation if it is None 
 #     06. If Item is empty, don't include the Item property for the citation
 #   03/22/2023 (htu) - added existing_rule_data to merge Standards 
+#   03/29/2023 (htu) - used len
 #    
 
 import os 
@@ -48,7 +49,7 @@ def get_authorities(rule_data, exist_rule_data: dict = {}):
     echo_msg(v_prg, v_stp, v_msg,2)
     v_stp = 1.1
     v_msg = "Input parameter rule_data is empty."
-    if rule_data.empty:
+    if len(rule_data) == 0:
         echo_msg(v_prg, v_stp, v_msg,0)
         return {}
 
@@ -91,6 +92,7 @@ def get_authorities(rule_data, exist_rule_data: dict = {}):
     # i = -1
     # for row in df_rules.itertuples(index=False):
     for i, row in df_rules.iterrows():
+    # for row in df_rules:
         # i += 1
         v_stp = 2.1
         # v_item          = df_rules.iloc[i]["Item"]

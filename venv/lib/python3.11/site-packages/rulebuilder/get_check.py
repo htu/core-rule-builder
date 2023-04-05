@@ -4,6 +4,7 @@
 #   03/14/2023 (htu) - ported from proc_rules_sdtm as get_check module
 #   03/17/2023 (htu) - added docstring and test cases
 #   03/23/2023 (htu) - added exist_rule_data to get existing check 
+#   03/30/2024 (htu) - changed to use content YAML Check 
 #    
 
 import os
@@ -46,7 +47,8 @@ def get_check(rule_data, exist_rule_data: dict = {}):
         echo_msg(v_prg, v_stp, v_msg,0)
         return {}
 
-    r_json = exist_rule_data.get("json", {}).get("Check")
+    # r_json = exist_rule_data.get("json", {}).get("Check")
+    r_json = exist_rule_data.get("Check")
     if r_json is not None:
         return r_json
 

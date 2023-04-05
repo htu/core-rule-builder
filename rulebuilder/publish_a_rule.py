@@ -1,12 +1,16 @@
-# Purpose: RPublish a rule to a Cosmos DB
+# Purpose: Publish a rule to a Cosmos DB
 # -----------------------------------------------------------------------------
 # History: MM/DD/YYYY (developer) - description
 #   04/01/2023 (htu) - initial coding based on get_existing_rule 
+#   04/03/2023 (htu) - added code to get status
+#   04/04/2023 (htu) -
+#     1. changed "Rule Identifier" to Rule_Identifier
+#     2. added step 4.1 to backup docs before replacing it 
 #
 
 import os
 # import sys
-# import json 
+import json 
 from dotenv import load_dotenv
 from rulebuilder.echo_msg import echo_msg
 from rulebuilder.read_a_rule import read_a_rule
@@ -14,7 +18,8 @@ from rulebuilder.get_db_cfg import get_db_cfg
 from azure.cosmos.exceptions import CosmosResourceNotFoundError
 
 
-def publish_a_rule(rule_id = None, doc_id:str=None, rule_dir:str=None, db_cfg = None):
+def publish_a_rule(rule_id = None, doc_id:str=None, rule_dir:str=None, 
+                   db_cfg = None, r_ids = None):
     """
     Publishes a rule to a Cosmos DB container.
 
@@ -23,6 +28,7 @@ def publish_a_rule(rule_id = None, doc_id:str=None, rule_dir:str=None, db_cfg = 
         doc_id (str): The ID of the rule document to publish.
         rule_dir (str): The path to the directory where rule JSON files are stored.
         db_cfg (dict): The configuration for the Cosmos DB container.
+        r_ids (dict): The stats for existing documents
 
     Returns:
         str: A message indicating whether the rule was added or replaced.
@@ -34,6 +40,7 @@ def publish_a_rule(rule_id = None, doc_id:str=None, rule_dir:str=None, db_cfg = 
     v_prg = __name__
     v_stp = 1.0
     g_lvl = int(os.getenv("g_lvl"))
+    log_fn = os.getenv("log_fn") 
     v_msg = "Getting existing rule..."
     echo_msg(v_prg, v_stp, v_msg, 1)
 
@@ -103,23 +110,68 @@ def publish_a_rule(rule_id = None, doc_id:str=None, rule_dir:str=None, db_cfg = 
     df_row = {"rule_id": None, "core_id": None,  "user_id": None, "guid_id": None,
               "created": None, "changed": None, "status": None, "version": None,
               "publish_status": None}
+    r_auth = r_json.get("json", {}).get("Authorities")
+    r_ref = r_auth[0].get("Standards")[0].get("References")
+    r_id = r_ref[0].get("Rule_Identifier",{}).get("Id")
+    core_status = r_json.get("json", {}).get("Core", {}).get("Status")
+    df_row.update({"rule_id": r_id})
     df_row.update({"core_id": core_id} )
     df_row.update({"user_id": r_json.get("creator",{}).get("id")})
     df_row.update({"guid_id": r_json.get("id")})
     df_row.update({"created": r_json.get("created")})
     df_row.update({"changed": r_json.get("changed")})
-    df_row.update({"status": r_json.get("json",{}).get("Core",{}).get("Status")})
-    v_vers = r_json.get("json", {}).get("Authorities", {}).get(
-        "Standards", {}).get("Version", {})
+    df_row.update({"status": core_status})
+    # v_vers = r_json.get("json", {}).get("Authorities", {}).get(
+    #    "Standards", {}).get("Version", {})
+    v_vs = []
+    v_vers = None
+    # print(r_json["json"]) 
+    # for authority in r_json['json']['Authorities']: 
+    for authority in r_auth: 
+        for standard in authority['Standards']:
+            v_vs.append(standard['Version'])
+    v_vers = ", ".join(v_vs)
     df_row.update({"version": v_vers})
 
     # 4.0 add or replace document
     v_stp = 4.0 
     v_msg = "Publishing the document..."
+    echo_msg(v_prg, v_stp, v_msg, 1)
 
+    v_stp = 4.1
+    v_msg = "Backing up the docuemnt first..."
+    fn_path = os.path.dirname(log_fn)
+    echo_msg(v_prg, v_stp, v_msg, 2)
+    if r_ids is not None:
+        v_stp = 4.11
+        docs = r_ids[r_id]["ids"] if r_id in r_ids.keys() else None
+        doc_cnt = 0
+        if docs is not None:
+            for d_id in docs:  
+                doc_cnt += 1
+                fn=f"{fn_path}/{r_id}-{core_status}-{doc_cnt}.json"        
+                e_doc = ctc.read_item(item=d_id, partition_key=d_id)
+                with open(fn, 'w') as f:
+                    v_stp = 4.111
+                    v_msg = "Writing to: " + fn
+                    echo_msg(v_prg, v_stp, v_msg, 3)
+                    json.dump(e_doc, f, indent=4)
+                # Delete the existing document
+                v_stp = 4.112
+                ctc.delete_item(item=e_doc, partition_key=d_id)
+                v_msg = f" . Document with id {d_id} deleted."
+                echo_msg(v_prg, v_stp, v_msg, 3)
+        r_status = "Added" if doc_cnt == 0 else "Replaced" 
+    else:
+        v_stp = 4.12
+        v_msg = "No backup IDs are defined. "
+        echo_msg(v_prg, v_stp, v_msg, 3)
 
+    v_stp = 4.2
+    v_msg = "Let's publish the document..."
+    echo_msg(v_prg, v_stp, v_msg, 2)
     try:
-        v_stp = 4.1
+        v_stp = 4.21
         # Check if the document exists
         existing_document = ctc.read_item(
             item=document_id, partition_key=document_id)
@@ -148,15 +200,16 @@ def publish_a_rule(rule_id = None, doc_id:str=None, rule_dir:str=None, db_cfg = 
         ctc.create_item(body=new_document, partition_key=document_id)
         v_msg = f" . Document with id {document_id} created."
         echo_msg(v_prg, v_stp, v_msg, 2)
-        r_status = "Published: replaced"
-
+        if r_status is None: 
+            r_status = "Replaced"
     except CosmosResourceNotFoundError:
-        v_stp = 4.2
+        v_stp = 4.22
         # If the document does not exist, create it
         ctc.create_item(body=new_document, partition_key=document_id)
         v_msg = f"  Document with id {document_id} created."
         echo_msg(v_prg, v_stp, v_msg, 2)
-        r_status = "Published: added"
+        if r_status is None: 
+            r_status = "Added"
 
     df_row.update({"publish_status": r_status})
 
@@ -183,12 +236,12 @@ if __name__ == "__main__":
     # Test case 2: Use Doc ID
     # d_id = "9959136a-523f-4546-9520-ffa22cda8867"     # CG0006
     d_id = "6161d4d5-6c96-47e1-baeb-4e70b1ffed46"       # CG0443
-    r_rst = publish_a_rule(doc_id=d_id, db_cfg=cfg)
-    print(f"Stauts: {r_rst}")
+    # r_rst = publish_a_rule(doc_id=d_id, db_cfg=cfg)
+    # print(f"Stauts: {r_rst}")
     # json.dump(r_2, sys.stdout, indent=4)
 
     # Test case 3: Provide both rule and doc IDs
     d_id = "8e4ce5f6-5d7d-420c-887d-26c09b89b793"   # CG0008
-    r_rst = publish_a_rule(rule_id=r_id, doc_id=d_id, db_cfg=cfg)
-    print(f"Stauts: {r_rst}")
+    # r_rst = publish_a_rule(rule_id=r_id, doc_id=d_id, db_cfg=cfg)
+    # print(f"Stauts: {r_rst}")
     # json.dump(r_3, sys.stdout, indent=4)

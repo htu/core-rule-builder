@@ -2,6 +2,9 @@
 # -----------------------------------------------------------------------------
 # History: MM/DD/YYYY (developer) - description
 #   03/29/2023 (htu) - initial coding based on proc_each_sdtm_rule 
+#   04/05/2023 (htu) - 
+#     1. added rule_dir, get_db_rule, db_name, ct_name, and r_ids 
+#     2. updated calling to get_existing_rule parameters in Step 1.3
 #    
 
 import os 
@@ -30,14 +33,18 @@ from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap
 from rulebuilder.get_yaml_authorities import get_yaml_authorities
 
-def proc_each_yaml (rule_id:str=None,rule_data = None, rule_obj = None):
+def proc_each_yaml (rule_id:str=None,rule_data = None, rule_obj = None,
+                    rule_dir:str =None, r_ids = None, 
+                    get_db_rule:int = 0,
+                    db_name: str = None, ct_name:str=None):
     v_prg = __name__
     
     v_stp = 1.0
     echo_msg(v_prg, v_stp, "Setting parameters...", 1)
     load_dotenv()
     yaml_file = os.getenv("yaml_file")
-    rule_dir = os.getenv("existing_rule_dir")
+    if rule_dir is None: 
+        rule_dir = os.getenv("existing_rule_dir")
     g_lvl = int(os.getenv("g_lvl"))
 
     # 1.1 check parameters 
@@ -73,7 +80,11 @@ def proc_each_yaml (rule_id:str=None,rule_data = None, rule_obj = None):
     # print (f"Rule Data: {rule_data}")
     # print(f"Schema Data: {rule_tmp.keys()}")
     if rule_obj is None: 
-        rule_obj = get_existing_rule(rule_id,in_rule_folder=rule_dir, use_yaml_content=False)
+        rule_obj = get_existing_rule(rule_id, in_rule_folder=rule_dir, 
+                                     get_db_rule=get_db_rule, r_ids=r_ids,
+                                     db_name=db_name,ct_name=ct_name,
+                                     use_yaml_content=False)
+        
     if g_lvl >= 5:
         print("---------- Existing Rule Object ----------")
         # yaml_loader.dump(y_content, sys.stdout)

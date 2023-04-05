@@ -6,7 +6,7 @@
 #   03/29/2023 (htu) - added use_yaml_content for json 
 #   03/30/2023 (htu) - added echo_msg 
 #   04/04/2023 (htu) - added creator.id for new rule
-#   04/05/2023 (htu) - added db_cfg, db_name, ct_name and r_ids and reading from a DB
+#   04/05/2023 (htu) - added db_cfg, r_ids and reading from a DB
 #    
 
 import os
@@ -20,16 +20,8 @@ from transformer.transformer import Transformer
 from yaml import safe_load
 from dotenv import load_dotenv
 from rulebuilder.echo_msg import echo_msg
-from rulebuilder.get_db_cfg import get_db_cfg
-from rulebuilder.read_a_rule import read_a_rule
-from rulebuilder.read_db_rule import read_db_rule
-from rulebuilder.get_doc_stats import get_doc_stats
 
-
-def get_existing_rule(rule_id, in_rule_folder, 
-                      get_db_rule:int = 0, db_cfg = None, r_ids = None, 
-                      db_name:str=None, ct_name:str=None,
-                      use_yaml_content:bool=True):
+def get_existing_rule(rule_id, in_rule_folder, db_cfg = None, r_irds = None, use_yaml_content:bool=True):
     """
     Get an existing rule based on the given rule_id from a specified folder.
     * If the rule file is found, it returns a dictionary containing the 
@@ -48,24 +40,29 @@ def get_existing_rule(rule_id, in_rule_folder,
     v_prg = __name__
     v_stp = 1.0
     g_lvl = int(os.getenv("g_lvl"))
-    v_msg = "Checking input parameters..."
-    echo_msg(v_prg, v_stp, v_msg, 2)
+    v_msg = "Getting existing rule..."
+    echo_msg(v_prg, v_stp, v_msg, 3)
 
-    # 2 get json data either from db or rule folder
-    v_stp = 2.0
-    if get_db_rule == 1: 
-        v_stp = 2.1
-        v_msg = f"Getting rule doc from {ct_name}.{db_name}..."
-        echo_msg(v_prg, v_stp, v_msg, 2)
-        json_data = read_db_rule(rule_id=rule_id, db_cfg=db_cfg,r_ids=r_ids,
-                                 db_name=db_name,ct_name=ct_name)
-    else: 
-        v_stp = 2.2
-        v_msg = f"Getting rule file from {in_rule_folder}..."
-        echo_msg(v_prg, v_stp, v_msg, 2)
-        json_data = read_a_rule(rule_id=rule_id,rule_dir=in_rule_folder)
-
-    rule_guid = json_data.get('id')
+    rule_guid = None
+    cnt = {"Searched":0, "Matched": 0, "Skipped": 0}
+    for filename in os.listdir(in_rule_folder):
+        cnt["Searched"] += 1
+        if rule_id in filename:
+            cnt["Matched"] += 1
+            v_stp = 2.1
+            v_msg = " . Reading file: " + filename
+            echo_msg(v_prg, v_stp, v_msg, 4)
+            filepath = os.path.join(in_rule_folder, filename)
+            with open(filepath, 'r') as f:
+                json_data = json.load(f)
+                rule_guid = json_data.get('id')
+        else:
+            cnt["Skipped"] += 1
+    v_stp = 2.2
+    v_msg = " . Searched " + str(cnt["Searched"]) + " files. "
+    if cnt["Searched"] > cnt["Skipped"]: 
+        v_msg += " And found " + str(cnt["Matched"]) + " matched file. "
+    echo_msg(v_prg, v_stp, v_msg, 4)
 
     v_stp = 3.0
     v_msg = "Building r_json object..."
@@ -84,7 +81,6 @@ def get_existing_rule(rule_id, in_rule_folder,
             "creator": {
                 "id": default_id
             },
-            "json": {},
             "status": "new"
         }
     else:
@@ -94,9 +90,6 @@ def get_existing_rule(rule_id, in_rule_folder,
         r_json = json_data
         r_json["changed"] = now_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
         r_json["status"] = "exist"
-        r1 = r_json.get("json")
-        if r1 is None or r1 == "null":
-            r_json["json"] = {}
     
     yaml_loader = YAML()
     yaml_loader.indent(mapping=2, sequence=4, offset=2)
@@ -123,10 +116,21 @@ def get_existing_rule(rule_id, in_rule_folder,
         # print(f"JSON Content: {r_json['content']}")
 
         y_content = yaml_loader.load(r_json["content"]) or {}
+        # for transformation in transformations:
+        #         transformation(yaml, r_json, self)
+        # print(f"YAML: {yaml}") 
+
+        # content = StringIO()
+        # yaml_loader.dump(y_content, content,)
+
+        # r_json["content"] = content.getvalue()
+        # print(r_json["content"])
          
         r_json["json"] = Transformer.spaces_to_underscores(
             safe_load(r_json["content"]))
+        # content.close() 
 
+        # json.dump(r_json["json"]) 
     return r_json 
 
 
@@ -137,19 +141,16 @@ if __name__ == "__main__":
     rule_dir = os.getenv("existing_rule_dir")
     os.environ["g_lvl"] = "5"
     # Test case 1: Rule exists in the folder and use_yaml_content is True
-    rule_id = "CG0063"
-    # r_1 = get_existing_rule(rule_id, rule_dir)
-    # print(f"Result 1:")
-    # json.dump(r_1,sys.stdout,indent=4)
+    rule_id = "CG0006"
+    r_1 = get_existing_rule(rule_id, rule_dir)
+    print(f"Result 1:")
+    json.dump(r_1,sys.stdout,indent=4)
 
 
     # Test case 2: Rule exists in the folder and use_yaml_content is False
-    db = "library"
-    ct = 'core_rules_dev'
-    r_2 = get_existing_rule(
-         rule_id, rule_dir, use_yaml_content=False,get_db_rule=1, db_name=db, ct_name=ct )
+    # r_2 = get_existing_rule(
+    #     rule_id, rule_dir, use_yaml_content=False)
     # print(f"Result 2: {r_2}")
-    json.dump(r_2, sys.stdout, indent=4)
 
     # Test case 3: Rule does not exist in the folder
     # non_existing_rule_id = "non_existing_rule"

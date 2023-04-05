@@ -8,6 +8,7 @@
 #   03/30/2023 (htu) - 
 #     1. fixed the missing strings and added CommentedSeq
 #     2. added echo_msg 
+#   04/04/2023 (htu) - added step 1.5 and "CommentedMap, dict" in step 1.41
 
 import json
 import re
@@ -40,7 +41,8 @@ def rename_keys(obj, a: str = "_", b: str = " "):
         v_msg = " . In CommentedMap"
         echo_msg(v_prg, v_stp, v_msg, 5)
         for key, value in list(obj.items()):
-            if isinstance(value, (list, CommentedSeq)):
+            v_stp = 1.41
+            if isinstance(value, (list, CommentedSeq, CommentedMap, dict)):
                 rename_keys(value, a, b)
             new_key = key.replace(a, b)
             v_stp = 1.5
@@ -52,6 +54,11 @@ def rename_keys(obj, a: str = "_", b: str = " "):
                     obj.ca.items[new_key] = obj.ca.items.get(key)
                     if key in obj.ca.items:
                         del obj.ca.items[key]
+    else:
+        v_stp = 1.5
+        v_msg = f"ERR: Object Type not being processed: {type(obj)}"
+        echo_msg(v_prg, v_stp, v_msg, 5)
+
             
 # End of rename_keys 
 

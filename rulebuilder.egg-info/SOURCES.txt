@@ -10,6 +10,7 @@ rulebuilder/build_rule_yaml.py
 rulebuilder/convert_json_to_yaml.py
 rulebuilder/convert_keys.py
 rulebuilder/create_db_container.py
+rulebuilder/create_log_dir.py
 rulebuilder/decode_classes.py
 rulebuilder/echo_msg.py
 rulebuilder/get_authorities.py
@@ -19,6 +20,7 @@ rulebuilder/get_creator_id.py
 rulebuilder/get_db_cfg.py
 rulebuilder/get_db_documents.py
 rulebuilder/get_desc.py
+rulebuilder/get_doc_stats.py
 rulebuilder/get_executability.py
 rulebuilder/get_existing_rule.py
 rulebuilder/get_jmsg.py
@@ -37,6 +39,7 @@ rulebuilder/publish_a_rule.py
 rulebuilder/publish_rules.py
 rulebuilder/rbuilder.py
 rulebuilder/read_a_rule.py
+rulebuilder/read_db_rule.py
 rulebuilder/read_rules.py
 rulebuilder/rename_dict_keys.py
 rulebuilder/rename_keys.py

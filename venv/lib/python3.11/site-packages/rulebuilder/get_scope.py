@@ -27,8 +27,8 @@ def get_scope(rule_data, exist_rule_data: dict = {}):
         }
     df_rules = rule_data
     df = decode_classes(df_rules) 
-    print(f"{__name__}:\n  Class: {df['Class']}\n  Domains: {df['Domain']}")
-    print(f"  C_Exc: {df['Classes_Exclude']}\n  D_Exc: {df['Domains_Exclude']}")
+    # print(f"{__name__}:\n  Class: {df['Class']}\n  Domains: {df['Domain']}")
+    # print(f"  C_Exc: {df['Classes_Exclude']}\n  D_Exc: {df['Domains_Exclude']}")
 
     def set_scope (k, c1="Class", c2="Classes"):
         if df[c1].iloc[0] is not None:

@@ -19,12 +19,23 @@
 #   03/30/2023 (htu) - 
 #     1. used and tested proc_each_yaml
 #     2. added log_dir and log files 
-# 
+#   04/03/2023 (htu): 
+#     1. added pub2db, db_name and ct_name parameters
+#     2. used get_db_cfg, create_log_dir and publish_a_rule 
+#   04/04/2023 (htu) - 
+#     1. added get_doc_stats and step 1.42 
+#     2. added r_ids to publish_a_rule
+#   04/05/2023 (htu) - 
+#     1. added get_db_rule for getting rule doce from DB
+#     2. updated get_existing_rule parameters at step 3.4 
+#     3. updated proc_each_yaml parameters at step 3.5
 #  
 
 # import ruamel.yaml as yaml
 import os
 import pandas as pd
+import sys 
+import json 
 from rulebuilder.echo_msg import echo_msg
 from rulebuilder.read_rules import read_rules
 # from rulebuilder.get_creator_id import get_creator_id
@@ -34,14 +45,20 @@ from rulebuilder.output_rule2file import output_rule2file
 from rulebuilder.build_rule_yaml import build_rule_yaml
 from rulebuilder.proc_each_yaml import proc_each_yaml
 from dotenv import load_dotenv
-from datetime import datetime, timezone
-
+# from datetime import datetime, timezone
+import datetime as dt 
+from rulebuilder.create_log_dir import create_log_dir
+from rulebuilder.get_db_cfg import get_db_cfg
+from rulebuilder.publish_a_rule import publish_a_rule
+from rulebuilder.get_doc_stats import get_doc_stats
 
 def proc_sdtm_rules(df_data=None, in_rule_folder:str=None, 
                     out_rule_folder:str=None, 
                     rule_ids: list = ["CG0001"],s_version: list = [], 
                     s_class: list = [], s_domain: list = [],
-                    wrt2log: int = 0
+                    wrt2log: int = 0, pub2db: int = 0,
+                    get_db_rule: int = 0,
+                    db_name:str=None, ct_name:str=None 
                     ) -> None:
     """
     ===============
@@ -105,8 +122,9 @@ def proc_sdtm_rules(df_data=None, in_rule_folder:str=None,
 
     """
     v_prg = __name__ 
+    st_all = dt.datetime.now()
     load_dotenv()
-    now_utc = datetime.now(timezone.utc)
+    now_utc = dt.datetime.now(dt.timezone.utc)
     w2log = os.getenv("write2log")
     log_dir = os.getenv("log_dir")
     job_id = now_utc.strftime("%Y%m%d_%H%M%S")
@@ -115,27 +133,9 @@ def proc_sdtm_rules(df_data=None, in_rule_folder:str=None,
     if w2log > wrt2log:
         wrt2log = w2log 
     # 0. set up log first 
-    if wrt2log >= 1:
-        os.environ["write2log"] = "1"
-        if not os.path.exists(log_dir):
-            v_stp = 0.1
-            v_msg = "Could not find log dir: " + log_dir
-            echo_msg(v_prg, v_stp, v_msg, 2)
-            v_msg = "Making dir - " + log_dir
-            echo_msg(v_prg, v_stp, v_msg, 2)
-            os.makedirs(log_dir)
-
-        log_path = now_utc.strftime("/%Y/%m/") + job_id 
-        log_dir = log_dir + log_path
-        fn_sufix = now_utc.strftime("-%dT%H%M%SZ.txt")
-        if not os.path.exists(log_dir):
-            v_stp = 0.2
-            v_msg = "Could not find log dir: " + log_dir
-            echo_msg(v_prg, v_stp, v_msg, 2)
-            v_msg = "Making dir - " + log_dir
-            echo_msg(v_prg, v_stp, v_msg, 2)
-            os.makedirs(log_dir)
-
+    log_cfg = create_log_dir(job_id=job_id, fn_root="crb", fn_sufix="xlsx", 
+                             wrt2log=wrt2log)
+    log_fdir = log_cfg["log_fdir"]
 
     # 1. get inputs
     # -----------------------------------------------------------------------
@@ -178,11 +178,25 @@ def proc_sdtm_rules(df_data=None, in_rule_folder:str=None,
     v_stp = 1.3
     if num_records_processed < 1:
         v_msg = "No record find in the rule definition data set."
-        echo_msg(v_prg, v_stp, v_msg,2)
+        echo_msg(v_prg, v_stp, v_msg,0)
         return
     else:
         v_msg = "INFO:Total number of records: " + str(num_records_processed)
         echo_msg(v_prg, v_stp, v_msg,2)
+
+    v_stp = 1.4 
+    if pub2db > 0:
+        if db_name is None and ct_name is None:
+            v_msg = "When publishing to a DB, database and container names are required."
+            echo_msg(v_prg, v_stp, v_msg, 0)
+            return
+        db_cfg = get_db_cfg(db_name=db_name,ct_name=ct_name)
+        if 'ct_conn' not in db_cfg.keys(): 
+            v_msg = "Could not create container connection for C/D: {ct_name}/{db_name}"
+            echo_msg(v_prg, v_stp, v_msg, 0)
+            return
+        v_stp = 1.42
+        r_ids = get_doc_stats(db=db_name,ct=ct_name,wrt2file=wrt2log)
 
     # 2. Group data by Rule ID
     # -----------------------------------------------------------------------
@@ -235,19 +249,23 @@ def proc_sdtm_rules(df_data=None, in_rule_folder:str=None,
     # Loop through each Rule ID and print out required information
 
     df_log = pd.DataFrame(columns=["rule_id", "core_id",  "user_id", "guid_id", 
-                                   "created", "changed", "status", "version", 
+                                   "created", "changed", "rule_status", "version", 
                                    "class", "domain", "variable", "rule_type", 
-                                   "document", "section", "sensitivity"])
+                                   "document", "section", "sensitivity",
+                                   "publish_status"])
     rows = []
+    fn_sufix = now_utc.strftime("%dT%H%M%S.txt")
     for rule_id, group in grouped_data:
-        log_fn = log_dir + "/" + rule_id + fn_sufix 
+        st_row = dt.datetime.now()
+        log_fn = f"{log_fdir}/{rule_id}-{fn_sufix}" 
         os.environ["log_fn"] = log_fn
         # if rule_id not in rule_ids: continue 
         num_records = group.shape[0]
         row = {"rule_id": None, "core_id": None,  "user_id": None,"guid_id":None, 
-               "created": None, "changed": None, "status": None,"version":None,
+               "created": None, "changed": None, "rule_status": None,"version":None,
                "class":None, "domain": None,"variable":None, "rule_type": None,
-               "document":None, "section": None, "sensitivity": None}
+               "document": None, "section": None, "sensitivity": None, 
+               "publish_status": None}
         row.update({"rule_id":rule_id})
 
         # 3.1 show rule id and number of records in the group
@@ -271,19 +289,33 @@ def proc_sdtm_rules(df_data=None, in_rule_folder:str=None,
         rule_data = df[df["Rule ID"] == rule_id]
         rule_data = rule_data.reset_index(drop=True)
 
-        rule_obj = get_existing_rule(rule_id, in_rule_folder)
+        # 3.4 read in the existing rule
+        v_stp = 3.4 
+        rule_obj = get_existing_rule(rule_id, in_rule_folder, 
+                                     get_db_rule=get_db_rule, r_ids=r_ids,
+                                     db_name=db_name,ct_name=ct_name,
+                                     use_yaml_content=False)
+        print("------------------------------------------")
+        json.dump(rule_obj, sys.stdout, indent=4)
+
+        # 3.5 process the rule 
         # 
         # a_json = proc_each_sdtm_rule(
         #     rule_data, rule_obj, rule_id, in_rule_folder, cnt_published)
-        a_json = proc_each_yaml(rule_id,rule_data, rule_obj)
+        v_stp = 3.5 
+        a_json = proc_each_yaml(rule_id,rule_data, rule_obj=rule_obj,
+                                rule_dir=in_rule_folder,r_ids=r_ids,
+                                get_db_rule=get_db_rule,db_name=db_name,ct_name=ct_name)
         a = a_json 
-
+        r_status = a.get("status")
+        if r_status is None or r_status != "new":
+            r_status = a.get("json", {}).get("Core", {}).get("Status")
         row.update({"core_id": a.get("json",{}).get("Core",{}).get("Id")})
         row.update({"user_id": a.get("creator",{}).get("id")})
         row.update({"guid_id": a.get("id")})
         row.update({"created": a.get("created")})
         row.update({"changed": a.get("changed")})
-        row.update({"status": a.get("json",{}).get("Core",{}).get("Status")})
+        row.update({"rule_status": r_status})
         row.update({"rule_type": a.get("json", {}).get("Rule_Type")})
         row.update({"sensitivity": a.get(
             "json", {}).get("Sensitivity")})
@@ -305,8 +337,8 @@ def proc_sdtm_rules(df_data=None, in_rule_folder:str=None,
         row.update({"document": rule_data["Document"].str.cat(sep = "; ")})
         row.update({"section": rule_data["Section"].str.cat(sep = "; ")})
         # Append row to list of rows
-        rows.append(row)
 
+        # 3.6 build yaml content
         a_json["content"] = None 
         # # Only get json for YAML
         # dict_yaml = a_json["json"]
@@ -315,7 +347,23 @@ def proc_sdtm_rules(df_data=None, in_rule_folder:str=None,
         # d_yaml = rename_keys(dict_yaml, '_', ' ')
         # a_yaml = yaml.dump(d_yaml, default_flow_style=False)
         a_yaml = build_rule_yaml(rule_data,a_json)
+
+        # 3.7 output the rule to json and yaml files
         output_rule2file(rule_id, a_json, a_yaml, out_rule_folder)
+
+        # 3.8 publish the rule 
+        if pub2db == 1:
+            a_row= publish_a_rule(rule_id=rule_id,db_cfg=db_cfg,r_ids=r_ids)
+            row.update({"publish_status": a_row["publish_status"]})
+
+        # 3.9 Append the status record to rows
+        rows.append(row)
+        et_row = dt.datetime.now()
+        st = st_row.strftime("%Y-%m-%d %H:%M:%S")
+        et = et_row.strftime("%Y-%m-%d %H:%M:%S")
+        v_msg = f"The job {job_id} for {rule_id} was done between: {st} and {et}"
+        echo_msg(v_prg, v_stp, v_msg,1)
+
     # End of for rule_id, group in grouped_data
 
     # Collect basic stats and print them out
@@ -332,6 +380,12 @@ def proc_sdtm_rules(df_data=None, in_rule_folder:str=None,
     df_log = pd.DataFrame.from_records(rows)
     df_log.to_excel(rst_fn, index=False)
 
+    et_all = dt.datetime.now()
+    st = st_all.strftime("%Y-%m-%d %H:%M:%S")
+    et = et_all.strftime("%Y-%m-%d %H:%M:%S")
+    v_msg = f"The job {job_id} was done between: {st} and {et}"
+    echo_msg(v_prg, v_stp, v_msg,1)
+
 
 # Test cases
 if __name__ == "__main__":
@@ -347,8 +401,27 @@ if __name__ == "__main__":
     echo_msg(v_prg, v_stp, "Test Case 01: Basic Parameter",1)
 
     # proc_sdtm_rules(rule_ids=["CG0006"], wrt2log=True)
-    proc_sdtm_rules(rule_ids=["CG0006"], wrt2log=True)
+    # proc_sdtm_rules(rule_ids=["CG0006"], wrt2log=True)
     
     # Expected output:
+    # 2. Test publishing rules 
+    v_stp = 2.0 
+    echo_msg(v_prg, v_stp, "Test Case 02: Publish Rules",1)
+    db = 'library'
+    ct = 'core_rules_dev'
+    # proc_sdtm_rules(rule_ids=["CG0063"], wrt2log=True,pub2db=1,db_name=db,ct_name=ct)
+    # proc_sdtm_rules(rule_ids=[], wrt2log=True,pub2db=1,db_name=db,ct_name=ct)
+
+    # Publish to dev environme t
+    ct = 'editor_rules_dev'
+    # proc_sdtm_rules(rule_ids=["CG0001","CG0015", "CG0063"], wrt2log=True, pub2db=1, 
+    #                 get_db_rule=1, db_name=db, ct_name=ct)
+
+    # proc_sdtm_rules(rule_ids=["CG0002","CG0027","CG0015", "CG0063"], wrt2log=True,
+    #                pub2db=1, db_name=db, ct_name=ct)
+    proc_sdtm_rules(rule_ids=[], wrt2log=True, pub2db=1,
+                    get_db_rule=1, db_name=db, ct_name=ct)
+
 
 # End of File
+
