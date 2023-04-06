@@ -1,5 +1,8 @@
 # 03/17/2023: filter out data
 data/
+baks/
+baks.bak/
+.DS_Store 
 
 # 03/16/2023: filter out sphinx documents
 _build/
