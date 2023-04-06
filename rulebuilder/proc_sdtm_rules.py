@@ -29,23 +29,20 @@
 #     1. added get_db_rule for getting rule doce from DB
 #     2. updated get_existing_rule parameters at step 3.4 
 #     3. updated proc_each_yaml parameters at step 3.5
+#     4. updated docstring
 #  
 
-# import ruamel.yaml as yaml
 import os
 import pandas as pd
 import sys 
 import json 
 from rulebuilder.echo_msg import echo_msg
 from rulebuilder.read_rules import read_rules
-# from rulebuilder.get_creator_id import get_creator_id
 from rulebuilder.get_existing_rule import get_existing_rule
-# from rulebuilder.proc_each_sdtm_rule import proc_each_sdtm_rule
 from rulebuilder.output_rule2file import output_rule2file
 from rulebuilder.build_rule_yaml import build_rule_yaml
 from rulebuilder.proc_each_yaml import proc_each_yaml
 from dotenv import load_dotenv
-# from datetime import datetime, timezone
 import datetime as dt 
 from rulebuilder.create_log_dir import create_log_dir
 from rulebuilder.get_db_cfg import get_db_cfg
@@ -61,65 +58,55 @@ def proc_sdtm_rules(df_data=None, in_rule_folder:str=None,
                     db_name:str=None, ct_name:str=None 
                     ) -> None:
     """
-    ===============
-    proc_sdtm_rules
-    ===============
-    This method processes all the rule definition and produces a yaml 
-    and json file.
+    Process all rule definitions in `df_data`, and output a YAML and JSON
+    file for each rule to `out_rule_folder`.
 
     Parameters:
     -----------
-    df_data: dataframe
-        a data frame containing all the rule definitions and can be 
-        returned from *read_rules* method. 
-    rule_template: json
-        a json content from reading a Core Rule Schema and can be returned
-        from *get_schema* method. 
-    rule_ids: list
-        a list of rule ids that will be used to select rule definitions 
-        to be used to generate yaml and json files for the rules. If not
-        provided or if it is a empty list, all the rule definitions will be
-        used. 
-    in_rule_folder: str
-        a folder containing all the existing rules
-    out_rule_folder: str
-        a folder where the new or updated rules will be output to
+    df_data: DataFrame, default None
+        The rule definition data. If None, it is read in from the file specified
+        by the `yaml_file` environment variable.
+    in_rule_folder: str, default None
+        The folder containing existing rules. If None, it is read from the
+        `existing_rule_dir` environment variable.
+    out_rule_folder: str, default None
+        The folder where the new or updated rules will be output to. If None,
+        it is read from the `output_dir` environment variable.
+    rule_ids: list of str, default ['CG0001']
+        A list of rule IDs that will be used to select rule definitions
+        to be used to generate YAML and JSON files for the rules. If not
+        provided or if it is an empty list, all the rule definitions will be
+        used.
+    s_version: list of str, default []
+        A list of standard versions to filter the rules by. If an empty list,
+        no filtering is performed.
+    s_class: list of str, default []
+        A list of rule classes to filter the rules by. If an empty list, no
+        filtering is performed.
+    s_domain: list of str, default []
+        A list of domains to filter the rules by. If an empty list, no filtering
+        is performed.
+    wrt2log: int, default 0
+        If 1, write logs to a file.
+    pub2db: int, default 0
+        If 1, publish the rule to a database specified by `db_name` and `ct_name`.
+    get_db_rule: int, default 0
+        If 1, get the rule from the database specified by `db_name` and `ct_name`.
+    db_name: str, default None
+        The name of the database to publish/get rules from.
+    ct_name: str, default None
+        The name of the container to publish/get rules from.
 
-    returns
+    Returns:
+    --------
+        None
+
+    Raises:
     -------
-        None
-
-    Raises
-    ------
     ValueError
-        None
-
-    Comments from Gerry Campion:  
-    *01. For the yaml files, only the contents within the json property are 
-        required. The other properties are only required in the json file.
-    *02. The property names in the yaml file should not have underscores. The 
-        property names in the json file should have underscores.
-    03. I recommend copying the sample yaml rule into the rule editor. The 
-        schema will alert you of most of the structure issues.
-    *04. Variable, Condition, and Rule columns should be mapped to comments in
-        the beginning of the YAML file (comments start with #) (see table 
-        above). These won't appear in the json property in the json file 
-        because json does not allow comments.
-    05. I would like to see an example with different Class and Domain other 
-        than ALL
-    *06. If Item is empty, don't include the Item property for the citation
-    *07. Replace Check: Check: null with Check: null
-    *08. Don't add Core.Id
-    09. Description and Outcome.Message - I'm curious how you are generating 
-        these?
-    *10. Rule Type and Sensitivity should be left null
-    11. I noticed these samples include rules merged from multiple rows in 
-        the source spreadsheet. I was expecting to see a sample for each row 
-        in the spreadsheet. Then, a second step would merge the rules from 
-        multiple rows for each rule id and also merge them with the rule ids 
-        in the core database. Is this following a different strategy?
-
-
+        If `pub2db` is 1 and `db_name` or `ct_name` are not specified.
+        If the file specified by `yaml_file` does not exist.
+        If `in_rule_folder` or `out_rule_folder` do not exist.
     """
     v_prg = __name__ 
     st_all = dt.datetime.now()
